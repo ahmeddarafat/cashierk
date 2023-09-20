@@ -1,0 +1,63 @@
+name: start_app
+description: A new Flutter project.
+
+
+publish_to: 'none' 
+
+
+version: 1.0.0+1
+
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  # assets:
+  #   - assets/images/
+  #   - assets/icons/
+  
+  # fonts:
+  #   - family: Inter
+  #     fonts:
+  #       - asset: assets\fonts\inter\Inter-Light.ttf
+  #         weight: 300
+  #       - asset: assets\fonts\inter\Inter-Regular.ttf
+  #         weight: 400
+  #       - asset: assets\fonts\inter\Inter-Medium.ttf
+  #         weight: 500
+  #       - asset: assets\fonts\inter\Inter-SemiBold.ttf
+  #         weight: 600
+  #       - asset: assets\fonts\inter\Inter-Bold.ttf
+  #         weight: 700
+
+# flutter_intl:
+#   enabled: true
+#   output_dir: lib/resources/localization/generated
+#   arb_dir: lib/resources/localization/l10n
+
+# flutter_native_splash:
+#   image: assets/images/logo_500.png
+#   color: "#105161"
+#   android: true
+#   ios: true
+
+# flutter_launcher_icons:
+#   android: true
+#   ios: true
+#   image_path: "assets/images/logo_foreground.png"
+#   adaptive_icon_backgorund: "#105161"
+#   adaptive_icon_foreground: "assets/images/logo_foreground.png"
