@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:start_app/resources/styles/app_themes.dart';
 
-void main() {
+import 'resources/router/app_router.dart';
+import 'resources/service_locator/service_locator.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await initModule();
   runApp(const MyApp());
 }
 
@@ -9,13 +17,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Start App',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Start App',
+        onGenerateRoute: RouteGenerate.getRoute,
+        theme: AppThemes.light,
+        scrollBehavior: ScrollConfiguration.of(context).copyWith(
+          physics: const BouncingScrollPhysics(),
+        ),
+        home: const MyHomePage(title: 'Flutter Demo Home Page'),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
