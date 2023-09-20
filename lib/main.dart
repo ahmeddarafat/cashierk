@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:start_app/resources/localization/generated/l10n.dart';
 import 'resources/styles/app_themes.dart';
 
 import 'resources/router/app_router.dart';
@@ -24,6 +26,14 @@ class MyApp extends StatelessWidget {
         title: 'Start App',
         onGenerateRoute: RouteGenerate.getRoute,
         theme: AppThemes.light,
+        locale: const Locale("en", "US"),
+        supportedLocales: S.delegate.supportedLocales,
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
         scrollBehavior: ScrollConfiguration.of(context).copyWith(
           physics: const BouncingScrollPhysics(),
         ),

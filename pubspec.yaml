@@ -15,10 +15,16 @@ dependencies:
   # Ui
   cupertino_icons: ^1.0.2
   intl: ^0.18.1
+  another_flushbar: ^1.12.30
 
   # State Management
+  flutter_bloc: ^8.1.3
+  meta: ^1.9.1
+  equatable: ^2.0.5
 
   # Localization
+  flutter_localizations:
+    sdk: flutter
 
   # Responsive
   flutter_screenutil: ^5.9.0
@@ -33,8 +39,6 @@ dependencies:
   # Local Database
   shared_preferences: ^2.2.1
   internet_connection_checker: ^1.0.0+1
-  flutter_bloc: ^8.1.3
-  another_flushbar: ^1.12.30
 
 dev_dependencies:
   flutter_test:
