@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class PrefsKeys {
   PrefsKeys._();
 
+  static const String onboarding = "onboarding";
   static const String login = "login";
   static const String token = "token";
   static const String userInfo = "user info";
@@ -11,6 +12,15 @@ class PrefsKeys {
 class AppPrefs {
   final SharedPreferences _sharedPrefs;
   AppPrefs(this._sharedPrefs);
+
+  /// onboarding
+  Future<void> setOnBoardingViewed() async {
+    await _sharedPrefs.setBool(PrefsKeys.onboarding, true);
+  }
+
+  bool isOnBoardingViewed() {
+    return _sharedPrefs.getBool(PrefsKeys.onboarding) ?? false;
+  }
 
   /// Auth
   Future<void> setUserLoggedIn() async {

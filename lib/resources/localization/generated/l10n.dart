@@ -49,6 +49,106 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `------------ onbording -------------`
+  String get onbording_comment {
+    return Intl.message(
+      '------------ onbording -------------',
+      name: 'onbording_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome to the Cashierk App!`
+  String get onboardingTitle1 {
+    return Intl.message(
+      'Welcome to the Cashierk App!',
+      name: 'onboardingTitle1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This app will teach you everything you need to know about using the Cashierk, from setting it up to processing payments.`
+  String get onboardingSubtitle1 {
+    return Intl.message(
+      'This app will teach you everything you need to know about using the Cashierk, from setting it up to processing payments.',
+      name: 'onboardingSubtitle1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Learn about the Cashierk`
+  String get onboardingTitle2 {
+    return Intl.message(
+      'Learn about the Cashierk',
+      name: 'onboardingTitle2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `In this app, you'll learn about the features of the AI Cashier and how to use them to your advantage.`
+  String get onboardingSubtitle2 {
+    return Intl.message(
+      'In this app, you\'ll learn about the features of the AI Cashier and how to use them to your advantage.',
+      name: 'onboardingSubtitle2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get started with the Cashierk`
+  String get onboardingTitle3 {
+    return Intl.message(
+      'Get started with the Cashierk',
+      name: 'onboardingTitle3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This app will walk you through the steps of getting started with the Cashierk, so you can start using it right away.`
+  String get onboardingSubtitle3 {
+    return Intl.message(
+      'This app will walk you through the steps of getting started with the Cashierk, so you can start using it right away.',
+      name: 'onboardingSubtitle3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Skip`
+  String get skip {
+    return Intl.message(
+      'Skip',
+      name: 'skip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get Started`
+  String get getStarted {
+    return Intl.message(
+      'Get Started',
+      name: 'getStarted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get next {
+    return Intl.message(
+      'Next',
+      name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,1 +1,12 @@
-{}
+{
+    "onbording_comment": "------------ onbording -------------",
+    "onboardingTitle1": "Welcome to the Cashierk App!",
+    "onboardingSubtitle1": "This app will teach you everything you need to know about using the Cashierk, from setting it up to processing payments.",
+    "onboardingTitle2": "Learn about the Cashierk",
+    "onboardingSubtitle2": "In this app, you'll learn about the features of the AI Cashier and how to use them to your advantage.",
+    "onboardingTitle3": "Get started with the Cashierk",
+    "onboardingSubtitle3": "This app will walk you through the steps of getting started with the Cashierk, so you can start using it right away.",
+    "skip": "Skip",
+    "getStarted": "Get Started",
+    "next": "Next"
+}

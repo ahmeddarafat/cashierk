@@ -21,5 +21,23 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
+        "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "onboardingSubtitle1": MessageLookupByLibrary.simpleMessage(
+            "This app will teach you everything you need to know about using the Cashierk, from setting it up to processing payments."),
+        "onboardingSubtitle2": MessageLookupByLibrary.simpleMessage(
+            "In this app, you\'ll learn about the features of the AI Cashier and how to use them to your advantage."),
+        "onboardingSubtitle3": MessageLookupByLibrary.simpleMessage(
+            "This app will walk you through the steps of getting started with the Cashierk, so you can start using it right away."),
+        "onboardingTitle1": MessageLookupByLibrary.simpleMessage(
+            "Welcome to the Cashierk App!"),
+        "onboardingTitle2":
+            MessageLookupByLibrary.simpleMessage("Learn about the Cashierk"),
+        "onboardingTitle3": MessageLookupByLibrary.simpleMessage(
+            "Get started with the Cashierk"),
+        "onbording_comment": MessageLookupByLibrary.simpleMessage(
+            "------------ onbording -------------"),
+        "skip": MessageLookupByLibrary.simpleMessage("Skip")
+      };
 }
