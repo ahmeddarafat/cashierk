@@ -1,6 +1,7 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter/material.dart';
+import 'package:start_app/resources/styles/app_colors.dart';
 
 import 'public_text.dart';
 
@@ -21,15 +22,15 @@ class PublicButton extends StatelessWidget {
     this.title = "",
     this.width,
     this.borderRadius = 12,
-    this.titleColor = Colors.white,
-    this.backgroundColor = Colors.purple,
+    this.titleColor = AppColors.white,
+    this.backgroundColor = AppColors.orangePrimary,
     this.verticalpadding,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: width ?? 306.w,
+      width: width ?? 300.w,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
@@ -39,10 +40,10 @@ class PublicButton extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: verticalpadding ?? 16.h),
+          padding: EdgeInsets.symmetric(vertical: verticalpadding ?? 12.h),
           child: PublicText(
             txt: title,
-            size: titleSize ?? 22.sp,
+            size: titleSize ?? 20.sp,
             color: titleColor,
             fw: FontWeight.w600, // semi bold
           ),
