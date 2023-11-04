@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/resources/localization/generated/l10n.dart';
 import 'resources/styles/app_themes.dart';
@@ -9,6 +10,10 @@ import 'resources/service_locator/service_locator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // To test Splash screen
+  // WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   await initModule();
   runApp(const MyApp());
@@ -23,7 +28,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(360, 690),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Start App',
+        title: 'Cashierk',
         onGenerateRoute: RouteGenerate.getRoute,
         theme: AppThemes.light,
         locale: const Locale("en", "US"),
