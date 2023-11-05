@@ -1,5 +1,5 @@
 {
-    "onbording_comment": "------------ onbording -------------",
+    "onbording_comment": "--------------------------- onbording -------------------------------",
     "onboardingTitle1": "Welcome to the Cashierk App!",
     "onboardingSubtitle1": "This app will teach you everything you need to know about using the Cashierk, from setting it up to processing payments.",
     "onboardingTitle2": "Learn about the Cashierk",
@@ -8,5 +8,25 @@
     "onboardingSubtitle3": "This app will walk you through the steps of getting started with the Cashierk, so you can start using it right away.",
     "skip": "Skip",
     "getStarted": "Get Started",
-    "next": "Next"
+    "next": "Next",
+    "login_comment": "--------------------------- login -------------------------------",
+    "login": "Login",
+    "loginTitle": "Login to continue!",
+    "email": "Email",
+    "password": "Password",
+    "emailHint": "Enter your email",
+    "passwordHint": "Enter your password",
+    "forgetPassword": "Forget Password?",
+    "enterYourEmail": "Please, enter your email",
+    "invalidEmailMeg": "Please, enter a valid email",
+    "enterYourPassword": "Please, enter your password",
+    "invalidPasswordMeg": "Please, enter a valid password",
+    "rememberMe": "Remember me",
+    "for": "Remember me",
+    "or":"Or",
+    "dontHaveAccount": "Don't have an account?",
+    "register_comment": "--------------------------- register -------------------------------",
+    "register": "Register"
+    
+
 }

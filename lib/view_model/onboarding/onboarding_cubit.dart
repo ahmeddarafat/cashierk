@@ -1,9 +1,11 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../data/data_source/local/app_prefs.dart';
 import '../../resources/constants/app_constants.dart';
+import '../../resources/router/app_router.dart';
 import '../../resources/service_locator/service_locator.dart';
 
 part 'onboarding_state.dart';
@@ -28,12 +30,12 @@ class OnboardingCubit extends Cubit<OnboardingState> {
   void onBoardingButton(BuildContext context) {
     if (currentIndex == 2) {
       appPrefs.setOnBoardingViewed();
-      // SchedulerBinding.instance.addPostFrameCallback((_) {
-      //   Navigator.pushReplacementNamed(
-      //     context,
-      //     AppRoutes.login,
-      //   );
-      // });
+      SchedulerBinding.instance.addPostFrameCallback((_) {
+        Navigator.pushReplacementNamed(
+          context,
+          AppRoutes.login,
+        );
+      });
     } else {
       increaseIndex();
     }

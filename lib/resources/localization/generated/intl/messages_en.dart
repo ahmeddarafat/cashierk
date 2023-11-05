@@ -22,7 +22,21 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "emailHint": MessageLookupByLibrary.simpleMessage("Enter your email"),
+        "enterYourEmail":
+            MessageLookupByLibrary.simpleMessage("Please, enter your email"),
+        "enterYourPassword":
+            MessageLookupByLibrary.simpleMessage("Please, enter your password"),
+        "forgetPassword":
+            MessageLookupByLibrary.simpleMessage("Forget Password?"),
         "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
+        "invalidEmailMeg":
+            MessageLookupByLibrary.simpleMessage("Please, enter a valid email"),
+        "invalidPasswordMeg": MessageLookupByLibrary.simpleMessage(
+            "Please, enter a valid password"),
+        "login_comment": MessageLookupByLibrary.simpleMessage(
+            "--------------------------- login -------------------------------"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "onboardingSubtitle1": MessageLookupByLibrary.simpleMessage(
             "This app will teach you everything you need to know about using the Cashierk, from setting it up to processing payments."),
@@ -37,7 +51,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "onboardingTitle3": MessageLookupByLibrary.simpleMessage(
             "Get started with the Cashierk"),
         "onbording_comment": MessageLookupByLibrary.simpleMessage(
-            "------------ onbording -------------"),
+            "--------------------------- onbording -------------------------------"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordHint":
+            MessageLookupByLibrary.simpleMessage("Enter your password"),
+        "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip")
       };
 }

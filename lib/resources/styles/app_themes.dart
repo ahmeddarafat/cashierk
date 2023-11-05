@@ -7,7 +7,7 @@ class AppThemes {
 
   static ThemeData light = ThemeData(
     useMaterial3: true,
-    fontFamily: "Inter",
+    fontFamily: "Roboto",
 
     /// Colors
     scaffoldBackgroundColor: Colors.white,

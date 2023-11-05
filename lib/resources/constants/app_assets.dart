@@ -1,6 +1,18 @@
 class Assets {
   Assets._();
   
+  /// Assets for iconsApple
+  /// assets/icons/apple.png
+  static const String iconsApple = "assets/icons/apple.png";
+
+  /// Assets for iconsFacebook
+  /// assets/icons/facebook.png
+  static const String iconsFacebook = "assets/icons/facebook.png";
+
+  /// Assets for iconsGoogle
+  /// assets/icons/google.png
+  static const String iconsGoogle = "assets/icons/google.png";
+
   /// Assets for imagesLogo
   /// assets/images/logo.jpeg
   static const String imagesLogo = "assets/images/logo.jpeg";
