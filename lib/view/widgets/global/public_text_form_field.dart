@@ -1,6 +1,7 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter/material.dart';
+import 'package:start_app/resources/styles/app_colors.dart';
 
 
 class PublicTextFormField extends StatefulWidget {
@@ -69,11 +70,11 @@ class _PublicTextFormFieldState extends State<PublicTextFormField> {
         autovalidateMode: AutovalidateMode.disabled,
         validator: widget.validator,
         decoration: InputDecoration(
-          fillColor: Colors.white,
-          iconColor: Colors.purple,
+          fillColor: AppColors.backgroundGrey,
+          iconColor: AppColors.orangePrimary,
           filled: true,
           labelText: widget.label,
-          labelStyle: TextStyle(color: Colors.purple, fontSize: 18.sp),
+          labelStyle: TextStyle(color: AppColors.orangePrimary, fontSize: 18.sp),
           hintText: widget.hint,
           hintStyle: TextStyle(color: Colors.grey, fontSize: 15.sp),
           enabledBorder: OutlineInputBorder(
@@ -83,7 +84,7 @@ class _PublicTextFormFieldState extends State<PublicTextFormField> {
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(widget.borderRadius),
-            borderSide: const BorderSide(color: Colors.purple, width: 0.5),
+            borderSide: const BorderSide(color: AppColors.orangePrimary, width: 0.5),
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(widget.borderRadius),
@@ -101,7 +102,7 @@ class _PublicTextFormFieldState extends State<PublicTextFormField> {
                 child: Icon(
                     widget.prefixIcon,
                     size: 22,
-                    color: Colors.purple,
+                    color: AppColors.orangePrimary,
                   ),
               )
               : null,
@@ -119,7 +120,7 @@ class _PublicTextFormFieldState extends State<PublicTextFormField> {
         return Icon(
           widget.suffixIcon,
           size: 22,
-          color: Colors.purple,
+          color: AppColors.orangePrimary,
         );
       }
       return InkWell(
@@ -131,11 +132,11 @@ class _PublicTextFormFieldState extends State<PublicTextFormField> {
         child: !showPassword
             ? const Icon(
                 Icons.visibility,
-                color: Colors.purple,
+                color: AppColors.orangePrimary,
               )
             : const Icon(
                 Icons.visibility_off,
-                color: Colors.purple,
+                color: AppColors.orangePrimary,
               ),
       );
     }

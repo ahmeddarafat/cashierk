@@ -4,6 +4,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/resources/localization/generated/l10n.dart';
+import 'package:start_app/view/pages/auth/login/login_page.dart';
+import 'package:start_app/view_model/auth/auth_cubit.dart';
 import 'package:start_app/view_model/onboarding/onboarding_cubit.dart';
 import 'resources/styles/app_themes.dart';
 
@@ -32,6 +34,7 @@ class MyApp extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(create: (_) => OnboardingCubit()),
+          BlocProvider(create: (_) => AuthCubit()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -49,6 +52,7 @@ class MyApp extends StatelessWidget {
           scrollBehavior: ScrollConfiguration.of(context).copyWith(
             physics: const BouncingScrollPhysics(),
           ),
+          // TODO: "UI: manage the first page will be opened"
           home: const OnboardingPage(),
         ),
       ),

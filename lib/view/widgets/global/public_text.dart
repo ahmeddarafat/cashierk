@@ -10,6 +10,8 @@ class PublicText extends StatelessWidget {
   final int? max;
   final FontWeight? fw;
   final TextAlign? align;
+  final double? letterSpacing;
+  final double? wordSpacing;
 
   const PublicText({
     super.key,
@@ -20,6 +22,8 @@ class PublicText extends StatelessWidget {
     this.align,
     this.max,
     this.fw,
+    this.letterSpacing,
+    this.wordSpacing,
   });
 
   @override
@@ -36,6 +40,8 @@ class PublicText extends StatelessWidget {
         decoration:
             under == true ? TextDecoration.underline : TextDecoration.none,
         overflow: TextOverflow.ellipsis,
+        letterSpacing: letterSpacing,
+        wordSpacing: wordSpacing,
       ),
     );
   }
