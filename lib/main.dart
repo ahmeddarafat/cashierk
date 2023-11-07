@@ -34,7 +34,6 @@ class MyApp extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(create: (_) => OnboardingCubit()),
-          BlocProvider(create: (_) => LoginCubit()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,

@@ -26,7 +26,22 @@
     "or":"Or",
     "dontHaveAccount": "Don't have an account?",
     "register_comment": "--------------------------- register -------------------------------",
-    "register": "Register"
+    "register": "Register",
+    "acceptTermsErrorMessage": "Please, accept terms & policy",
+    "registerTitle": "Welcome to Cashierk!",
+    "username":"User name",
+    "firstName" : "First name",
+    "lastName" : "Last name",
+    "confirmPass" : "Confirm Password",
+    "phone":"Phone Number",
+    "enterFirstName":"Please, enter your first name",
+    "enterLastName":"Please, enter your Last name",
+    "confirmPassHint": "Enter your password again",
+    "notMatchPassMeg" : "Password is not match",
+    "phoneHint": "Please, enter your phone number",
+    "invalidPhone": "Your phone number is not valid",
+    "privacyPolicy": "Privacy & Policy",
+    "alreadyHaveAccount": "Already have an account?"
     
 
 }

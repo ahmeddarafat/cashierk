@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:start_app/view/pages/auth/login/login_page.dart';
+import 'package:start_app/view_model/auth/login/login_cubit.dart';
+import 'package:start_app/view_model/auth/register/register_cubit.dart';
+
+import '../../view/pages/auth/register/register_page.dart';
 
 class AppRoutes {
   AppRoutes._private();
@@ -12,9 +17,20 @@ class AppRoutes {
 class RouteGenerate {
   static Route<dynamic> getRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
+      /// Auth
       case AppRoutes.login:
         return MaterialPageRoute(
-          builder: (_) => const LoginPage(),
+          builder: (_) => BlocProvider(
+            create: (_) => LoginCubit(),
+            child: const LoginPage(),
+          ),
+        );
+      case AppRoutes.register:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (_) => RegisterCubit(),
+            child: const RegisterPage(),
+          ),
         );
 
       default:

@@ -317,6 +317,156 @@ class S {
       args: [],
     );
   }
+
+  /// `Please, accept terms & policy`
+  String get acceptTermsErrorMessage {
+    return Intl.message(
+      'Please, accept terms & policy',
+      name: 'acceptTermsErrorMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome to Cashierk!`
+  String get registerTitle {
+    return Intl.message(
+      'Welcome to Cashierk!',
+      name: 'registerTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User name`
+  String get username {
+    return Intl.message(
+      'User name',
+      name: 'username',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `First name`
+  String get firstName {
+    return Intl.message(
+      'First name',
+      name: 'firstName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last name`
+  String get lastName {
+    return Intl.message(
+      'Last name',
+      name: 'lastName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirmPass {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirmPass',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phone {
+    return Intl.message(
+      'Phone Number',
+      name: 'phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please, enter your first name`
+  String get enterFirstName {
+    return Intl.message(
+      'Please, enter your first name',
+      name: 'enterFirstName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please, enter your Last name`
+  String get enterLastName {
+    return Intl.message(
+      'Please, enter your Last name',
+      name: 'enterLastName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your password again`
+  String get confirmPassHint {
+    return Intl.message(
+      'Enter your password again',
+      name: 'confirmPassHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password is not match`
+  String get notMatchPassMeg {
+    return Intl.message(
+      'Password is not match',
+      name: 'notMatchPassMeg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please, enter your phone number`
+  String get phoneHint {
+    return Intl.message(
+      'Please, enter your phone number',
+      name: 'phoneHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your phone number is not valid`
+  String get invalidPhone {
+    return Intl.message(
+      'Your phone number is not valid',
+      name: 'invalidPhone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy & Policy`
+  String get privacyPolicy {
+    return Intl.message(
+      'Privacy & Policy',
+      name: 'privacyPolicy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account?`
+  String get alreadyHaveAccount {
+    return Intl.message(
+      'Already have an account?',
+      name: 'alreadyHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

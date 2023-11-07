@@ -6,14 +6,16 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import '../../../../resources/constants/app_assets.dart';
 import '../../../../resources/extensions/app_extensions.dart';
 import '../../../../resources/localization/generated/l10n.dart';
+import '../../../../resources/router/app_router.dart';
 import '../../../../resources/styles/app_colors.dart';
-import '../../../../view_model/auth/auth_cubit.dart';
+import '../../../../view_model/auth/login/login_cubit.dart';
 import '../../../widgets/global/public_button.dart';
 import '../../../widgets/global/public_divider.dart';
 import '../../../widgets/global/public_snack_bar.dart';
 import '../../../widgets/global/public_text.dart';
 import '../../../widgets/global/public_text_form_field.dart';
-import 'components/icons_box.dart';
+import '../../../widgets/local/custom_divider.dart';
+import '../../../widgets/local/custom_social_auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -23,13 +25,13 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  late final AuthCubit cubit;
+  late final LoginCubit cubit;
 
   @override
   void initState() {
     super.initState();
 
-    cubit = AuthCubit.getInstance(context);
+    cubit = LoginCubit.getInstance(context);
     cubit.init();
   }
 
@@ -41,13 +43,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AuthCubit, AuthState>(
-      listenWhen: (_, current) {
-        return (current is LoginState || current is AuthnErrorState);
-      },
-      buildWhen: (_, current) {
-        return (current is LoginState || current is AuthnErrorState);
-      },
+    return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginLoadingState) {
           cubit.changeSnipper();
@@ -55,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
           if (cubit.spinner) {
             cubit.changeSnipper();
           }
-          if (state is AuthnErrorState) {
+          if (state is LoginErrorState) {
             MySnackBar.error(
                 message: state.error, color: AppColors.red, context: context);
           } else if (state is LoginSuccessState) {
@@ -76,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 25),
                       child: Form(
-                        key: cubit.loginformKey,
+                        key: cubit.formKey,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
@@ -93,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ),
                             40.ph,
-            
+
                             /// email
                             Align(
                               alignment: Alignment.centerLeft,
@@ -105,7 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                             PublicTextFormField(
                               hint: S.of(context).emailHint,
                               keyboardtype: TextInputType.emailAddress,
-                              controller: cubit.loginEmailController,
+                              controller: cubit.emailController,
                               validator: (email) {
                                 if (email!.isEmpty) {
                                   return S.of(context).enterYourEmail;
@@ -117,7 +113,7 @@ class _LoginPageState extends State<LoginPage> {
                               },
                             ),
                             21.ph,
-            
+
                             //password
                             Align(
                               alignment: Alignment.centerLeft,
@@ -128,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             PublicTextFormField(
                               hint: S.of(context).passwordHint,
-                              controller: cubit.loginPasswordController,
+                              controller: cubit.passwordController,
                               keyboardtype: TextInputType.visiblePassword,
                               isPassword: true,
                               showSuffixIcon: true,
@@ -142,14 +138,14 @@ class _LoginPageState extends State<LoginPage> {
                                 }
                               },
                             ),
-            
-                            /// forget password
+
+                            /// Remember me & forget password
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Row(
                                   children: [
-                                    BlocBuilder<AuthCubit, AuthState>(
+                                    BlocBuilder<LoginCubit, LoginState>(
                                       buildWhen: (_, current) =>
                                           current is ChangeRememberMeState,
                                       builder: (context, state) {
@@ -185,7 +181,7 @@ class _LoginPageState extends State<LoginPage> {
                               ],
                             ),
                             40.ph,
-            
+
                             /// button login
                             PublicButton(
                               title: S.of(context).login,
@@ -195,73 +191,14 @@ class _LoginPageState extends State<LoginPage> {
                                 cubit.login();
                               },
                             ),
-            
-                            /// login with facebook or gmail
                             40.ph,
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                PublicDivider(
-                                  width: 120.w,
-                                ),
-                                PublicText(
-                                  txt: S.of(context).or,
-                                  size: 18.sp,
-                                ),
-                                PublicDivider(
-                                  width: 120.w,
-                                ),
-                              ],
-                            ),
+                            const CustomDivider(),
                             38.ph,
-                            SizedBox(
-                              width: 251.w,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                children: [
-                                  InkWell(
-                                    onTap: () {
-                                      // TODO: 'data, logic' login with facebook
-                                    },
-                                    child: IconsBox(
-                                      image: Image.asset(
-                                        Assets.iconsFacebook,
-                                        height: 30.h,
-                                        width: 30.w,
-                                      ),
-                                    ),
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      // TODO: 'data, logic' login with google
-                                    },
-                                    child: IconsBox(
-                                      image: Image.asset(
-                                        Assets.iconsGoogle,
-                                        height: 30.h,
-                                        width: 30.w,
-                                      ),
-                                    ),
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      // TODO: 'data, logic' login with apple
-                                    },
-                                    child: IconsBox(
-                                      image: Image.asset(
-                                        Assets.iconsApple,
-                                        height: 30.h,
-                                        width: 30.w,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10.h,
-                            ),
-            
+
+                            /// login with facebook or gmail
+                            const CustomSocialAuth(),
+                            10.ph,
+
                             /// don't have account signup
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -273,8 +210,7 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                                 TextButton(
                                   onPressed: () {
-                                    // TODO: "UI: connect login with register"
-                                    // Navigator.pushNamed(context, AppRoutes.signUp);
+                                    Navigator.pushNamed(context, AppRoutes.register);
                                   },
                                   child: PublicText(
                                     txt: S.of(context).register,
@@ -301,3 +237,4 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+
