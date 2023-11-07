@@ -3,35 +3,35 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter/material.dart';
 
-import '../../data/data_source/local/app_prefs.dart';
-import '../../data/error_handler/custom_exception.dart';
-import '../../resources/service_locator/service_locator.dart';
+import '../../../data/data_source/local/app_prefs.dart';
+import '../../../resources/service_locator/service_locator.dart';
 
-part 'auth_state.dart';
+part 'login_state.dart';
 
-class AuthCubit extends Cubit<AuthState> {
-  AuthCubit() : super(AuthInitial());
-  static AuthCubit getInstance(BuildContext context) =>
+class LoginCubit extends Cubit<LoginState> {
+  LoginCubit() : super(LoginInitial());
+  static LoginCubit getInstance(BuildContext context) =>
       BlocProvider.of(context);
 
-  late final TextEditingController loginEmailController;
-  late final TextEditingController loginPasswordController;
+  late final TextEditingController emailController;
+  late final TextEditingController passwordController;
+  late final GlobalKey<FormState> formKey;
+
   bool _spinner = false;
   bool rememberMe = false;
   bool acceptTerms = false;
   final appPrefs = getIt<AppPrefs>();
-  late final GlobalKey<FormState> loginformKey;
 
   /// init & dispose
   void init() {
-    loginEmailController = TextEditingController();
-    loginPasswordController = TextEditingController();
-    loginformKey = GlobalKey<FormState>();
+    emailController = TextEditingController();
+    passwordController = TextEditingController();
+    formKey = GlobalKey<FormState>();
   }
 
   void dispose() {
-    loginEmailController.dispose();
-    loginPasswordController.dispose();
+    emailController.dispose();
+    passwordController.dispose();
   }
 
   /// Sinpper
@@ -50,44 +50,50 @@ class AuthCubit extends Cubit<AuthState> {
     emit(ChangeRememberMeState(rememberMe));
   }
 
-  void changeAcceptTerms() {
-    acceptTerms = !acceptTerms;
-    emit(ChangeAcceptTermsState(acceptTerms));
-  }
 
   /// Login
   Future<void> login() async {
-    if (loginformKey.currentState!.validate()) {
+    if (formKey.currentState!.validate()) {
       // final request = LoginRequest(
       //   email: emailController.text,
       //   password: passwordController.text,
       // );
-      emit(LoginLoadingState());
-      try {
-        // final response = await _repo.login(request);
-        // if (response.status == 1) {
-        //   appPrefs.setToken(response.data!.token);
-        //   appPrefs.setUserLoggedIn(rememberMe);
-        //   final user = response.data!.user;
-        //   appPrefs.setUserInfo(
-        //     firstName: user.firstName,
-        //     lastName: user.lastName,
-        //     email: user.email,
-        //     phone: user.phoneNumber,
-        //   );
-        //   emit(LoginSuccessState());
-        // } else {
-        //   emit(AuthnErrorState("Email or Passowrd is worng"));
-        // }
-      } catch (e) {
-        if (e is CustomException) {
-          emit(AuthnErrorState(e.message));
-        }
-      }
+      emit(LoadingState());
+      // try {
+      //   // final response = await _repo.login(request);
+      //   // if (response.status == 1) {
+      //   //   appPrefs.setToken(response.data!.token);
+      //   //   appPrefs.setUserLoggedIn(rememberMe);
+      //   //   final user = response.data!.user;
+      //   //   appPrefs.setUserInfo(
+      //   //     firstName: user.firstName,
+      //   //     lastName: user.lastName,
+      //   //     email: user.email,
+      //   //     phone: user.phoneNumber,
+      //   //   );
+      //   //   emit(LoginSuccessState());
+      //   // } else {
+      //   //   emit(AuthnErrorState("Email or Passowrd is worng"));
+      //   // }
+      // } catch (e) {
+      //   if (e is CustomException) {
+      //     emit(ErrorState(e.message));
+      //   }
+      // }
+
+      // remove after connect app to api
+      await Future.delayed(const Duration(seconds: 2));
+      emit(SuccessState());
     }
   }
 
-  // Future<void> register(RegisterRequest request) async {
+  // void changeAcceptTerms() {
+  //   acceptTerms = !acceptTerms;
+  //   emit(ChangeAcceptTermsState(acceptTerms));
+  // }
+
+
+  // Future<void> register() async {
   //   if (acceptTerms) {
   //     emit(RegisterLoadingState());
   //     try {

@@ -5,7 +5,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/resources/localization/generated/l10n.dart';
 import 'package:start_app/view/pages/auth/login/login_page.dart';
-import 'package:start_app/view_model/auth/auth_cubit.dart';
+import 'package:start_app/view_model/auth/login/login_cubit.dart';
 import 'package:start_app/view_model/onboarding/onboarding_cubit.dart';
 import 'resources/styles/app_themes.dart';
 
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(create: (_) => OnboardingCubit()),
-          BlocProvider(create: (_) => AuthCubit()),
+          BlocProvider(create: (_) => LoginCubit()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
