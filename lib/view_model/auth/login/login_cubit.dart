@@ -58,7 +58,7 @@ class LoginCubit extends Cubit<LoginState> {
       //   email: emailController.text,
       //   password: passwordController.text,
       // );
-      emit(LoadingState());
+      emit(LoginLoadingState());
       // try {
       //   // final response = await _repo.login(request);
       //   // if (response.status == 1) {
@@ -83,44 +83,11 @@ class LoginCubit extends Cubit<LoginState> {
 
       // remove after connect app to api
       await Future.delayed(const Duration(seconds: 2));
-      emit(SuccessState());
+      emit(LoginSuccessState());
     }
   }
 
-  // void changeAcceptTerms() {
-  //   acceptTerms = !acceptTerms;
-  //   emit(ChangeAcceptTermsState(acceptTerms));
-  // }
 
-
-  // Future<void> register() async {
-  //   if (acceptTerms) {
-  //     emit(RegisterLoadingState());
-  //     try {
-  //       final response = await _repo.register(request);
-  //       if (response.status == 1) {
-  //         appPrefs.setUserLoggedIn(true);
-  //         appPrefs.setToken(response.data!.token);
-  //         final user = response.data!.user;
-  //         appPrefs.setUserInfo(
-  //           firstName: user.firstName,
-  //           lastName: user.lastName,
-  //           email: user.email,
-  //           phone: user.phoneNumber,
-  //         );
-  //         emit(RegisterSuccessState());
-  //       } else {
-  //         emit(AuthnErrorState(response.message));
-  //       }
-  //     } catch (e) {
-  //       if (e is CustomException) {
-  //         emit(AuthnErrorState(e.message));
-  //       }
-  //     }
-  //   } else {
-  //     emit(AuthnErrorState(S.current.acceptTermsErrorMessage));
-  //   }
-  // }
 
   // Future<void> forgotPassword(String email) async {
   //   emit(ForgotPasswordLoadingState());

@@ -13,6 +13,15 @@ class RegisterLoadingState extends RegisterState {}
 
 class RegisterSuccessState extends RegisterState {}
 
+class RegisterErrorState extends RegisterState {
+  final String error;
+  const RegisterErrorState(this.error);
+
+  @override
+  // TODO: implement props
+  List<Object> get props => [error];
+}
+
 class ChangeAcceptTermsState extends RegisterState {
   final bool value;
   const ChangeAcceptTermsState(this.value);
