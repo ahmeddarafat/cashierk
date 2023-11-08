@@ -22,7 +22,6 @@
     "enterYourPassword": "Please, enter your password",
     "invalidPasswordMeg": "Please, enter a valid password",
     "rememberMe": "Remember me",
-    "for": "Remember me",
     "or":"Or",
     "dontHaveAccount": "Don't have an account?",
     "register_comment": "--------------------------- register -------------------------------",
@@ -41,7 +40,20 @@
     "phoneHint": "Please, enter your phone number",
     "invalidPhone": "Your phone number is not valid",
     "privacyPolicy": "Privacy & Policy",
-    "alreadyHaveAccount": "Already have an account?"
-    
+    "alreadyHaveAccount": "Already have an account?",
+    "forgot_passwrd_comment": "--------------------------- forgot_passwrd -------------------------------",
+    "forgetPasswordTitle":"Forgot Password",
+    "forgetPasswordSubtitle":"Enter you email address to can change your password",
+    "send": "Send",
+    "otp_comment": "--------------------------- otp -------------------------------",
+    "otpTitle":"Email Verification",
+    "otpSubtitle":"Enter the 4-digits code to verfiy your email address",
+    "verify": "Verfiy",
+    "reset_passwrd_comment": "--------------------------- reset_passwrd -------------------------------",
+    "resetPasswordTitle":"Reset Password",
+    "resetPasswordSubtitle":"Enter the new password",
+    "newPassword": "New password",
+    "confirmNewPassword": "Confirm new password",
+    "submit": "Submit"
 
 }

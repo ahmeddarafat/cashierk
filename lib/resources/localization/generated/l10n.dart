@@ -18,28 +18,31 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(_current != null, 'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(_current != null,
+        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
   }
 
-  static const AppLocalizationDelegate delegate =
-    AppLocalizationDelegate();
+  static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
-    final localeName = Intl.canonicalizedLocale(name); 
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
+    final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
       final instance = S();
       S._current = instance;
- 
+
       return instance;
     });
-  } 
+  }
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(instance != null, 'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
+    assert(instance != null,
+        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
     return instance!;
   }
 
@@ -277,7 +280,6 @@ class S {
     );
   }
 
-
   /// `Or`
   String get or {
     return Intl.message(
@@ -463,6 +465,146 @@ class S {
     return Intl.message(
       'Already have an account?',
       name: 'alreadyHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `--------------------------- forgot_passwrd -------------------------------`
+  String get forgot_passwrd_comment {
+    return Intl.message(
+      '--------------------------- forgot_passwrd -------------------------------',
+      name: 'forgot_passwrd_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot Password`
+  String get forgetPasswordTitle {
+    return Intl.message(
+      'Forgot Password',
+      name: 'forgetPasswordTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter you email address to can change your password`
+  String get forgetPasswordSubtitle {
+    return Intl.message(
+      'Enter you email address to can change your password',
+      name: 'forgetPasswordSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send`
+  String get send {
+    return Intl.message(
+      'Send',
+      name: 'send',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `--------------------------- otp -------------------------------`
+  String get otp_comment {
+    return Intl.message(
+      '--------------------------- otp -------------------------------',
+      name: 'otp_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email Verification`
+  String get otpTitle {
+    return Intl.message(
+      'Email Verification',
+      name: 'otpTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the 4-digits code to verfiy your email address`
+  String get otpSubtitle {
+    return Intl.message(
+      'Enter the 4-digits code to verfiy your email address',
+      name: 'otpSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verfiy`
+  String get verify {
+    return Intl.message(
+      'Verfiy',
+      name: 'verify',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `--------------------------- reset_passwrd -------------------------------`
+  String get reset_passwrd_comment {
+    return Intl.message(
+      '--------------------------- reset_passwrd -------------------------------',
+      name: 'reset_passwrd_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset Password`
+  String get resetPasswordTitle {
+    return Intl.message(
+      'Reset Password',
+      name: 'resetPasswordTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the new password`
+  String get resetPasswordSubtitle {
+    return Intl.message(
+      'Enter the new password',
+      name: 'resetPasswordSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New password`
+  String get newPassword {
+    return Intl.message(
+      'New password',
+      name: 'newPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm new password`
+  String get confirmNewPassword {
+    return Intl.message(
+      'Confirm new password',
+      name: 'confirmNewPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit`
+  String get submit {
+    return Intl.message(
+      'Submit',
+      name: 'submit',
       desc: '',
       args: [],
     );

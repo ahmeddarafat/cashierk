@@ -17,6 +17,7 @@ dependencies:
   intl: ^0.18.1
   another_flushbar: ^1.12.30
   flutter_svg: ^2.0.9
+  otp_text_field: ^1.1.3
 
   # State Management
   flutter_bloc: ^8.1.3
