@@ -3,14 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
-import '../../../../resources/constants/app_assets.dart';
 import '../../../../resources/extensions/app_extensions.dart';
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/router/app_router.dart';
 import '../../../../resources/styles/app_colors.dart';
 import '../../../../view_model/auth/login/login_cubit.dart';
 import '../../../widgets/global/public_button.dart';
-import '../../../widgets/global/public_divider.dart';
 import '../../../widgets/global/public_snack_bar.dart';
 import '../../../widgets/global/public_text.dart';
 import '../../../widgets/global/public_text_form_field.dart';
@@ -112,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
                                 }
                               },
                             ),
-                            21.ph,
+                            20.ph,
 
                             //password
                             Align(
@@ -166,11 +164,10 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                                 TextButton(
                                   onPressed: () {
-                                    // TODO: "UI: connect login to forgot pass"
-                                    // Navigator.pushNamed(
-                                    //   context,
-                                    //   AppRoutes.forgotPassword,
-                                    // );
+                                    Navigator.pushNamed(
+                                      context,
+                                      AppRoutes.forgotPassword,
+                                    );
                                   },
                                   child: PublicText(
                                     txt: S.of(context).forgetPassword,

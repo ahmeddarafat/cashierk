@@ -12,7 +12,6 @@ import '../../../view_model/onboarding/onboarding_cubit.dart';
 import '../../widgets/global/public_button.dart';
 import '../../widgets/global/public_text.dart';
 
-
 part 'components/custom_dots.dart';
 part 'components/onboarding_item.dart';
 
@@ -24,21 +23,22 @@ class OnboardingPage extends StatefulWidget {
 }
 
 class _OnboardingPageState extends State<OnboardingPage> {
+  late final OnboardingCubit cubit;
   @override
   void initState() {
     super.initState();
-    OnboardingCubit.get(context).init();
+    cubit = OnboardingCubit.get(context);
+    cubit.init();
   }
 
   @override
   void dispose() {
-    OnboardingCubit.get(context).dispose();
+    cubit.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    var cubit = OnboardingCubit.get(context);
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.white,
