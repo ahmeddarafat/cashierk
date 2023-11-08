@@ -50,7 +50,6 @@ class LoginCubit extends Cubit<LoginState> {
     emit(ChangeRememberMeState(rememberMe));
   }
 
-
   /// Login
   Future<void> login() async {
     if (formKey.currentState!.validate()) {
@@ -86,55 +85,6 @@ class LoginCubit extends Cubit<LoginState> {
       emit(LoginSuccessState());
     }
   }
-
-
-
-  // Future<void> forgotPassword(String email) async {
-  //   emit(ForgotPasswordLoadingState());
-  //   try {
-  //     final response = await _repo.forgotPassword(email);
-  //     if (response.status == 1) {
-  //       emit(ForgotPasswordSuccessState());
-  //     }
-  //   } catch (e) {
-  //     if (e is CustomException) {
-  //       emit(AuthnErrorState(e.message));
-  //     }
-  //   }
-  // }
-
-  // String otp = '';
-  // Future<void> verifyEmail() async {
-  //   if (otp.length == 6) {
-  //     emit(VerifyEmailLoadingState());
-  //     try {
-  //       final response = await _repo.verifyEmail(otp);
-  //       if (response.status == 1) {
-  //         emit(VerifyEmailSuccessState());
-  //       }
-  //     } catch (e) {
-  //       if (e is CustomException) {
-  //         emit(AuthnErrorState("Wrong Code, Send Again"));
-  //       }
-  //     }
-  //   } else {
-  //     emit(AuthnErrorState("Enter 6-digits Code"));
-  //   }
-  // }
-
-  // Future<void> resetPassword(ResetPasswordRequest request) async {
-  //   emit(ResetPasswordLoadingState());
-  //   try {
-  //     final respones = await _repo.resetPassword(request);
-  //     if (respones.status == 1) {
-  //       emit(ResetPasswordSuccessState());
-  //     }
-  //   } catch (e) {
-  //     if (e is CustomException) {
-  //       emit(AuthnErrorState(e.message));
-  //     }
-  //   }
-  // }
 
   // Future<void> logout() async {
   //   if (appPrefs.getToken() != null) {

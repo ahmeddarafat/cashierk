@@ -29,23 +29,3 @@ class ChangeRememberMeState extends LoginState {
 }
 
 
-// /// Forgot password
-// abstract class ForgotPasswordState extends LoginState {}
-
-// class ForgotPasswordLoadingState extends ForgotPasswordState {}
-
-// class ForgotPasswordSuccessState extends ForgotPasswordState {}
-
-// /// Verfiy Email
-// abstract class VerifyEmailState extends LoginState {}
-
-// class VerifyEmailLoadingState extends VerifyEmailState {}
-
-// class VerifyEmailSuccessState extends VerifyEmailState {}
-
-// /// reset Email
-// abstract class ResetPasswordState extends LoginState {}
-
-// class ResetPasswordLoadingState extends ResetPasswordState {}
-
-// class ResetPasswordSuccessState extends ResetPasswordState {}

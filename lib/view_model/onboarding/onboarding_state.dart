@@ -7,8 +7,6 @@ abstract class OnboardingState extends Equatable {
   List<Object> get props => [];
 }
 
-class OnboardingInitial extends OnboardingState {}
-
 class ChangeCurrentIndexState extends OnboardingState {
   final int index;
   const ChangeCurrentIndexState({required this.index});

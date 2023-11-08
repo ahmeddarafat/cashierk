@@ -11,7 +11,7 @@ import '../../resources/service_locator/service_locator.dart';
 part 'onboarding_state.dart';
 
 class OnboardingCubit extends Cubit<OnboardingState> {
-  OnboardingCubit() : super(OnboardingInitial());
+  OnboardingCubit() : super(const ChangeCurrentIndexState(index: 0));
   static OnboardingCubit get(BuildContext context) => BlocProvider.of(context);
 
   int currentIndex = 0;
