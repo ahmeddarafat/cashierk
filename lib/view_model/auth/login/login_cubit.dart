@@ -1,15 +1,21 @@
+import 'dart:developer';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter/material.dart';
+import 'package:start_app/data/repository/auth_repository.dart';
 
 import '../../../data/data_source/local/app_prefs.dart';
+import '../../../data/models/remote/auth_request.dart';
+import '../../../data/network/custom_exception.dart';
 import '../../../resources/service_locator/service_locator.dart';
 
 part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  LoginCubit() : super(LoginInitial());
+  final AuthRepository repo;
+  LoginCubit(this.repo) : super(LoginInitial());
   static LoginCubit getInstance(BuildContext context) =>
       BlocProvider.of(context);
 
@@ -53,45 +59,37 @@ class LoginCubit extends Cubit<LoginState> {
   /// Login
   Future<void> login() async {
     if (formKey.currentState!.validate()) {
-      // final request = LoginRequest(
-      //   email: emailController.text,
-      //   password: passwordController.text,
-      // );
+      final request = LoginRequest(
+        email: emailController.text,
+        password: passwordController.text,
+      );
       emit(LoginLoadingState());
-      // try {
-      //   // final response = await _repo.login(request);
-      //   // if (response.status == 1) {
-      //   //   appPrefs.setToken(response.data!.token);
-      //   //   appPrefs.setUserLoggedIn(rememberMe);
-      //   //   final user = response.data!.user;
-      //   //   appPrefs.setUserInfo(
-      //   //     firstName: user.firstName,
-      //   //     lastName: user.lastName,
-      //   //     email: user.email,
-      //   //     phone: user.phoneNumber,
-      //   //   );
-      //   //   emit(LoginSuccessState());
-      //   // } else {
-      //   //   emit(AuthnErrorState("Email or Passowrd is worng"));
-      //   // }
-      // } catch (e) {
-      //   if (e is CustomException) {
-      //     emit(ErrorState(e.message));
-      //   }
-      // }
-
-      // remove after connect app to api
-      await Future.delayed(const Duration(seconds: 2));
-      emit(LoginSuccessState());
+      try {
+        final response = await repo.login(request);
+        // if (response.status == 1) {
+        appPrefs.setToken(response.token);
+        rememberMe ? appPrefs.setUserLoggedIn() : null;
+        final user = response.user;
+        appPrefs.setUserInfo(
+          name: user.name,
+          email: user.email,
+          phone: user.phone,
+        );
+        // } else {
+        //   emit(LoginErrorState("Email or Passowrd is worng"));
+        // }
+        emit(LoginSuccessState());
+      } catch (e) {
+        log(e.toString());
+        if (e is CustomException) {
+          emit(LoginErrorState(e.message));
+        }
+      }
     }
   }
 
-  // Future<void> logout() async {
-  //   if (appPrefs.getToken() != null) {
-  //     await _repo.logout(appPrefs.getToken()!);
-  //   }
-  //   appPrefs.logout();
-  //   appPrefs.removeToken();
-  //   appPrefs.removeUserInfo();
-  // }
+  Future<void> logout() async {
+    await repo.logout(appPrefs.getToken());
+    appPrefs.clear();
+  }
 }

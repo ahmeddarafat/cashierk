@@ -1,18 +1,23 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:start_app/data/data_source/local/app_prefs.dart';
+import 'package:start_app/data/models/remote/auth_request.dart';
+import 'package:start_app/data/repository/auth_repository.dart';
 
+import '../../../data/network/custom_exception.dart';
 import '../../../resources/localization/generated/l10n.dart';
+import '../../../resources/service_locator/service_locator.dart';
 
 part 'register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
-  RegisterCubit() : super(RegisterInitial());
+  final AuthRepository repo;
+  RegisterCubit(this.repo) : super(RegisterInitial());
 
   static RegisterCubit getInstance(BuildContext context) =>
       BlocProvider.of(context);
 
-  bool acceptTerms = false;
   late final TextEditingController firsttNameController;
   late final TextEditingController lastNameController;
   late final TextEditingController emailController;
@@ -21,6 +26,8 @@ class RegisterCubit extends Cubit<RegisterState> {
   late final TextEditingController phoneController;
   late final GlobalKey<FormState> formKey;
   bool _spinner = false;
+  bool acceptTerms = false;
+  final appPrefs = getIt<AppPrefs>();
 
   /// init & dispose
   void init() {
@@ -61,32 +68,34 @@ class RegisterCubit extends Cubit<RegisterState> {
   Future<void> register() async {
     if (formKey.currentState!.validate()) {
       if (acceptTerms) {
+        final request = RegisterRequest(
+          firstName: firsttNameController.text,
+          lastName: lastNameController.text,
+          email: emailController.text,
+          password: passwordConfirmController.text,
+          phone: phoneController.text,
+        );
         emit(RegisterLoadingState());
-        // try {
-        //   final response = await _repo.register(request);
-        //   if (response.status == 1) {
-        //     appPrefs.setUserLoggedIn(true);
-        //     appPrefs.setToken(response.data!.token);
-        //     final user = response.data!.user;
-        //     appPrefs.setUserInfo(
-        //       firstName: user.firstName,
-        //       lastName: user.lastName,
-        //       email: user.email,
-        //       phone: user.phoneNumber,
-        //     );
-        //     emit(RegisterSuccessState());
-        //   } else {
-        //     emit(AuthnErrorState(response.message));
-        //   }
-        // } catch (e) {
-        //   if (e is CustomException) {
-        //     emit(AuthnErrorState(e.message));
-        //   }
-        // }
-
-        // remove after connect app to api
-        await Future.delayed(const Duration(seconds: 2));
-        emit(RegisterSuccessState());
+        try {
+          final response = await repo.register(request);
+        // if (response.status == 0) {
+          appPrefs.setUserLoggedIn();
+          appPrefs.setToken(response.token);
+          final user = response.user;
+          appPrefs.setUserInfo(
+            name: user.name,
+            email: user.email,
+            phone: user.phone,
+          );
+          emit(RegisterSuccessState());
+          // } else {
+          //   emit(AuthnErrorState(response.message));
+          // }
+        } catch (e) {
+          if (e is CustomException) {
+            emit(RegisterErrorState(e.message));
+          }
+        }
       } else {
         emit(RegisterErrorState(S.current.acceptTermsErrorMessage));
       }

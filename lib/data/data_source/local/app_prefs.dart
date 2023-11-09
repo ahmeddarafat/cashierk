@@ -50,26 +50,26 @@ class AppPrefs {
 
   /// userInfo
   Future<void> setUserInfo({
-    required int id,
     required String name,
     required String email,
+    required String phone,
   }) async {
     await _sharedPrefs.setStringList(
       PrefsKeys.userInfo,
       [
-        id.toString(),
         name,
         email,
+        phone,
       ],
     );
   }
 
-  ({int id, String email, String name}) getUserInfo() {
+  ({ String email, String name, String phone}) getUserInfo() {
     final userInfo = _sharedPrefs.getStringList(PrefsKeys.userInfo);
     return (
-      id: int.parse(userInfo?[0] ?? "0"),
-      name: userInfo?[1] ?? "Unknown",
-      email: userInfo?[2] ?? "Unknown",
+      name: userInfo?[0] ?? "Unknown",
+      email: userInfo?[1] ?? "Unknown",
+      phone: userInfo?[2] ?? "Unknown",
     );
   }
 

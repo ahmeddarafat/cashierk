@@ -6,6 +6,7 @@ import 'package:start_app/resources/extensions/app_extensions.dart';
 import 'package:start_app/view/widgets/local/custom_divider.dart';
 
 import '../../../../resources/localization/generated/l10n.dart';
+import '../../../../resources/router/app_router.dart';
 import '../../../../resources/styles/app_colors.dart';
 import '../../../../view_model/auth/register/register_cubit.dart';
 import '../../../widgets/global/public_button.dart';
@@ -51,11 +52,11 @@ class _RegisterPageState extends State<RegisterPage> {
                 message: state.error, color: Colors.red, context: context);
           } else if (state is RegisterSuccessState) {
             // TODO: "UI: connect register "
-            // Navigator.pushNamedAndRemoveUntil(
-            //   context,
-            //   AppRoutes.layouts,
-            //   (_) => false,
-            // );
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              AppRoutes.layouts,
+              (_) => false,
+            );
           }
         }
       },

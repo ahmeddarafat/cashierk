@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:start_app/resources/service_locator/service_locator.dart';
 import 'package:start_app/view/pages/auth/email_verification/email_verification_page.dart';
 import 'package:start_app/view/pages/auth/login/login_page.dart';
 import 'package:start_app/view/pages/auth/reset_password/reset_password_page.dart';
@@ -19,7 +20,9 @@ class AppRoutes {
   static const emailVerify = "email verify";
   static const resetPassword = "reset password";
 
-  /// 
+  /// home
+  static const layouts = "layouts";
+  
 }
 
 class RouteGenerate {
@@ -29,14 +32,14 @@ class RouteGenerate {
       case AppRoutes.login:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (_) => LoginCubit(),
+            create: (_) => LoginCubit(getIt()),
             child: const LoginPage(),
           ),
         );
       case AppRoutes.register:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
-            create: (_) => RegisterCubit(),
+            create: (_) => RegisterCubit(getIt()),
             child: const RegisterPage(),
           ),
         );
