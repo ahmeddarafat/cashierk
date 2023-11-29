@@ -50,10 +50,10 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `------------ onbording -------------`
+  /// `--------------------------- onbording -------------------------------`
   String get onbording_comment {
     return Intl.message(
-      '------------ onbording -------------',
+      '--------------------------- onbording -------------------------------',
       name: 'onbording_comment',
       desc: '',
       args: [],
@@ -145,6 +145,466 @@ class S {
     return Intl.message(
       'Next',
       name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `--------------------------- login -------------------------------`
+  String get login_comment {
+    return Intl.message(
+      '--------------------------- login -------------------------------',
+      name: 'login_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get login {
+    return Intl.message(
+      'Login',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login to continue!`
+  String get loginTitle {
+    return Intl.message(
+      'Login to continue!',
+      name: 'loginTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your email`
+  String get emailHint {
+    return Intl.message(
+      'Enter your email',
+      name: 'emailHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your password`
+  String get passwordHint {
+    return Intl.message(
+      'Enter your password',
+      name: 'passwordHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forget Password?`
+  String get forgetPassword {
+    return Intl.message(
+      'Forget Password?',
+      name: 'forgetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please, enter your email`
+  String get enterYourEmail {
+    return Intl.message(
+      'Please, enter your email',
+      name: 'enterYourEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please, enter a valid email`
+  String get invalidEmailMeg {
+    return Intl.message(
+      'Please, enter a valid email',
+      name: 'invalidEmailMeg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please, enter your password`
+  String get enterYourPassword {
+    return Intl.message(
+      'Please, enter your password',
+      name: 'enterYourPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please, enter a valid password`
+  String get invalidPasswordMeg {
+    return Intl.message(
+      'Please, enter a valid password',
+      name: 'invalidPasswordMeg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remember me`
+  String get rememberMe {
+    return Intl.message(
+      'Remember me',
+      name: 'rememberMe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Or`
+  String get or {
+    return Intl.message(
+      'Or',
+      name: 'or',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account?`
+  String get dontHaveAccount {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'dontHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `--------------------------- register -------------------------------`
+  String get register_comment {
+    return Intl.message(
+      '--------------------------- register -------------------------------',
+      name: 'register_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register`
+  String get register {
+    return Intl.message(
+      'Register',
+      name: 'register',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please, accept terms & policy`
+  String get acceptTermsErrorMessage {
+    return Intl.message(
+      'Please, accept terms & policy',
+      name: 'acceptTermsErrorMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome to Cashierk!`
+  String get registerTitle {
+    return Intl.message(
+      'Welcome to Cashierk!',
+      name: 'registerTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User name`
+  String get username {
+    return Intl.message(
+      'User name',
+      name: 'username',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `First name`
+  String get firstName {
+    return Intl.message(
+      'First name',
+      name: 'firstName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last name`
+  String get lastName {
+    return Intl.message(
+      'Last name',
+      name: 'lastName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirmPass {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirmPass',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phone {
+    return Intl.message(
+      'Phone Number',
+      name: 'phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please, enter your first name`
+  String get enterFirstName {
+    return Intl.message(
+      'Please, enter your first name',
+      name: 'enterFirstName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please, enter your Last name`
+  String get enterLastName {
+    return Intl.message(
+      'Please, enter your Last name',
+      name: 'enterLastName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your password again`
+  String get confirmPassHint {
+    return Intl.message(
+      'Enter your password again',
+      name: 'confirmPassHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password is not match`
+  String get notMatchPassMeg {
+    return Intl.message(
+      'Password is not match',
+      name: 'notMatchPassMeg',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please, enter your phone number`
+  String get phoneHint {
+    return Intl.message(
+      'Please, enter your phone number',
+      name: 'phoneHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your phone number is not valid`
+  String get invalidPhone {
+    return Intl.message(
+      'Your phone number is not valid',
+      name: 'invalidPhone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy & Policy`
+  String get privacyPolicy {
+    return Intl.message(
+      'Privacy & Policy',
+      name: 'privacyPolicy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account?`
+  String get alreadyHaveAccount {
+    return Intl.message(
+      'Already have an account?',
+      name: 'alreadyHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `--------------------------- forgot_passwrd -------------------------------`
+  String get forgot_passwrd_comment {
+    return Intl.message(
+      '--------------------------- forgot_passwrd -------------------------------',
+      name: 'forgot_passwrd_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot Password`
+  String get forgetPasswordTitle {
+    return Intl.message(
+      'Forgot Password',
+      name: 'forgetPasswordTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter you email address to can change your password`
+  String get forgetPasswordSubtitle {
+    return Intl.message(
+      'Enter you email address to can change your password',
+      name: 'forgetPasswordSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send`
+  String get send {
+    return Intl.message(
+      'Send',
+      name: 'send',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `--------------------------- otp -------------------------------`
+  String get otp_comment {
+    return Intl.message(
+      '--------------------------- otp -------------------------------',
+      name: 'otp_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email Verification`
+  String get otpTitle {
+    return Intl.message(
+      'Email Verification',
+      name: 'otpTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the 4-digits code to verfiy your email address`
+  String get otpSubtitle {
+    return Intl.message(
+      'Enter the 4-digits code to verfiy your email address',
+      name: 'otpSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verfiy`
+  String get verify {
+    return Intl.message(
+      'Verfiy',
+      name: 'verify',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `--------------------------- reset_passwrd -------------------------------`
+  String get reset_passwrd_comment {
+    return Intl.message(
+      '--------------------------- reset_passwrd -------------------------------',
+      name: 'reset_passwrd_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset Password`
+  String get resetPasswordTitle {
+    return Intl.message(
+      'Reset Password',
+      name: 'resetPasswordTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter the new password`
+  String get resetPasswordSubtitle {
+    return Intl.message(
+      'Enter the new password',
+      name: 'resetPasswordSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New password`
+  String get newPassword {
+    return Intl.message(
+      'New password',
+      name: 'newPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm new password`
+  String get confirmNewPassword {
+    return Intl.message(
+      'Confirm new password',
+      name: 'confirmNewPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit`
+  String get submit {
+    return Intl.message(
+      'Submit',
+      name: 'submit',
       desc: '',
       args: [],
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:start_app/resources/styles/app_colors.dart';
 
 
 class AppThemes {
@@ -7,12 +8,12 @@ class AppThemes {
 
   static ThemeData light = ThemeData(
     useMaterial3: true,
-    fontFamily: "Inter",
+    fontFamily: "Roboto",
 
     /// Colors
     scaffoldBackgroundColor: Colors.white,
-    colorScheme: const ColorScheme.light(
-      primary: Colors.blue,
+    colorScheme:  ColorScheme.fromSeed(
+      seedColor: AppColors.orangePrimary,
     ),
 
     /// App Bar Theme

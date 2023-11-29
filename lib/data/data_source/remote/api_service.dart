@@ -2,19 +2,24 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
-const String baseUrl = "";
+const String baseUrl = "https://cashierc.pharmaco-medica.com/api";
 
 class EndPoints {
   EndPoints._();
+
+  static const login = "/auth/login";
+  static const register = "/auth/register";
+  static const profile = "/auth/user-profile";
+  static const logout = "/auth/logout";
 
 }
 
 class Headers {
   Headers._();
 
-  static const String contentType = "content-type";
-  static const String applicationJson = "application/json";
-  static const String accept = "accept";
+  static const contentType = "content-type";
+  static const applicationJson = "application/json";
+  static const accept = "accept";
 }
 
 class ApiService {

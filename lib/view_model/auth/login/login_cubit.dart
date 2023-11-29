@@ -1,0 +1,95 @@
+import 'dart:developer';
+
+import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:flutter/material.dart';
+import 'package:start_app/data/repository/auth_repository.dart';
+
+import '../../../data/data_source/local/app_prefs.dart';
+import '../../../data/models/remote/auth_request.dart';
+import '../../../data/network/custom_exception.dart';
+import '../../../resources/service_locator/service_locator.dart';
+
+part 'login_state.dart';
+
+class LoginCubit extends Cubit<LoginState> {
+  final AuthRepository repo;
+  LoginCubit(this.repo) : super(LoginInitial());
+  static LoginCubit getInstance(BuildContext context) =>
+      BlocProvider.of(context);
+
+  late final TextEditingController emailController;
+  late final TextEditingController passwordController;
+  late final GlobalKey<FormState> formKey;
+
+  bool _spinner = false;
+  bool rememberMe = false;
+  bool acceptTerms = false;
+  final appPrefs = getIt<AppPrefs>();
+
+  /// init & dispose
+  void init() {
+    emailController = TextEditingController();
+    passwordController = TextEditingController();
+    formKey = GlobalKey<FormState>();
+  }
+
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+  }
+
+  /// Sinpper
+  bool get spinner {
+    return _spinner;
+  }
+
+  void changeSnipper() {
+    _spinner = !_spinner;
+  }
+
+  /// checkboxes
+
+  void changeRememberMe() {
+    rememberMe = !rememberMe;
+    emit(ChangeRememberMeState(rememberMe));
+  }
+
+  /// Login
+  Future<void> login() async {
+    if (formKey.currentState!.validate()) {
+      final request = LoginRequest(
+        email: emailController.text,
+        password: passwordController.text,
+      );
+      emit(LoginLoadingState());
+      try {
+        final response = await repo.login(request);
+        // if (response.status == 1) {
+        appPrefs.setToken(response.token);
+        rememberMe ? appPrefs.setUserLoggedIn() : null;
+        final user = response.user;
+        appPrefs.setUserInfo(
+          name: user.name,
+          email: user.email,
+          phone: user.phone,
+        );
+        // } else {
+        //   emit(LoginErrorState("Email or Passowrd is worng"));
+        // }
+        emit(LoginSuccessState());
+      } catch (e) {
+        log(e.toString());
+        if (e is CustomException) {
+          emit(LoginErrorState(e.message));
+        }
+      }
+    }
+  }
+
+  Future<void> logout() async {
+    await repo.logout(appPrefs.getToken());
+    appPrefs.clear();
+  }
+}
