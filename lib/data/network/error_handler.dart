@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'failure.dart';
 
-class ErrorHandler implements Exception {
+class ErrorHandler {
   late Failure failure;
 
   ErrorHandler.handle(dynamic error) {
@@ -17,8 +17,7 @@ Failure _handleError(DioException error) {
   switch (error.type) {
     case DioExceptionType.badResponse:
       final code = error.response?.statusCode;
-      final message = error.response?.statusMessage;
-      if (code != null && message != null) {
+      if (code != null) {
         switch (code) {
           case ResponseCode.unauthorised:
             return DataSource.unauthorised.getFailure();
