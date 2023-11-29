@@ -53,7 +53,6 @@ class _LoginPageState extends State<LoginPage> {
             MySnackBar.error(
                 message: state.error, color: AppColors.red, context: context);
           } else if (state is LoginSuccessState) {
-            // TODO: "connect login to home"
             Navigator.pushReplacementNamed(context, AppRoutes.layouts);
           }
         }

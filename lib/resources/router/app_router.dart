@@ -4,6 +4,7 @@ import 'package:start_app/resources/service_locator/service_locator.dart';
 import 'package:start_app/view/pages/auth/email_verification/email_verification_page.dart';
 import 'package:start_app/view/pages/auth/login/login_page.dart';
 import 'package:start_app/view/pages/auth/reset_password/reset_password_page.dart';
+import 'package:start_app/view/pages/layouts/layouts_page.dart';
 import 'package:start_app/view_model/auth/login/login_cubit.dart';
 import 'package:start_app/view_model/auth/register/register_cubit.dart';
 
@@ -54,6 +55,12 @@ class RouteGenerate {
       case AppRoutes.resetPassword:
         return MaterialPageRoute(
           builder: (_) => const ResetPasswordPage(),
+        );
+
+      /// layouts
+      case AppRoutes.layouts:
+        return MaterialPageRoute(
+          builder: (_) => const LayoutsPage(),
         );
 
       default:

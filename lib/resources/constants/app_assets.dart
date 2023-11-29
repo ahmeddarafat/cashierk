@@ -21,6 +21,10 @@ class Assets {
   /// assets/icons/apple.png
   static const String iconsApple = "assets/icons/apple.png";
 
+  /// Assets for iconsDiscovery
+  /// assets/icons/Discovery.svg
+  static const String iconsDiscovery = "assets/icons/Discovery.svg";
+
   /// Assets for iconsFacebook
   /// assets/icons/facebook.png
   static const String iconsFacebook = "assets/icons/facebook.png";
@@ -28,6 +32,10 @@ class Assets {
   /// Assets for iconsGoogle
   /// assets/icons/google.png
   static const String iconsGoogle = "assets/icons/google.png";
+
+  /// Assets for iconsReceipts
+  /// assets/icons/receipts.svg
+  static const String iconsReceipts = "assets/icons/receipts.svg";
 
   /// Assets for imagesForgetPass
   /// assets/images/forget-pass.svg

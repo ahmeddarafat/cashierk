@@ -5,6 +5,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/resources/localization/generated/l10n.dart';
 import 'package:start_app/view/pages/auth/login/login_page.dart';
+import 'package:start_app/view/pages/layouts/layouts_page.dart';
 import 'package:start_app/view_model/auth/login/login_cubit.dart';
 import 'package:start_app/view_model/auth/reset_pass/reset_cubit.dart';
 import 'package:start_app/view_model/onboarding/onboarding_cubit.dart';
@@ -54,7 +55,7 @@ class MyApp extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
           ),
           // TODO: "UI: manage the first page will be opened"
-          home: const OnboardingPage(),
+          home: const LayoutsPage(),
         ),
       ),
     );
