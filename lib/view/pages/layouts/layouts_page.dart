@@ -4,12 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:start_app/resources/constants/app_assets.dart';
 import 'package:start_app/resources/styles/app_colors.dart';
-import 'package:start_app/view/pages/home/welcome/discover/discover_page.dart';
-import 'package:start_app/view/pages/home/favourites/favourites_page.dart';
-import 'package:start_app/view/pages/home/profile/profile_page.dart';
-import 'package:start_app/view/pages/home/recepits/recepits_page.dart';
+import 'package:start_app/view/pages/favourites/favourites_page.dart';
+import 'package:start_app/view/pages/profile/profile_page.dart';
+import 'package:start_app/view/pages/recepits/recepits_page.dart';
 
-import '../home/scan/scan_page.dart';
+import '../home/discover/discover_page.dart';
+import '../scan/scan_page.dart';
 
 class LayoutsPage extends StatefulWidget {
   const LayoutsPage({super.key});

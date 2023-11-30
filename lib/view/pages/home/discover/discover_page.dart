@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:start_app/data/dummy_data/dummy_data.dart';
 import 'package:start_app/data/models/local/category_model.dart';
 import 'package:start_app/resources/constants/app_assets.dart';
@@ -38,11 +39,12 @@ class DiscoverPage extends StatelessWidget {
                   const Spacer(),
                   IconButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, AppRoutes.favourites);
+                      Navigator.pushNamed(context, AppRoutes.notifications);
                     },
-                    icon: Icon(
-                      Icons.favorite_border_outlined,
-                      size: 30.w,
+                    icon: SvgPicture.asset(
+                      Assets.iconsNotification,
+                      height: 30.w,
+                      width: 30.w,
                       color: AppColors.black,
                     ),
                   ),
@@ -51,15 +53,28 @@ class DiscoverPage extends StatelessWidget {
               20.ph,
 
               /// search
-              Container(
-                width: double.infinity,
-                height: 40.h,
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-                decoration: BoxDecoration(
-                    color: AppColors.backgroundGrey,
-                    borderRadius: BorderRadius.circular(8)),
-                child: PublicText(
-                  txt: S.of(context).search,
+              InkWell(
+                onTap: () => Navigator.pushNamed(context, AppRoutes.search),
+                child: Hero(
+                  tag: "Search tage",
+                  child: Container(
+                    width: double.infinity,
+                    height: 40.h,
+                    padding:
+                        EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
+                    decoration: BoxDecoration(
+                        color: AppColors.backgroundGrey,
+                        borderRadius: BorderRadius.circular(8)),
+                    child: Row(
+                      children: [
+                        const Icon(Icons.search),
+                        10.pw,
+                        PublicText(
+                          txt: S.of(context).search,
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ),
               20.ph,
@@ -125,4 +140,3 @@ class DiscoverPage extends StatelessWidget {
     );
   }
 }
-
