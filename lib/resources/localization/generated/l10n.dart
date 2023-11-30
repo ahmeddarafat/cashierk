@@ -700,6 +700,26 @@ class S {
     );
   }
 
+  /// `Best Seller`
+  String get bestSeller {
+    return Intl.message(
+      'Best Seller',
+      name: 'bestSeller',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `--------------------------- Notifications -------------------------------`
+  String get notification_comment {
+    return Intl.message(
+      '--------------------------- Notifications -------------------------------',
+      name: 'notification_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Notifications`
   String get notifications {
     return Intl.message(
@@ -710,11 +730,21 @@ class S {
     );
   }
 
-  /// `Best Seller`
-  String get bestSeller {
+  /// `--------------------------- favourites -------------------------------`
+  String get favourites_comment {
     return Intl.message(
-      'Best Seller',
-      name: 'bestSeller',
+      '--------------------------- favourites -------------------------------',
+      name: 'favourites_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Favourites`
+  String get favourites {
+    return Intl.message(
+      'Favourites',
+      name: 'favourites',
       desc: '',
       args: [],
     );

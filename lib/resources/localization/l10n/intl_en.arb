@@ -64,7 +64,10 @@
     "meat": "Meat",
     "chicken": "Chicken",
     "orange": "Orange",
+    "bestSeller":"Best Seller",
+    "notification_comment": "--------------------------- Notifications -------------------------------",
     "notifications": "Notifications",
-    "bestSeller":"Best Seller"
+    "favourites_comment": "--------------------------- favourites -------------------------------",
+    "favourites": "Favourites"
 
 }

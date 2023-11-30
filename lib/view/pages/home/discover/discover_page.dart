@@ -13,9 +13,9 @@ import 'package:start_app/view/widgets/global/public_title_tile.dart';
 import '../../../../data/models/local/categories/item_model.dart';
 import '../../../../../resources/localization/generated/l10n.dart';
 import '../../../../../resources/styles/app_colors.dart';
+import '../../../widgets/local/item_card.dart';
 
 part 'components/category_item.dart';
-part 'components/item_card.dart';
 
 class DiscoverPage extends StatelessWidget {
   const DiscoverPage({super.key});
@@ -116,22 +116,17 @@ class DiscoverPage extends StatelessWidget {
                   Navigator.pushNamed(context, AppRoutes.bestSeller);
                 },
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: GridView.builder(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: AppConstants.items.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 20.h,
-                    crossAxisSpacing: 20.w,
-                    childAspectRatio: 170 / 220,
-                  ),
-                  itemBuilder: (_, index) {
-                    return ItemCard(item: DummyData.items[index]);
-                  },
+              GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: AppConstants.items.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 170 / 220,
                 ),
+                itemBuilder: (_, index) {
+                  return ItemCard(item: DummyData.items[index]);
+                },
               ),
             ],
           ),

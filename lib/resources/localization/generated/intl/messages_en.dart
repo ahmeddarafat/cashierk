@@ -49,6 +49,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please, enter your email"),
         "enterYourPassword":
             MessageLookupByLibrary.simpleMessage("Please, enter your password"),
+        "favourites": MessageLookupByLibrary.simpleMessage("Favourites"),
+        "favourites_comment": MessageLookupByLibrary.simpleMessage(
+            "--------------------------- favourites -------------------------------"),
         "firstName": MessageLookupByLibrary.simpleMessage("First name"),
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("Forget Password?"),
@@ -77,6 +80,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "notMatchPassMeg":
             MessageLookupByLibrary.simpleMessage("Password is not match"),
+        "notification_comment": MessageLookupByLibrary.simpleMessage(
+            "--------------------------- Notifications -------------------------------"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "onboardingSubtitle1": MessageLookupByLibrary.simpleMessage(
             "This app will teach you everything you need to know about using the Cashierk, from setting it up to processing payments."),
