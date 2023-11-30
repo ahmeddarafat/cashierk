@@ -69,6 +69,18 @@
     "notification_comment": "--------------------------- Notifications -------------------------------",
     "notifications": "Notifications",
     "favourites_comment": "--------------------------- favourites -------------------------------",
-    "favourites": "Favourites"
+    "favourites": "Favourites",
+    "profile_comment": "--------------------------- profile -------------------------------",
+    "editProfile": "Edit Profile",
+    "myOrders": "My Orders",
+    "myCards": "My Cards",
+    "about": "About",
+    "helpCenter": "Help Centr",
+    "darkMode": "Dark Mode",
+    "changePassword": "Change Password",
+    "logout": "Logout",
+    "logoutWarning": "Are you sure you want to log out?",
+    "yesLogout": "Yes, logout",
+    "cancel": "Cancel"
 
 }

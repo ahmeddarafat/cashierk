@@ -35,7 +35,15 @@ class AppRoutes {
   static const bestSeller = "best seller";
   static const search = "search";
   static const notifications = "notifications";
-  
+
+  /// profile
+  static const editProfile = "edit profile";
+  static const myOrders = "my orders";
+  static const myCards = "my cards";
+  static const about = "about";
+  static const notificationSettings = "notification settings";
+  static const helpCenter = "help center";
+  static const changePassword = "change password";
   
 }
 

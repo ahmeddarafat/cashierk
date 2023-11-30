@@ -23,23 +23,29 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "WelcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
+        "about": MessageLookupByLibrary.simpleMessage("About"),
         "acceptTermsErrorMessage": MessageLookupByLibrary.simpleMessage(
             "Please, accept terms & policy"),
         "all": MessageLookupByLibrary.simpleMessage("All"),
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "bestSeller": MessageLookupByLibrary.simpleMessage("Best Seller"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
+        "changePassword":
+            MessageLookupByLibrary.simpleMessage("Change Password"),
         "chicken": MessageLookupByLibrary.simpleMessage("Chicken"),
         "confirmNewPassword":
             MessageLookupByLibrary.simpleMessage("Confirm new password"),
         "confirmPass": MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "confirmPassHint":
             MessageLookupByLibrary.simpleMessage("Enter your password again"),
+        "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
         "discover_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- Discover -------------------------------"),
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
+        "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "emailHint": MessageLookupByLibrary.simpleMessage("Enter your email"),
         "enterFirstName": MessageLookupByLibrary.simpleMessage(
@@ -64,6 +70,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "--------------------------- forgot_passwrd -------------------------------"),
         "fruits": MessageLookupByLibrary.simpleMessage("Fruits"),
         "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
+        "helpCenter": MessageLookupByLibrary.simpleMessage("Help Centr"),
         "invalidEmailMeg":
             MessageLookupByLibrary.simpleMessage("Please, enter a valid email"),
         "invalidPasswordMeg": MessageLookupByLibrary.simpleMessage(
@@ -76,7 +83,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Login to continue!"),
         "login_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- login -------------------------------"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "logoutWarning": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to log out?"),
         "meat": MessageLookupByLibrary.simpleMessage("Meat"),
+        "myCards": MessageLookupByLibrary.simpleMessage("My Cards"),
+        "myOrders": MessageLookupByLibrary.simpleMessage("My Orders"),
         "newPassword": MessageLookupByLibrary.simpleMessage("New password"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "notMatchPassMeg":
@@ -113,6 +125,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please, enter your phone number"),
         "privacyPolicy":
             MessageLookupByLibrary.simpleMessage("Privacy & Policy"),
+        "profile_comment": MessageLookupByLibrary.simpleMessage(
+            "--------------------------- profile -------------------------------"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "registerTitle":
             MessageLookupByLibrary.simpleMessage("Welcome to Cashierk!"),
@@ -131,6 +145,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "username": MessageLookupByLibrary.simpleMessage("User name"),
         "vegtables": MessageLookupByLibrary.simpleMessage("Vegtables"),
-        "verify": MessageLookupByLibrary.simpleMessage("Verfiy")
+        "verify": MessageLookupByLibrary.simpleMessage("Verfiy"),
+        "yesLogout": MessageLookupByLibrary.simpleMessage("Yes, logout")
       };
 }

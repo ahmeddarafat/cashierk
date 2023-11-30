@@ -66,8 +66,8 @@ class Assets {
   static const String imagesForgetPass = "assets/images/forget-pass.svg";
 
   /// Assets for imagesLogo
-  /// assets/images/logo.jpeg
-  static const String imagesLogo = "assets/images/logo.jpeg";
+  /// assets/images/logo.png
+  static const String imagesLogo = "assets/images/logo.png";
 
   /// Assets for imagesMeat
   /// assets/images/meat.png
@@ -92,6 +92,10 @@ class Assets {
   /// Assets for imagesOtp
   /// assets/images/otp.svg
   static const String imagesOtp = "assets/images/otp.svg";
+
+  /// Assets for imagesProfile
+  /// assets/images/profile.png
+  static const String imagesProfile = "assets/images/profile.png";
 
   /// Assets for imagesResetPass
   /// assets/images/reset-pass.svg
