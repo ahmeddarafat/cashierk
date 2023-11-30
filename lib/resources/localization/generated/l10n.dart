@@ -609,6 +609,156 @@ class S {
       args: [],
     );
   }
+
+  /// `--------------------------- Discover -------------------------------`
+  String get discover_comment {
+    return Intl.message(
+      '--------------------------- Discover -------------------------------',
+      name: 'discover_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome Back!`
+  String get WelcomeBack {
+    return Intl.message(
+      'Welcome Back!',
+      name: 'WelcomeBack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message(
+      'Search',
+      name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Categories`
+  String get categories {
+    return Intl.message(
+      'Categories',
+      name: 'categories',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fruits`
+  String get fruits {
+    return Intl.message(
+      'Fruits',
+      name: 'fruits',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Vegtables`
+  String get vegtables {
+    return Intl.message(
+      'Vegtables',
+      name: 'vegtables',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Meat`
+  String get meat {
+    return Intl.message(
+      'Meat',
+      name: 'meat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chicken`
+  String get chicken {
+    return Intl.message(
+      'Chicken',
+      name: 'chicken',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Orange`
+  String get orange {
+    return Intl.message(
+      'Orange',
+      name: 'orange',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All`
+  String get all {
+    return Intl.message(
+      'All',
+      name: 'all',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Best Seller`
+  String get bestSeller {
+    return Intl.message(
+      'Best Seller',
+      name: 'bestSeller',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `--------------------------- Notifications -------------------------------`
+  String get notification_comment {
+    return Intl.message(
+      '--------------------------- Notifications -------------------------------',
+      name: 'notification_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notifications`
+  String get notifications {
+    return Intl.message(
+      'Notifications',
+      name: 'notifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `--------------------------- favourites -------------------------------`
+  String get favourites_comment {
+    return Intl.message(
+      '--------------------------- favourites -------------------------------',
+      name: 'favourites_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Favourites`
+  String get favourites {
+    return Intl.message(
+      'Favourites',
+      name: 'favourites',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

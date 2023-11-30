@@ -22,15 +22,22 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "WelcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
         "acceptTermsErrorMessage": MessageLookupByLibrary.simpleMessage(
             "Please, accept terms & policy"),
+        "all": MessageLookupByLibrary.simpleMessage("All"),
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "bestSeller": MessageLookupByLibrary.simpleMessage("Best Seller"),
+        "categories": MessageLookupByLibrary.simpleMessage("Categories"),
+        "chicken": MessageLookupByLibrary.simpleMessage("Chicken"),
         "confirmNewPassword":
             MessageLookupByLibrary.simpleMessage("Confirm new password"),
         "confirmPass": MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "confirmPassHint":
             MessageLookupByLibrary.simpleMessage("Enter your password again"),
+        "discover_comment": MessageLookupByLibrary.simpleMessage(
+            "--------------------------- Discover -------------------------------"),
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -43,6 +50,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please, enter your email"),
         "enterYourPassword":
             MessageLookupByLibrary.simpleMessage("Please, enter your password"),
+        "favourites": MessageLookupByLibrary.simpleMessage("Favourites"),
+        "favourites_comment": MessageLookupByLibrary.simpleMessage(
+            "--------------------------- favourites -------------------------------"),
         "firstName": MessageLookupByLibrary.simpleMessage("First name"),
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("Forget Password?"),
@@ -52,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Forgot Password"),
         "forgot_passwrd_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- forgot_passwrd -------------------------------"),
+        "fruits": MessageLookupByLibrary.simpleMessage("Fruits"),
         "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
         "invalidEmailMeg":
             MessageLookupByLibrary.simpleMessage("Please, enter a valid email"),
@@ -65,10 +76,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Login to continue!"),
         "login_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- login -------------------------------"),
+        "meat": MessageLookupByLibrary.simpleMessage("Meat"),
         "newPassword": MessageLookupByLibrary.simpleMessage("New password"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "notMatchPassMeg":
             MessageLookupByLibrary.simpleMessage("Password is not match"),
+        "notification_comment": MessageLookupByLibrary.simpleMessage(
+            "--------------------------- Notifications -------------------------------"),
+        "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "onboardingSubtitle1": MessageLookupByLibrary.simpleMessage(
             "This app will teach you everything you need to know about using the Cashierk, from setting it up to processing payments."),
         "onboardingSubtitle2": MessageLookupByLibrary.simpleMessage(
@@ -84,6 +99,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "onbording_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- onbording -------------------------------"),
         "or": MessageLookupByLibrary.simpleMessage("Or"),
+        "orange": MessageLookupByLibrary.simpleMessage("Orange"),
         "otpSubtitle": MessageLookupByLibrary.simpleMessage(
             "Enter the 4-digits code to verfiy your email address"),
         "otpTitle": MessageLookupByLibrary.simpleMessage("Email Verification"),
@@ -109,10 +125,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Reset Password"),
         "reset_passwrd_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- reset_passwrd -------------------------------"),
+        "search": MessageLookupByLibrary.simpleMessage("Search"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "username": MessageLookupByLibrary.simpleMessage("User name"),
+        "vegtables": MessageLookupByLibrary.simpleMessage("Vegtables"),
         "verify": MessageLookupByLibrary.simpleMessage("Verfiy")
       };
 }

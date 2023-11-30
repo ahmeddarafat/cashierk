@@ -4,11 +4,17 @@ import 'package:start_app/resources/service_locator/service_locator.dart';
 import 'package:start_app/view/pages/auth/email_verification/email_verification_page.dart';
 import 'package:start_app/view/pages/auth/login/login_page.dart';
 import 'package:start_app/view/pages/auth/reset_password/reset_password_page.dart';
+import 'package:start_app/view/pages/favourites/favourites_page.dart';
+import 'package:start_app/view/pages/layouts/layouts_page.dart';
 import 'package:start_app/view_model/auth/login/login_cubit.dart';
 import 'package:start_app/view_model/auth/register/register_cubit.dart';
 
 import '../../view/pages/auth/forgot_password/forgot_password_page.dart';
 import '../../view/pages/auth/register/register_page.dart';
+import '../../view/pages/home/best_seller/best_seller.dart';
+import '../../view/pages/home/categories/categories_page.dart';
+import '../../view/pages/notifications/notifications_page.dart';
+import '../../view/pages/search/search_page.dart';
 
 class AppRoutes {
   AppRoutes._private();
@@ -22,6 +28,14 @@ class AppRoutes {
 
   /// home
   static const layouts = "layouts";
+  static const favourites = "favourites";
+
+  /// Discover
+  static const categories = "categories";
+  static const bestSeller = "best seller";
+  static const search = "search";
+  static const notifications = "notifications";
+  
   
 }
 
@@ -55,6 +69,35 @@ class RouteGenerate {
         return MaterialPageRoute(
           builder: (_) => const ResetPasswordPage(),
         );
+
+      /// home
+      case AppRoutes.layouts:
+        return MaterialPageRoute(
+          builder: (_) => const LayoutsPage(),
+        );
+      case AppRoutes.favourites:
+        return MaterialPageRoute(
+          builder: (_) => const FavouritesPage(),
+        );
+
+      /// Discover
+      case AppRoutes.categories:
+        return MaterialPageRoute(
+          builder: (_) => const CategoriesPage(),
+        );
+      case AppRoutes.bestSeller:
+        return MaterialPageRoute(
+          builder: (_) => const BestSellerPage(),
+        );
+      case AppRoutes.search:
+        return MaterialPageRoute(
+          builder: (_) => const SearchPage(),
+        );
+      case AppRoutes.notifications:
+        return MaterialPageRoute(
+          builder: (_) => const NotificationsPage(),
+        );
+      
 
       default:
         return MaterialPageRoute(

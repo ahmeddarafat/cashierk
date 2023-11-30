@@ -21,6 +21,10 @@ class Assets {
   /// assets/icons/apple.png
   static const String iconsApple = "assets/icons/apple.png";
 
+  /// Assets for iconsDiscovery
+  /// assets/icons/Discovery.svg
+  static const String iconsDiscovery = "assets/icons/Discovery.svg";
+
   /// Assets for iconsFacebook
   /// assets/icons/facebook.png
   static const String iconsFacebook = "assets/icons/facebook.png";
@@ -29,6 +33,34 @@ class Assets {
   /// assets/icons/google.png
   static const String iconsGoogle = "assets/icons/google.png";
 
+  /// Assets for iconsNotification
+  /// assets/icons/notification.svg
+  static const String iconsNotification = "assets/icons/notification.svg";
+
+  /// Assets for iconsNotificationCircle
+  /// assets/icons/notification-circle.svg
+  static const String iconsNotificationCircle = "assets/icons/notification-circle.svg";
+
+  /// Assets for iconsReceipts
+  /// assets/icons/receipts.svg
+  static const String iconsReceipts = "assets/icons/receipts.svg";
+
+  /// Assets for imagesAvacado
+  /// assets/images/avacado.png
+  static const String imagesAvacado = "assets/images/avacado.png";
+
+  /// Assets for imagesBanner
+  /// assets/images/banner.png
+  static const String imagesBanner = "assets/images/banner.png";
+
+  /// Assets for imagesBrokly
+  /// assets/images/brokly.png
+  static const String imagesBrokly = "assets/images/brokly.png";
+
+  /// Assets for imagesChicken
+  /// assets/images/chicken.png
+  static const String imagesChicken = "assets/images/chicken.png";
+
   /// Assets for imagesForgetPass
   /// assets/images/forget-pass.svg
   static const String imagesForgetPass = "assets/images/forget-pass.svg";
@@ -36,6 +68,10 @@ class Assets {
   /// Assets for imagesLogo
   /// assets/images/logo.jpeg
   static const String imagesLogo = "assets/images/logo.jpeg";
+
+  /// Assets for imagesMeat
+  /// assets/images/meat.png
+  static const String imagesMeat = "assets/images/meat.png";
 
   /// Assets for imagesOnboarding1
   /// assets/images/onboarding1.svg
@@ -48,6 +84,10 @@ class Assets {
   /// Assets for imagesOnboarding3
   /// assets/images/onboarding3.svg
   static const String imagesOnboarding3 = "assets/images/onboarding3.svg";
+
+  /// Assets for imagesOrange
+  /// assets/images/orange.png
+  static const String imagesOrange = "assets/images/orange.png";
 
   /// Assets for imagesOtp
   /// assets/images/otp.svg

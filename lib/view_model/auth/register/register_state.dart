@@ -18,7 +18,6 @@ class RegisterErrorState extends RegisterState {
   const RegisterErrorState(this.error);
 
   @override
-  // TODO: implement props
   List<Object> get props => [error];
 }
 
