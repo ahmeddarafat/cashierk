@@ -37,6 +37,10 @@ class Assets {
   /// assets/icons/notification.svg
   static const String iconsNotification = "assets/icons/notification.svg";
 
+  /// Assets for iconsNotificationCircle
+  /// assets/icons/notification-circle.svg
+  static const String iconsNotificationCircle = "assets/icons/notification-circle.svg";
+
   /// Assets for iconsReceipts
   /// assets/icons/receipts.svg
   static const String iconsReceipts = "assets/icons/receipts.svg";

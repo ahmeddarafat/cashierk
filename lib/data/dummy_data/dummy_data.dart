@@ -1,7 +1,8 @@
 import '../../resources/constants/app_assets.dart';
-import '../models/local/item_model.dart';
+import '../models/local/categories/item_model.dart';
+import '../models/local/notifications/notification_model.dart';
 
-class DummyData{
+class DummyData {
   DummyData._();
 
   static final items = [
@@ -29,7 +30,7 @@ class DummyData{
       amount: "1 Kg",
       price: 10.8,
     ),
-        Item(
+    Item(
       image: Assets.imagesOrange,
       name: "Orange",
       amount: "1 Kg",
@@ -52,6 +53,39 @@ class DummyData{
       name: "broccoli",
       amount: "1 Kg",
       price: 10.8,
+    ),
+  ];
+
+  static const List<NotificationObject> notifications = [
+    NotificationObject(
+      title: "Fresh Vegetables",
+      date: "Aug 12, 2023",
+      content: "30% - 50% Off on selected vegetables",
+    ),
+    NotificationObject(
+      title: "Fresh Fruits",
+      date: "Mar 15, 2023",
+      content: "30% - 50% Off on selected fruits.",
+    ),
+    NotificationObject(
+      title: "Fresh Vegetables",
+      date: "Aug 12, 2023",
+      content: "30% - 50% Off on selected vegetables",
+    ),
+    NotificationObject(
+      title: "Fresh Fruits",
+      date: "Mar 15, 2023",
+      content: "30% - 50% Off on selected fruits.",
+    ),
+    NotificationObject(
+      title: "Fresh Vegetables",
+      date: "Aug 12, 2023",
+      content: "30% - 50% Off on selected vegetables",
+    ),
+    NotificationObject(
+      title: "Fresh Fruits",
+      date: "Mar 15, 2023",
+      content: "30% - 50% Off on selected fruits.",
     ),
   ];
 }

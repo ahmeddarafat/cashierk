@@ -77,6 +77,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "notMatchPassMeg":
             MessageLookupByLibrary.simpleMessage("Password is not match"),
+        "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "onboardingSubtitle1": MessageLookupByLibrary.simpleMessage(
             "This app will teach you everything you need to know about using the Cashierk, from setting it up to processing payments."),
         "onboardingSubtitle2": MessageLookupByLibrary.simpleMessage(

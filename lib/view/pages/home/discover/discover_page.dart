@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:start_app/data/dummy_data/dummy_data.dart';
-import 'package:start_app/data/models/local/category_model.dart';
+import 'package:start_app/data/models/local/categories/category_model.dart';
 import 'package:start_app/resources/constants/app_assets.dart';
 import 'package:start_app/resources/constants/app_constants.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
@@ -10,7 +10,7 @@ import 'package:start_app/resources/router/app_router.dart';
 import 'package:start_app/view/widgets/global/public_text.dart';
 import 'package:start_app/view/widgets/global/public_title_tile.dart';
 
-import '../../../../../data/models/local/item_model.dart';
+import '../../../../data/models/local/categories/item_model.dart';
 import '../../../../../resources/localization/generated/l10n.dart';
 import '../../../../../resources/styles/app_colors.dart';
 
