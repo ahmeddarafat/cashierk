@@ -609,6 +609,106 @@ class S {
       args: [],
     );
   }
+
+  /// `--------------------------- Discover -------------------------------`
+  String get discover_comment {
+    return Intl.message(
+      '--------------------------- Discover -------------------------------',
+      name: 'discover_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome Back!`
+  String get WelcomeBack {
+    return Intl.message(
+      'Welcome Back!',
+      name: 'WelcomeBack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message(
+      'Search',
+      name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Categories`
+  String get categories {
+    return Intl.message(
+      'Categories',
+      name: 'categories',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fruits`
+  String get fruits {
+    return Intl.message(
+      'Fruits',
+      name: 'fruits',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Vegtables`
+  String get vegtables {
+    return Intl.message(
+      'Vegtables',
+      name: 'vegtables',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Meat`
+  String get meat {
+    return Intl.message(
+      'Meat',
+      name: 'meat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chicken`
+  String get chicken {
+    return Intl.message(
+      'Chicken',
+      name: 'chicken',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Orange`
+  String get orange {
+    return Intl.message(
+      'Orange',
+      name: 'orange',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Best Seller`
+  String get bestSeller {
+    return Intl.message(
+      'Best Seller',
+      name: 'bestSeller',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -18,7 +18,7 @@ class PublicTitleTile extends StatelessWidget {
       contentPadding: const EdgeInsets.symmetric(horizontal: 0),
       leading: PublicText(
         txt: title,
-        size: 24.sp,
+        size: 20.sp,
         fw: FontWeight.w600,
       ),
       trailing: InkWell(

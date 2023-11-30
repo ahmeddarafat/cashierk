@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:start_app/resources/constants/app_assets.dart';
 import 'package:start_app/resources/styles/app_colors.dart';
-import 'package:start_app/view/pages/home/discover/discover_page.dart';
+import 'package:start_app/view/pages/home/welcome/discover/discover_page.dart';
 import 'package:start_app/view/pages/home/favourites/favourites_page.dart';
 import 'package:start_app/view/pages/home/profile/profile_page.dart';
 import 'package:start_app/view/pages/home/recepits/recepits_page.dart';
@@ -36,7 +36,7 @@ class _LayoutsPageState extends State<LayoutsPage> {
         activeIndex: 2,
         color: AppColors.white,
         circleColor: AppColors.orangePrimary,
-        shadowColor: AppColors.grey,
+        shadowColor: AppColors.lightGrey,
         elevation: 2,
         height: 60.h,
         circleWidth: 50.w,

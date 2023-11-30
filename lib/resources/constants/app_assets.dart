@@ -37,6 +37,22 @@ class Assets {
   /// assets/icons/receipts.svg
   static const String iconsReceipts = "assets/icons/receipts.svg";
 
+  /// Assets for imagesAvacado
+  /// assets/images/avacado.png
+  static const String imagesAvacado = "assets/images/avacado.png";
+
+  /// Assets for imagesBanner
+  /// assets/images/banner.png
+  static const String imagesBanner = "assets/images/banner.png";
+
+  /// Assets for imagesBrokly
+  /// assets/images/brokly.png
+  static const String imagesBrokly = "assets/images/brokly.png";
+
+  /// Assets for imagesChicken
+  /// assets/images/chicken.png
+  static const String imagesChicken = "assets/images/chicken.png";
+
   /// Assets for imagesForgetPass
   /// assets/images/forget-pass.svg
   static const String imagesForgetPass = "assets/images/forget-pass.svg";
@@ -44,6 +60,10 @@ class Assets {
   /// Assets for imagesLogo
   /// assets/images/logo.jpeg
   static const String imagesLogo = "assets/images/logo.jpeg";
+
+  /// Assets for imagesMeat
+  /// assets/images/meat.png
+  static const String imagesMeat = "assets/images/meat.png";
 
   /// Assets for imagesOnboarding1
   /// assets/images/onboarding1.svg
@@ -56,6 +76,10 @@ class Assets {
   /// Assets for imagesOnboarding3
   /// assets/images/onboarding3.svg
   static const String imagesOnboarding3 = "assets/images/onboarding3.svg";
+
+  /// Assets for imagesOrange
+  /// assets/images/orange.png
+  static const String imagesOrange = "assets/images/orange.png";
 
   /// Assets for imagesOtp
   /// assets/images/otp.svg

@@ -54,6 +54,16 @@
     "resetPasswordSubtitle":"Enter the new password",
     "newPassword": "New password",
     "confirmNewPassword": "Confirm new password",
-    "submit": "Submit"
+    "submit": "Submit",
+    "discover_comment": "--------------------------- Discover -------------------------------",
+    "WelcomeBack": "Welcome Back!",
+    "search": "Search",
+    "categories": "Categories",
+    "fruits": "Fruits",
+    "vegtables": "Vegtables",
+    "meat": "Meat",
+    "chicken": "Chicken",
+    "orange": "Orange",
+    "bestSeller":"Best Seller"
 
 }
