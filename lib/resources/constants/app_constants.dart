@@ -34,10 +34,9 @@ class AppConstants {
       color: const Color(0xFFEED9B6),
     ),
     Category(
-      image: Assets.imagesBrokly,
-      name: S.current.vegtables,
-      color: const Color(0xFF82DA9D)
-    ),
+        image: Assets.imagesBrokly,
+        name: S.current.vegtables,
+        color: const Color(0xFF82DA9D)),
     Category(
       image: Assets.imagesMeat,
       name: S.current.meat,
@@ -68,6 +67,18 @@ class AppConstants {
       name: S.current.chicken,
       color: const Color(0xFFF5D4A0),
     ),
+  ];
+
+  static final categoriesNames = [
+    S.current.all,
+    S.current.fruits,
+    S.current.vegtables,
+    S.current.meat,
+    S.current.chicken,
+    S.current.fruits,
+    S.current.vegtables,
+    S.current.meat,
+    S.current.chicken,
   ];
 
   static final items = [

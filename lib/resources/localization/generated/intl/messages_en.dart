@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "WelcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
         "acceptTermsErrorMessage": MessageLookupByLibrary.simpleMessage(
             "Please, accept terms & policy"),
+        "all": MessageLookupByLibrary.simpleMessage("All"),
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "bestSeller": MessageLookupByLibrary.simpleMessage("Best Seller"),
