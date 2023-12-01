@@ -880,6 +880,16 @@ class S {
     );
   }
 
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `--------------------------- notifications settings -------------------------------`
   String get notification_settings_comment {
     return Intl.message(

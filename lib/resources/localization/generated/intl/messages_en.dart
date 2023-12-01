@@ -145,6 +145,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Reset Password"),
         "reset_passwrd_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- reset_passwrd -------------------------------"),
+        "save": MessageLookupByLibrary.simpleMessage("Save"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),

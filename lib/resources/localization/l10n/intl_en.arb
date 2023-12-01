@@ -82,6 +82,7 @@
     "logoutWarning": "Are you sure you want to log out?",
     "yesLogout": "Yes, logout",
     "cancel": "Cancel",
+    "save" : "Save",
     "notification_settings_comment": "--------------------------- notifications settings -------------------------------",
     "generalNotifications": "General Notifications",
     "specialOffer": "Special Offers",
