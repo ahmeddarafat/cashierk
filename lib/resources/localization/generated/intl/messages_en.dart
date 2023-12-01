@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "all": MessageLookupByLibrary.simpleMessage("All"),
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "appUpdates": MessageLookupByLibrary.simpleMessage("App Updates"),
         "bestSeller": MessageLookupByLibrary.simpleMessage("Best Seller"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
@@ -69,6 +70,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgot_passwrd_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- forgot_passwrd -------------------------------"),
         "fruits": MessageLookupByLibrary.simpleMessage("Fruits"),
+        "generalNotifications":
+            MessageLookupByLibrary.simpleMessage("General Notifications"),
         "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
         "helpCenter": MessageLookupByLibrary.simpleMessage("Help Centr"),
         "invalidEmailMeg":
@@ -95,6 +98,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Password is not match"),
         "notification_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- Notifications -------------------------------"),
+        "notification_settings_comment": MessageLookupByLibrary.simpleMessage(
+            "--------------------------- notifications settings -------------------------------"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "onboardingSubtitle1": MessageLookupByLibrary.simpleMessage(
             "This app will teach you everything you need to know about using the Cashierk, from setting it up to processing payments."),
@@ -133,6 +138,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "register_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- register -------------------------------"),
         "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
+        "rememeberMe": MessageLookupByLibrary.simpleMessage("Remember Me"),
         "resetPasswordSubtitle":
             MessageLookupByLibrary.simpleMessage("Enter the new password"),
         "resetPasswordTitle":
@@ -142,6 +148,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
+        "sound": MessageLookupByLibrary.simpleMessage("Sound"),
+        "specialOffer": MessageLookupByLibrary.simpleMessage("Special Offers"),
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "username": MessageLookupByLibrary.simpleMessage("User name"),
         "vegtables": MessageLookupByLibrary.simpleMessage("Vegtables"),

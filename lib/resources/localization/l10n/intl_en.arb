@@ -81,6 +81,12 @@
     "logout": "Logout",
     "logoutWarning": "Are you sure you want to log out?",
     "yesLogout": "Yes, logout",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "notification_settings_comment": "--------------------------- notifications settings -------------------------------",
+    "generalNotifications": "General Notifications",
+    "specialOffer": "Special Offers",
+    "sound": "Sound",
+    "rememeberMe": "Remember Me",
+    "appUpdates": "App Updates"
 
 }

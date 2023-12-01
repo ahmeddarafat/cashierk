@@ -8,9 +8,11 @@ import 'public_text.dart';
 
 enum Switchers {
   darkMode,
-  faceId,
-  rememberMe,
-  touchId,
+  general,
+  sound,
+  offers,
+  updates,
+  rememberMe
 }
 
 class PublicSwitchListTile extends StatefulWidget {

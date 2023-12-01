@@ -6,16 +6,16 @@ import 'package:start_app/resources/extensions/app_extensions.dart';
 import 'package:start_app/view/widgets/global/public_divider.dart';
 import 'package:start_app/view_model/auth/login/login_cubit.dart';
 
-import '../../../../resources/constants/app_assets.dart';
-import '../../../../resources/localization/generated/l10n.dart';
-import '../../../resources/router/app_router.dart';
-import '../../../resources/styles/app_colors.dart';
-import '../../widgets/global/public_button.dart';
-import '../../widgets/global/public_list_tile.dart';
-import '../../widgets/global/public_outline_button.dart';
-import '../../widgets/global/public_snack_bar.dart';
-import '../../widgets/global/public_switch_list_tile.dart';
-import '../../widgets/global/public_text.dart';
+import '../../../../../resources/constants/app_assets.dart';
+import '../../../../../resources/localization/generated/l10n.dart';
+import '../../../../resources/router/app_router.dart';
+import '../../../../resources/styles/app_colors.dart';
+import '../../../widgets/global/public_button.dart';
+import '../../../widgets/global/public_list_tile.dart';
+import '../../../widgets/global/public_outline_button.dart';
+import '../../../widgets/global/public_snack_bar.dart';
+import '../../../widgets/global/public_switch_list_tile.dart';
+import '../../../widgets/global/public_text.dart';
 
 part 'components/logout_bottom_sheet.dart';
 
