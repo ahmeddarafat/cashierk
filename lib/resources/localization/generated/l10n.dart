@@ -949,6 +949,46 @@ class S {
       args: [],
     );
   }
+
+  /// `--------------------------- change_password -------------------------------`
+  String get change_password_comment {
+    return Intl.message(
+      '--------------------------- change_password -------------------------------',
+      name: 'change_password_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please fill in the field below to change your current password.`
+  String get changePasswordSubtitle {
+    return Intl.message(
+      'Please fill in the field below to change your current password.',
+      name: 'changePasswordSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `**********`
+  String get passStars {
+    return Intl.message(
+      '**********',
+      name: 'passStars',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Old Password`
+  String get oldPassword {
+    return Intl.message(
+      'Old Password',
+      name: 'oldPassword',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

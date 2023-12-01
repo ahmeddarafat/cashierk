@@ -88,6 +88,11 @@
     "specialOffer": "Special Offers",
     "sound": "Sound",
     "rememeberMe": "Remember Me",
-    "appUpdates": "App Updates"
+    "appUpdates": "App Updates",
+    "change_password_comment": "--------------------------- change_password -------------------------------",
+    "changePasswordSubtitle": "Please fill in the field below to change your current password.",
+    "passStars": "**********",
+    "oldPassword": "Old Password"
+
 
 }

@@ -35,6 +35,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("Change Password"),
+        "changePasswordSubtitle": MessageLookupByLibrary.simpleMessage(
+            "Please fill in the field below to change your current password."),
+        "change_password_comment": MessageLookupByLibrary.simpleMessage(
+            "--------------------------- change_password -------------------------------"),
         "chicken": MessageLookupByLibrary.simpleMessage("Chicken"),
         "confirmNewPassword":
             MessageLookupByLibrary.simpleMessage("Confirm new password"),
@@ -101,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "notification_settings_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- notifications settings -------------------------------"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
+        "oldPassword": MessageLookupByLibrary.simpleMessage("Old Password"),
         "onboardingSubtitle1": MessageLookupByLibrary.simpleMessage(
             "This app will teach you everything you need to know about using the Cashierk, from setting it up to processing payments."),
         "onboardingSubtitle2": MessageLookupByLibrary.simpleMessage(
@@ -122,6 +127,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "otpTitle": MessageLookupByLibrary.simpleMessage("Email Verification"),
         "otp_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- otp -------------------------------"),
+        "passStars": MessageLookupByLibrary.simpleMessage("**********"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordHint":
             MessageLookupByLibrary.simpleMessage("Enter your password"),
