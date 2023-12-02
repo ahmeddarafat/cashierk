@@ -91,7 +91,11 @@
     "change_password_comment": "--------------------------- change_password -------------------------------",
     "changePasswordSubtitle": "Please fill in the field below to change your current password.",
     "passStars": "**********",
-    "oldPassword": "Old Password"
+    "oldPassword": "Old Password",
+    "scan_comment": "--------------------------- Scan -------------------------------",
+    "scanTitle":"Scan the QR Code",
+    "scanSubtitle":"Point Your Camera Towards the QR Code to receive the voucher",
+    "scanNow": "Scan Now"
 
 
 }

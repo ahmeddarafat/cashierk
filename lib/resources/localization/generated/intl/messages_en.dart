@@ -150,6 +150,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "reset_passwrd_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- reset_passwrd -------------------------------"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
+        "scanNow": MessageLookupByLibrary.simpleMessage("Scan Now"),
+        "scanSubtitle": MessageLookupByLibrary.simpleMessage(
+            "Point Your Camera Towards the QR Code to receive the voucher"),
+        "scanTitle": MessageLookupByLibrary.simpleMessage("Scan the QR Code"),
+        "scan_comment": MessageLookupByLibrary.simpleMessage(
+            "--------------------------- Scan -------------------------------"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),

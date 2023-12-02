@@ -979,6 +979,46 @@ class S {
       args: [],
     );
   }
+
+  /// `--------------------------- Scan -------------------------------`
+  String get scan_comment {
+    return Intl.message(
+      '--------------------------- Scan -------------------------------',
+      name: 'scan_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scan the QR Code`
+  String get scanTitle {
+    return Intl.message(
+      'Scan the QR Code',
+      name: 'scanTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Point Your Camera Towards the QR Code to receive the voucher`
+  String get scanSubtitle {
+    return Intl.message(
+      'Point Your Camera Towards the QR Code to receive the voucher',
+      name: 'scanSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scan Now`
+  String get scanNow {
+    return Intl.message(
+      'Scan Now',
+      name: 'scanNow',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -97,6 +97,10 @@ class Assets {
   /// assets/images/profile.png
   static const String imagesProfile = "assets/images/profile.png";
 
+  /// Assets for imagesQrCode
+  /// assets/images/qr_code.png
+  static const String imagesQrCode = "assets/images/qr_code.png";
+
   /// Assets for imagesResetPass
   /// assets/images/reset-pass.svg
   static const String imagesResetPass = "assets/images/reset-pass.svg";
