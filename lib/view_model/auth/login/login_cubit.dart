@@ -89,7 +89,15 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   Future<void> logout() async {
-    await repo.logout(appPrefs.getToken());
-    appPrefs.clear();
+    emit(LogoutLoadingState());
+    try {
+      await repo.logout(appPrefs.getToken());
+      appPrefs.clear();
+      emit(LogoutSuccessState());
+    } catch (e) {
+      if (e is CustomException) {
+        emit(LogoutErrorState(e.message));
+      }
+    }
   }
 }

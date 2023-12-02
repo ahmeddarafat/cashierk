@@ -14,6 +14,7 @@ import 'resources/styles/app_themes.dart';
 import 'resources/router/app_router.dart';
 import 'resources/service_locator/service_locator.dart';
 import 'view/pages/onboarding/onboarding_page.dart';
+import 'view_model/profile/change_password/change_password_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -37,6 +38,8 @@ class MyApp extends StatelessWidget {
         providers: [
           BlocProvider(create: (_) => OnboardingCubit()),
           BlocProvider(create: (_) => ResetCubit()),
+          // TODO: "Test - remove it after"
+          BlocProvider(create: (_) => LoginCubit(getIt())),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,

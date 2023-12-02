@@ -590,16 +590,6 @@ class S {
     );
   }
 
-  /// `Confirm new password`
-  String get confirmNewPassword {
-    return Intl.message(
-      'Confirm new password',
-      name: 'confirmNewPassword',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Submit`
   String get submit {
     return Intl.message(
@@ -755,6 +745,236 @@ class S {
     return Intl.message(
       'Favourites',
       name: 'favourites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `--------------------------- profile -------------------------------`
+  String get profile_comment {
+    return Intl.message(
+      '--------------------------- profile -------------------------------',
+      name: 'profile_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Profile`
+  String get editProfile {
+    return Intl.message(
+      'Edit Profile',
+      name: 'editProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Orders`
+  String get myOrders {
+    return Intl.message(
+      'My Orders',
+      name: 'myOrders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Cards`
+  String get myCards {
+    return Intl.message(
+      'My Cards',
+      name: 'myCards',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `About`
+  String get about {
+    return Intl.message(
+      'About',
+      name: 'about',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Help Center`
+  String get helpCenter {
+    return Intl.message(
+      'Help Center',
+      name: 'helpCenter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dark Mode`
+  String get darkMode {
+    return Intl.message(
+      'Dark Mode',
+      name: 'darkMode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Password`
+  String get changePassword {
+    return Intl.message(
+      'Change Password',
+      name: 'changePassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message(
+      'Logout',
+      name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to log out?`
+  String get logoutWarning {
+    return Intl.message(
+      'Are you sure you want to log out?',
+      name: 'logoutWarning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes, logout`
+  String get yesLogout {
+    return Intl.message(
+      'Yes, logout',
+      name: 'yesLogout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message(
+      'Save',
+      name: 'save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `--------------------------- notifications settings -------------------------------`
+  String get notification_settings_comment {
+    return Intl.message(
+      '--------------------------- notifications settings -------------------------------',
+      name: 'notification_settings_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `General Notifications`
+  String get generalNotifications {
+    return Intl.message(
+      'General Notifications',
+      name: 'generalNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Special Offers`
+  String get specialOffer {
+    return Intl.message(
+      'Special Offers',
+      name: 'specialOffer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sound`
+  String get sound {
+    return Intl.message(
+      'Sound',
+      name: 'sound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remember Me`
+  String get rememeberMe {
+    return Intl.message(
+      'Remember Me',
+      name: 'rememeberMe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `App Updates`
+  String get appUpdates {
+    return Intl.message(
+      'App Updates',
+      name: 'appUpdates',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `--------------------------- change_password -------------------------------`
+  String get change_password_comment {
+    return Intl.message(
+      '--------------------------- change_password -------------------------------',
+      name: 'change_password_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please fill in the field below to change your current password.`
+  String get changePasswordSubtitle {
+    return Intl.message(
+      'Please fill in the field below to change your current password.',
+      name: 'changePasswordSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `**********`
+  String get passStars {
+    return Intl.message(
+      '**********',
+      name: 'passStars',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Old Password`
+  String get oldPassword {
+    return Intl.message(
+      'Old Password',
+      name: 'oldPassword',
       desc: '',
       args: [],
     );

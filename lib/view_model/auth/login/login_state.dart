@@ -28,4 +28,17 @@ class ChangeRememberMeState extends LoginState {
   List<Object?> get props => [value];
 }
 
+/// logout
+class LogoutLoadingState extends LoginState {}
+
+class LogoutSuccessState extends LoginState {}
+
+class LogoutErrorState extends LoginState {
+  final String error;
+  LogoutErrorState(this.error);
+
+  @override
+  List<Object?> get props => [error];
+}
+
 

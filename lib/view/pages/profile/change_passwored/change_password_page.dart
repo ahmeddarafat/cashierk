@@ -1,82 +1,84 @@
-import 'package:flutter_svg/svg.dart';
-import 'package:start_app/resources/constants/app_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
-import 'package:start_app/view_model/auth/reset_pass/reset_cubit.dart';
+import 'package:start_app/view_model/profile/change_password/change_password_cubit.dart';
 
 import '../../../../resources/localization/generated/l10n.dart';
-import '../../../../resources/router/app_router.dart';
 import '../../../../resources/styles/app_colors.dart';
 import '../../../widgets/global/public_button.dart';
 import '../../../widgets/global/public_snack_bar.dart';
 import '../../../widgets/global/public_text.dart';
 import '../../../widgets/global/public_text_form_field.dart';
 
-class ResetPasswordPage extends StatefulWidget {
-  const ResetPasswordPage({
+class ChangePasswordPage extends StatefulWidget {
+  const ChangePasswordPage({
     super.key,
   });
 
   @override
-  State<ResetPasswordPage> createState() => _ResetPasswordPageState();
+  State<ChangePasswordPage> createState() => _ChangePasswordPageState();
 }
 
-class _ResetPasswordPageState extends State<ResetPasswordPage> {
-  late final ResetCubit cubit;
+class _ChangePasswordPageState extends State<ChangePasswordPage> {
+  late final ChangePasswordCubit cubit;
 
   @override
   void initState() {
     super.initState();
-    cubit = ResetCubit.getInstance(context);
-    cubit.initReset();
+    cubit = ChangePasswordCubit.getInstance(context);
+    cubit.init();
   }
 
   @override
   void dispose() {
-    cubit.disposeReset();
+    cubit.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<ResetCubit, ResetState>(
-      listenWhen: (_, current) {
-        return (current is ResetPasswordState || current is ResetErrorState);
-      },
-      buildWhen: (_, current) {
-        return (current is ResetPasswordState || current is ResetErrorState);
-      },
+    return BlocConsumer<ChangePasswordCubit, ChangePasswordState>(
       listener: (context, state) {
-        if (state is ResetPasswordLoadingState) {
+        if (state is ChangePasswordLoadingState) {
           cubit.changeSnipper();
         } else {
           if (cubit.spinner) {
             cubit.changeSnipper();
           }
-          if (state is ResetErrorState) {
+          if (state is ChangePasswordErrorState) {
             MySnackBar.error(
                 message: state.error, color: Colors.red, context: context);
-          } else if (state is ResetPasswordSuccessState) {
-            Navigator.pushNamedAndRemoveUntil(
-              context,
-              AppRoutes.login,
-              (_) => false,
-            );
+          } else if (state is ChangePasswordSuccessState) {
+            // TODO: "UI - build pop up success"
           }
         }
       },
       builder: (context, state) {
-        if (state is! ResetPasswordSuccessState) {
+        if (state is! ChangePasswordSuccessState) {
           return ModalProgressHUD(
               inAsyncCall: cubit.spinner,
               child: Scaffold(
-                appBar: AppBar(),
+                appBar: AppBar(
+                  centerTitle: true,
+                  toolbarHeight: 80.h,
+                  title: PublicText(
+                    txt: S.of(context).changePassword,
+                    fw: FontWeight.bold,
+                    size: 22.sp,
+                  ),
+                  leading: IconButton(
+                    icon: const Icon(
+                      Icons.arrow_back_ios_new_outlined,
+                      color: AppColors.orangePrimary,
+                    ),
+                    onPressed: () => Navigator.pop(context),
+                  ),
+                ),
                 body: SingleChildScrollView(
                   child: Form(
-                    key: cubit.resetFormKey,
+                    key: cubit.formKey,
                     child: Padding(
                       padding: EdgeInsets.only(
                         right: 25.w,
@@ -84,43 +86,49 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                         bottom: 20.h,
                       ),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          /// image
-                          SvgPicture.asset(
-                            Assets.imagesResetPass,
-                            height: 250.h,
-                            width: double.infinity,
-                          ),
-                          10.ph,
-
-                          /// reset password title
-                          PublicText(
-                            txt: S.of(context).resetPasswordTitle,
-                            fw: FontWeight.bold,
-                            size: 20.sp,
-                          ),
-                          10.ph,
-
                           /// reset password subtitle
                           PublicText(
-                            txt: S.of(context).resetPasswordSubtitle,
+                            txt: S.of(context).changePasswordSubtitle,
                             color: AppColors.grey,
                             size: 18.sp,
                             align: TextAlign.center,
                           ),
                           40.ph,
 
-                          /// new password
-                          Align(
-                            alignment: Alignment.centerLeft,
-                            child: PublicText(
-                              txt: S.of(context).newPassword,
-                              fw: FontWeight.w500,
-                            ),
+                          /// old password
+                          PublicText(
+                            txt: S.of(context).oldPassword,
+                            fw: FontWeight.w500,
                           ),
                           PublicTextFormField(
-                            hint: S.of(context).confirmPass,
+                            hint: S.of(context).passStars,
+                            controller: cubit.oldPasswordController,
+                            keyboardtype: TextInputType.visiblePassword,
+                            isPassword: true,
+                            showSuffixIcon: true,
+                            validator: (password) {
+                              if (password!.isEmpty) {
+                                return S.of(context).enterYourPassword;
+                              } else {
+                                if (password.isPassValid()) {
+                                  return null;
+                                } else {
+                                  return S.of(context).invalidPasswordMeg;
+                                }
+                              }
+                            },
+                          ),
+                          20.ph,
+
+                          /// new password
+                          PublicText(
+                            txt: S.of(context).newPassword,
+                            fw: FontWeight.w500,
+                          ),
+                          PublicTextFormField(
+                            hint: S.of(context).passStars,
                             controller: cubit.passwordController,
                             keyboardtype: TextInputType.visiblePassword,
                             isPassword: true,
@@ -139,16 +147,13 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                           ),
                           20.ph,
 
-                          // confirm new password
-                          Align(
-                            alignment: Alignment.centerLeft,
-                            child: PublicText(
-                              txt: S.of(context).confirmPass,
-                              fw: FontWeight.w500,
-                            ),
+                          /// confirm new password
+                          PublicText(
+                            txt: S.of(context).confirmPass,
+                            fw: FontWeight.w500,
                           ),
                           PublicTextFormField(
-                            hint: S.of(context).confirmPass,
+                            hint: S.of(context).passStars,
                             controller: cubit.confirmPassController,
                             keyboardtype: TextInputType.visiblePassword,
                             isPassword: true,
@@ -164,7 +169,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                               }
                             },
                           ),
-                          40.ph,
+                          120.ph,
 
                           // button submit
                           PublicButton(
@@ -173,7 +178,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                             onPressed: () {
                               // To dismiss keyboard
                               FocusScope.of(context).unfocus();
-                              cubit.resetPassword();
+                              cubit.chagePassword();
                             },
                           ),
                         ],

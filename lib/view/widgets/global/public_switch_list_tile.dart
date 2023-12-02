@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:start_app/resources/styles/app_colors.dart';
 
 import '../../../data/data_source/local/app_prefs.dart';
 import '../../../resources/service_locator/service_locator.dart';
@@ -7,9 +8,11 @@ import 'public_text.dart';
 
 enum Switchers {
   darkMode,
-  faceId,
-  rememberMe,
-  touchId,
+  general,
+  sound,
+  offers,
+  updates,
+  rememberMe
 }
 
 class PublicSwitchListTile extends StatefulWidget {
@@ -49,7 +52,7 @@ class _PublicSwitchListTileState extends State<PublicSwitchListTile> {
             setSwitches(widget.swithcer, switcherValue);
           },
           value: switcherValue,
-          activeColor: Colors.purple,
+          activeColor:AppColors.orangePrimary,
         ),
       ),
     );
