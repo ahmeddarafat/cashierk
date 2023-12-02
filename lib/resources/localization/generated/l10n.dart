@@ -1019,6 +1019,56 @@ class S {
       args: [],
     );
   }
+
+  /// `--------------------------- cart -------------------------------`
+  String get cart_comment {
+    return Intl.message(
+      '--------------------------- cart -------------------------------',
+      name: 'cart_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subtotal`
+  String get subtotal {
+    return Intl.message(
+      'Subtotal',
+      name: 'subtotal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Taxes`
+  String get taxes {
+    return Intl.message(
+      'Taxes',
+      name: 'taxes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total`
+  String get total {
+    return Intl.message(
+      'Total',
+      name: 'total',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Proceed to checkout`
+  String get proceedCheckout {
+    return Intl.message(
+      'Proceed to checkout',
+      name: 'proceedCheckout',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

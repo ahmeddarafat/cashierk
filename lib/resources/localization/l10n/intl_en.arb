@@ -95,7 +95,12 @@
     "scan_comment": "--------------------------- Scan -------------------------------",
     "scanTitle":"Scan the QR Code",
     "scanSubtitle":"Point Your Camera Towards the QR Code to receive the voucher",
-    "scanNow": "Scan Now"
+    "scanNow": "Scan Now",
+    "cart_comment": "--------------------------- cart -------------------------------",
+    "subtotal": "Subtotal",
+    "taxes": "Taxes",
+    "total": "Total",
+    "proceedCheckout": "Proceed to checkout"
 
 
 }

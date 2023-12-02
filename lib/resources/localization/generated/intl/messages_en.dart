@@ -32,6 +32,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "appUpdates": MessageLookupByLibrary.simpleMessage("App Updates"),
         "bestSeller": MessageLookupByLibrary.simpleMessage("Best Seller"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "cart_comment": MessageLookupByLibrary.simpleMessage(
+            "--------------------------- cart -------------------------------"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
         "changePassword":
             MessageLookupByLibrary.simpleMessage("Change Password"),
@@ -134,6 +136,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Please, enter your phone number"),
         "privacyPolicy":
             MessageLookupByLibrary.simpleMessage("Privacy & Policy"),
+        "proceedCheckout":
+            MessageLookupByLibrary.simpleMessage("Proceed to checkout"),
         "profile_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- profile -------------------------------"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
@@ -162,6 +166,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "sound": MessageLookupByLibrary.simpleMessage("Sound"),
         "specialOffer": MessageLookupByLibrary.simpleMessage("Special Offers"),
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
+        "subtotal": MessageLookupByLibrary.simpleMessage("Subtotal"),
+        "taxes": MessageLookupByLibrary.simpleMessage("Taxes"),
+        "total": MessageLookupByLibrary.simpleMessage("Total"),
         "username": MessageLookupByLibrary.simpleMessage("User name"),
         "vegtables": MessageLookupByLibrary.simpleMessage("Vegtables"),
         "verify": MessageLookupByLibrary.simpleMessage("Verfiy"),
