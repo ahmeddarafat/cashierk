@@ -121,7 +121,8 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                             },
                           ),
                           20.ph,
-                          /// old password
+
+                          /// new password
                           PublicText(
                             txt: S.of(context).newPassword,
                             fw: FontWeight.w500,
@@ -148,11 +149,11 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
 
                           /// confirm new password
                           PublicText(
-                            txt: S.of(context).confirmNewPassword,
+                            txt: S.of(context).confirmPass,
                             fw: FontWeight.w500,
                           ),
                           PublicTextFormField(
-                            hint: S.of(context).confirmNewPassword,
+                            hint: S.of(context).passStars,
                             controller: cubit.confirmPassController,
                             keyboardtype: TextInputType.visiblePassword,
                             isPassword: true,
@@ -168,7 +169,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                               }
                             },
                           ),
-                          40.ph,
+                          120.ph,
 
                           // button submit
                           PublicButton(

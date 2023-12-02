@@ -21,6 +21,7 @@ class ChangePasswordCubit extends Cubit<ChangePasswordState> {
     oldPasswordController = TextEditingController();
     passwordController = TextEditingController();
     confirmPassController = TextEditingController();
+    formKey = GlobalKey<FormState>();
   }
 
   void dispose() {

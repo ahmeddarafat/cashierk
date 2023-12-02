@@ -6,14 +6,18 @@ import 'package:start_app/view/pages/auth/login/login_page.dart';
 import 'package:start_app/view/pages/auth/reset_password/reset_password_page.dart';
 import 'package:start_app/view/pages/favourites/favourites_page.dart';
 import 'package:start_app/view/pages/layouts/layouts_page.dart';
+import 'package:start_app/view/pages/profile/change_passwored/change_password_page.dart';
+import 'package:start_app/view/pages/profile/notification_settings/notificaiton_settings_page.dart';
 import 'package:start_app/view_model/auth/login/login_cubit.dart';
 import 'package:start_app/view_model/auth/register/register_cubit.dart';
+import 'package:start_app/view_model/profile/change_password/change_password_cubit.dart';
 
 import '../../view/pages/auth/forgot_password/forgot_password_page.dart';
 import '../../view/pages/auth/register/register_page.dart';
 import '../../view/pages/home/best_seller/best_seller.dart';
 import '../../view/pages/home/categories/categories_page.dart';
 import '../../view/pages/notifications/notifications_page.dart';
+import '../../view/pages/profile/edit_profile/edit_profile_page.dart';
 import '../../view/pages/search/search_page.dart';
 
 class AppRoutes {
@@ -44,7 +48,6 @@ class AppRoutes {
   static const notificationSettings = "notification settings";
   static const helpCenter = "help center";
   static const changePassword = "change password";
-  
 }
 
 class RouteGenerate {
@@ -105,7 +108,23 @@ class RouteGenerate {
         return MaterialPageRoute(
           builder: (_) => const NotificationsPage(),
         );
-      
+
+      /// Profile
+      case AppRoutes.changePassword:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => ChangePasswordCubit(),
+            child: const ChangePasswordPage(),
+          ),
+        );
+      case AppRoutes.editProfile:
+        return MaterialPageRoute(
+          builder: (_) => const EditProfilePage(),
+        );
+      case AppRoutes.notificationSettings:
+        return MaterialPageRoute(
+          builder: (_) => const NotificationsSettingsPage(),
+        );
 
       default:
         return MaterialPageRoute(

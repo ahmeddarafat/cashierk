@@ -28,14 +28,20 @@ class NotificationCard extends StatelessWidget {
         ),
         child: Row(
           children: [
-            SvgPicture.asset(
-              Assets.iconsNotificationCircle,
-              height: 40.w,
-              width: 40.w,
+            Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: AppColors.orangePrimary),
+                shape: BoxShape.circle
+              ),
+              child: Icon(
+                Icons.priority_high_rounded,
+                size: 40.w,
+                color: AppColors.orangePrimary,
+              ),
             ),
             10.pw,
             SizedBox(
-              width: MediaQuery.sizeOf(context).width - 2 * 28.w - 50.w,
+              width: MediaQuery.sizeOf(context).width - 2 * 32.w - 50.w,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,

@@ -9,8 +9,8 @@ import '../../../widgets/global/public_button.dart';
 import '../../../widgets/global/public_text.dart';
 import '../../../widgets/global/public_text_form_field.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+class EditProfilePage extends StatelessWidget {
+  const EditProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,42 +34,51 @@ class ProfilePage extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 40.h),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Stack(
-                  children: [
-                    CircleAvatar(
-                      radius: 50.w,
-                      backgroundColor: AppColors.orangePrimary,
-                      child: Image.asset(
-                        Assets.imagesProfile,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    Positioned(
-                      bottom: 2.h,
-                      right: 2.w,
-                      child: InkWell(
-                        onTap: () {},
-                        child: Container(
-                          padding: const EdgeInsets.all(6),
-                          decoration: const BoxDecoration(
-                            color: AppColors.orangePrimary,
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(
-                            Icons.edit,
-                            size: 18.w,
-                            color: AppColors.white,
-                          ),
+                Align(
+                  alignment: Alignment.center,
+                  child: Stack(
+                    children: [
+                      CircleAvatar(
+                        radius: 70.w,
+                        backgroundColor: AppColors.orangePrimary,
+                        child: Image.asset(
+                          Assets.imagesProfile,
+                          fit: BoxFit.cover,
                         ),
                       ),
-                    )
-                  ],
+                      Positioned(
+                        bottom: 2.h,
+                        right: 2.w,
+                        child: InkWell(
+                          onTap: () {},
+                          child: Container(
+                            padding: const EdgeInsets.all(6),
+                            decoration: const BoxDecoration(
+                              color: AppColors.orangePrimary,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Icon(
+                              Icons.edit,
+                              size: 18.w,
+                              color: AppColors.white,
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
                 24.ph,
+
+                /// Username
+                PublicText(
+                  txt: S.of(context).username,
+                  fw: FontWeight.w500,
+                ),
                 PublicTextFormField(
                   hint: 'Ahmed Arafat',
-                  label: S.of(context).username,
                   keyboardtype: TextInputType.text,
                   controller: TextEditingController(),
                   validator: (name) {
@@ -80,9 +89,14 @@ class ProfilePage extends StatelessWidget {
                   },
                 ),
                 24.ph,
+
+                /// Email
+                PublicText(
+                  txt: S.of(context).email,
+                  fw: FontWeight.w500,
+                ),
                 PublicTextFormField(
                   hint: "arafat11@gmail.com",
-                  label: S.of(context).email,
                   keyboardtype: TextInputType.emailAddress,
                   controller: TextEditingController(),
                   showprefixIcon: true,
@@ -95,7 +109,6 @@ class ProfilePage extends StatelessWidget {
                   },
                 ),
                 125.ph,
-
                 PublicButton(
                   title: S.of(context).save,
                   width: double.infinity,

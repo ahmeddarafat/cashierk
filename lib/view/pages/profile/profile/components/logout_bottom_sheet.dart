@@ -19,7 +19,7 @@ class LogoutBottomSheet extends StatelessWidget {
           if (state is LogoutErrorState) {
             MySnackBar.error(
               message: state.error,
-              color: Colors.red,
+              color: AppColors.red,
               context: context,
             );
           } else if (state is LogoutSuccessState) {
@@ -41,7 +41,7 @@ class LogoutBottomSheet extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 60.w, vertical: 26.h),
+            padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 24.h),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [

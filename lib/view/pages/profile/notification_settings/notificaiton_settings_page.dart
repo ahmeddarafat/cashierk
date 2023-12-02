@@ -29,7 +29,7 @@ class NotificationsSettingsPage extends StatelessWidget {
           ),
         ),
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 40.h),
+          padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 40.h),
           child: Column(
             children: [
               PublicSwitchListTile(

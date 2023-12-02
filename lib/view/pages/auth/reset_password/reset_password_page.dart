@@ -120,7 +120,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                             ),
                           ),
                           PublicTextFormField(
-                            hint: S.of(context).confirmNewPassword,
+                            hint: S.of(context).confirmPass,
                             controller: cubit.passwordController,
                             keyboardtype: TextInputType.visiblePassword,
                             isPassword: true,
@@ -143,12 +143,12 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                           Align(
                             alignment: Alignment.centerLeft,
                             child: PublicText(
-                              txt: S.of(context).confirmNewPassword,
+                              txt: S.of(context).confirmPass,
                               fw: FontWeight.w500,
                             ),
                           ),
                           PublicTextFormField(
-                            hint: S.of(context).confirmNewPassword,
+                            hint: S.of(context).confirmPass,
                             controller: cubit.confirmPassController,
                             keyboardtype: TextInputType.visiblePassword,
                             isPassword: true,

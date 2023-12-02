@@ -590,16 +590,6 @@ class S {
     );
   }
 
-  /// `Confirm new password`
-  String get confirmNewPassword {
-    return Intl.message(
-      'Confirm new password',
-      name: 'confirmNewPassword',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Submit`
   String get submit {
     return Intl.message(
@@ -810,10 +800,10 @@ class S {
     );
   }
 
-  /// `Help Centr`
+  /// `Help Center`
   String get helpCenter {
     return Intl.message(
-      'Help Centr',
+      'Help Center',
       name: 'helpCenter',
       desc: '',
       args: [],

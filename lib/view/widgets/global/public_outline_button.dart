@@ -1,6 +1,7 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter/material.dart';
+import 'package:start_app/resources/styles/app_colors.dart';
 
 import 'public_text.dart';
 
@@ -22,8 +23,8 @@ class PublicOutlineButton extends StatelessWidget {
     this.title = "",
     this.width,
     this.borderRadius = 12,
-    this.titleColor = Colors.purple,
-    this.backgroundColor = Colors.white,
+    this.titleColor = AppColors.orangePrimary,
+    this.backgroundColor = AppColors.white,
     this.verticalpadding,
   }) : super(key: key);
 
@@ -42,10 +43,10 @@ class PublicOutlineButton extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: verticalpadding ?? 16.h),
+          padding: EdgeInsets.symmetric(vertical: verticalpadding ?? 12.h),
           child: PublicText(
             txt: title,
-            size: titleSize ?? 22.sp,
+            size: titleSize ?? 20.sp,
             color: titleColor,
             fw: FontWeight.w600, // semi bold
           ),

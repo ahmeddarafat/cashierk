@@ -40,8 +40,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "change_password_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- change_password -------------------------------"),
         "chicken": MessageLookupByLibrary.simpleMessage("Chicken"),
-        "confirmNewPassword":
-            MessageLookupByLibrary.simpleMessage("Confirm new password"),
         "confirmPass": MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "confirmPassHint":
             MessageLookupByLibrary.simpleMessage("Enter your password again"),
@@ -77,7 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "generalNotifications":
             MessageLookupByLibrary.simpleMessage("General Notifications"),
         "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
-        "helpCenter": MessageLookupByLibrary.simpleMessage("Help Centr"),
+        "helpCenter": MessageLookupByLibrary.simpleMessage("Help Center"),
         "invalidEmailMeg":
             MessageLookupByLibrary.simpleMessage("Please, enter a valid email"),
         "invalidPasswordMeg": MessageLookupByLibrary.simpleMessage(
