@@ -30,8 +30,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "appUpdates": MessageLookupByLibrary.simpleMessage("App Updates"),
+        "backToHome": MessageLookupByLibrary.simpleMessage("Back to Home"),
         "bestSeller": MessageLookupByLibrary.simpleMessage("Best Seller"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "cart": MessageLookupByLibrary.simpleMessage("Cart"),
         "cart_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- cart -------------------------------"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
@@ -122,6 +124,16 @@ class MessageLookup extends MessageLookupByLibrary {
             "--------------------------- onbording -------------------------------"),
         "or": MessageLookupByLibrary.simpleMessage("Or"),
         "orange": MessageLookupByLibrary.simpleMessage("Orange"),
+        "orderFaild":
+            MessageLookupByLibrary.simpleMessage("Oops! Order Failed"),
+        "orderFaildSubtitle": MessageLookupByLibrary.simpleMessage(
+            "Something went terribly wrong"),
+        "orderSuccessful":
+            MessageLookupByLibrary.simpleMessage("Order Successful"),
+        "orderSuccessfulSubtitle": MessageLookupByLibrary.simpleMessage(
+            "Your items has been placed and is on it’s way to being processed"),
+        "order_state_comment": MessageLookupByLibrary.simpleMessage(
+            "--------------------------- order state -------------------------------"),
         "otpSubtitle": MessageLookupByLibrary.simpleMessage(
             "Enter the 4-digits code to verfiy your email address"),
         "otpTitle": MessageLookupByLibrary.simpleMessage("Email Verification"),
@@ -169,6 +181,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "subtotal": MessageLookupByLibrary.simpleMessage("Subtotal"),
         "taxes": MessageLookupByLibrary.simpleMessage("Taxes"),
         "total": MessageLookupByLibrary.simpleMessage("Total"),
+        "trackMyOrder": MessageLookupByLibrary.simpleMessage("Track my Order"),
+        "tryAgain": MessageLookupByLibrary.simpleMessage("Try Again"),
         "username": MessageLookupByLibrary.simpleMessage("User name"),
         "vegtables": MessageLookupByLibrary.simpleMessage("Vegtables"),
         "verify": MessageLookupByLibrary.simpleMessage("Verfiy"),

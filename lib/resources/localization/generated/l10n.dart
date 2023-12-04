@@ -1040,6 +1040,16 @@ class S {
     );
   }
 
+  /// `Cart`
+  String get cart {
+    return Intl.message(
+      'Cart',
+      name: 'cart',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Taxes`
   String get taxes {
     return Intl.message(
@@ -1065,6 +1075,86 @@ class S {
     return Intl.message(
       'Proceed to checkout',
       name: 'proceedCheckout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `--------------------------- order state -------------------------------`
+  String get order_state_comment {
+    return Intl.message(
+      '--------------------------- order state -------------------------------',
+      name: 'order_state_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Successful`
+  String get orderSuccessful {
+    return Intl.message(
+      'Order Successful',
+      name: 'orderSuccessful',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your items has been placed and is on it’s way to being processed`
+  String get orderSuccessfulSubtitle {
+    return Intl.message(
+      'Your items has been placed and is on it’s way to being processed',
+      name: 'orderSuccessfulSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Oops! Order Failed`
+  String get orderFaild {
+    return Intl.message(
+      'Oops! Order Failed',
+      name: 'orderFaild',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went terribly wrong`
+  String get orderFaildSubtitle {
+    return Intl.message(
+      'Something went terribly wrong',
+      name: 'orderFaildSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try Again`
+  String get tryAgain {
+    return Intl.message(
+      'Try Again',
+      name: 'tryAgain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Track my Order`
+  String get trackMyOrder {
+    return Intl.message(
+      'Track my Order',
+      name: 'trackMyOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back to Home`
+  String get backToHome {
+    return Intl.message(
+      'Back to Home',
+      name: 'backToHome',
       desc: '',
       args: [],
     );

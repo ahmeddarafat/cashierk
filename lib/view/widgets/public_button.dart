@@ -43,9 +43,9 @@ class PublicButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: verticalpadding ?? 12.h),
           child: PublicText(
             txt: title,
-            size: titleSize ?? 20.sp,
+            size: titleSize ?? 18.sp,
             color: titleColor,
-            fw: FontWeight.w600, // semi bold
+            fw: FontWeight.w500, // medium
           ),
         ),
       ),

@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/data/dummy_data/dummy_data.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
+import 'package:start_app/resources/router/app_router.dart';
 import 'package:start_app/view/widgets/public_button.dart';
 import 'package:start_app/view/widgets/public_divider.dart';
 
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/styles/app_colors.dart';
+import '../../../widgets/custom_price_row.dart';
 import '../../../widgets/public_text.dart';
 
 class CartPage extends StatelessWidget {
@@ -20,7 +22,7 @@ class CartPage extends StatelessWidget {
           centerTitle: true,
           toolbarHeight: 80.h,
           title: PublicText(
-            txt: S.of(context).notifications,
+            txt: S.of(context).cart,
             fw: FontWeight.bold,
             size: 22.sp,
           ),
@@ -93,28 +95,35 @@ class CartPage extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    PriceRow(
+                    CustomPriceRow(
                       title: S.of(context).subtotal,
                       price: 22,
                       color: AppColors.grey,
                       size: 16.sp,
                     ),
                     10.ph,
-                    PriceRow(
+                    CustomPriceRow(
                       title: S.of(context).taxes,
                       price: 2.5,
                       color: AppColors.grey,
                       size: 14.sp,
                     ),
                     10.ph,
-                    PriceRow(
+                    CustomPriceRow(
                       title: S.of(context).total,
                       price: 24.5,
                       size: 18.sp,
                     ),
                     10.ph,
                     PublicButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        // TODO: "logic - should go to payment"
+                        Navigator.pushNamed(
+                          context,
+                          AppRoutes.orderState,
+                          arguments: true,
+                        );
+                      },
                       title: S.of(context).proceedCheckout,
                     ),
                   ],
@@ -124,39 +133,6 @@ class CartPage extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class PriceRow extends StatelessWidget {
-  final String title;
-  final double price;
-  final Color? color;
-  final double? size;
-  const PriceRow({
-    super.key,
-    required this.title,
-    required this.price,
-    this.color,
-    this.size,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        PublicText(
-          txt: title,
-          color: color,
-          size: size,
-        ),
-        const Spacer(),
-        PublicText(
-          txt: "\$${price.orAbout()}",
-          color: color,
-          size: size,
-        ),
-      ],
     );
   }
 }

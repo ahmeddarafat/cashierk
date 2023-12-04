@@ -98,9 +98,18 @@
     "scanNow": "Scan Now",
     "cart_comment": "--------------------------- cart -------------------------------",
     "subtotal": "Subtotal",
+    "cart": "Cart",
     "taxes": "Taxes",
     "total": "Total",
-    "proceedCheckout": "Proceed to checkout"
+    "proceedCheckout": "Proceed to checkout",
+    "order_state_comment": "--------------------------- order state -------------------------------",
+    "orderSuccessful": "Order Successful",
+    "orderSuccessfulSubtitle":"Your items has been placed and is on it’s way to being processed",
+    "orderFaild":"Oops! Order Failed",
+    "orderFaildSubtitle":"Something went terribly wrong",
+    "tryAgain": "Try Again",
+    "trackMyOrder": "Track my Order",
+    "backToHome": "Back to Home"
 
 
 }

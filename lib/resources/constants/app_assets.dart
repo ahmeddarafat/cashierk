@@ -104,4 +104,8 @@ class Assets {
   /// Assets for imagesResetPass
   /// assets/images/reset-pass.svg
   static const String imagesResetPass = "assets/images/reset-pass.svg";
+
+  /// Assets for imagesSuccess
+  /// assets/images/success.png
+  static const String imagesSuccess = "assets/images/success.png";
 }
