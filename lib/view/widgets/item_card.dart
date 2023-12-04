@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
 
-import '../../../data/models/local/categories/item_model.dart';
-import '../../../resources/styles/app_colors.dart';
-import '../global/public_text.dart';
+import '../../data/models/local/categories/item_model.dart';
+import '../../resources/styles/app_colors.dart';
+import 'public_text.dart';
 
 class ItemCard extends StatelessWidget {
   final Item item;

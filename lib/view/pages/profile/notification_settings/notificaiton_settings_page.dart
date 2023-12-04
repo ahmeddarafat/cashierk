@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:start_app/view/widgets/global/public_divider.dart';
+import 'package:start_app/view/widgets/public_divider.dart';
 
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/styles/app_colors.dart';
-import '../../../widgets/global/public_switch_list_tile.dart';
-import '../../../widgets/global/public_text.dart';
+import '../../../widgets/public_switch_list_tile.dart';
+import '../../../widgets/public_text.dart';
 
 class NotificationsSettingsPage extends StatelessWidget {
   const NotificationsSettingsPage({super.key});

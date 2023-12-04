@@ -9,8 +9,8 @@ import '../../../resources/constants/app_constants.dart';
 import '../../../resources/localization/generated/l10n.dart';
 import '../../../resources/styles/app_colors.dart';
 import '../../../view_model/onboarding/onboarding_cubit.dart';
-import '../../widgets/global/public_button.dart';
-import '../../widgets/global/public_text.dart';
+import '../../widgets/public_button.dart';
+import '../../widgets/public_text.dart';
 
 part 'components/custom_dots.dart';
 part 'components/onboarding_item.dart';

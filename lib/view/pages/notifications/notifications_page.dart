@@ -1,15 +1,13 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:flutter/material.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
 
 import '../../../data/dummy_data/dummy_data.dart';
 import '../../../data/models/local/notifications/notification_model.dart';
-import '../../../resources/constants/app_assets.dart';
 import '../../../resources/localization/generated/l10n.dart';
 import '../../../resources/styles/app_colors.dart';
-import '../../widgets/global/public_text.dart';
+import '../../widgets/public_text.dart';
 
 part 'components/notification_card.dart';
 

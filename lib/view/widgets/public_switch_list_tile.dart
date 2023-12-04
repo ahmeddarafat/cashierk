@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:start_app/resources/styles/app_colors.dart';
 
-import '../../../data/data_source/local/app_prefs.dart';
-import '../../../resources/service_locator/service_locator.dart';
+import '../../data/data_source/local/app_prefs.dart';
+import '../../resources/service_locator/service_locator.dart';
 import 'public_text.dart';
 
 enum Switchers {

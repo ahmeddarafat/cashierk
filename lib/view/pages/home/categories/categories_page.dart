@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
-import 'package:start_app/view/widgets/global/public_text_form_field.dart';
+import 'package:start_app/view/widgets/public_text_form_field.dart';
 
 import '../../../../data/dummy_data/dummy_data.dart';
 import '../../../../resources/constants/app_constants.dart';
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/styles/app_colors.dart';
-import '../../../widgets/global/public_text.dart';
-import '../../../widgets/local/item_card.dart';
+import '../../../widgets/public_text.dart';
+import '../../../widgets/item_card.dart';
 
 class CategoriesPage extends StatelessWidget {
   const CategoriesPage({super.key});

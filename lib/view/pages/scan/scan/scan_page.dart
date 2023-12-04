@@ -5,8 +5,8 @@ import 'package:start_app/resources/extensions/app_extensions.dart';
 import 'package:start_app/resources/localization/generated/l10n.dart';
 import 'package:start_app/resources/router/app_router.dart';
 import 'package:start_app/resources/styles/app_colors.dart';
-import 'package:start_app/view/widgets/global/public_button.dart';
-import 'package:start_app/view/widgets/global/public_text.dart';
+import 'package:start_app/view/widgets/public_button.dart';
+import 'package:start_app/view/widgets/public_text.dart';
 
 class ScanPage extends StatelessWidget {
   const ScanPage({super.key});

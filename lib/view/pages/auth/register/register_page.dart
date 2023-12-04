@@ -3,17 +3,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
-import 'package:start_app/view/widgets/local/custom_divider.dart';
+import 'package:start_app/view/widgets/custom_divider.dart';
 
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/router/app_router.dart';
 import '../../../../resources/styles/app_colors.dart';
 import '../../../../view_model/auth/register/register_cubit.dart';
-import '../../../widgets/global/public_button.dart';
-import '../../../widgets/global/public_snack_bar.dart';
-import '../../../widgets/global/public_text.dart';
-import '../../../widgets/global/public_text_form_field.dart';
-import '../../../widgets/local/custom_social_auth.dart';
+import '../../../widgets/public_button.dart';
+import '../../../widgets/public_snack_bar.dart';
+import '../../../widgets/public_text.dart';
+import '../../../widgets/public_text_form_field.dart';
+import '../../../widgets/custom_social_auth.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
