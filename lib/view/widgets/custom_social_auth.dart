@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../resources/constants/app_assets.dart';
-import '../../../resources/styles/app_colors.dart';
+import '../../resources/constants/app_assets.dart';
+import '../../resources/styles/app_colors.dart';
 
 class CustomSocialAuth extends StatelessWidget {
   const CustomSocialAuth({

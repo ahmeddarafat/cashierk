@@ -1,4 +1,5 @@
 import '../../resources/constants/app_assets.dart';
+import '../models/local/cart/cart_item.dart';
 import '../models/local/categories/item_model.dart';
 import '../models/local/notifications/notification_model.dart';
 
@@ -86,6 +87,65 @@ class DummyData {
       title: "Fresh Fruits",
       date: "Mar 15, 2023",
       content: "30% - 50% Off on selected fruits.",
+    ),
+  ];
+
+  static final cartItems = [
+    CartItem(
+      image: Assets.imagesOrange,
+      name: "Orange",
+      amount: "3 Kg",
+      price: "\$7.00/kg",
+      totalPrice: 21,
+    ),
+    CartItem(
+      image: Assets.imagesMeat,
+      name: "Meat",
+      amount: "1 Kg",
+      price: "\$100.00/kg",
+      totalPrice: 100,
+    ),
+    CartItem(
+      image: Assets.imagesAvacado,
+      name: "Avacado",
+      amount: "2 Kg",
+      price: "\$35.5/kg",
+      totalPrice: 71,
+    ),
+    CartItem(
+      image: Assets.imagesBrokly,
+      name: "broccoli",
+      amount: "3 Kg",
+      price: "\$10.00/kg",
+      totalPrice: 30,
+    ),
+    CartItem(
+      image: Assets.imagesOrange,
+      name: "Orange",
+      amount: "3 Kg",
+      price: "\$7.00/kg",
+      totalPrice: 21,
+    ),
+    CartItem(
+      image: Assets.imagesMeat,
+      name: "Meat",
+      amount: "1 Kg",
+      price: "\$100.00/kg",
+      totalPrice: 100,
+    ),
+    CartItem(
+      image: Assets.imagesAvacado,
+      name: "Avacado",
+      amount: "2 Kg",
+      price: "\$35.5/kg",
+      totalPrice: 71,
+    ),
+    CartItem(
+      image: Assets.imagesBrokly,
+      name: "broccoli",
+      amount: "3 Kg",
+      price: "\$10.00/kg",
+      totalPrice: 30,
     ),
   ];
 }

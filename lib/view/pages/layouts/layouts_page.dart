@@ -9,7 +9,7 @@ import 'package:start_app/view/pages/profile/profile/profile_page.dart';
 import 'package:start_app/view/pages/recepits/recepits_page.dart';
 
 import '../home/discover/discover_page.dart';
-import '../scan/scan_page.dart';
+import '../scan/scan/scan_page.dart';
 
 class LayoutsPage extends StatefulWidget {
   const LayoutsPage({super.key});

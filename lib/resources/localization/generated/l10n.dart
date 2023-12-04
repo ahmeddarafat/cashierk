@@ -979,6 +979,186 @@ class S {
       args: [],
     );
   }
+
+  /// `--------------------------- Scan -------------------------------`
+  String get scan_comment {
+    return Intl.message(
+      '--------------------------- Scan -------------------------------',
+      name: 'scan_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scan the QR Code`
+  String get scanTitle {
+    return Intl.message(
+      'Scan the QR Code',
+      name: 'scanTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Point Your Camera Towards the QR Code to receive the voucher`
+  String get scanSubtitle {
+    return Intl.message(
+      'Point Your Camera Towards the QR Code to receive the voucher',
+      name: 'scanSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scan Now`
+  String get scanNow {
+    return Intl.message(
+      'Scan Now',
+      name: 'scanNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `--------------------------- cart -------------------------------`
+  String get cart_comment {
+    return Intl.message(
+      '--------------------------- cart -------------------------------',
+      name: 'cart_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subtotal`
+  String get subtotal {
+    return Intl.message(
+      'Subtotal',
+      name: 'subtotal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cart`
+  String get cart {
+    return Intl.message(
+      'Cart',
+      name: 'cart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Taxes`
+  String get taxes {
+    return Intl.message(
+      'Taxes',
+      name: 'taxes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total`
+  String get total {
+    return Intl.message(
+      'Total',
+      name: 'total',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Proceed to checkout`
+  String get proceedCheckout {
+    return Intl.message(
+      'Proceed to checkout',
+      name: 'proceedCheckout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `--------------------------- order state -------------------------------`
+  String get order_state_comment {
+    return Intl.message(
+      '--------------------------- order state -------------------------------',
+      name: 'order_state_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Successful`
+  String get orderSuccessful {
+    return Intl.message(
+      'Order Successful',
+      name: 'orderSuccessful',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your items has been placed and is on it’s way to being processed`
+  String get orderSuccessfulSubtitle {
+    return Intl.message(
+      'Your items has been placed and is on it’s way to being processed',
+      name: 'orderSuccessfulSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Oops! Order Failed`
+  String get orderFaild {
+    return Intl.message(
+      'Oops! Order Failed',
+      name: 'orderFaild',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went terribly wrong`
+  String get orderFaildSubtitle {
+    return Intl.message(
+      'Something went terribly wrong',
+      name: 'orderFaildSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try Again`
+  String get tryAgain {
+    return Intl.message(
+      'Try Again',
+      name: 'tryAgain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Track my Order`
+  String get trackMyOrder {
+    return Intl.message(
+      'Track my Order',
+      name: 'trackMyOrder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back to Home`
+  String get backToHome {
+    return Intl.message(
+      'Back to Home',
+      name: 'backToHome',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

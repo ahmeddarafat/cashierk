@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../resources/localization/generated/l10n.dart';
-import '../global/public_divider.dart';
-import '../global/public_text.dart';
+import '../../resources/localization/generated/l10n.dart';
+import 'public_divider.dart';
+import 'public_text.dart';
 
 class CustomDivider extends StatelessWidget {
   const CustomDivider({

@@ -8,6 +8,8 @@ import 'package:start_app/view/pages/favourites/favourites_page.dart';
 import 'package:start_app/view/pages/layouts/layouts_page.dart';
 import 'package:start_app/view/pages/profile/change_passwored/change_password_page.dart';
 import 'package:start_app/view/pages/profile/notification_settings/notificaiton_settings_page.dart';
+import 'package:start_app/view/pages/scan/cart/cart_page.dart';
+import 'package:start_app/view/pages/scan/order_state/order_state_page.dart';
 import 'package:start_app/view_model/auth/login/login_cubit.dart';
 import 'package:start_app/view_model/auth/register/register_cubit.dart';
 import 'package:start_app/view_model/profile/change_password/change_password_cubit.dart';
@@ -48,6 +50,10 @@ class AppRoutes {
   static const notificationSettings = "notification settings";
   static const helpCenter = "help center";
   static const changePassword = "change password";
+
+  /// Scan
+  static const cart = "cart";
+  static const orderState = "order state";
 }
 
 class RouteGenerate {
@@ -124,6 +130,18 @@ class RouteGenerate {
       case AppRoutes.notificationSettings:
         return MaterialPageRoute(
           builder: (_) => const NotificationsSettingsPage(),
+        );
+
+      /// Cart
+      case AppRoutes.cart:
+        return MaterialPageRoute(
+          builder: (_) => const CartPage(),
+        );
+      case AppRoutes.orderState:
+        return MaterialPageRoute(
+          builder: (_) => OrderStatePage(
+            isSuccess: routeSettings.arguments as bool,
+          ),
         );
 
       default:

@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../data/dummy_data/dummy_data.dart';
 import '../../../resources/constants/app_constants.dart';
 import '../../../resources/localization/generated/l10n.dart';
-import '../../widgets/global/public_text.dart';
-import '../../widgets/local/item_card.dart';
+import '../../widgets/public_text.dart';
+import '../../widgets/item_card.dart';
 
 class FavouritesPage extends StatelessWidget {
   const FavouritesPage({super.key});

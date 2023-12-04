@@ -7,10 +7,10 @@ import 'package:start_app/view_model/profile/change_password/change_password_cub
 
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/styles/app_colors.dart';
-import '../../../widgets/global/public_button.dart';
-import '../../../widgets/global/public_snack_bar.dart';
-import '../../../widgets/global/public_text.dart';
-import '../../../widgets/global/public_text_form_field.dart';
+import '../../../widgets/public_button.dart';
+import '../../../widgets/public_snack_bar.dart';
+import '../../../widgets/public_text.dart';
+import '../../../widgets/public_text_form_field.dart';
 
 class ChangePasswordPage extends StatefulWidget {
   const ChangePasswordPage({

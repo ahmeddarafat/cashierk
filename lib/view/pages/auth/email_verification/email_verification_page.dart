@@ -12,9 +12,9 @@ import 'package:start_app/view_model/auth/reset_pass/reset_cubit.dart';
 
 import '../../../../resources/router/app_router.dart';
 import '../../../../resources/styles/app_colors.dart';
-import '../../../widgets/global/public_button.dart';
-import '../../../widgets/global/public_snack_bar.dart';
-import '../../../widgets/global/public_text.dart';
+import '../../../widgets/public_button.dart';
+import '../../../widgets/public_snack_bar.dart';
+import '../../../widgets/public_text.dart';
 
 class EmailVerificationPage extends StatelessWidget {
   const EmailVerificationPage({super.key});

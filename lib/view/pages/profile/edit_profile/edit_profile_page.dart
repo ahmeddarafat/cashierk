@@ -5,9 +5,9 @@ import 'package:start_app/resources/extensions/app_extensions.dart';
 import '../../../../resources/constants/app_assets.dart';
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/styles/app_colors.dart';
-import '../../../widgets/global/public_button.dart';
-import '../../../widgets/global/public_text.dart';
-import '../../../widgets/global/public_text_form_field.dart';
+import '../../../widgets/public_button.dart';
+import '../../../widgets/public_text.dart';
+import '../../../widgets/public_text_form_field.dart';
 
 class EditProfilePage extends StatelessWidget {
   const EditProfilePage({super.key});

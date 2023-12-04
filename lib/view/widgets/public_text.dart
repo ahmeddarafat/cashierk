@@ -1,11 +1,12 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter/material.dart';
+import 'package:start_app/resources/styles/app_colors.dart';
 
 class PublicText extends StatelessWidget {
   final String txt;
   final bool? under;
-  final Color color;
+  final Color? color;
   final double? size;
   final int? max;
   final FontWeight? fw;
@@ -16,7 +17,7 @@ class PublicText extends StatelessWidget {
   const PublicText({
     super.key,
     required this.txt,
-    this.color = Colors.black,
+    this.color,
     this.size,
     this.under,
     this.align,
@@ -33,7 +34,7 @@ class PublicText extends StatelessWidget {
       textAlign: align ?? TextAlign.start,
       maxLines: max ?? 2,
       style: TextStyle(
-        color: color,
+        color: color ?? AppColors.black,
         fontSize: size ?? 16.sp,
         height: 1.32,
         fontWeight: fw ?? FontWeight.normal,

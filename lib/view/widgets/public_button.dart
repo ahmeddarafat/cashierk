@@ -5,8 +5,7 @@ import 'package:start_app/resources/styles/app_colors.dart';
 
 import 'public_text.dart';
 
-
-class PublicOutlineButton extends StatelessWidget {
+class PublicButton extends StatelessWidget {
   final String title;
   final void Function()? onPressed;
   final double? width;
@@ -16,28 +15,26 @@ class PublicOutlineButton extends StatelessWidget {
   final Color backgroundColor;
   final double? verticalpadding;
 
-  const PublicOutlineButton({
+  const PublicButton({
     Key? key,
     required this.onPressed,
     this.titleSize,
     this.title = "",
     this.width,
     this.borderRadius = 12,
-    this.titleColor = AppColors.orangePrimary,
-    this.backgroundColor = AppColors.white,
+    this.titleColor = AppColors.white,
+    this.backgroundColor = AppColors.orangePrimary,
     this.verticalpadding,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: width ?? 306.w,
-      child: OutlinedButton(
+      width: width ?? 300.w,
+      child: ElevatedButton(
         onPressed: onPressed,
-        style: OutlinedButton.styleFrom(
+        style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor,
-          foregroundColor: titleColor,
-          side: BorderSide(color: titleColor),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius),
           ),
@@ -46,9 +43,9 @@ class PublicOutlineButton extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: verticalpadding ?? 12.h),
           child: PublicText(
             txt: title,
-            size: titleSize ?? 20.sp,
+            size: titleSize ?? 18.sp,
             color: titleColor,
-            fw: FontWeight.w600, // semi bold
+            fw: FontWeight.w500, // medium
           ),
         ),
       ),
