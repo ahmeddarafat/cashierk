@@ -73,6 +73,10 @@ class Assets {
   /// assets/images/meat.png
   static const String imagesMeat = "assets/images/meat.png";
 
+  /// Assets for imagesNoOrder
+  /// assets/images/no-order.png
+  static const String imagesNoOrder = "assets/images/no-order.png";
+
   /// Assets for imagesOnboarding1
   /// assets/images/onboarding1.svg
   static const String imagesOnboarding1 = "assets/images/onboarding1.svg";

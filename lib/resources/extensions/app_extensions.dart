@@ -76,7 +76,7 @@ extension DateFormant on DateTime {
     return DateFormat("EEE d, MMM").format(this);
   }
 
-  /// Ex: Apr 19, 2023
+  /// Ex: "Apr 19, 2023"
   String get format2 {
     return DateFormat("MMM d, yyyy").format(this);
   }

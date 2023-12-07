@@ -1159,6 +1159,76 @@ class S {
       args: [],
     );
   }
+
+  /// `--------------------------- receptis -------------------------------`
+  String get recepits_comment {
+    return Intl.message(
+      '--------------------------- receptis -------------------------------',
+      name: 'recepits_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You don't have an order yet`
+  String get noOrderTitle {
+    return Intl.message(
+      'You don\'t have an order yet',
+      name: 'noOrderTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Orders`
+  String get orders {
+    return Intl.message(
+      'Orders',
+      name: 'orders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You don't have any order at this time`
+  String get noOrderSubtitle {
+    return Intl.message(
+      'You don\'t have any order at this time',
+      name: 'noOrderSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Completed`
+  String get completed {
+    return Intl.message(
+      'Completed',
+      name: 'completed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Canceled`
+  String get canceled {
+    return Intl.message(
+      'Canceled',
+      name: 'canceled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View Details`
+  String get viewDetails {
+    return Intl.message(
+      'View Details',
+      name: 'viewDetails',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

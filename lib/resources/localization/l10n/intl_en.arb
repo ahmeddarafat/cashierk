@@ -109,7 +109,15 @@
     "orderFaildSubtitle":"Something went terribly wrong",
     "tryAgain": "Try Again",
     "trackMyOrder": "Track my Order",
-    "backToHome": "Back to Home"
+    "backToHome": "Back to Home",
+    "recepits_comment": "--------------------------- receptis -------------------------------",
+    "noOrderTitle": "You don't have an order yet",
+    "orders": "Orders",
+    "noOrderSubtitle": "You don't have any order at this time",
+    "completed": "Completed",
+    "canceled": "Canceled",
+    "viewDetails": "View Details"
+
 
 
 }

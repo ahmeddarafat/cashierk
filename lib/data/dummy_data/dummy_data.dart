@@ -1,3 +1,5 @@
+import 'package:start_app/data/models/local/recepits/order_model.dart';
+
 import '../../resources/constants/app_assets.dart';
 import '../models/local/cart/cart_item.dart';
 import '../models/local/categories/item_model.dart';
@@ -146,6 +148,27 @@ class DummyData {
       amount: "3 Kg",
       price: "\$10.00/kg",
       totalPrice: 30,
+    ),
+  ];
+
+  static final orders = [
+    Order(
+      shopName: "carrefour",
+      date: DateTime.now(),
+      status: OrderStatus.complete,
+      notes:
+          "Please check the product before packaging, and check the product before packaging.",
+      subTotalPrice: 8.5,
+      taxes: 0.5,
+    ),
+    Order(
+      shopName: "carrefour",
+      date: DateTime.now(),
+      status: OrderStatus.cancel,
+      notes:
+          "Please check the product before packaging, and check the product before packaging.",
+      subTotalPrice: 20.5,
+      taxes: 0.5,
     ),
   ];
 }
