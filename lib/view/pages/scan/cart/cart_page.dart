@@ -36,7 +36,7 @@ class CartPage extends StatelessWidget {
         ),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-          child: Column(
+          child: Column( 
             children: [
               Expanded(
                 child: ListView.separated(

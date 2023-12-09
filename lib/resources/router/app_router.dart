@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:start_app/data/models/local/recepits/order_model.dart';
 import 'package:start_app/resources/service_locator/service_locator.dart';
 import 'package:start_app/view/pages/auth/email_verification/email_verification_page.dart';
 import 'package:start_app/view/pages/auth/login/login_page.dart';
@@ -8,6 +9,7 @@ import 'package:start_app/view/pages/favourites/favourites_page.dart';
 import 'package:start_app/view/pages/layouts/layouts_page.dart';
 import 'package:start_app/view/pages/profile/change_passwored/change_password_page.dart';
 import 'package:start_app/view/pages/profile/notification_settings/notificaiton_settings_page.dart';
+import 'package:start_app/view/pages/recepits/order_details/order_details_page.dart';
 import 'package:start_app/view/pages/scan/cart/cart_page.dart';
 import 'package:start_app/view/pages/scan/order_state/order_state_page.dart';
 import 'package:start_app/view_model/auth/login/login_cubit.dart';
@@ -54,6 +56,9 @@ class AppRoutes {
   /// Scan
   static const cart = "cart";
   static const orderState = "order state";
+
+  /// Recepits
+  static const orderDetails = "order details";
 }
 
 class RouteGenerate {
@@ -141,6 +146,14 @@ class RouteGenerate {
         return MaterialPageRoute(
           builder: (_) => OrderStatePage(
             isSuccess: routeSettings.arguments as bool,
+          ),
+        );
+
+      /// Recepits
+      case AppRoutes.orderDetails:
+        return MaterialPageRoute(
+          builder: (_) => OrderDetailsPage(
+            order: routeSettings.arguments as Order,
           ),
         );
 

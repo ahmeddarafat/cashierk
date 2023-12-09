@@ -1159,6 +1159,176 @@ class S {
       args: [],
     );
   }
+
+  /// `--------------------------- receptis -------------------------------`
+  String get recepits_comment {
+    return Intl.message(
+      '--------------------------- receptis -------------------------------',
+      name: 'recepits_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You don't have an order yet`
+  String get noOrderTitle {
+    return Intl.message(
+      'You don\'t have an order yet',
+      name: 'noOrderTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Orders`
+  String get orders {
+    return Intl.message(
+      'Orders',
+      name: 'orders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You don't have any order at this time`
+  String get noOrderSubtitle {
+    return Intl.message(
+      'You don\'t have any order at this time',
+      name: 'noOrderSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Completed`
+  String get completed {
+    return Intl.message(
+      'Completed',
+      name: 'completed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Canceled`
+  String get canceled {
+    return Intl.message(
+      'Canceled',
+      name: 'canceled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View Details`
+  String get viewDetails {
+    return Intl.message(
+      'View Details',
+      name: 'viewDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `--------------------------- order detials comment -------------------------------`
+  String get order_details_comment {
+    return Intl.message(
+      '--------------------------- order detials comment -------------------------------',
+      name: 'order_details_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Status`
+  String get OrderStatus {
+    return Intl.message(
+      'Order Status',
+      name: 'OrderStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Overview`
+  String get overview {
+    return Intl.message(
+      'Overview',
+      name: 'overview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Summary`
+  String get orderSummary {
+    return Intl.message(
+      'Order Summary',
+      name: 'orderSummary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Method`
+  String get paymentMethod {
+    return Intl.message(
+      'Payment Method',
+      name: 'paymentMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Received`
+  String get received {
+    return Intl.message(
+      'Received',
+      name: 'received',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order ID`
+  String get orderId {
+    return Intl.message(
+      'Order ID',
+      name: 'orderId',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shop Name`
+  String get shopName {
+    return Intl.message(
+      'Shop Name',
+      name: 'shopName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date`
+  String get date {
+    return Intl.message(
+      'Date',
+      name: 'date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notes`
+  String get notes {
+    return Intl.message(
+      'Notes',
+      name: 'notes',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

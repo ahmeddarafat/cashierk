@@ -6,7 +6,7 @@ import 'package:start_app/resources/constants/app_assets.dart';
 import 'package:start_app/resources/styles/app_colors.dart';
 import 'package:start_app/view/pages/favourites/favourites_page.dart';
 import 'package:start_app/view/pages/profile/profile/profile_page.dart';
-import 'package:start_app/view/pages/recepits/recepits_page.dart';
+import 'package:start_app/view/pages/recepits/recepits/recepits_page.dart';
 
 import '../home/discover/discover_page.dart';
 import '../scan/scan/scan_page.dart';

@@ -109,7 +109,25 @@
     "orderFaildSubtitle":"Something went terribly wrong",
     "tryAgain": "Try Again",
     "trackMyOrder": "Track my Order",
-    "backToHome": "Back to Home"
+    "backToHome": "Back to Home",
+    "recepits_comment": "--------------------------- receptis -------------------------------",
+    "noOrderTitle": "You don't have an order yet",
+    "orders": "Orders",
+    "noOrderSubtitle": "You don't have any order at this time",
+    "completed": "Completed",
+    "canceled": "Canceled",
+    "viewDetails": "View Details",
+    "order_details_comment": "--------------------------- order detials comment -------------------------------",
+    "OrderStatus":"Order Status",
+    "overview":"Overview",
+    "orderSummary":"Order Summary",
+    "paymentMethod":"Payment Method",
+    "received": "Received",
+    "orderId" : "Order ID",
+    "shopName":"Shop Name",
+    "date":"Date",
+    "notes":"Notes"
+
 
 
 }
