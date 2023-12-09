@@ -50,7 +50,7 @@ class OrderCard extends StatelessWidget {
           Row(
             children: [
               PublicText(
-                txt: order.date.format2,
+                txt: order.date.monthDayYearFormat,
                 color: AppColors.grey,
               ),
               const Spacer(),

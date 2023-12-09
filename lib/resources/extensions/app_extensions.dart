@@ -77,7 +77,12 @@ extension DateFormant on DateTime {
   }
 
   /// Ex: "Apr 19, 2023"
-  String get format2 {
+  String get monthDayYearFormat {
     return DateFormat("MMM d, yyyy").format(this);
+  }
+
+  /// Ex: "Apr 19, 2023"
+  String get timeFormat {
+    return DateFormat("hh:mm a").format(this);
   }
 }

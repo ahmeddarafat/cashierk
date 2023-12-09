@@ -116,7 +116,17 @@
     "noOrderSubtitle": "You don't have any order at this time",
     "completed": "Completed",
     "canceled": "Canceled",
-    "viewDetails": "View Details"
+    "viewDetails": "View Details",
+    "order_details_comment": "--------------------------- order detials comment -------------------------------",
+    "OrderStatus":"Order Status",
+    "overview":"Overview",
+    "orderSummary":"Order Summary",
+    "paymentMethod":"Payment Method",
+    "received": "Received",
+    "orderId" : "Order ID",
+    "shopName":"Shop Name",
+    "date":"Date",
+    "notes":"Notes"
 
 
 

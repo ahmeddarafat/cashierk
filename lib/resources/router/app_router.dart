@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:start_app/data/models/local/recepits/order_model.dart';
 import 'package:start_app/resources/service_locator/service_locator.dart';
 import 'package:start_app/view/pages/auth/email_verification/email_verification_page.dart';
 import 'package:start_app/view/pages/auth/login/login_page.dart';
@@ -58,7 +59,6 @@ class AppRoutes {
 
   /// Recepits
   static const orderDetails = "order details";
-  
 }
 
 class RouteGenerate {
@@ -149,12 +149,13 @@ class RouteGenerate {
           ),
         );
 
-        /// Recepits
+      /// Recepits
       case AppRoutes.orderDetails:
         return MaterialPageRoute(
-          builder: (_) => const OrderDetailsPage(),
+          builder: (_) => OrderDetailsPage(
+            order: routeSettings.arguments as Order,
+          ),
         );
-        
 
       default:
         return MaterialPageRoute(
