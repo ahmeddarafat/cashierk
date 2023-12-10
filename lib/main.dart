@@ -9,12 +9,14 @@ import 'package:start_app/view/pages/layouts/layouts_page.dart';
 import 'package:start_app/view_model/auth/login/login_cubit.dart';
 import 'package:start_app/view_model/auth/reset_pass/reset_cubit.dart';
 import 'package:start_app/view_model/onboarding/onboarding_cubit.dart';
+import 'data/data_source/local/app_prefs.dart';
 import 'resources/styles/app_themes.dart';
 
 import 'resources/router/app_router.dart';
 import 'resources/service_locator/service_locator.dart';
 import 'view/pages/onboarding/onboarding_page.dart';
 import 'view_model/profile/change_password/change_password_cubit.dart';
+import 'view_model/profile/profile/profile_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,13 +40,12 @@ class MyApp extends StatelessWidget {
         providers: [
           BlocProvider(create: (_) => OnboardingCubit()),
           BlocProvider(create: (_) => ResetCubit()),
-          // TODO: "Test - remove it after"
           BlocProvider(create: (_) => LoginCubit(getIt())),
+          BlocProvider(create: (_) => ProfileCubit()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Cashierk',
-          onGenerateRoute: RouteGenerate.getRoute,
           theme: AppThemes.light,
           locale: const Locale("en", "US"),
           supportedLocales: S.delegate.supportedLocales,
@@ -57,10 +58,23 @@ class MyApp extends StatelessWidget {
           scrollBehavior: ScrollConfiguration.of(context).copyWith(
             physics: const BouncingScrollPhysics(),
           ),
-          // TODO: "UI: manage the first page will be opened"
-          home: const LayoutsPage(),
+          onGenerateRoute: RouteGenerate.getRoute,
+          initialRoute: getInitRoute(),
         ),
       ),
     );
+  }
+
+  String getInitRoute() {
+    AppPrefs appPrefs = getIt<AppPrefs>();
+    if (appPrefs.isOnBoardingViewed()) {
+      if (appPrefs.isUserLoggedIn()) {
+        return AppRoutes.layouts;
+      } else {
+        return AppRoutes.login;
+      }
+    } else {
+      return AppRoutes.onboarding;
+    }
   }
 }

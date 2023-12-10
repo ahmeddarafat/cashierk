@@ -3,8 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
+import 'package:start_app/view/widgets/public_circular_image.dart';
 import 'package:start_app/view/widgets/public_divider.dart';
 import 'package:start_app/view_model/auth/login/login_cubit.dart';
+import 'package:start_app/view_model/profile/profile/profile_cubit.dart';
 
 import '../../../../../resources/constants/app_assets.dart';
 import '../../../../../resources/localization/generated/l10n.dart';
@@ -18,8 +20,22 @@ import '../../../widgets/public_text.dart';
 
 part 'components/logout_bottom_sheet.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
+
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  late final ProfileCubit cubit;
+
+  @override
+  void initState() {
+    super.initState();
+    cubit = ProfileCubit.getInstance(context);
+    cubit.getUserInfo();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,21 +46,29 @@ class ProfilePage extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                CircleAvatar(
-                  radius: 70.w,
-                  backgroundImage: const AssetImage(Assets.imagesProfile),
-                ),
+                PublicCircularImage(image: cubit.image),
                 8.ph,
-                PublicText(
-                  txt: "Ahmed Arafat",
-                  size: 24.sp,
-                  fw: FontWeight.w600,
-                ),
-                8.ph,
-                PublicText(
-                  txt: "ahmed.arafat2@gmail.com",
-                  size: 14.sp,
-                  color: AppColors.grey,
+                BlocBuilder<ProfileCubit, ProfileState>(
+                  buildWhen: (_, current) => current is ChangeProfileState,
+                  builder: (context, state) {
+                    state as ChangeProfileState;
+                    return Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        PublicText(
+                          txt: state.name,
+                          size: 24.sp,
+                          fw: FontWeight.w600,
+                        ),
+                        8.ph,
+                        PublicText(
+                          txt: state.email,
+                          size: 14.sp,
+                          color: AppColors.grey,
+                        ),
+                      ],
+                    );
+                  },
                 ),
                 20.ph,
                 PublicListTile(

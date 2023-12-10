@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:start_app/data/data_source/remote/api_variables.dart';
 import 'package:start_app/data/network/error_handler.dart';
@@ -31,7 +30,6 @@ class AuthRepository {
         );
         return AuthResponse.fromJson(response.data);
       } catch (error) {
-        log(error.toString());
         final failure = ErrorHandler.handle(error).failure;
         throw CustomException(failure.message);
       }
