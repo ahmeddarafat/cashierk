@@ -7,6 +7,7 @@ class PrefsKeys {
   static const String login = "login";
   static const String token = "token";
   static const String userInfo = "user info";
+  static const String profileImage = "profileImage";
 }
 
 class AppPrefs {
@@ -64,7 +65,7 @@ class AppPrefs {
     );
   }
 
-  ({ String email, String name, String phone}) getUserInfo() {
+  ({String email, String name, String phone}) getUserInfo() {
     final userInfo = _sharedPrefs.getStringList(PrefsKeys.userInfo);
     return (
       name: userInfo?[0] ?? "Unknown",
@@ -75,6 +76,19 @@ class AppPrefs {
 
   void removeUserInfo() {
     _sharedPrefs.remove(PrefsKeys.userInfo);
+  }
+
+  /// profileImage
+  Future<void> setProfileImage(String profileImage) async {
+    await _sharedPrefs.setString(PrefsKeys.profileImage, profileImage);
+  }
+
+  String getProfileImage() {
+    return _sharedPrefs.getString(PrefsKeys.profileImage) ?? "Unknown";
+  }
+
+  Future<void> removeProfileImage() async {
+    await _sharedPrefs.remove(PrefsKeys.profileImage);
   }
 
   void clear() {

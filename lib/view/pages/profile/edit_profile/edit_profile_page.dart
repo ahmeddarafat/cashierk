@@ -1,16 +1,45 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:start_app/data/data_source/local/app_prefs.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
+import 'package:start_app/resources/service_locator/service_locator.dart';
+import 'package:start_app/view_model/profile/profile/profile_cubit.dart';
 
-import '../../../../resources/constants/app_assets.dart';
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/styles/app_colors.dart';
 import '../../../widgets/public_button.dart';
+import '../../../widgets/public_circular_image.dart';
 import '../../../widgets/public_text.dart';
 import '../../../widgets/public_text_form_field.dart';
 
-class EditProfilePage extends StatelessWidget {
+class EditProfilePage extends StatefulWidget {
   const EditProfilePage({super.key});
+
+  @override
+  State<EditProfilePage> createState() => _EditProfilePageState();
+}
+
+class _EditProfilePageState extends State<EditProfilePage> {
+  late final AppPrefs appPrefs;
+  late final ({String email, String name, String phone}) userInfo;
+  late final ProfileCubit cubit;
+
+  @override
+  void initState() {
+    super.initState();
+    cubit = ProfileCubit.getInstance(context);
+    cubit.init();
+    appPrefs = getIt<AppPrefs>();
+    userInfo = appPrefs.getUserInfo();
+  }
+
+  @override
+  void dispose() {
+    cubit.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,88 +62,90 @@ class EditProfilePage extends StatelessWidget {
         body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 40.h),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.center,
-                  child: Stack(
-                    children: [
-                      CircleAvatar(
-                        radius: 70.w,
-                        backgroundColor: AppColors.orangePrimary,
-                        child: Image.asset(
-                          Assets.imagesProfile,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 2.h,
-                        right: 2.w,
-                        child: InkWell(
-                          onTap: () {},
-                          child: Container(
-                            padding: const EdgeInsets.all(6),
-                            decoration: const BoxDecoration(
-                              color: AppColors.orangePrimary,
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(
-                              Icons.edit,
-                              size: 18.w,
-                              color: AppColors.white,
+            child: Form(
+              key: cubit.formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: Stack(
+                      children: [
+                        PublicCircularImage(image: cubit.image),
+                        Positioned(
+                          bottom: 2.h,
+                          right: 2.w,
+                          child: InkWell(
+                            onTap: () {
+                              cubit.pickImage(ImageSource.gallery);
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.all(6),
+                              decoration: const BoxDecoration(
+                                color: AppColors.orangePrimary,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                Icons.edit,
+                                size: 18.w,
+                                color: AppColors.white,
+                              ),
                             ),
                           ),
-                        ),
-                      )
-                    ],
+                        )
+                      ],
+                    ),
                   ),
-                ),
-                24.ph,
-
-                /// Username
-                PublicText(
-                  txt: S.of(context).username,
-                  fw: FontWeight.w500,
-                ),
-                PublicTextFormField(
-                  hint: 'Ahmed Arafat',
-                  keyboardtype: TextInputType.text,
-                  controller: TextEditingController(),
-                  validator: (name) {
-                    if (name!.length < 3) {
-                      return S.of(context).enterFirstName;
-                    }
-                    return null;
-                  },
-                ),
-                24.ph,
-
-                /// Email
-                PublicText(
-                  txt: S.of(context).email,
-                  fw: FontWeight.w500,
-                ),
-                PublicTextFormField(
-                  hint: "arafat11@gmail.com",
-                  keyboardtype: TextInputType.emailAddress,
-                  controller: TextEditingController(),
-                  showprefixIcon: true,
-                  prefixIcon: Icons.email,
-                  validator: (email) {
-                    if (email!.isEmailValid()) {
+                  24.ph,
+            
+                  /// Username
+                  PublicText(
+                    txt: S.of(context).username,
+                    fw: FontWeight.w500,
+                  ),
+                  PublicTextFormField(
+                    hint: userInfo.name,
+                    keyboardtype: TextInputType.text,
+                    controller: cubit.nameController,
+                    validator: (name) {
+                      if (name!.length < 3) {
+                        return S.of(context).enterFirstName;
+                      }
                       return null;
-                    }
-                    return S.of(context).invalidEmailMeg;
-                  },
-                ),
-                125.ph,
-                PublicButton(
-                  title: S.of(context).save,
-                  width: double.infinity,
-                  onPressed: () {},
-                )
-              ],
+                    },
+                  ),
+                  24.ph,
+            
+                  /// Email
+                  PublicText(
+                    txt: S.of(context).email,
+                    fw: FontWeight.w500,
+                  ),
+                  PublicTextFormField(
+                    hint: userInfo.email,
+                    keyboardtype: TextInputType.emailAddress,
+                    controller: cubit.emailController,
+                    showprefixIcon: true,
+                    prefixIcon: Icons.email,
+                    validator: (email) {
+                      if (email!.isEmailValid()) {
+                        return null;
+                      }
+                      return S.of(context).invalidEmailMeg;
+                    },
+                  ),
+                  125.ph,
+                  PublicButton(
+                    title: S.of(context).save,
+                    width: double.infinity,
+                    onPressed: () {
+                      // To dismiss keyboard
+                      FocusScope.of(context).unfocus();
+                      cubit.editUserInfo();
+                    },
+                  )
+                ],
+              ),
             ),
           ),
         ),
@@ -122,3 +153,5 @@ class EditProfilePage extends StatelessWidget {
     );
   }
 }
+
+

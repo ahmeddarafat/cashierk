@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:start_app/data/data_source/local/app_prefs.dart';
 import 'package:start_app/data/models/remote/auth_request.dart';
+import 'package:start_app/data/models/remote/auth_response.dart';
 import 'package:start_app/data/repository/auth_repository.dart';
 
 import '../../../data/network/custom_exception.dart';
@@ -78,19 +79,8 @@ class RegisterCubit extends Cubit<RegisterState> {
         emit(RegisterLoadingState());
         try {
           final response = await repo.register(request);
-        // if (response.status == 0) {
-          appPrefs.setUserLoggedIn();
-          appPrefs.setToken(response.token);
-          final user = response.user;
-          appPrefs.setUserInfo(
-            name: user.name,
-            email: user.email,
-            phone: user.phone,
-          );
+          _storeDataLocally(response);
           emit(RegisterSuccessState());
-          // } else {
-          //   emit(AuthnErrorState(response.message));
-          // }
         } catch (e) {
           if (e is CustomException) {
             emit(RegisterErrorState(e.message));
@@ -100,5 +90,16 @@ class RegisterCubit extends Cubit<RegisterState> {
         emit(RegisterErrorState(S.current.acceptTermsErrorMessage));
       }
     }
+  }
+
+  void _storeDataLocally(AuthResponse response) {
+    appPrefs.setUserLoggedIn();
+    appPrefs.setToken(response.token);
+    final user = response.user;
+    appPrefs.setUserInfo(
+      name: user.name,
+      email: user.email,
+      phone: user.phone,
+    );
   }
 }

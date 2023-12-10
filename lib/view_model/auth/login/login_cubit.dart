@@ -4,6 +4,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter/material.dart';
+import 'package:start_app/data/models/remote/auth_response.dart';
 import 'package:start_app/data/repository/auth_repository.dart';
 
 import '../../../data/data_source/local/app_prefs.dart';
@@ -50,7 +51,6 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   /// checkboxes
-
   void changeRememberMe() {
     rememberMe = !rememberMe;
     emit(ChangeRememberMeState(rememberMe));
@@ -66,18 +66,7 @@ class LoginCubit extends Cubit<LoginState> {
       emit(LoginLoadingState());
       try {
         final response = await repo.login(request);
-        // if (response.status == 1) {
-        appPrefs.setToken(response.token);
-        rememberMe ? appPrefs.setUserLoggedIn() : null;
-        final user = response.user;
-        appPrefs.setUserInfo(
-          name: user.name,
-          email: user.email,
-          phone: user.phone,
-        );
-        // } else {
-        //   emit(LoginErrorState("Email or Passowrd is worng"));
-        // }
+        _storeDataLocally(response);
         emit(LoginSuccessState());
       } catch (e) {
         log(e.toString());
@@ -88,11 +77,22 @@ class LoginCubit extends Cubit<LoginState> {
     }
   }
 
+  void _storeDataLocally(AuthResponse response) {
+    final user = response.user;
+    appPrefs.setToken(response.token);
+    rememberMe ? appPrefs.setUserLoggedIn() : null;
+    appPrefs.setUserInfo(
+      name: user.name,
+      email: user.email,
+      phone: user.phone,
+    );
+  }
+
   Future<void> logout() async {
     emit(LogoutLoadingState());
     try {
       await repo.logout(appPrefs.getToken());
-      appPrefs.clear();
+      appPrefs.logout();
       emit(LogoutSuccessState());
     } catch (e) {
       if (e is CustomException) {

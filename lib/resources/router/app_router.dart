@@ -7,6 +7,7 @@ import 'package:start_app/view/pages/auth/login/login_page.dart';
 import 'package:start_app/view/pages/auth/reset_password/reset_password_page.dart';
 import 'package:start_app/view/pages/favourites/favourites_page.dart';
 import 'package:start_app/view/pages/layouts/layouts_page.dart';
+import 'package:start_app/view/pages/onboarding/onboarding_page.dart';
 import 'package:start_app/view/pages/profile/change_passwored/change_password_page.dart';
 import 'package:start_app/view/pages/profile/notification_settings/notificaiton_settings_page.dart';
 import 'package:start_app/view/pages/recepits/order_details/order_details_page.dart';
@@ -28,6 +29,7 @@ class AppRoutes {
   AppRoutes._private();
 
   /// Auth
+  static const onboarding = "onboarding";
   static const login = "login";
   static const register = "register";
   static const forgotPassword = "forgot password";
@@ -65,12 +67,13 @@ class RouteGenerate {
   static Route<dynamic> getRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       /// Auth
+      case AppRoutes.onboarding:
+        return MaterialPageRoute(
+          builder: (_) => const OnboardingPage(),
+        );
       case AppRoutes.login:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (_) => LoginCubit(getIt()),
-            child: const LoginPage(),
-          ),
+          builder: (_) => const LoginPage(),
         );
       case AppRoutes.register:
         return MaterialPageRoute(
