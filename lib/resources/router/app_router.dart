@@ -13,6 +13,7 @@ import 'package:start_app/view/pages/profile/notification_settings/notificaiton_
 import 'package:start_app/view/pages/recepits/order_details/order_details_page.dart';
 import 'package:start_app/view/pages/scan/cart/cart_page.dart';
 import 'package:start_app/view/pages/scan/order_state/order_state_page.dart';
+import 'package:start_app/view/pages/scan/qr_view/qr_view_page.dart';
 import 'package:start_app/view_model/auth/login/login_cubit.dart';
 import 'package:start_app/view_model/auth/register/register_cubit.dart';
 import 'package:start_app/view_model/profile/change_password/change_password_cubit.dart';
@@ -58,6 +59,7 @@ class AppRoutes {
   /// Scan
   static const cart = "cart";
   static const orderState = "order state";
+  static const qrView = "qr view";
 
   /// Recepits
   static const orderDetails = "order details";
@@ -140,10 +142,14 @@ class RouteGenerate {
           builder: (_) => const NotificationsSettingsPage(),
         );
 
-      /// Cart
+      /// Scan
       case AppRoutes.cart:
         return MaterialPageRoute(
           builder: (_) => const CartPage(),
+        );
+      case AppRoutes.qrView:
+        return MaterialPageRoute(
+          builder: (_) => const QRViewPage(),
         );
       case AppRoutes.orderState:
         return MaterialPageRoute(
