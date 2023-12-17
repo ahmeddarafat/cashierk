@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:start_app/data/models/local/recepits/order_model.dart';
+import 'package:start_app/data/repository/scan_repository.dart';
 import 'package:start_app/resources/service_locator/service_locator.dart';
 import 'package:start_app/view/pages/auth/email_verification/email_verification_page.dart';
 import 'package:start_app/view/pages/auth/login/login_page.dart';
@@ -17,6 +18,7 @@ import 'package:start_app/view/pages/scan/qr_view/qr_view_page.dart';
 import 'package:start_app/view_model/auth/login/login_cubit.dart';
 import 'package:start_app/view_model/auth/register/register_cubit.dart';
 import 'package:start_app/view_model/profile/change_password/change_password_cubit.dart';
+import 'package:start_app/view_model/scan/qr_view_model/qr_bloc.dart';
 
 import '../../view/pages/auth/forgot_password/forgot_password_page.dart';
 import '../../view/pages/auth/register/register_page.dart';
@@ -149,7 +151,10 @@ class RouteGenerate {
         );
       case AppRoutes.qrView:
         return MaterialPageRoute(
-          builder: (_) => const QRViewPage(),
+          builder: (_) => BlocProvider(
+            create: (context) => QRBloc(getIt<ScanRepository>()),
+            child: const QRViewPage(),
+          ),
         );
       case AppRoutes.orderState:
         return MaterialPageRoute(

@@ -1,5 +1,5 @@
 
-import 'package:start_app/data/data_source/remote/api_variables.dart';
+import 'package:start_app/data/data_source/remote/api_constants.dart';
 import 'package:start_app/data/network/error_handler.dart';
 
 import '../data_source/remote/api_service.dart';

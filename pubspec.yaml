@@ -24,6 +24,7 @@ dependencies:
 
   # State Management
   flutter_bloc: ^8.1.3
+  bloc_concurrency: ^0.2.2
   meta: ^1.9.1
   equatable: ^2.0.5
 
@@ -44,6 +45,8 @@ dependencies:
 
   # Local Database
   shared_preferences: ^2.2.1
+
+  # Others
   image_picker: ^1.0.4
   qr_code_scanner: ^1.0.1
 

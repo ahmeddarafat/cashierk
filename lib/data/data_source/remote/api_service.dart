@@ -7,11 +7,14 @@ const String baseUrl = "https://cashierc.pharmaco-medica.com/api";
 class EndPoints {
   EndPoints._();
 
+  /// order
   static const login = "/auth/login";
   static const register = "/auth/register";
   static const profile = "/auth/user-profile";
   static const logout = "/auth/logout";
 
+  /// order
+  static const newOrder = "/orders";
 }
 
 class Headers {
