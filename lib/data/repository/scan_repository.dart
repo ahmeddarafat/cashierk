@@ -1,7 +1,6 @@
 import 'package:start_app/data/data_source/local/app_prefs.dart';
 import 'package:start_app/data/data_source/remote/api_constants.dart';
 import 'package:start_app/data/models/remote/order/order_model.dart';
-import 'package:start_app/resources/service_locator/service_locator.dart';
 
 import '../data_source/remote/api_service.dart';
 import '../network/custom_exception.dart';
@@ -29,7 +28,7 @@ class ScanRepository {
           body: {},
           token: _appPrefs.getToken(),
         );
-        return response.data[ApiVars.orderNumber];
+        return response.data[ApiConstants.orderNumber];
       } catch (error) {
         final failure = ErrorHandler.handle(error).failure;
         throw CustomException(failure.message);

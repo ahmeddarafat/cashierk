@@ -17,7 +17,6 @@ import 'package:start_app/view/pages/scan/cart/cart_page.dart';
 import 'package:start_app/view/pages/scan/order_state/order_state_page.dart';
 import 'package:start_app/view/pages/scan/qr_view/qr_view_page.dart';
 import 'package:start_app/view/pages/scan/waiting/waiting_page.dart';
-import 'package:start_app/view_model/auth/login/login_cubit.dart';
 import 'package:start_app/view_model/auth/register/register_cubit.dart';
 import 'package:start_app/view_model/profile/change_password/change_password_cubit.dart';
 import 'package:start_app/view_model/scan/qr_code/qr_bloc.dart';

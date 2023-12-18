@@ -15,10 +15,10 @@ class OrderModel {
 
   factory OrderModel.fromMap(Map<String, dynamic> map) {
     return OrderModel(
-      number: map[ApiVars.orderNumber] as String,
-      status: map[ApiVars.orderStatus] as String,
-      totalPrice: map[ApiVars.orderTotal] as String,
-      items: (map[ApiVars.orderItems] as List)
+      number: map[ApiConstants.orderNumber] as String,
+      status: map[ApiConstants.orderStatus] as String,
+      totalPrice: map[ApiConstants.orderTotal] as String,
+      items: (map[ApiConstants.orderItems] as List)
           .map((item) => OrderItem.fromMap(item))
           .toList(),
     );
@@ -43,10 +43,10 @@ class OrderItem {
 
   factory OrderItem.fromMap(Map<String, dynamic> map) {
     return OrderItem(
-      name: map[ApiVars.productName] as String,
-      image: map[ApiVars.productImage] as String,
-      quantity: map[ApiVars.quantity] as int,
-      unitPrice: map[ApiVars.unitPrice] as String,
+      name: map[ApiConstants.productName] as String,
+      image: map[ApiConstants.productImage] as String,
+      quantity: map[ApiConstants.quantity] as int,
+      unitPrice: map[ApiConstants.unitPrice] as String,
     );
   }
 }
