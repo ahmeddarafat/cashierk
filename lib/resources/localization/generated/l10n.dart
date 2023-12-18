@@ -1329,6 +1329,36 @@ class S {
       args: [],
     );
   }
+
+  /// `--------------------------- waiting comment -------------------------------`
+  String get Wating_comment {
+    return Intl.message(
+      '--------------------------- waiting comment -------------------------------',
+      name: 'Wating_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please Wait`
+  String get pleaseWait {
+    return Intl.message(
+      'Please Wait',
+      name: 'pleaseWait',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We are adding your products`
+  String get waitingSubtitle {
+    return Intl.message(
+      'We are adding your products',
+      name: 'waitingSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

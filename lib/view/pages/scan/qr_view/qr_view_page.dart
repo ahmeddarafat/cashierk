@@ -7,8 +7,8 @@ import 'package:start_app/data/repository/scan_repository.dart';
 import 'package:start_app/resources/router/app_router.dart';
 import 'package:start_app/resources/service_locator/service_locator.dart';
 import 'package:start_app/view/widgets/public_button.dart';
-import 'package:start_app/view_model/scan/qr_view_model/qr_bloc.dart';
-import 'package:start_app/view_model/scan/qr_view_model/qr_state.dart';
+import 'package:start_app/view_model/scan/qr_code/qr_bloc.dart';
+import 'package:start_app/view_model/scan/qr_code/qr_state.dart';
 
 import '../../../../resources/styles/app_colors.dart';
 import '../../../widgets/public_snack_bar.dart';

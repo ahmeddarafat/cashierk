@@ -8,6 +8,7 @@ class PrefsKeys {
   static const String token = "token";
   static const String userInfo = "user info";
   static const String profileImage = "profileImage";
+  static const String orderNumber = "order number";
 }
 
 class AppPrefs {
@@ -89,6 +90,19 @@ class AppPrefs {
 
   Future<void> removeProfileImage() async {
     await _sharedPrefs.remove(PrefsKeys.profileImage);
+  }
+
+  /// orderNumber
+  Future<void> setOrderNumber(String orderNumber) async {
+    await _sharedPrefs.setString(PrefsKeys.orderNumber, orderNumber);
+  }
+
+  String getOrderNumber() {
+    return _sharedPrefs.getString(PrefsKeys.orderNumber) ?? "Unknown";
+  }
+
+  Future<void> removeOrderNumber() async {
+    await _sharedPrefs.remove(PrefsKeys.orderNumber);
   }
 
   void clear() {

@@ -4,11 +4,11 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter/material.dart';
-import 'package:start_app/data/models/remote/auth_response.dart';
 import 'package:start_app/data/repository/auth_repository.dart';
 
 import '../../../data/data_source/local/app_prefs.dart';
-import '../../../data/models/remote/auth_request.dart';
+import '../../../data/models/remote/auth/auth_request.dart';
+import '../../../data/models/remote/auth/auth_response.dart';
 import '../../../data/network/custom_exception.dart';
 import '../../../resources/service_locator/service_locator.dart';
 

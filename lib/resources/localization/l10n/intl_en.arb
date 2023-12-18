@@ -126,7 +126,10 @@
     "orderId" : "Order ID",
     "shopName":"Shop Name",
     "date":"Date",
-    "notes":"Notes"
+    "notes":"Notes",
+    "Wating_comment": "--------------------------- waiting comment -------------------------------",
+    "pleaseWait": "Please Wait",
+    "waitingSubtitle": "We are adding your products"
 
 
 

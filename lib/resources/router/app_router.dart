@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:start_app/data/models/local/recepits/order_model.dart';
+import 'package:start_app/data/models/remote/order/order_model.dart';
 import 'package:start_app/data/repository/scan_repository.dart';
 import 'package:start_app/resources/service_locator/service_locator.dart';
 import 'package:start_app/view/pages/auth/email_verification/email_verification_page.dart';
@@ -15,10 +16,12 @@ import 'package:start_app/view/pages/recepits/order_details/order_details_page.d
 import 'package:start_app/view/pages/scan/cart/cart_page.dart';
 import 'package:start_app/view/pages/scan/order_state/order_state_page.dart';
 import 'package:start_app/view/pages/scan/qr_view/qr_view_page.dart';
+import 'package:start_app/view/pages/scan/waiting/waiting_page.dart';
 import 'package:start_app/view_model/auth/login/login_cubit.dart';
 import 'package:start_app/view_model/auth/register/register_cubit.dart';
 import 'package:start_app/view_model/profile/change_password/change_password_cubit.dart';
-import 'package:start_app/view_model/scan/qr_view_model/qr_bloc.dart';
+import 'package:start_app/view_model/scan/qr_code/qr_bloc.dart';
+import 'package:start_app/view_model/scan/waiting/wating_viewmodel.dart';
 
 import '../../view/pages/auth/forgot_password/forgot_password_page.dart';
 import '../../view/pages/auth/register/register_page.dart';
@@ -62,6 +65,7 @@ class AppRoutes {
   static const cart = "cart";
   static const orderState = "order state";
   static const qrView = "qr view";
+  static const waiting = "waiting";
 
   /// Recepits
   static const orderDetails = "order details";
@@ -147,7 +151,8 @@ class RouteGenerate {
       /// Scan
       case AppRoutes.cart:
         return MaterialPageRoute(
-          builder: (_) => const CartPage(),
+          builder: (_) =>
+              CartPage(order: routeSettings.arguments as OrderModel),
         );
       case AppRoutes.qrView:
         return MaterialPageRoute(
@@ -160,6 +165,13 @@ class RouteGenerate {
         return MaterialPageRoute(
           builder: (_) => OrderStatePage(
             isSuccess: routeSettings.arguments as bool,
+          ),
+        );
+      case AppRoutes.waiting:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (_) => WaitingViewModel(getIt<ScanRepository>()),
+            child: const WaitingPage(),
           ),
         );
 

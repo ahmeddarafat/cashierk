@@ -8,6 +8,6 @@ abstract class QREvent extends Equatable {
 }
 
 class QRListeningEvent extends QREvent {
-  const QRListeningEvent();
-
+  final String code;
+  const QRListeningEvent(this.code);
 }

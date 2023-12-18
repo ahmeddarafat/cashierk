@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/data/dummy_data/dummy_data.dart';
+import 'package:start_app/data/models/remote/order/order_model.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
 import 'package:start_app/resources/router/app_router.dart';
 import 'package:start_app/view/widgets/public_button.dart';
@@ -12,7 +13,11 @@ import '../../../widgets/custom_price_row.dart';
 import '../../../widgets/public_text.dart';
 
 class CartPage extends StatelessWidget {
-  const CartPage({super.key});
+  final OrderModel order;
+  const CartPage({
+    super.key,
+    required this.order,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +41,7 @@ class CartPage extends StatelessWidget {
         ),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-          child: Column( 
+          child: Column(
             children: [
               Expanded(
                 child: ListView.separated(
