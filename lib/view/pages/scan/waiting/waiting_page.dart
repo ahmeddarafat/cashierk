@@ -64,18 +64,20 @@ Widget _waitingContent(BuildContext context) {
             children: [
               Lottie.asset(
                 Assets.jsonsLoading,
-                height: 100.w,
-                width: 100.w,
+                height: 150.w,
+                width: 150.w,
               ),
-              40.ph,
+              30.ph,
               PublicText(
                 txt: S.of(context).pleaseWait,
-                size: 20.sp,
+                size: 22.sp,
                 fw: FontWeight.bold,
+                letterSpacing: 2.8.h,
               ),
               20.ph,
               PublicText(
                 txt: S.of(context).waitingSubtitle,
+                size: 18.sp,
                 color: AppColors.grey,
                 align: TextAlign.center,
               ),

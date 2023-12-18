@@ -26,7 +26,7 @@ class _QRViewPageState extends State<QRViewPage> {
   @override
   void initState() {
     super.initState();
-    _viewModel = context.read();
+    _viewModel = QRBloc.getInstance(context);
     _viewModel.init();
   }
 
@@ -47,7 +47,7 @@ class _QRViewPageState extends State<QRViewPage> {
             context: context,
           );
         } else if (state is QRSuccessState) {
-          Navigator.pushReplacementNamed(context, AppRoutes.cart);
+          Navigator.pushReplacementNamed(context, AppRoutes.waiting);
         }
       },
       child: _qrViewContent(context),

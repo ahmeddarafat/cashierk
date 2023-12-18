@@ -42,9 +42,8 @@ class ScanRepository {
   Future<OrderModel> getOrderItems(String orderNumber) async {
     if (await _networkInfo.isConnected) {
       try {
-        final response = await _apiService.postData(
+        final response = await _apiService.getData(
           endPoint: "${EndPoints.newOrder}/$orderNumber",
-          body: {},
           token: _appPrefs.getToken(),
         );
         return OrderModel.fromMap(response.data);

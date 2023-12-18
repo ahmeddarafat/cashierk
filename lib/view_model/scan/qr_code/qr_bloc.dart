@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,6 +26,8 @@ class QRBloc extends Bloc<QREvent, QRState> {
     on<QRListeningEvent>(_onQRCodeActived, transformer: droppable());
   }
 
+  static QRBloc getInstance(BuildContext context) => context.read();
+
   void init() {
     qrKey = GlobalKey(debugLabel: 'QR');
     _appPrefs = getIt<AppPrefs>();
@@ -49,6 +52,7 @@ class QRBloc extends Bloc<QREvent, QRState> {
       try {
         final orderNumber = await repo.createNewOrder();
         _appPrefs.setOrderNumber(orderNumber);
+        log("orderNumber: $orderNumber");
 
         emit(const QRSuccessState());
       } catch (error) {
