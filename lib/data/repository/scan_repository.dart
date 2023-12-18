@@ -10,15 +10,15 @@ import '../network/network_info.dart';
 
 class ScanRepository {
   final NetworkInfo _networkInfo;
-  final ApiService _apiService;
-  late AppPrefs _appPrefs;
+  late final ApiService _apiService;
+  late final AppPrefs _appPrefs;
 
   ScanRepository({
     required NetworkInfo networkInfo,
-    required ApiService apiService,
+    required AppPrefs appPerfs,
   })  : _networkInfo = networkInfo,
-        _apiService = apiService {
-    _appPrefs = getIt<AppPrefs>();
+        _appPrefs = appPerfs {
+    _apiService = ApiService(EndPoints.serverBaseUrl);
   }
 
   Future<String> createNewOrder() async {

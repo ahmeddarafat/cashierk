@@ -4,7 +4,6 @@ import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:start_app/data/repository/auth_repository.dart';
 import '../../data/data_source/local/app_prefs.dart';
-import '../../data/data_source/remote/api_service.dart';
 
 import '../../data/network/network_info.dart';
 import '../../data/repository/scan_repository.dart';
@@ -21,11 +20,6 @@ Future<void> initModule() async {
     () => AppPrefs(sharedPrefs),
   );
 
-  /// api service
-  getIt.registerLazySingleton(
-    () => ApiService(),
-  );
-
   /// network Info
   getIt.registerLazySingleton<NetworkInfo>(
     () => NetworkInfoImpl(
@@ -37,7 +31,6 @@ Future<void> initModule() async {
   getIt.registerLazySingleton(
     () => AuthRepository(
       networkInfo: getIt(),
-      apiService: getIt(),
     ),
   );
 
@@ -45,7 +38,7 @@ Future<void> initModule() async {
   getIt.registerLazySingleton(
     () => ScanRepository(
       networkInfo: getIt(),
-      apiService: getIt(),
+      appPerfs: getIt(),
     ),
   );
 }

@@ -2,10 +2,11 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
-const String baseUrl = "https://cashierc.pharmaco-medica.com/api";
-
 class EndPoints {
   EndPoints._();
+
+  static const serverBaseUrl = "https://cashierc.pharmaco-medica.com/api";
+  static const paymentBaseUrl = "https://cashierc.pharmaco-medica.com/api";
 
   /// order
   static const login = "/auth/login";
@@ -27,13 +28,14 @@ class Headers {
 
 class ApiService {
   final Dio _dio;
+  final String baseUrl;
 
   static Map<String, String> headers = {
     Headers.contentType: Headers.applicationJson,
     Headers.accept: Headers.applicationJson,
   };
 
-  ApiService()
+  ApiService(this.baseUrl)
       : _dio = Dio(
           BaseOptions(
             baseUrl: baseUrl,

@@ -35,7 +35,7 @@ class WaitingViewModel extends Cubit<WaitingState> {
     final orderNumber = _appPrefs.getOrderNumber();
     try {
       var order = await repo.getOrderItems(orderNumber);
-      while (order.orderStatus == OrderStatus.pending.name) {
+      while (order.status == OrderStatus.pending.name) {
         order = await repo.getOrderItems(orderNumber);
         await Future.delayed(const Duration(milliseconds: 500));
       }

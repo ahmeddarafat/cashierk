@@ -1,4 +1,3 @@
-
 import 'package:start_app/data/data_source/remote/api_constants.dart';
 import 'package:start_app/data/network/error_handler.dart';
 
@@ -10,13 +9,13 @@ import '../network/network_info.dart';
 
 class AuthRepository {
   final NetworkInfo _networkInfo;
-  final ApiService _apiService;
+  late final ApiService _apiService;
 
   AuthRepository({
     required NetworkInfo networkInfo,
-    required ApiService apiService,
-  })  : _networkInfo = networkInfo,
-        _apiService = apiService;
+  }) : _networkInfo = networkInfo {
+    _apiService = ApiService(EndPoints.serverBaseUrl);
+  }
 
   Future<AuthResponse> login(LoginRequest request) async {
     if (await _networkInfo.isConnected) {
