@@ -1,6 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/data/dummy_data/dummy_data.dart';
+import 'package:start_app/data/models/remote/order/order_model.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
 import 'package:start_app/resources/router/app_router.dart';
 import 'package:start_app/view/widgets/public_button.dart';
@@ -11,8 +13,14 @@ import '../../../../resources/styles/app_colors.dart';
 import '../../../widgets/custom_price_row.dart';
 import '../../../widgets/public_text.dart';
 
+part 'components/order_item_row.dart';
+
 class CartPage extends StatelessWidget {
-  const CartPage({super.key});
+  final OrderModel order;
+  const CartPage({
+    super.key,
+    required this.order,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,53 +44,13 @@ class CartPage extends StatelessWidget {
         ),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
-          child: Column( 
+          child: Column(
             children: [
               Expanded(
                 child: ListView.separated(
-                  itemCount: DummyData.cartItems.length,
+                  itemCount: order.items.length,
                   itemBuilder: (_, index) {
-                    return Row(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Container(
-                          height: 60.w,
-                          width: 60.w,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            color: AppColors.backgroundGrey,
-                          ),
-                          child: Image.asset(DummyData.cartItems[index].image),
-                        ),
-                        16.pw,
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            PublicText(
-                              txt: DummyData.cartItems[index].name,
-                              size: 18.sp,
-                            ),
-                            4.ph,
-                            PublicText(
-                              txt:
-                                  "Quntities: ${DummyData.cartItems[index].amount}",
-                              color: AppColors.grey,
-                              size: 12.sp,
-                            ),
-                            4.ph,
-                            PublicText(
-                              txt: DummyData.cartItems[index].price,
-                              size: 14.sp,
-                            ),
-                          ],
-                        ),
-                        const Spacer(),
-                        PublicText(
-                          txt:
-                              "\$ ${DummyData.cartItems[index].totalPrice.orAbout()}",
-                        ),
-                      ],
-                    );
+                    return OrderItemRow(item: order.items[index]);
                   },
                   separatorBuilder: (_, __) => Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.h),
@@ -91,30 +59,30 @@ class CartPage extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 10.h),
+                padding: EdgeInsets.only(top: 10.h,left: 15.w,right: 15.w),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     CustomPriceRow(
                       title: S.of(context).subtotal,
-                      price: 22,
+                      price: order.totalPrice,
                       color: AppColors.grey,
                       size: 16.sp,
                     ),
                     10.ph,
                     CustomPriceRow(
                       title: S.of(context).taxes,
-                      price: 2.5,
+                      price: "0",
                       color: AppColors.grey,
                       size: 14.sp,
                     ),
                     10.ph,
                     CustomPriceRow(
                       title: S.of(context).total,
-                      price: 24.5,
+                      price: order.totalPrice,
                       size: 18.sp,
                     ),
-                    10.ph,
+                    15.ph,
                     PublicButton(
                       onPressed: () {
                         // TODO: "logic - should go to payment"

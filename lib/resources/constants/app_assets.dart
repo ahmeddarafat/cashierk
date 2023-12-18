@@ -112,4 +112,8 @@ class Assets {
   /// Assets for imagesSuccess
   /// assets/images/success.png
   static const String imagesSuccess = "assets/images/success.png";
+
+  /// Assets for jsonsLoading
+  /// assets/jsons/loading.json
+  static const String jsonsLoading = "assets/jsons/loading.json";
 }

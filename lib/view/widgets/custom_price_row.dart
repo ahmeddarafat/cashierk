@@ -11,7 +11,7 @@ import 'public_text.dart';
 
 class CustomPriceRow extends StatelessWidget {
   final String title;
-  final double price;
+  final String price;
   final Color? color;
   final double? size;
   const CustomPriceRow({
@@ -33,7 +33,7 @@ class CustomPriceRow extends StatelessWidget {
         ),
         const Spacer(),
         PublicText(
-          txt: "\$${price.orAbout()}",
+          txt: "\$$price",
           color: color,
           size: size,
         ),

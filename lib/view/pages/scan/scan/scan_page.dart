@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/resources/constants/app_assets.dart';
@@ -8,6 +10,7 @@ import 'package:start_app/resources/styles/app_colors.dart';
 import 'package:start_app/view/widgets/public_button.dart';
 import 'package:start_app/view/widgets/public_text.dart';
 
+
 class ScanPage extends StatelessWidget {
   const ScanPage({super.key});
 
@@ -16,7 +19,7 @@ class ScanPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-           padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -41,8 +44,8 @@ class ScanPage extends StatelessWidget {
                 ),
                 100.ph,
                 PublicButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, AppRoutes.cart);
+                  onPressed: ()  {
+                    Navigator.pushNamed(context, AppRoutes.qrView);
                   },
                   title: S.of(context).scanNow,
                 )

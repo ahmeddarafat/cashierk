@@ -23,6 +23,8 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "OrderStatus": MessageLookupByLibrary.simpleMessage("Order Status"),
+        "Wating_comment": MessageLookupByLibrary.simpleMessage(
+            "--------------------------- waiting comment -------------------------------"),
         "WelcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
         "about": MessageLookupByLibrary.simpleMessage("About"),
         "acceptTermsErrorMessage": MessageLookupByLibrary.simpleMessage(
@@ -162,6 +164,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "phone": MessageLookupByLibrary.simpleMessage("Phone Number"),
         "phoneHint": MessageLookupByLibrary.simpleMessage(
             "Please, enter your phone number"),
+        "pleaseWait": MessageLookupByLibrary.simpleMessage("Please Wait"),
         "privacyPolicy":
             MessageLookupByLibrary.simpleMessage("Privacy & Policy"),
         "proceedCheckout":
@@ -207,6 +210,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "vegtables": MessageLookupByLibrary.simpleMessage("Vegtables"),
         "verify": MessageLookupByLibrary.simpleMessage("Verfiy"),
         "viewDetails": MessageLookupByLibrary.simpleMessage("View Details"),
+        "waitingSubtitle":
+            MessageLookupByLibrary.simpleMessage("We are adding your products"),
         "yesLogout": MessageLookupByLibrary.simpleMessage("Yes, logout")
       };
 }
