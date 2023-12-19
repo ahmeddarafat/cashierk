@@ -62,7 +62,9 @@ class ScanRepository {
           endPoint: EndPoints.orders,
           token: _appPrefs.getToken(),
         );
-        return [OrderModel.fromMap(response.data)];
+        return (response.data as List).map((order) {
+          return OrderModel.fromMap(order);
+        }).toList();
       } catch (error) {
         final failure = ErrorHandler.handle(error).failure;
         throw CustomException(failure.message);
