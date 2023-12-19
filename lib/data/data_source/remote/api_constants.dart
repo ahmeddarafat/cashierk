@@ -47,7 +47,7 @@ class EndPoints {
   static const logout = "/auth/logout";
 
   /// order
-  static const newOrder = "/orders";
+  static const orders = "/orders";
 
   /// Payment
   static const authToken = "/auth/tokens";
