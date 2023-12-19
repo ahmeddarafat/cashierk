@@ -4,6 +4,7 @@ import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:start_app/data/repository/auth_repository.dart';
 import 'package:start_app/data/repository/payment_repository.dart';
+import 'package:start_app/data/repository/recepits_repository.dart';
 import '../../data/data_source/local/app_prefs.dart';
 
 import '../../data/network/network_info.dart';
@@ -48,6 +49,14 @@ Future<void> initModule() async {
     () => PaymentRepository(
       networkInfo: getIt(),
       appPrefs: getIt(),
+    ),
+  );
+
+  /// recepits repository
+  getIt.registerLazySingleton(
+    () => RecepitsRepository(
+      networkInfo: getIt(),
+      appPerfs: getIt(),
     ),
   );
 }
