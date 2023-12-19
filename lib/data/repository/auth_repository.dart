@@ -23,8 +23,8 @@ class AuthRepository {
         var response = await _apiService.postData(
           endPoint: EndPoints.login,
           body: {
-            ApiVars.email: request.email,
-            ApiVars.password: request.password,
+            ApiConstants.email: request.email,
+            ApiConstants.password: request.password,
           },
         );
         return AuthResponse.fromJson(response.data);
@@ -43,10 +43,10 @@ class AuthRepository {
         var response = await _apiService.postData(
           endPoint: EndPoints.register,
           body: {
-            ApiVars.name: "${request.firstName} ${request.lastName}",
-            ApiVars.email: request.email,
-            ApiVars.password: request.password,
-            ApiVars.phone: request.phone,
+            ApiConstants.name: "${request.firstName} ${request.lastName}",
+            ApiConstants.email: request.email,
+            ApiConstants.password: request.password,
+            ApiConstants.phone: request.phone,
           },
         );
         return AuthResponse.fromJson(response.data);

@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/resources/localization/generated/l10n.dart';
-import 'package:start_app/view/pages/auth/login/login_page.dart';
-import 'package:start_app/view/pages/layouts/layouts_page.dart';
 import 'package:start_app/view_model/auth/login/login_cubit.dart';
 import 'package:start_app/view_model/auth/reset_pass/reset_cubit.dart';
 import 'package:start_app/view_model/onboarding/onboarding_cubit.dart';
@@ -14,8 +11,6 @@ import 'resources/styles/app_themes.dart';
 
 import 'resources/router/app_router.dart';
 import 'resources/service_locator/service_locator.dart';
-import 'view/pages/onboarding/onboarding_page.dart';
-import 'view_model/profile/change_password/change_password_cubit.dart';
 import 'view_model/profile/profile/profile_cubit.dart';
 
 void main() async {
@@ -66,6 +61,8 @@ class MyApp extends StatelessWidget {
   }
 
   String getInitRoute() {
+    // for testing
+    // return AppRoutes.login;
     AppPrefs appPrefs = getIt<AppPrefs>();
     if (appPrefs.isOnBoardingViewed()) {
       if (appPrefs.isUserLoggedIn()) {

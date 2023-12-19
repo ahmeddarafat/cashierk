@@ -15,10 +15,10 @@ class AuthResponse {
 
   factory AuthResponse.fromJson(Map<String, dynamic> map) {
     return AuthResponse(
-      status: map[ApiVars.status] as int?,
-      message: map[ApiVars.message] as String?,
-      user: User.fromJson(map[ApiVars.user] as Map<String, dynamic>),
-      token: map[ApiVars.token] as String,
+      status: map[ApiConstants.status] as int?,
+      message: map[ApiConstants.message] as String?,
+      user: User.fromJson(map[ApiConstants.user] as Map<String, dynamic>),
+      token: map[ApiConstants.accessToken] as String,
     );
   }
 
@@ -41,9 +41,9 @@ class User {
 
   factory User.fromJson(Map<String, dynamic> map) {
     return User(
-      name: map[ApiVars.name] as String,
-      email: map[ApiVars.email] as String,
-      phone: map[ApiVars.phone] as String,
+      name: map[ApiConstants.name] as String,
+      email: map[ApiConstants.email] as String,
+      phone: map[ApiConstants.phone] as String,
     );
   }
 }
