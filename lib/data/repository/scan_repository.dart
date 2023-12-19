@@ -24,7 +24,7 @@ class ScanRepository {
     if (await _networkInfo.isConnected) {
       try {
         final response = await _apiService.postData(
-          endPoint: EndPoints.newOrder,
+          endPoint: EndPoints.orders,
           body: {},
           token: _appPrefs.getToken(),
         );
@@ -42,10 +42,27 @@ class ScanRepository {
     if (await _networkInfo.isConnected) {
       try {
         final response = await _apiService.getData(
-          endPoint: "${EndPoints.newOrder}/$orderNumber",
+          endPoint: "${EndPoints.orders}/$orderNumber",
           token: _appPrefs.getToken(),
         );
         return OrderModel.fromMap(response.data);
+      } catch (error) {
+        final failure = ErrorHandler.handle(error).failure;
+        throw CustomException(failure.message);
+      }
+    } else {
+      throw CustomException("Check your network connection");
+    }
+  }
+
+  Future<List<OrderModel>> getAllOrder() async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final response = await _apiService.getData(
+          endPoint: EndPoints.orders,
+          token: _appPrefs.getToken(),
+        );
+        return [OrderModel.fromMap(response.data)];
       } catch (error) {
         final failure = ErrorHandler.handle(error).failure;
         throw CustomException(failure.message);
