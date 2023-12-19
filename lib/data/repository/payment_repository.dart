@@ -91,7 +91,7 @@ class PaymentRepository {
           body: {
             ApiConstants.authToken: authToken,
             ApiConstants.amountCents: price,
-            ApiConstants.expiration: 3600,
+            ApiConstants.expiration: 8000,
             ApiConstants.orderId: orderId,
             ApiConstants.currency: "EGP",
             ApiConstants.integrationId: IntegrationIds.cardId,

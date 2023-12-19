@@ -3,6 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:start_app/data/repository/auth_repository.dart';
+import 'package:start_app/data/repository/payment_repository.dart';
 import '../../data/data_source/local/app_prefs.dart';
 
 import '../../data/network/network_info.dart';
@@ -39,6 +40,14 @@ Future<void> initModule() async {
     () => ScanRepository(
       networkInfo: getIt(),
       appPerfs: getIt(),
+    ),
+  );
+
+  /// payment repository
+  getIt.registerLazySingleton(
+    () => PaymentRepository(
+      networkInfo: getIt(),
+      appPrefs: getIt(),
     ),
   );
 }

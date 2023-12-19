@@ -10,6 +10,7 @@ import 'package:start_app/view/pages/auth/reset_password/reset_password_page.dar
 import 'package:start_app/view/pages/favourites/favourites_page.dart';
 import 'package:start_app/view/pages/layouts/layouts_page.dart';
 import 'package:start_app/view/pages/onboarding/onboarding_page.dart';
+import 'package:start_app/view/pages/payment/payment_webview.dart';
 import 'package:start_app/view/pages/profile/change_passwored/change_password_page.dart';
 import 'package:start_app/view/pages/profile/notification_settings/notificaiton_settings_page.dart';
 import 'package:start_app/view/pages/recepits/order_details/order_details_page.dart';
@@ -19,6 +20,7 @@ import 'package:start_app/view/pages/scan/qr_view/qr_view_page.dart';
 import 'package:start_app/view/pages/scan/waiting/waiting_page.dart';
 import 'package:start_app/view_model/auth/register/register_cubit.dart';
 import 'package:start_app/view_model/profile/change_password/change_password_cubit.dart';
+import 'package:start_app/view_model/scan/cart/cart_viewmodel.dart';
 import 'package:start_app/view_model/scan/qr_code/qr_bloc.dart';
 import 'package:start_app/view_model/scan/waiting/wating_viewmodel.dart';
 
@@ -68,6 +70,9 @@ class AppRoutes {
 
   /// Recepits
   static const orderDetails = "order details";
+
+  /// payment
+  static const payment = "payment";
 }
 
 class RouteGenerate {
@@ -150,8 +155,10 @@ class RouteGenerate {
       /// Scan
       case AppRoutes.cart:
         return MaterialPageRoute(
-          builder: (_) =>
-              CartPage(order: routeSettings.arguments as OrderModel),
+          builder: (_) => BlocProvider(
+            create: (context) => CartViewModel(getIt()),
+            child: CartPage(order: routeSettings.arguments as OrderModel),
+          ),
         );
       case AppRoutes.qrView:
         return MaterialPageRoute(
@@ -179,6 +186,14 @@ class RouteGenerate {
         return MaterialPageRoute(
           builder: (_) => OrderDetailsPage(
             order: routeSettings.arguments as Order,
+          ),
+        );
+
+      /// Payment
+      case AppRoutes.payment:
+        return MaterialPageRoute(
+          builder: (_) => PaymentWebView(
+            paymentToken: routeSettings.arguments as String,
           ),
         );
 

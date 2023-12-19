@@ -51,6 +51,7 @@ dependencies:
   qr_code_scanner: ^1.0.1
   lottie: ^2.7.0
   cached_network_image: ^3.3.0
+  webview_flutter: ^4.4.2
 
 dev_dependencies:
   flutter_test:

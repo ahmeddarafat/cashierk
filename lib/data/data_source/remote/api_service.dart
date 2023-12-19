@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
@@ -55,12 +57,13 @@ class ApiService {
     Map<String, dynamic>? query,
     String? token,
   }) async {
+    log("the body: $body");
     return await _dio.post(
       endPoint,
       data: body,
       queryParameters: query,
       options: Options(
-        headers: {"Authorization": "Bearer $token"},
+        headers: token != null ? {"Authorization": "Bearer $token"} : null,
       ),
     );
   }
@@ -74,7 +77,7 @@ class ApiService {
       endPoint,
       queryParameters: query,
       options: Options(
-        headers: {"Authorization": "Bearer $token"},
+        headers: token != null ? {"Authorization": "Bearer $token"} : null,
       ),
     );
   }
