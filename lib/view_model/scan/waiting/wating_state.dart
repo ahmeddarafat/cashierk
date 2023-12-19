@@ -20,5 +20,5 @@ final class WaitingErrorState extends WaitingState {
   const WaitingErrorState(this.message);
 
   @override
-  List<Object?> get props => [message];
+  List<Object> get props => [message];
 }

@@ -20,9 +20,9 @@ class LoginCubit extends Cubit<LoginState> {
   static LoginCubit getInstance(BuildContext context) =>
       BlocProvider.of(context);
 
-  late final TextEditingController emailController;
-  late final TextEditingController passwordController;
-  late final GlobalKey<FormState> formKey;
+  late TextEditingController emailController;
+  late TextEditingController passwordController;
+  late GlobalKey<FormState> formKey;
 
   bool _spinner = false;
   bool rememberMe = false;

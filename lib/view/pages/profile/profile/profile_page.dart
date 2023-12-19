@@ -8,7 +8,6 @@ import 'package:start_app/view/widgets/public_divider.dart';
 import 'package:start_app/view_model/auth/login/login_cubit.dart';
 import 'package:start_app/view_model/profile/profile/profile_cubit.dart';
 
-import '../../../../../resources/constants/app_assets.dart';
 import '../../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/router/app_router.dart';
 import '../../../../resources/styles/app_colors.dart';
