@@ -9,7 +9,7 @@ import '../../data/data_source/local/app_prefs.dart';
 
 import '../../data/network/network_info.dart';
 import '../../data/repository/scan_repository.dart';
-import '../../view_model/bloc_observer.dart';
+import '../observers/bloc_observer.dart';
 
 final GetIt getIt = GetIt.instance;
 

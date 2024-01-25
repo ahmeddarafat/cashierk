@@ -1,9 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:start_app/data/models/remote/order/order_model.dart';
+import 'package:start_app/data/models/order/order_model.dart';
 import 'package:start_app/data/repository/recepits_repository.dart';
-import 'package:start_app/data/repository/scan_repository.dart';
 
 import '../../data/network/custom_exception.dart';
 

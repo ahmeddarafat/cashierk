@@ -1,4 +1,4 @@
-import '../../../../resources/localization/generated/l10n.dart';
+import '../../../resources/localization/generated/l10n.dart';
 
 enum OrderStatus {
   complete,

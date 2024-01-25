@@ -1,9 +1,9 @@
-import 'package:start_app/data/models/local/recepits/order_model.dart';
+import 'package:start_app/data/models/recepits/order_model.dart';
 
 import '../../resources/constants/app_assets.dart';
-import '../models/local/cart/cart_item.dart';
-import '../models/local/categories/item_model.dart';
-import '../models/local/notifications/notification_model.dart';
+import '../models/cart/cart_item.dart';
+import '../models/categories/item_model.dart';
+import '../models/notifications/notification_model.dart';
 
 class DummyData {
   DummyData._();

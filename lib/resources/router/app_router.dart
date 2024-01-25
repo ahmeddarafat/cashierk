@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:start_app/data/models/local/recepits/order_model.dart';
-import 'package:start_app/data/models/remote/order/order_model.dart';
+import 'package:start_app/data/models/recepits/order_model.dart';
+import 'package:start_app/data/models/order/order_model.dart';
 import 'package:start_app/data/repository/scan_repository.dart';
 import 'package:start_app/resources/service_locator/service_locator.dart';
 import 'package:start_app/view/pages/auth/email_verification/email_verification_page.dart';

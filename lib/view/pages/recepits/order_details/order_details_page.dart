@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
 
-import '../../../../data/models/local/recepits/order_model.dart';
+import '../../../../data/models/recepits/order_model.dart';
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/styles/app_colors.dart';
 import '../../../widgets/custom_price_row.dart';

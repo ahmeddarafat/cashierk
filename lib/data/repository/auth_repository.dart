@@ -2,8 +2,8 @@ import 'package:start_app/data/data_source/remote/api_constants.dart';
 import 'package:start_app/data/network/error_handler.dart';
 
 import '../data_source/remote/api_service.dart';
-import '../models/remote/auth/auth_request.dart';
-import '../models/remote/auth/auth_response.dart';
+import '../models/auth/auth_request.dart';
+import '../models/auth/auth_response.dart';
 import '../network/custom_exception.dart';
 import '../network/network_info.dart';
 

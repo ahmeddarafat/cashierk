@@ -1,7 +1,7 @@
 import '../data_source/local/app_prefs.dart';
 import '../data_source/remote/api_constants.dart';
 import '../data_source/remote/api_service.dart';
-import '../models/remote/order/order_model.dart';
+import '../models/order/order_model.dart';
 import '../network/custom_exception.dart';
 import '../network/error_handler.dart';
 import '../network/network_info.dart';

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
 
 import '../../../data/dummy_data/dummy_data.dart';
-import '../../../data/models/local/notifications/notification_model.dart';
+import '../../../data/models/notifications/notification_model.dart';
 import '../../../resources/localization/generated/l10n.dart';
 import '../../../resources/styles/app_colors.dart';
 import '../../widgets/public_text.dart';
