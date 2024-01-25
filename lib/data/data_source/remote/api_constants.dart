@@ -37,6 +37,7 @@ class ApiConstants {
 class EndPoints {
   EndPoints._();
 
+  /// Url
   static const serverBaseUrl = "https://cashierc.pharmaco-medica.com/api";
   static const paymentBaseUrl = "https://accept.paymob.com/api";
 

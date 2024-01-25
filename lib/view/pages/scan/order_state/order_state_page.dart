@@ -8,6 +8,7 @@ import 'package:start_app/view/widgets/public_outline_button.dart';
 import 'package:start_app/view/widgets/public_text.dart';
 
 import '../../../../resources/localization/generated/l10n.dart';
+import '../../../../resources/router/app_router.dart';
 
 class OrderStatePage extends StatelessWidget {
   final bool isSuccess;
@@ -24,29 +25,40 @@ class OrderStatePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  Assets.imagesSuccess,
+                  isSuccess ? Assets.imagesSuccess : Assets.imagesFailure,
                   height: 140.h,
                   width: 140.h,
                 ),
                 40.ph,
                 PublicText(
-                  txt: S.of(context).orderSuccessful,
+                  txt: isSuccess
+                      ? S.of(context).orderSuccessful
+                      : S.of(context).orderFaild,
                   size: 24.sp,
                 ),
                 10.ph,
                 PublicText(
-                  txt: S.of(context).orderSuccessfulSubtitle,
+                  txt: isSuccess
+                      ? S.of(context).orderSuccessfulSubtitle
+                      : S.of(context).orderFaildSubtitle,
                   color: AppColors.grey,
                   align: TextAlign.center,
                 ),
                 100.ph,
                 PublicButton(
-                  onPressed: () {},
-                  title: S.of(context).trackMyOrder,
+                  onPressed: () => isSuccess ? _trackMyOrder : _tryAgain,
+                  title: isSuccess
+                      ? S.of(context).trackMyOrder
+                      : S.of(context).tryAgain,
                 ),
                 20.ph,
                 PublicOutlineButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.popUntil(
+                      context,
+                      (route) => route.settings.name == AppRoutes.layouts,
+                    );
+                  },
                   title: S.of(context).backToHome,
                 )
               ],
@@ -54,6 +66,17 @@ class OrderStatePage extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  void _trackMyOrder(BuildContext context) {
+    Navigator.pop(context);
+  }
+
+  void _tryAgain(BuildContext context) {
+    Navigator.pop(
+      context,
+      (route) => route.settings.name == AppRoutes.layouts,
     );
   }
 }

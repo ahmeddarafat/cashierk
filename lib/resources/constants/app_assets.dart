@@ -61,6 +61,10 @@ class Assets {
   /// assets/images/chicken.png
   static const String imagesChicken = "assets/images/chicken.png";
 
+  /// Assets for imagesFailure
+  /// assets/images/failure.png
+  static const String imagesFailure = "assets/images/failure.png";
+
   /// Assets for imagesForgetPass
   /// assets/images/forget-pass.svg
   static const String imagesForgetPass = "assets/images/forget-pass.svg";
@@ -117,3 +121,4 @@ class Assets {
   /// assets/jsons/loading.json
   static const String jsonsLoading = "assets/jsons/loading.json";
 }
+

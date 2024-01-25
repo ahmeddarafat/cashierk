@@ -1,9 +1,4 @@
-import 'dart:developer';
 
-import 'package:dio/dio.dart';
-import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:start_app/data/data_source/local/app_prefs.dart';
 import 'package:start_app/data/data_source/remote/api_service.dart';
 import 'package:start_app/data/network/custom_exception.dart';
