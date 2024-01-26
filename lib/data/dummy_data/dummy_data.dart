@@ -1,9 +1,9 @@
-import 'package:start_app/data/models/recepits/order_model.dart';
 
 import '../../resources/constants/app_assets.dart';
 import '../models/cart/cart_item.dart';
 import '../models/categories/item_model.dart';
 import '../models/notifications/notification_model.dart';
+import '../models/order/order_model.dart';
 
 class DummyData {
   DummyData._();
@@ -58,6 +58,7 @@ class DummyData {
       price: 10.8,
     ),
   ];
+  
 
   static const List<NotificationObject> notifications = [
     NotificationObject(
@@ -152,23 +153,29 @@ class DummyData {
   ];
 
   static final orders = [
-    Order(
+    OrderModel(
       shopName: "carrefour",
       date: DateTime.now(),
-      status: OrderStatus.complete,
+      status: "complete",
       notes:
           "Please check the product before packaging, and check the product before packaging.",
       subTotalPrice: 8.5,
       taxes: 0.5,
+      totalPrice: '9',
+      id: '',
+      items: [],
     ),
-    Order(
+    OrderModel(
       shopName: "carrefour",
       date: DateTime.now(),
-      status: OrderStatus.cancel,
+      status: "cancel",
       notes:
           "Please check the product before packaging, and check the product before packaging.",
       subTotalPrice: 20.5,
       taxes: 0.5,
+      totalPrice: '21',
+      id: '',
+      items: [],
     ),
   ];
 }

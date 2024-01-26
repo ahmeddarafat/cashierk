@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/data/models/order/order_model.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
 import 'package:start_app/resources/router/app_router.dart';
-import 'package:start_app/view/pages/payment/payment_webview.dart';
 import 'package:start_app/view/widgets/public_button.dart';
 import 'package:start_app/view/widgets/public_divider.dart';
 import 'package:start_app/view_model/scan/cart/cart_viewmodel.dart';
@@ -83,6 +82,7 @@ class _CartPageState extends State<CartPage> {
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 10.h),
           child: Column(
             children: [
+              /// order items
               Expanded(
                 child: ListView.separated(
                   itemCount: widget.order.items.length,
@@ -95,6 +95,8 @@ class _CartPageState extends State<CartPage> {
                   ),
                 ),
               ),
+
+              /// prices
               Padding(
                 padding: EdgeInsets.only(top: 10.h, left: 15.w, right: 15.w),
                 child: Column(
@@ -120,6 +122,8 @@ class _CartPageState extends State<CartPage> {
                       size: 18.sp,
                     ),
                     15.ph,
+
+                    /// checkout button
                     BlocBuilder<CartViewModel, CartState>(
                       builder: (context, state) {
                         if (state is CartLoadingState) {

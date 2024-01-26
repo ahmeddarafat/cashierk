@@ -6,6 +6,7 @@ import '../../../../data/models/recepits/order_model.dart';
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/styles/app_colors.dart';
 import '../../../widgets/custom_price_row.dart';
+import '../../../widgets/public_divider.dart';
 import '../../../widgets/public_text.dart';
 
 part 'components/overview_info_row.dart';
@@ -129,25 +130,36 @@ class OrderDetailsPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(color: AppColors.lightGrey),
                         ),
+                        child: ListView.separated(
+                          itemCount: order.items.length,
+                          itemBuilder: (_, index) {
+                            return OrderItemRow(
+                                item: widget.order.items[index]);
+                          },
+                          separatorBuilder: (_, __) => Padding(
+                            padding: EdgeInsets.symmetric(vertical: 8.h),
+                            child: const PublicDivider(),
+                          ),
+                        ),
                       ),
                       20.ph,
 
-                      /// payment method
-                      PublicText(
-                        txt: S.of(context).paymentMethod,
-                        size: 18.sp,
-                      ),
-                      15.ph,
-                      // TODO: "UI - complete payment method"
-                      Container(
-                        width: double.infinity,
-                        height: 50.h,
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: AppColors.lightGrey),
-                        ),
-                      ),
+                      // /// payment method
+                      // PublicText(
+                      //   txt: S.of(context).paymentMethod,
+                      //   size: 18.sp,
+                      // ),
+                      // 15.ph,
+                      // // TODO: "UI - complete payment method"
+                      // Container(
+                      //   width: double.infinity,
+                      //   height: 50.h,
+                      //   padding: const EdgeInsets.all(8),
+                      //   decoration: BoxDecoration(
+                      //     borderRadius: BorderRadius.circular(12),
+                      //     border: Border.all(color: AppColors.lightGrey),
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),
@@ -188,5 +200,3 @@ class OrderDetailsPage extends StatelessWidget {
     );
   }
 }
-
-
