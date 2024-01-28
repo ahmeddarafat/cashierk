@@ -1,17 +1,17 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
 
-import '../../data/models/categories/item_model.dart';
+import '../../data/models/item_model.dart';
 import '../../resources/styles/app_colors.dart';
 import 'public_text.dart';
 
 class ItemCard extends StatelessWidget {
   final Item item;
-  
+
   const ItemCard({
-    super.key, required this.item,
+    super.key,
+    required this.item,
   });
 
   @override
@@ -50,14 +50,13 @@ class ItemCard extends StatelessWidget {
               PublicText(txt: item.name),
               5.ph,
               PublicText(
-                txt: item.amount,
+                txt: "${item.quantity} ${item.unit}",
                 color: AppColors.grey,
                 size: 14.sp,
               ),
               const Spacer(),
               PublicText(
-                txt:
-                    "\$ ${item.price.orAbout()}",
+                txt: "\$ ${double.parse(item.unitPrice).orAbout()}",
                 color: AppColors.orangePrimary,
                 size: 18.sp,
               ),

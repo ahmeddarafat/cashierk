@@ -33,8 +33,8 @@ class OrderCard extends StatelessWidget {
               ),
               const Spacer(),
               PublicText(
-                txt: order.status.name,
-                color: order.status == OrderStatus.complete
+                txt: order.status,
+                color: order.status == S.of(context).completed
                     ? Colors.green
                     : Colors.red,
               ),

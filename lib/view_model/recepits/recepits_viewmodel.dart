@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:start_app/data/models/order/order_model.dart';
+import 'package:start_app/data/models/order_model.dart';
 import 'package:start_app/data/repository/recepits_repository.dart';
 
 import '../../data/network/custom_exception.dart';
@@ -10,7 +10,7 @@ part 'recepits_state.dart';
 
 class RecepitsViewModel extends Cubit<RecepitsState> {
   final RecepitsRepository repo;
-  late final List<OrderModel> allOrders;
+  late final List<Order> allOrders;
 
   RecepitsViewModel(this.repo) : super(const RecepitsInitState()) {
     allOrders = [];

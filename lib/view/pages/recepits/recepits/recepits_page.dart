@@ -7,7 +7,7 @@ import 'package:start_app/resources/router/app_router.dart';
 import 'package:start_app/view/widgets/public_button.dart';
 import 'package:start_app/view_model/recepits/recepits_viewmodel.dart';
 
-import '../../../../data/models/recepits/order_model.dart';
+import '../../../../data/models/order_model.dart';
 import '../../../../resources/constants/app_assets.dart';
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/styles/app_colors.dart';

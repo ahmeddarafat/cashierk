@@ -26,7 +26,7 @@ class FavouritesPage extends StatelessWidget {
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 5.w),
           child: GridView.builder(
-            itemCount: AppConstants.items.length,
+            itemCount: DummyData.items.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               childAspectRatio: 170 / 220,

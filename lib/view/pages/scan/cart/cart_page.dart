@@ -2,7 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:start_app/data/models/order/order_model.dart';
+import 'package:start_app/data/models/item_model.dart';
+import 'package:start_app/data/models/order_model.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
 import 'package:start_app/resources/router/app_router.dart';
 import 'package:start_app/view/widgets/public_button.dart';
@@ -18,7 +19,7 @@ import '../../../widgets/public_text.dart';
 part 'components/order_item_row.dart';
 
 class CartPage extends StatefulWidget {
-  final OrderModel order;
+  final Order order;
   const CartPage({
     super.key,
     required this.order,

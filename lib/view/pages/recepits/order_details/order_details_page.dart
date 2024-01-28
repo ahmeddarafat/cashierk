@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
 
-import '../../../../data/models/recepits/order_model.dart';
+import '../../../../data/models/order_model.dart';
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/styles/app_colors.dart';
 import '../../../widgets/custom_price_row.dart';
 import '../../../widgets/public_divider.dart';
 import '../../../widgets/public_text.dart';
+import '../../scan/cart/cart_page.dart';
 
 part 'components/overview_info_row.dart';
 
@@ -134,7 +135,7 @@ class OrderDetailsPage extends StatelessWidget {
                           itemCount: order.items.length,
                           itemBuilder: (_, index) {
                             return OrderItemRow(
-                                item: widget.order.items[index]);
+                                item: order.items[index]);
                           },
                           separatorBuilder: (_, __) => Padding(
                             padding: EdgeInsets.symmetric(vertical: 8.h),

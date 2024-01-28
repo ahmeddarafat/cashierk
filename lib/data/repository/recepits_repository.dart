@@ -1,7 +1,7 @@
 import '../data_source/local/app_prefs.dart';
 import '../data_source/remote/api_constants.dart';
 import '../data_source/remote/api_service.dart';
-import '../models/order/order_model.dart';
+import '../models/order_model.dart';
 import '../network/custom_exception.dart';
 import '../network/error_handler.dart';
 import '../network/network_info.dart';
@@ -19,7 +19,7 @@ class RecepitsRepository {
     _apiService = ApiService(EndPoints.serverBaseUrl);
   }
 
-  Future<List<OrderModel>> getAllOrder() async {
+  Future<List<Order>> getAllOrder() async {
     if (await _networkInfo.isConnected) {
       try {
         final response = await _apiService.getData(
@@ -27,7 +27,7 @@ class RecepitsRepository {
           token: _appPrefs.getToken(),
         );
         return (response.data as List).map((order) {
-          return OrderModel.fromMap(order);
+          return Order.fromMap(order);
         }).toList();
       } catch (error) {
         final failure = ErrorHandler.handle(error).failure;

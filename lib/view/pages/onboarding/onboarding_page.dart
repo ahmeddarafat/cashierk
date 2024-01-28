@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
 
-import '../../../data/models/onboarding/onboarding_model.dart';
+import '../../../data/models/onboarding_model.dart';
 import '../../../resources/constants/app_constants.dart';
 import '../../../resources/localization/generated/l10n.dart';
 import '../../../resources/styles/app_colors.dart';

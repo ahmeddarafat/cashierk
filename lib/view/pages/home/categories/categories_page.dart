@@ -78,7 +78,7 @@ class CategoriesPage extends StatelessWidget {
               GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: AppConstants.items.length,
+                itemCount: DummyData.items.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 170 / 220,
