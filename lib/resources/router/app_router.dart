@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:start_app/data/models/order_entity.dart';
 import 'package:start_app/data/models/order_model.dart';
 import 'package:start_app/data/repository/scan_repository.dart';
 import 'package:start_app/resources/service_locator/service_locator.dart';
@@ -202,7 +203,7 @@ class RouteGenerate {
       case AppRoutes.orderDetails:
         return MaterialPageRoute(
           builder: (_) => OrderDetailsPage(
-            order: routeSettings.arguments as Order,
+            order: routeSettings.arguments as OrderEntity,
           ),
           settings: routeSettings
         );

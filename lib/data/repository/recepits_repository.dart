@@ -1,3 +1,6 @@
+import 'package:dio/dio.dart';
+import 'package:start_app/data/models/order_entity.dart';
+
 import '../data_source/local/app_prefs.dart';
 import '../data_source/remote/api_constants.dart';
 import '../data_source/remote/api_service.dart';
@@ -19,16 +22,14 @@ class RecepitsRepository {
     _apiService = ApiService(EndPoints.serverBaseUrl);
   }
 
-  Future<List<Order>> getAllOrder() async {
+  Future<List<OrderEntity>> getAllOrder() async {
     if (await _networkInfo.isConnected) {
       try {
         final response = await _apiService.getData(
           endPoint: EndPoints.orders,
           token: _appPrefs.getToken(),
         );
-        return (response.data as List).map((order) {
-          return Order.fromMap(order);
-        }).toList();
+        return _modelingOrder(response);
       } catch (error) {
         final failure = ErrorHandler.handle(error).failure;
         throw CustomException(failure.message);
@@ -36,5 +37,12 @@ class RecepitsRepository {
     } else {
       throw CustomException("Check your network connection");
     }
+  }
+
+  List<OrderEntity> _modelingOrder(Response<dynamic> response) {
+    return (response.data as List).map((order) {
+      final model = Order.fromMap(order);
+      return OrderEntity.fromModel(model);
+    }).toList();
   }
 }

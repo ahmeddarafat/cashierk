@@ -119,7 +119,7 @@
     "viewDetails": "View Details",
     "order_details_comment": "--------------------------- order detials comment -------------------------------",
     "OrderStatus":"Order Status",
-    "overview":"Overview",
+    "overview":"Order OverView",
     "orderSummary":"Order Summary",
     "paymentMethod":"Payment Method",
     "received": "Received",

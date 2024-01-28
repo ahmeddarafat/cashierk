@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/data/dummy_data/dummy_data.dart';
+import 'package:start_app/data/models/order_entity.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
 import 'package:start_app/resources/router/app_router.dart';
 import 'package:start_app/view/widgets/public_button.dart';
@@ -78,7 +79,7 @@ class _RecepitsPageState extends State<RecepitsPage> {
     if (_viewModel.allOrders.isEmpty) {
       return const NoOrderVeiw();
     } else {
-      return const OrderView();
+      return OrderView(orders: _viewModel.allOrders);
     }
   }
 }

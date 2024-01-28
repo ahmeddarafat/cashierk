@@ -98,30 +98,30 @@ class DummyData {
     ),
   ];
 
-  static final orders = [
-    Order(
-      shopName: "carrefour",
-      date: DateTime.now(),
-      status: "complete",
-      notes:
-          "Please check the product before packaging, and check the product before packaging.",
-      subTotalPrice: 8.5,
-      taxes: 0.5,
-      totalPrice: '9',
-      id: '',
-      items: [],
-    ),
-    Order(
-      shopName: "carrefour",
-      date: DateTime.now(),
-      status: "cancel",
-      notes:
-          "Please check the product before packaging, and check the product before packaging.",
-      subTotalPrice: 20.5,
-      taxes: 0.5,
-      totalPrice: '21',
-      id: '',
-      items: [],
-    ),
-  ];
+  // static final orders = [
+  //   Order(
+  //     shopName: "Carrefour",
+  //     date: DateTime.now(),
+  //     status: "completed",
+  //     notes:
+  //         "Please check the product before packaging, and check the product before packaging.",
+  //     subTotalPrice: 8.5,
+  //     taxes: 0.5,
+  //     totalPrice: '9',
+  //     id: '',
+  //     items: [...items],
+  //   ),
+  //   Order(
+  //     shopName: "Carrefour",
+  //     date: DateTime.now(),
+  //     status: "canceled",
+  //     notes:
+  //         "Please check the product before packaging, and check the product before packaging.",
+  //     subTotalPrice: 20.5,
+  //     taxes: 0.5,
+  //     totalPrice: '21',
+  //     id: '',
+  //     items: [...items],
+  //   ),
+  // ];
 }

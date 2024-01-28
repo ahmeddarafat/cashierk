@@ -6,9 +6,9 @@ class Order {
   final String status;
   final String totalPrice;
   final String shopName;
-  final DateTime date;
+  final String date;
   final String notes;
-  final double subTotalPrice;
+  final String subTotalPrice;
   final double taxes;
   final List<Item> items;
 
@@ -26,18 +26,19 @@ class Order {
 
   /// TODO: data - compelte the rest of the fields
   factory Order.fromMap(Map<String, dynamic> map) {
+    final totalPrice = map[ApiConstants.orderTotal] as String;
     return Order(
       id: map[ApiConstants.orderNumber] as String,
       status: map[ApiConstants.orderStatus] as String,
-      totalPrice: map[ApiConstants.orderTotal] as String,
+      date: map[ApiConstants.orderDate] as String,
+      shopName: 'Al-Soltan Market',
+      notes: 'There is no notes',
+      subTotalPrice: totalPrice,
+      taxes: 0,
+      totalPrice: totalPrice,
       items: (map[ApiConstants.orderItems] as List)
           .map((item) => Item.fromMap(item))
           .toList(),
-      shopName: '',
-      date: DateTime.now(),
-      notes: '',
-      subTotalPrice: 0,
-      taxes: 0,
     );
   }
 }

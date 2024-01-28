@@ -1250,10 +1250,10 @@ class S {
     );
   }
 
-  /// `Overview`
+  /// `Order OverView`
   String get overview {
     return Intl.message(
-      'Overview',
+      'Order OverView',
       name: 'overview',
       desc: '',
       args: [],

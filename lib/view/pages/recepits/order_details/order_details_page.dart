@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:start_app/data/models/order_entity.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
 
-import '../../../../data/models/order_model.dart';
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/styles/app_colors.dart';
 import '../../../widgets/custom_price_row.dart';
@@ -13,7 +13,7 @@ import '../../scan/cart/cart_page.dart';
 part 'components/overview_info_row.dart';
 
 class OrderDetailsPage extends StatelessWidget {
-  final Order order;
+  final OrderEntity order;
   const OrderDetailsPage({super.key, required this.order});
 
   @override
@@ -62,11 +62,11 @@ class OrderDetailsPage extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             PublicText(
-                              txt: S.of(context).received,
+                              txt: order.status.name,
                             ),
                             10.ph,
                             PublicText(
-                              txt: order.date.timeFormat,
+                              txt: order.time,
                               color: AppColors.grey,
                               size: 14.sp,
                             ),
@@ -77,7 +77,7 @@ class OrderDetailsPage extends StatelessWidget {
 
                       /// order overview
                       PublicText(
-                        txt: S.of(context).OrderStatus,
+                        txt: S.of(context).overview,
                         size: 18.sp,
                       ),
                       15.ph,
@@ -94,7 +94,7 @@ class OrderDetailsPage extends StatelessWidget {
                           children: [
                             OverViewInfoRow(
                               title: S.of(context).orderId,
-                              description: "230320342",
+                              description: order.id,
                             ),
                             10.ph,
                             OverViewInfoRow(
@@ -104,7 +104,7 @@ class OrderDetailsPage extends StatelessWidget {
                             10.ph,
                             OverViewInfoRow(
                               title: S.of(context).date,
-                              description: order.date.monthDayYearFormat,
+                              description: order.date,
                             ),
                             10.ph,
                             OverViewInfoRow(
@@ -122,20 +122,19 @@ class OrderDetailsPage extends StatelessWidget {
                         size: 18.sp,
                       ),
                       15.ph,
-                      // TODO: "UI - complete order summary"
                       Container(
                         width: double.infinity,
-                        height: 50.h,
                         padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(color: AppColors.lightGrey),
                         ),
                         child: ListView.separated(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
                           itemCount: order.items.length,
                           itemBuilder: (_, index) {
-                            return OrderItemRow(
-                                item: order.items[index]);
+                            return OrderItemRow(item: order.items[index]);
                           },
                           separatorBuilder: (_, __) => Padding(
                             padding: EdgeInsets.symmetric(vertical: 8.h),
@@ -144,23 +143,6 @@ class OrderDetailsPage extends StatelessWidget {
                         ),
                       ),
                       20.ph,
-
-                      // /// payment method
-                      // PublicText(
-                      //   txt: S.of(context).paymentMethod,
-                      //   size: 18.sp,
-                      // ),
-                      // 15.ph,
-                      // // TODO: "UI - complete payment method"
-                      // Container(
-                      //   width: double.infinity,
-                      //   height: 50.h,
-                      //   padding: const EdgeInsets.all(8),
-                      //   decoration: BoxDecoration(
-                      //     borderRadius: BorderRadius.circular(12),
-                      //     border: Border.all(color: AppColors.lightGrey),
-                      //   ),
-                      // ),
                     ],
                   ),
                 ),

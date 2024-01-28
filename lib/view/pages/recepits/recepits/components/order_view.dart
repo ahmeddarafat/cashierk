@@ -1,18 +1,20 @@
 part of '../recepits_page.dart';
 
 class OrderView extends StatelessWidget {
+  final List<OrderEntity> orders;
   const OrderView({
     super.key,
+    required this.orders,
   });
 
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      itemCount: DummyData.orders.length,
+      itemCount: orders.length,
       itemBuilder: (_, index) {
-        return OrderCard(order: DummyData.orders[index]);
+        return OrderCard(order: orders[index]);
       },
-      separatorBuilder: (_, __) => 20.ph,
+      separatorBuilder: (_, __) => 10.ph,
     );
   }
 }
