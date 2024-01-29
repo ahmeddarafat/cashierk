@@ -1,9 +1,7 @@
-import 'package:start_app/data/models/recepits/order_model.dart';
-
 import '../../resources/constants/app_assets.dart';
-import '../models/cart/cart_item.dart';
-import '../models/categories/item_model.dart';
-import '../models/notifications/notification_model.dart';
+import '../models/item_model.dart';
+import '../models/notification_model.dart';
+import '../models/order_model.dart';
 
 class DummyData {
   DummyData._();
@@ -12,50 +10,58 @@ class DummyData {
     Item(
       image: Assets.imagesOrange,
       name: "Orange",
-      amount: "1 Kg",
-      price: 20,
+      unit: "Kg",
+      quantity: 1,
+      unitPrice: '20',
     ),
     Item(
       image: Assets.imagesMeat,
       name: "Meat",
-      amount: "1 Kg",
-      price: 100,
+      unit: "Kg",
+      unitPrice: "100",
+      quantity: 1,
     ),
     Item(
       image: Assets.imagesAvacado,
       name: "Avacado",
-      amount: "1 Kg",
-      price: 35.5,
+      unit: "Kg",
+      unitPrice: "35.5",
+      quantity: 1,
     ),
     Item(
       image: Assets.imagesBrokly,
       name: "broccoli",
-      amount: "1 Kg",
-      price: 10.8,
+      unit: "Kg",
+      quantity: 1,
+      unitPrice: "10.8",
     ),
     Item(
       image: Assets.imagesOrange,
       name: "Orange",
-      amount: "1 Kg",
-      price: 20,
+      unit: "Kg",
+      quantity: 1,
+      unitPrice: '20',
     ),
     Item(
       image: Assets.imagesMeat,
       name: "Meat",
-      amount: "1 Kg",
-      price: 100,
+      unit: "Kg",
+      unitPrice: "100",
+      quantity: 1,
     ),
     Item(
       image: Assets.imagesAvacado,
       name: "Avacado",
-      amount: "1 Kg",
-      price: 35.5,
+      unit: "Kg",
+      unitPrice: "35.5",
+      quantity: 1,
     ),
     Item(
       image: Assets.imagesBrokly,
       name: "broccoli",
-      amount: "1 Kg",
-      price: 10.8,
+      unit: "Kg",
+      quantity: 1,
+      unitPrice: "10.8",
     ),
   ];
 
@@ -92,83 +98,30 @@ class DummyData {
     ),
   ];
 
-  static final cartItems = [
-    CartItem(
-      image: Assets.imagesOrange,
-      name: "Orange",
-      amount: "3 Kg",
-      price: "\$7.00/kg",
-      totalPrice: 21,
-    ),
-    CartItem(
-      image: Assets.imagesMeat,
-      name: "Meat",
-      amount: "1 Kg",
-      price: "\$100.00/kg",
-      totalPrice: 100,
-    ),
-    CartItem(
-      image: Assets.imagesAvacado,
-      name: "Avacado",
-      amount: "2 Kg",
-      price: "\$35.5/kg",
-      totalPrice: 71,
-    ),
-    CartItem(
-      image: Assets.imagesBrokly,
-      name: "broccoli",
-      amount: "3 Kg",
-      price: "\$10.00/kg",
-      totalPrice: 30,
-    ),
-    CartItem(
-      image: Assets.imagesOrange,
-      name: "Orange",
-      amount: "3 Kg",
-      price: "\$7.00/kg",
-      totalPrice: 21,
-    ),
-    CartItem(
-      image: Assets.imagesMeat,
-      name: "Meat",
-      amount: "1 Kg",
-      price: "\$100.00/kg",
-      totalPrice: 100,
-    ),
-    CartItem(
-      image: Assets.imagesAvacado,
-      name: "Avacado",
-      amount: "2 Kg",
-      price: "\$35.5/kg",
-      totalPrice: 71,
-    ),
-    CartItem(
-      image: Assets.imagesBrokly,
-      name: "broccoli",
-      amount: "3 Kg",
-      price: "\$10.00/kg",
-      totalPrice: 30,
-    ),
-  ];
-
-  static final orders = [
-    Order(
-      shopName: "carrefour",
-      date: DateTime.now(),
-      status: OrderStatus.complete,
-      notes:
-          "Please check the product before packaging, and check the product before packaging.",
-      subTotalPrice: 8.5,
-      taxes: 0.5,
-    ),
-    Order(
-      shopName: "carrefour",
-      date: DateTime.now(),
-      status: OrderStatus.cancel,
-      notes:
-          "Please check the product before packaging, and check the product before packaging.",
-      subTotalPrice: 20.5,
-      taxes: 0.5,
-    ),
-  ];
+  // static final orders = [
+  //   Order(
+  //     shopName: "Carrefour",
+  //     date: DateTime.now(),
+  //     status: "completed",
+  //     notes:
+  //         "Please check the product before packaging, and check the product before packaging.",
+  //     subTotalPrice: 8.5,
+  //     taxes: 0.5,
+  //     totalPrice: '9',
+  //     id: '',
+  //     items: [...items],
+  //   ),
+  //   Order(
+  //     shopName: "Carrefour",
+  //     date: DateTime.now(),
+  //     status: "canceled",
+  //     notes:
+  //         "Please check the product before packaging, and check the product before packaging.",
+  //     subTotalPrice: 20.5,
+  //     taxes: 0.5,
+  //     totalPrice: '21',
+  //     id: '',
+  //     items: [...items],
+  //   ),
+  // ];
 }

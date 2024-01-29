@@ -1,6 +1,6 @@
 import 'package:start_app/data/data_source/local/app_prefs.dart';
 import 'package:start_app/data/data_source/remote/api_constants.dart';
-import 'package:start_app/data/models/order/order_model.dart';
+import 'package:start_app/data/models/order_model.dart';
 
 import '../data_source/remote/api_service.dart';
 import '../network/custom_exception.dart';
@@ -38,14 +38,14 @@ class ScanRepository {
     }
   }
 
-  Future<OrderModel> getOrderItems(String orderNumber) async {
+  Future<Order> getOrderItems(String orderNumber) async {
     if (await _networkInfo.isConnected) {
       try {
         final response = await _apiService.getData(
           endPoint: "${EndPoints.orders}/$orderNumber",
           token: _appPrefs.getToken(),
         );
-        return OrderModel.fromMap(response.data);
+        return Order.fromMap(response.data);
       } catch (error) {
         final failure = ErrorHandler.handle(error).failure;
         throw CustomException(failure.message);

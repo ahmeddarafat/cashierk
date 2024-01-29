@@ -1,8 +1,8 @@
 import 'package:flutter/painting.dart';
-import 'package:start_app/data/models/categories/category_model.dart';
+import 'package:start_app/data/models/category_model.dart';
 
-import '../../data/models/categories/item_model.dart';
-import '../../data/models/onboarding/onboarding_model.dart';
+import '../../data/models/item_model.dart';
+import '../../data/models/onboarding_model.dart';
 import '../localization/generated/l10n.dart';
 import 'app_assets.dart';
 
@@ -81,54 +81,4 @@ class AppConstants {
     S.current.chicken,
   ];
 
-  static final items = [
-    Item(
-      image: Assets.imagesOrange,
-      name: S.current.orange,
-      amount: "1 Kg",
-      price: 20,
-    ),
-    Item(
-      image: Assets.imagesOrange,
-      name: S.current.orange,
-      amount: "1 Kg",
-      price: 20,
-    ),
-    Item(
-      image: Assets.imagesOrange,
-      name: S.current.orange,
-      amount: "1 Kg",
-      price: 20,
-    ),
-    Item(
-      image: Assets.imagesOrange,
-      name: S.current.orange,
-      amount: "1 Kg",
-      price: 20,
-    ),
-    Item(
-      image: Assets.imagesOrange,
-      name: S.current.orange,
-      amount: "1 Kg",
-      price: 20,
-    ),
-    Item(
-      image: Assets.imagesOrange,
-      name: S.current.orange,
-      amount: "1 Kg",
-      price: 20,
-    ),
-    Item(
-      image: Assets.imagesOrange,
-      name: S.current.orange,
-      amount: "1 Kg",
-      price: 20,
-    ),
-    Item(
-      image: Assets.imagesOrange,
-      name: S.current.orange,
-      amount: "1 Kg",
-      price: 20,
-    ),
-  ];
 }

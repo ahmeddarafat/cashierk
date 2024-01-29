@@ -14,8 +14,6 @@ import '../observers/bloc_observer.dart';
 final GetIt getIt = GetIt.instance;
 
 Future<void> initModule() async {
-  Bloc.observer = MyBlocObserver();
-
   /// Shared prefs
   final sharedPrefs = await SharedPreferences.getInstance();
   getIt.registerLazySingleton(

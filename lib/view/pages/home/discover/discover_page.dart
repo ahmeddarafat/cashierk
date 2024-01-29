@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:start_app/data/dummy_data/dummy_data.dart';
-import 'package:start_app/data/models/categories/category_model.dart';
+import 'package:start_app/data/models/category_model.dart';
 import 'package:start_app/resources/constants/app_assets.dart';
 import 'package:start_app/resources/constants/app_constants.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
@@ -118,7 +118,7 @@ class DiscoverPage extends StatelessWidget {
               GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: AppConstants.items.length,
+                itemCount: DummyData.items.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   childAspectRatio: 170 / 220,

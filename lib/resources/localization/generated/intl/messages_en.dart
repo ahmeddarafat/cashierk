@@ -155,7 +155,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "otpTitle": MessageLookupByLibrary.simpleMessage("Email Verification"),
         "otp_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- otp -------------------------------"),
-        "overview": MessageLookupByLibrary.simpleMessage("Overview"),
+        "overview": MessageLookupByLibrary.simpleMessage("Order OverView"),
         "passStars": MessageLookupByLibrary.simpleMessage("**********"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordHint":
