@@ -1,4 +1,8 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:convert';
+
 import 'package:intl/intl.dart';
+
 import 'package:start_app/resources/extensions/app_extensions.dart';
 
 import 'item_model.dart';
@@ -24,6 +28,7 @@ extension OrderStatusExtension on OrderStatus {
 class OrderEntity {
   final String id;
   final String shopName;
+  // enum
   final OrderStatus status;
   final String notes;
   final String date;
@@ -34,16 +39,16 @@ class OrderEntity {
   final List<Item> items;
 
   OrderEntity({
-    required this.shopName,
-    required this.date,
-    required this.notes,
-    required this.subTotalPrice,
-    required this.taxes,
     required this.id,
+    required this.shopName,
     required this.status,
+    required this.notes,
+    required this.date,
+    required this.time,
+    required this.taxes,
+    required this.subTotalPrice,
     required this.totalPrice,
     required this.items,
-    required this.time,
   });
 
   factory OrderEntity.fromModel(Order order) {
@@ -78,5 +83,49 @@ class OrderEntity {
       items: order.items,
       status: orderStatus,
     );
+  }
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'id': id,
+      'shopName': shopName,
+      'status': status.index,
+      'notes': notes,
+      'date': date,
+      'time': time,
+      'taxes': taxes,
+      'subTotalPrice': subTotalPrice,
+      'totalPrice': totalPrice,
+      'items': items.map((x) => x.toMap()).toList(),
+    };
+  }
+
+  factory OrderEntity.fromMap(Map<String, dynamic> map) {
+    return OrderEntity(
+      id: map['id'] as String,
+      shopName: map['shopName'] as String,
+      status: OrderStatus.values[map['status'] as int],
+      notes: map['notes'] as String,
+      date: map['date'] as String,
+      time: map['time'] as String,
+      taxes: map['taxes'] as double,
+      subTotalPrice: map['subTotalPrice'] as double,
+      totalPrice: map['totalPrice'] as double,
+      items: List<Item>.from(
+        (map['items'] as List<int>).map<Item>(
+          (x) => Item.fromMap(x as Map<String, dynamic>),
+        ),
+      ),
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory OrderEntity.fromJson(String source) =>
+      OrderEntity.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  @override
+  String toString() {
+    return 'OrderEntity(id: $id, shopName: $shopName, status: $status, notes: $notes, date: $date, time: $time, taxes: $taxes, subTotalPrice: $subTotalPrice, totalPrice: $totalPrice, items: $items)';
   }
 }
