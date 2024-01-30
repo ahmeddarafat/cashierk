@@ -78,20 +78,10 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 const PublicDivider(),
                 PublicListTile(
-                  onTap: () => Navigator.pushNamed(context, AppRoutes.myOrders),
-                  title: S.of(context).myOrders,
-                  icon: Icons.list,
-                ),
-                const PublicDivider(),
-                PublicListTile(
-                  onTap: () => Navigator.pushNamed(context, AppRoutes.myCards),
-                  title: S.of(context).myCards,
-                  icon: Icons.card_membership_outlined,
-                ),
-                const PublicDivider(),
-                PublicListTile(
                   onTap: () => Navigator.pushNamed(
-                      context, AppRoutes.notificationSettings),
+                    context,
+                    AppRoutes.notificationSettings,
+                  ),
                   title: S.of(context).notifications,
                   icon: Icons.notifications,
                 ),
@@ -110,10 +100,11 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 const PublicDivider(),
                 PublicListTile(
-                    onTap: () =>
-                        Navigator.pushNamed(context, AppRoutes.changePassword),
-                    title: S.of(context).changePassword,
-                    icon: Icons.remove_red_eye_outlined),
+                  onTap: () =>
+                      Navigator.pushNamed(context, AppRoutes.changePassword),
+                  title: S.of(context).changePassword,
+                  icon: Icons.remove_red_eye_outlined,
+                ),
                 const PublicDivider(),
                 20.ph,
                 PublicListTile(
