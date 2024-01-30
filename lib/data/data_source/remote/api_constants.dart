@@ -21,6 +21,7 @@ class ApiConstants {
   static const productName = "product_name";
   static const orderItems = "order_items";
   static const orderDate = "order_date";
+  static const productUnit = "product_unit";
 
   /// Payment
   static const token = "token";

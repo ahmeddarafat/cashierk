@@ -1,7 +1,7 @@
 part of '../cart_page.dart';
 
 class OrderItemRow extends StatelessWidget {
-  final Item item;
+  final ItemEntity item;
   const OrderItemRow({super.key, required this.item});
 
   @override

@@ -1,7 +1,6 @@
 import 'package:flutter/painting.dart';
 import 'package:start_app/data/models/category_model.dart';
 
-import '../../data/models/item_model.dart';
 import '../../data/models/onboarding_model.dart';
 import '../localization/generated/l10n.dart';
 import 'app_assets.dart';

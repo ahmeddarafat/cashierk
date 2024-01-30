@@ -2,10 +2,10 @@
 import 'dart:convert';
 
 import 'package:intl/intl.dart';
+import 'package:start_app/data/models/item_entity.dart';
 
 import 'package:start_app/resources/extensions/app_extensions.dart';
 
-import 'item_model.dart';
 import 'order_model.dart';
 
 enum OrderStatus { pending, processing, delivered, canceled }
@@ -36,7 +36,7 @@ class OrderEntity {
   final double taxes;
   final double subTotalPrice;
   final double totalPrice;
-  final List<Item> items;
+  final List<ItemEntity> items;
 
   OrderEntity({
     required this.id,
@@ -80,7 +80,7 @@ class OrderEntity {
       subTotalPrice: subTotalPrice,
       taxes: order.taxes,
       totalPrice: totalPrice,
-      items: order.items,
+      items: order.items.map((item) => ItemEntity.fromModel(item)).toList(),
       status: orderStatus,
     );
   }
@@ -111,9 +111,9 @@ class OrderEntity {
       taxes: map['taxes'] as double,
       subTotalPrice: map['subTotalPrice'] as double,
       totalPrice: map['totalPrice'] as double,
-      items: List<Item>.from(
-        (map['items'] as List<int>).map<Item>(
-          (x) => Item.fromMap(x as Map<String, dynamic>),
+      items: List<ItemEntity>.from(
+        (map['items'] as List<int>).map<ItemEntity>(
+          (x) => ItemEntity.fromMap(x as Map<String, dynamic>),
         ),
       ),
     );

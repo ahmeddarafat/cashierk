@@ -16,9 +16,9 @@ class CartViewModel extends Cubit<CartState> {
 
   static CartViewModel getInstance(BuildContext context) => context.read();
 
-  Future<void> checkout(String price) async {
+  Future<void> checkout(double price) async {
     // because the gateway deals with cents (100 centes = 1 pound)
-    final totalPrice = (double.parse(price) * 100).toString();
+    final totalPrice = (price * 100).toString();
     try {
       emit(const CartLoadingState());
       final authToken = await repo.getAuthToken();

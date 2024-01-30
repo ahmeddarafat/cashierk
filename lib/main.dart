@@ -7,6 +7,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:start_app/resources/localization/generated/l10n.dart';
 import 'package:start_app/view_model/auth/login/login_cubit.dart';
 import 'package:start_app/view_model/auth/reset_pass/reset_cubit.dart';
+import 'package:start_app/view_model/home/home_cubit.dart';
 import 'package:start_app/view_model/onboarding/onboarding_cubit.dart';
 import 'package:start_app/view_model/recepits/recepits_viewmodel.dart';
 import 'data/data_source/local/app_prefs.dart';
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: (_) => LoginCubit(getIt())),
           BlocProvider(create: (_) => ProfileCubit()),
           BlocProvider(create: (_) => RecepitsViewModel(getIt())),
+          BlocProvider(create: (_) => HomeCubit()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,

@@ -9,6 +9,7 @@ import 'package:start_app/resources/extensions/app_extensions.dart';
 import 'package:start_app/resources/router/app_router.dart';
 import 'package:start_app/view/widgets/public_text.dart';
 import 'package:start_app/view/widgets/public_title_tile.dart';
+import 'package:start_app/view_model/home/home_cubit.dart';
 
 import '../../../../../resources/localization/generated/l10n.dart';
 import '../../../../../resources/styles/app_colors.dart';
@@ -21,6 +22,7 @@ class DiscoverPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var bloc = HomeCubit.getInstance(context);
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -124,7 +126,7 @@ class DiscoverPage extends StatelessWidget {
                   childAspectRatio: 170 / 220,
                 ),
                 itemBuilder: (_, index) {
-                  return ItemCard(item: DummyData.items[index]);
+                  return ItemCard(item: bloc.allItems[index]);
                 },
               ),
             ],

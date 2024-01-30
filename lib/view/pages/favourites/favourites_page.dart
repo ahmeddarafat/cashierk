@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:start_app/view_model/home/home_cubit.dart';
 
 import '../../../data/dummy_data/dummy_data.dart';
 import '../../../resources/constants/app_constants.dart';
@@ -25,14 +27,20 @@ class FavouritesPage extends StatelessWidget {
         ),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 5.w),
-          child: GridView.builder(
-            itemCount: DummyData.items.length,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: 170 / 220,
-            ),
-            itemBuilder: (_, index) {
-              return ItemCard(item: DummyData.items[index]);
+          child: BlocBuilder<HomeCubit, HomeState>(
+            buildWhen: (_,current)=> current is ChangeFavoriteState,
+            builder: (context, state) {
+             var bloc = HomeCubit.getInstance(context);
+              return GridView.builder(
+                itemCount: bloc.favoirteItems.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 170 / 220,
+                ),
+                itemBuilder: (_, index) {
+                  return ItemCard(item: bloc.favoirteItems[index]);
+                },
+              );
             },
           ),
         ),
