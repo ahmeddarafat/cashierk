@@ -69,6 +69,8 @@
     "notifications": "Notifications",
     "favourites_comment": "--------------------------- favourites -------------------------------",
     "favourites": "Favourites",
+    "noFavoriteTitle": "You don't have an favorite items yet",
+    "noFavoriteSubtitle": "Remember to mark you favorite items",
     "profile_comment": "--------------------------- profile -------------------------------",
     "editProfile": "Edit Profile",
     "myOrders": "My Orders",

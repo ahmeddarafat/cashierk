@@ -11,7 +11,7 @@ import 'public_text.dart';
 
 class CustomPriceRow extends StatelessWidget {
   final String title;
-  final String price;
+  final double price;
   final Color? color;
   final double? size;
   const CustomPriceRow({

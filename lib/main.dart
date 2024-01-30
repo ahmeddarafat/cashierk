@@ -1,12 +1,16 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:start_app/resources/localization/generated/l10n.dart';
 import 'package:start_app/view_model/auth/login/login_cubit.dart';
 import 'package:start_app/view_model/auth/reset_pass/reset_cubit.dart';
+import 'package:start_app/view_model/home/home_cubit.dart';
 import 'package:start_app/view_model/onboarding/onboarding_cubit.dart';
 import 'package:start_app/view_model/recepits/recepits_viewmodel.dart';
 import 'data/data_source/local/app_prefs.dart';
@@ -44,6 +48,7 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: (_) => LoginCubit(getIt())),
           BlocProvider(create: (_) => ProfileCubit()),
           BlocProvider(create: (_) => RecepitsViewModel(getIt())),
+          BlocProvider(create: (_) => HomeCubit()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -82,3 +87,11 @@ class MyApp extends StatelessWidget {
     }
   }
 }
+
+
+
+  /// notes
+  
+  /// 1. remove the cache data to reset the app
+  /// var appDir = (await getApplicationDocumentsDirectory()).path;
+  /// Directory(appDir).delete(recursive: true);

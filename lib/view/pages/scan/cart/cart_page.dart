@@ -2,7 +2,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:start_app/data/models/item_entity.dart';
 import 'package:start_app/data/models/item_model.dart';
+import 'package:start_app/data/models/order_entity.dart';
 import 'package:start_app/data/models/order_model.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
 import 'package:start_app/resources/router/app_router.dart';
@@ -19,7 +21,7 @@ import '../../../widgets/public_text.dart';
 part 'components/order_item_row.dart';
 
 class CartPage extends StatefulWidget {
-  final Order order;
+  final OrderEntity order;
   const CartPage({
     super.key,
     required this.order,
@@ -112,7 +114,7 @@ class _CartPageState extends State<CartPage> {
                     10.ph,
                     CustomPriceRow(
                       title: S.of(context).taxes,
-                      price: "0",
+                      price: 0,
                       color: AppColors.grey,
                       size: 14.sp,
                     ),

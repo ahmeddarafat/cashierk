@@ -156,21 +156,21 @@ class OrderDetailsPage extends StatelessWidget {
                   children: [
                     CustomPriceRow(
                       title: S.of(context).subtotal,
-                      price: order.subTotalPrice.toString(),
+                      price: order.subTotalPrice,
                       color: AppColors.grey,
                       size: 16.sp,
                     ),
                     10.ph,
                     CustomPriceRow(
                       title: S.of(context).taxes,
-                      price: order.taxes.toString(),
+                      price: order.taxes,
                       color: AppColors.grey,
                       size: 14.sp,
                     ),
                     10.ph,
                     CustomPriceRow(
                       title: S.of(context).total,
-                      price: order.totalPrice.toString(),
+                      price: order.totalPrice,
                       size: 18.sp,
                     ),
                   ],

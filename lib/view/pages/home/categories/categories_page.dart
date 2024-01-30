@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
 import 'package:start_app/view/widgets/public_text_form_field.dart';
+import 'package:start_app/view_model/home/home_cubit.dart';
 
 import '../../../../data/dummy_data/dummy_data.dart';
 import '../../../../resources/constants/app_constants.dart';
@@ -15,6 +16,7 @@ class CategoriesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var bloc = HomeCubit.getInstance(context);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -84,7 +86,7 @@ class CategoriesPage extends StatelessWidget {
                   childAspectRatio: 170 / 220,
                 ),
                 itemBuilder: (_, index) {
-                  return ItemCard(item: DummyData.items[index]);
+                  return ItemCard(item: bloc.allItems[index]);
                 },
               ),
             ],
