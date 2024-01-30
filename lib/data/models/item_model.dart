@@ -3,6 +3,7 @@ import 'dart:convert';
 import '../data_source/remote/api_constants.dart';
 
 class Item {
+  final String id;
   final String name;
   final String image;
   final int quantity;
@@ -11,6 +12,7 @@ class Item {
   late final double totalPrice;
 
   Item({
+    required this.id,
     required this.name,
     required this.image,
     required this.quantity,
@@ -22,6 +24,7 @@ class Item {
 
   factory Item.fromMap(Map<String, dynamic> map) {
     return Item(
+      id: map[ApiConstants.productId] as String? ?? "0",
       name: map[ApiConstants.productName] as String,
       image: map[ApiConstants.productImage] as String,
       quantity: map[ApiConstants.quantity] as int,

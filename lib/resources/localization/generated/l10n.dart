@@ -750,6 +750,26 @@ class S {
     );
   }
 
+  /// `You don't have an favorite items yet`
+  String get noFavoriteTitle {
+    return Intl.message(
+      'You don\'t have an favorite items yet',
+      name: 'noFavoriteTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remember to mark you favorite items`
+  String get noFavoriteSubtitle {
+    return Intl.message(
+      'Remember to mark you favorite items',
+      name: 'noFavoriteSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `--------------------------- profile -------------------------------`
   String get profile_comment {
     return Intl.message(

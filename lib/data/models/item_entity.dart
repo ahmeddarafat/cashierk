@@ -1,7 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
-import 'package:uuid/uuid.dart';
 
 import 'item_model.dart';
 
@@ -27,9 +26,8 @@ class ItemEntity {
   });
 
   factory ItemEntity.fromModel(Item item) {
-    const uuid = Uuid();
     return ItemEntity(
-      id: uuid.v1(),
+      id: item.id,
       name: item.name,
       image: item.image,
       quantity: item.quantity,

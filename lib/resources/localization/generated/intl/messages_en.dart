@@ -106,6 +106,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "myOrders": MessageLookupByLibrary.simpleMessage("My Orders"),
         "newPassword": MessageLookupByLibrary.simpleMessage("New password"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "noFavoriteSubtitle": MessageLookupByLibrary.simpleMessage(
+            "Remember to mark you favorite items"),
+        "noFavoriteTitle": MessageLookupByLibrary.simpleMessage(
+            "You don\'t have an favorite items yet"),
         "noOrderSubtitle": MessageLookupByLibrary.simpleMessage(
             "You don\'t have any order at this time"),
         "noOrderTitle": MessageLookupByLibrary.simpleMessage(

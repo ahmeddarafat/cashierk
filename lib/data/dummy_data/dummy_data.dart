@@ -8,6 +8,7 @@ class DummyData {
 
   static final items = [
     Item(
+      id: "1",
       image: Assets.imagesOrange,
       name: "Orange",
       unit: "Kg",
@@ -15,6 +16,7 @@ class DummyData {
       unitPrice: '20',
     ),
     Item(
+      id: "2",
       image: Assets.imagesMeat,
       name: "Meat",
       unit: "Kg",
@@ -22,6 +24,7 @@ class DummyData {
       quantity: 1,
     ),
     Item(
+      id: "3",
       image: Assets.imagesAvacado,
       name: "Avacado",
       unit: "Kg",
@@ -29,6 +32,7 @@ class DummyData {
       quantity: 1,
     ),
     Item(
+      id: "4",
       image: Assets.imagesBrokly,
       name: "broccoli",
       unit: "Kg",
@@ -36,6 +40,7 @@ class DummyData {
       unitPrice: "10.8",
     ),
     Item(
+      id: "5",
       image: Assets.imagesOrange,
       name: "Orange",
       unit: "Kg",
@@ -43,6 +48,7 @@ class DummyData {
       unitPrice: '20',
     ),
     Item(
+      id: "6",
       image: Assets.imagesMeat,
       name: "Meat",
       unit: "Kg",
@@ -50,6 +56,7 @@ class DummyData {
       quantity: 1,
     ),
     Item(
+      id: "7",
       image: Assets.imagesAvacado,
       name: "Avacado",
       unit: "Kg",
@@ -57,6 +64,7 @@ class DummyData {
       quantity: 1,
     ),
     Item(
+      id: "8",
       image: Assets.imagesBrokly,
       name: "broccoli",
       unit: "Kg",

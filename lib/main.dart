@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
@@ -84,3 +87,11 @@ class MyApp extends StatelessWidget {
     }
   }
 }
+
+
+
+  /// notes
+  
+  /// 1. remove the cache data to reset the app
+  /// var appDir = (await getApplicationDocumentsDirectory()).path;
+  /// Directory(appDir).delete(recursive: true);
