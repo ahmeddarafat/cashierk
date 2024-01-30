@@ -57,6 +57,8 @@ dependencies:
   uuid: ^4.2.2
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1
+  flutter_widget_from_html: ^0.14.11
+  flutter_markdown: ^0.6.18+3
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +74,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/jsons/
+    - assets/markdown/
 
   fonts:
     - family: Roboto

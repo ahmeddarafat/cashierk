@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "--------------------------- waiting comment -------------------------------"),
         "WelcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
         "about": MessageLookupByLibrary.simpleMessage("About"),
+        "aboutDescription": MessageLookupByLibrary.simpleMessage(
+            "Digital platform that integrates artificial intelligence (AI) technology into the operations and customer experience of a supermarket. This app employs various AI algorithms and tools to enhance different aspects of the supermarket, including inventory management, personalized shopping experiences, dynamic pricing, checkout optimization, predictive analytics, and customer service. By leveraging AI capabilities, the app aims to improve efficiency, convenience, and customer satisfaction while also optimizing inventory, reducing waste, and maximizing profitability for the supermarket. Overall, a \'Smart Supermarket with AI\' app revolutionizes the traditional supermarket model by introducing advanced technology solutions to streamline operations and enhance the shopping experience for both customers and store operators."),
         "acceptTermsErrorMessage": MessageLookupByLibrary.simpleMessage(
             "Please, accept terms & policy"),
         "all": MessageLookupByLibrary.simpleMessage("All"),
@@ -160,7 +162,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "otp_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- otp -------------------------------"),
         "overview": MessageLookupByLibrary.simpleMessage("Order OverView"),
-        "passStars": MessageLookupByLibrary.simpleMessage("**********"),
+        "passStars": MessageLookupByLibrary.simpleMessage("*********"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordHint":
             MessageLookupByLibrary.simpleMessage("Enter your password"),
@@ -207,6 +209,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "subtotal": MessageLookupByLibrary.simpleMessage("Subtotal"),
         "taxes": MessageLookupByLibrary.simpleMessage("Taxes"),
+        "termsConditions":
+            MessageLookupByLibrary.simpleMessage("Terms & Conditions"),
         "total": MessageLookupByLibrary.simpleMessage("Total"),
         "trackMyOrder": MessageLookupByLibrary.simpleMessage("Track my Order"),
         "tryAgain": MessageLookupByLibrary.simpleMessage("Try Again"),

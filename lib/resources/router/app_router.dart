@@ -12,6 +12,8 @@ import 'package:start_app/view/pages/onboarding/onboarding_page.dart';
 import 'package:start_app/view/pages/payment/payment_webview.dart';
 import 'package:start_app/view/pages/profile/change_passwored/change_password_page.dart';
 import 'package:start_app/view/pages/profile/notification_settings/notificaiton_settings_page.dart';
+import 'package:start_app/view/pages/profile/policy_terms/about_Page.dart';
+import 'package:start_app/view/pages/profile/policy_terms/policy_page.dart';
 import 'package:start_app/view/pages/recepits/order_details/order_details_page.dart';
 import 'package:start_app/view/pages/scan/cart/cart_page.dart';
 import 'package:start_app/view/pages/scan/order_state/order_state_page.dart';
@@ -29,6 +31,7 @@ import '../../view/pages/home/best_seller/best_seller.dart';
 import '../../view/pages/home/categories/categories_page.dart';
 import '../../view/pages/notifications/notifications_page.dart';
 import '../../view/pages/profile/edit_profile/edit_profile_page.dart';
+import '../../view/pages/profile/policy_terms/terms_page.dart';
 import '../../view/pages/search/search_page.dart';
 
 class AppRoutes {
@@ -60,6 +63,8 @@ class AppRoutes {
   static const notificationSettings = "notification settings";
   static const helpCenter = "help center";
   static const changePassword = "change password";
+  static const policy = "policy";
+  static const terms = "terms";
 
   /// Scan
   static const cart = "cart";
@@ -162,6 +167,21 @@ class RouteGenerate {
       case AppRoutes.notificationSettings:
         return MaterialPageRoute(
           builder: (_) => const NotificationsSettingsPage(),
+          settings: routeSettings
+        );
+      case AppRoutes.policy:
+        return MaterialPageRoute(
+          builder: (_) => const PolicyPage(),
+          settings: routeSettings
+        );
+      case AppRoutes.terms:
+        return MaterialPageRoute(
+          builder: (_) => const TermsPage(),
+          settings: routeSettings
+        );
+      case AppRoutes.about:
+        return MaterialPageRoute(
+          builder: (_) => const AboutPage(),
           settings: routeSettings
         );
 

@@ -94,9 +94,15 @@ class _ProfilePageState extends State<ProfilePage> {
                 const PublicDivider(),
                 PublicListTile(
                   onTap: () =>
-                      Navigator.pushNamed(context, AppRoutes.helpCenter),
-                  title: S.of(context).helpCenter,
-                  icon: Icons.question_mark_rounded,
+                      Navigator.pushNamed(context, AppRoutes.policy),
+                  title: S.of(context).privacyPolicy,
+                  icon: Icons.privacy_tip_outlined,
+                ),
+                PublicListTile(
+                  onTap: () =>
+                      Navigator.pushNamed(context, AppRoutes.terms),
+                  title: S.of(context).termsConditions,
+                  icon: Icons.telegram_sharp,
                 ),
                 const PublicDivider(),
                 PublicListTile(

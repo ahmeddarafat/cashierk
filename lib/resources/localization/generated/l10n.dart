@@ -900,6 +900,26 @@ class S {
     );
   }
 
+  /// `Terms & Conditions`
+  String get termsConditions {
+    return Intl.message(
+      'Terms & Conditions',
+      name: 'termsConditions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Digital platform that integrates artificial intelligence (AI) technology into the operations and customer experience of a supermarket. This app employs various AI algorithms and tools to enhance different aspects of the supermarket, including inventory management, personalized shopping experiences, dynamic pricing, checkout optimization, predictive analytics, and customer service. By leveraging AI capabilities, the app aims to improve efficiency, convenience, and customer satisfaction while also optimizing inventory, reducing waste, and maximizing profitability for the supermarket. Overall, a 'Smart Supermarket with AI' app revolutionizes the traditional supermarket model by introducing advanced technology solutions to streamline operations and enhance the shopping experience for both customers and store operators.`
+  String get aboutDescription {
+    return Intl.message(
+      'Digital platform that integrates artificial intelligence (AI) technology into the operations and customer experience of a supermarket. This app employs various AI algorithms and tools to enhance different aspects of the supermarket, including inventory management, personalized shopping experiences, dynamic pricing, checkout optimization, predictive analytics, and customer service. By leveraging AI capabilities, the app aims to improve efficiency, convenience, and customer satisfaction while also optimizing inventory, reducing waste, and maximizing profitability for the supermarket. Overall, a \'Smart Supermarket with AI\' app revolutionizes the traditional supermarket model by introducing advanced technology solutions to streamline operations and enhance the shopping experience for both customers and store operators.',
+      name: 'aboutDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `--------------------------- notifications settings -------------------------------`
   String get notification_settings_comment {
     return Intl.message(
@@ -980,10 +1000,10 @@ class S {
     );
   }
 
-  /// `**********`
+  /// `*********`
   String get passStars {
     return Intl.message(
-      '**********',
+      '*********',
       name: 'passStars',
       desc: '',
       args: [],
