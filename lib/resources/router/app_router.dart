@@ -86,12 +86,12 @@ class RouteGenerate {
       case AppRoutes.onboarding:
         return MaterialPageRoute(
           builder: (_) => const OnboardingPage(),
-          settings: routeSettings
+          settings: routeSettings,
         );
       case AppRoutes.login:
         return MaterialPageRoute(
           builder: (_) => const LoginPage(),
-          settings: routeSettings
+          settings: routeSettings,
         );
       case AppRoutes.register:
         return MaterialPageRoute(
@@ -99,55 +99,55 @@ class RouteGenerate {
             create: (_) => RegisterCubit(getIt()),
             child: const RegisterPage(),
           ),
-          settings: routeSettings
+          settings: routeSettings,
         );
       case AppRoutes.forgotPassword:
         return MaterialPageRoute(
           builder: (_) => const ForgotPasswordPage(),
-          settings: routeSettings
+          settings: routeSettings,
         );
       case AppRoutes.emailVerify:
         return MaterialPageRoute(
-          builder: (_) => const EmailVerificationPage(),
+          builder: (_) => EmailVerificationPage(),
         );
       case AppRoutes.resetPassword:
         return MaterialPageRoute(
           builder: (_) => const ResetPasswordPage(),
-          settings: routeSettings
+          settings: routeSettings,
         );
 
       /// home
       case AppRoutes.layouts:
         return MaterialPageRoute(
           builder: (_) => const LayoutsPage(),
-          settings: routeSettings
+          settings: routeSettings,
         );
       case AppRoutes.favourites:
         return MaterialPageRoute(
           builder: (_) => const FavouritesPage(),
-          settings: routeSettings
+          settings: routeSettings,
         );
 
       /// Discover
       case AppRoutes.categories:
         return MaterialPageRoute(
           builder: (_) => const CategoriesPage(),
-          settings: routeSettings
+          settings: routeSettings,
         );
       case AppRoutes.bestSeller:
         return MaterialPageRoute(
           builder: (_) => const BestSellerPage(),
-          settings: routeSettings
+          settings: routeSettings,
         );
       case AppRoutes.search:
         return MaterialPageRoute(
           builder: (_) => const SearchPage(),
-          settings: routeSettings
+          settings: routeSettings,
         );
       case AppRoutes.notifications:
         return MaterialPageRoute(
           builder: (_) => const NotificationsPage(),
-          settings: routeSettings
+          settings: routeSettings,
         );
 
       /// Profile
@@ -157,32 +157,32 @@ class RouteGenerate {
             create: (context) => ChangePasswordCubit(),
             child: const ChangePasswordPage(),
           ),
-          settings: routeSettings
+          settings: routeSettings,
         );
       case AppRoutes.editProfile:
         return MaterialPageRoute(
           builder: (_) => const EditProfilePage(),
-          settings: routeSettings
+          settings: routeSettings,
         );
       case AppRoutes.notificationSettings:
         return MaterialPageRoute(
           builder: (_) => const NotificationsSettingsPage(),
-          settings: routeSettings
+          settings: routeSettings,
         );
       case AppRoutes.policy:
         return MaterialPageRoute(
           builder: (_) => const PolicyPage(),
-          settings: routeSettings
+          settings: routeSettings,
         );
       case AppRoutes.terms:
         return MaterialPageRoute(
           builder: (_) => const TermsPage(),
-          settings: routeSettings
+          settings: routeSettings,
         );
       case AppRoutes.about:
         return MaterialPageRoute(
           builder: (_) => const AboutPage(),
-          settings: routeSettings
+          settings: routeSettings,
         );
 
       /// Scan
@@ -192,7 +192,7 @@ class RouteGenerate {
             create: (context) => CartViewModel(getIt()),
             child: CartPage(order: routeSettings.arguments as OrderEntity),
           ),
-          settings: routeSettings
+          settings: routeSettings,
         );
       case AppRoutes.qrView:
         return MaterialPageRoute(
@@ -200,14 +200,14 @@ class RouteGenerate {
             create: (context) => QRBloc(getIt<ScanRepository>()),
             child: const QRViewPage(),
           ),
-          settings: routeSettings
+          settings: routeSettings,
         );
       case AppRoutes.orderState:
         return MaterialPageRoute(
           builder: (_) => OrderStatePage(
             isSuccess: routeSettings.arguments as bool,
           ),
-          settings: routeSettings
+          settings: routeSettings,
         );
       case AppRoutes.waiting:
         return MaterialPageRoute(
@@ -215,7 +215,7 @@ class RouteGenerate {
             create: (_) => WaitingViewModel(getIt<ScanRepository>()),
             child: const WaitingPage(),
           ),
-          settings: routeSettings
+          settings: routeSettings,
         );
 
       /// Recepits
@@ -224,7 +224,7 @@ class RouteGenerate {
           builder: (_) => OrderDetailsPage(
             order: routeSettings.arguments as OrderEntity,
           ),
-          settings: routeSettings
+          settings: routeSettings,
         );
 
       /// Payment
@@ -233,7 +233,7 @@ class RouteGenerate {
           builder: (_) => PaymentWebView(
             paymentToken: routeSettings.arguments as String,
           ),
-          settings: routeSettings
+          settings: routeSettings,
         );
 
       default:

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -44,7 +43,7 @@ class MyApp extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(create: (_) => OnboardingCubit()),
-          BlocProvider(create: (_) => ResetCubit()),
+          BlocProvider(create: (_) => ResetCubit(getIt())),
           BlocProvider(create: (_) => LoginCubit(getIt())),
           BlocProvider(create: (_) => ProfileCubit()),
           BlocProvider(create: (_) => RecepitsViewModel(getIt())),
@@ -75,7 +74,7 @@ class MyApp extends StatelessWidget {
 
   String getInitRoute() {
     // for testing
-    // return AppRoutes.login;
+    return AppRoutes.login;
     AppPrefs appPrefs = getIt<AppPrefs>();
     if (appPrefs.isOnBoardingViewed()) {
       if (appPrefs.isUserLoggedIn()) {

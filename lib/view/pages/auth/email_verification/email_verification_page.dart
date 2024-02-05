@@ -17,7 +17,8 @@ import '../../../widgets/public_snack_bar.dart';
 import '../../../widgets/public_text.dart';
 
 class EmailVerificationPage extends StatelessWidget {
-  const EmailVerificationPage({super.key});
+  late String otp;
+  EmailVerificationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -90,9 +91,9 @@ class EmailVerificationPage extends StatelessWidget {
 
                       //otp text field
                       OTPTextField(
-                        length: 4,
+                        length: 6,
                         width: double.infinity,
-                        fieldWidth: 60.w,
+                        fieldWidth: 40.w,
                         style: TextStyle(
                           fontSize: 35.sp,
                           fontWeight: FontWeight.w400,
@@ -100,7 +101,7 @@ class EmailVerificationPage extends StatelessWidget {
                         textFieldAlignment: MainAxisAlignment.spaceAround,
                         fieldStyle: FieldStyle.box,
                         onChanged: (otp) {
-                          cubit.otp = otp;
+                          this.otp = otp;
                         },
                       ),
                       40.ph,
@@ -110,7 +111,7 @@ class EmailVerificationPage extends StatelessWidget {
                         title: S.of(context).verify,
                         width: 350.w,
                         onPressed: () {
-                          cubit.verifyEmail();
+                          cubit.verifyEmail(otp);
                         },
                       ),
                     ],
