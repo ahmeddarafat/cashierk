@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(360, 690),
+      minTextAdapt: true,
       child: MultiBlocProvider(
         providers: [
           BlocProvider(create: (_) => OnboardingCubit()),
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Cashierk',
+          title: 'Cashierc',
           theme: AppThemes.light,
           locale: const Locale("en", "US"),
           supportedLocales: S.delegate.supportedLocales,

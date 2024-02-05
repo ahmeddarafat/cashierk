@@ -1,11 +1,14 @@
 import 'package:start_app/data/data_source/local/app_prefs.dart';
 import 'package:start_app/data/data_source/remote/api_constants.dart';
+import 'package:start_app/data/models/order_entity.dart';
 import 'package:start_app/data/models/order_model.dart';
 
 import '../data_source/remote/api_service.dart';
 import '../network/custom_exception.dart';
 import '../network/error_handler.dart';
 import '../network/network_info.dart';
+
+import 'dart:developer';
 
 class ScanRepository {
   final NetworkInfo _networkInfo;
@@ -47,6 +50,7 @@ class ScanRepository {
         );
         return Order.fromMap(response.data);
       } catch (error) {
+        log(error.toString());
         final failure = ErrorHandler.handle(error).failure;
         throw CustomException(failure.message);
       }

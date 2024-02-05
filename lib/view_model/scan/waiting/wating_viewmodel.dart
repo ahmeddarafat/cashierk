@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:start_app/data/data_source/local/app_prefs.dart';
-import 'package:start_app/data/models/order_model.dart';
+import 'package:start_app/data/models/order_entity.dart';
 import 'package:start_app/data/network/custom_exception.dart';
 import 'package:start_app/view_model/scan/waiting/wating_state.dart';
 
@@ -23,7 +23,7 @@ extension OrderStatusX on OrderStatus {
 class WaitingViewModel extends Cubit<WaitingState> {
   final ScanRepository repo;
   late final AppPrefs _appPrefs;
-  late final Order order;
+  late final OrderEntity order;
 
   WaitingViewModel(this.repo) : super(const WaitingLoadingState()) {
     _appPrefs = getIt<AppPrefs>();
@@ -31,6 +31,7 @@ class WaitingViewModel extends Cubit<WaitingState> {
 
   static WaitingViewModel getInstance(BuildContext context) => context.read();
 
+  // TODO: data - prefer move the data actions to the repository (re-requests)
   Future<void> getOrderItems() async {
     final orderNumber = _appPrefs.getOrderNumber();
     try {
@@ -39,7 +40,7 @@ class WaitingViewModel extends Cubit<WaitingState> {
         order = await repo.getOrderItems(orderNumber);
         await Future.delayed(const Duration(milliseconds: 500));
       }
-      this.order = order;
+      this.order = OrderEntity.fromModel(order);
       emit(const WaitingCompleteState());
     } catch (error) {
       if (error is CustomException) {
