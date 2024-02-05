@@ -53,13 +53,13 @@ class OrderStatePage extends StatelessWidget {
                 ),
                 20.ph,
                 PublicOutlineButton(
+                  title: S.of(context).backToHome,
                   onPressed: () {
                     Navigator.popUntil(
                       context,
                       (route) => route.settings.name == AppRoutes.layouts,
                     );
                   },
-                  title: S.of(context).backToHome,
                 )
               ],
             ),
@@ -70,13 +70,13 @@ class OrderStatePage extends StatelessWidget {
   }
 
   void _trackMyOrder(BuildContext context) {
-    Navigator.pop(context);
-  }
-
-  void _tryAgain(BuildContext context) {
-    Navigator.pop(
+    Navigator.popUntil(
       context,
       (route) => route.settings.name == AppRoutes.layouts,
     );
+  }
+
+  void _tryAgain(BuildContext context) {
+    Navigator.pop(context);
   }
 }

@@ -5,6 +5,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 
 class PaymentViewModel {
   late final WebViewController controller;
+  int status = -1;
 
   void configController(String paymentToken) {
     controller = WebViewController()
@@ -12,14 +13,12 @@ class PaymentViewModel {
       ..setBackgroundColor(const Color(0x00000000))
       ..setNavigationDelegate(
         NavigationDelegate(
-          onProgress: (progress) {
-            log('Progress: $progress');
-          },
-          onPageStarted: (url) {
-            log("page started with url: $url");
-          },
           onPageFinished: (String url) {
-            log("page finised with url :$url");
+            if (url.contains('success=true')) {
+              status = 1;
+            } else if (url.contains('success=false')) {
+              status = 0;
+            }
           },
           onWebResourceError: (WebResourceError error) {
             log("page error: $error");

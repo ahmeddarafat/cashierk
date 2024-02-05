@@ -92,7 +92,7 @@ class PaymentRepository {
             ApiConstants.currency: "EGP",
             ApiConstants.integrationId: IntegrationIds.cardId,
             "billing_data": {
-              "order_id": orderNumber,
+              "postal_code": orderNumber,
               "first_name": userInfo.name,
               "last_name": userInfo.name,
               "email": userInfo.email,
@@ -102,7 +102,6 @@ class PaymentRepository {
               "street": "NA",
               "building": "NA",
               "shipping_method": "NA",
-              "postal_code": "NA",
               "city": "NA",
               "country": "NA",
               "state": "NA"
