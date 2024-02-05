@@ -77,6 +77,7 @@ class PaymentRepository {
     String authToken,
     String price,
     String orderId,
+    String orderNumber
   ) async {
     if (await _networkInfo.isConnected) {
       final userInfo = _appPrefs.getUserInfo();
@@ -91,6 +92,7 @@ class PaymentRepository {
             ApiConstants.currency: "EGP",
             ApiConstants.integrationId: IntegrationIds.cardId,
             "billing_data": {
+              "order_id": orderNumber,
               "first_name": userInfo.name,
               "last_name": userInfo.name,
               "email": userInfo.email,

@@ -120,5 +120,13 @@ class Assets {
   /// Assets for jsonsLoading
   /// assets/jsons/loading.json
   static const String jsonsLoading = "assets/jsons/loading.json";
+
+  /// Assets for markdownPrivacyPolicy
+  /// assets/markdown/privacy_policy.md
+  static const String markdownPrivacyPolicy = "assets/markdown/privacy_policy.md";
+
+  /// Assets for markdownTerms
+  /// assets/markdown/terms.md
+  static const String markdownTerms = "assets/markdown/terms.md";
 }
 

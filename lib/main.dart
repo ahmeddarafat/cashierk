@@ -1,9 +1,7 @@
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
@@ -12,6 +10,7 @@ import 'package:start_app/view_model/auth/login/login_cubit.dart';
 import 'package:start_app/view_model/auth/reset_pass/reset_cubit.dart';
 import 'package:start_app/view_model/home/home_cubit.dart';
 import 'package:start_app/view_model/onboarding/onboarding_cubit.dart';
+import 'package:start_app/view_model/profile/cubit/notification_settings_cubit.dart';
 import 'package:start_app/view_model/recepits/recepits_viewmodel.dart';
 import 'data/data_source/local/app_prefs.dart';
 import 'resources/observers/bloc_observer.dart';
@@ -41,6 +40,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(360, 690),
+      minTextAdapt: true,
       child: MultiBlocProvider(
         providers: [
           BlocProvider(create: (_) => OnboardingCubit()),
@@ -49,10 +49,11 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: (_) => ProfileCubit()),
           BlocProvider(create: (_) => RecepitsViewModel(getIt())),
           BlocProvider(create: (_) => HomeCubit()),
+          BlocProvider(create: (_) => NotificationSettingsCubit()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Cashierk',
+          title: 'Cashierc',
           theme: AppThemes.light,
           locale: const Locale("en", "US"),
           supportedLocales: S.delegate.supportedLocales,

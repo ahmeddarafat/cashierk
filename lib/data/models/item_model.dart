@@ -29,7 +29,7 @@ class Item {
       image: map[ApiConstants.productImage] as String,
       quantity: map[ApiConstants.quantity] as int,
       unitPrice: map[ApiConstants.unitPrice] as String,
-      unit: map[ApiConstants.productUnit] as String,
+      unit: map[ApiConstants.productUnit] as String? ??"",
     );
   }
 }

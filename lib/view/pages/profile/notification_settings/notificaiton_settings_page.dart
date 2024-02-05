@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/view/widgets/public_divider.dart';
+import 'package:start_app/view_model/profile/cubit/notification_settings_cubit.dart';
 
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/styles/app_colors.dart';
@@ -12,6 +13,7 @@ class NotificationsSettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var bloc = NotificationSettingsCubit.getInstance(context);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -33,28 +35,33 @@ class NotificationsSettingsPage extends StatelessWidget {
           child: Column(
             children: [
               PublicSwitchListTile(
+                index: 0,
                 title: S.of(context).generalNotifications,
-                swithcer: Switchers.general,
+                initValue: bloc.notifications[0],
               ),
               const PublicDivider(),
               PublicSwitchListTile(
+                index: 1,
                 title: S.of(context).rememberMe,
-                swithcer: Switchers.rememberMe,
+                initValue: bloc.notifications[1],
               ),
               const PublicDivider(),
               PublicSwitchListTile(
+                index: 2,
                 title: S.of(context).sound,
-                swithcer: Switchers.sound,
+                initValue: bloc.notifications[2],
               ),
               const PublicDivider(),
               PublicSwitchListTile(
+                index: 3,
                 title: S.of(context).specialOffer,
-                swithcer: Switchers.offers,
+                initValue: bloc.notifications[3],
               ),
               const PublicDivider(),
               PublicSwitchListTile(
+                index: 4,
                 title: S.of(context).appUpdates,
-                swithcer: Switchers.updates,
+                initValue: bloc.notifications[4],
               ),
               const PublicDivider()
             ],

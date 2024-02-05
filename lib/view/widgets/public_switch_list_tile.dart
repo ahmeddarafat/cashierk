@@ -1,28 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:start_app/resources/styles/app_colors.dart';
+import 'package:start_app/view_model/profile/cubit/notification_settings_cubit.dart';
 
 import '../../data/data_source/local/app_prefs.dart';
 import '../../resources/service_locator/service_locator.dart';
 import 'public_text.dart';
 
-enum Switchers {
-  darkMode,
-  general,
-  sound,
-  offers,
-  updates,
-  rememberMe
-}
-
 class PublicSwitchListTile extends StatefulWidget {
+  final int index;
   final String title;
-  final Switchers swithcer;
   final Icon? icon;
+  final bool initValue;
   const PublicSwitchListTile({
     super.key,
+    required this.index,
     required this.title,
-    required this.swithcer,
+    required this.initValue,
     this.icon,
   });
 
@@ -32,7 +26,16 @@ class PublicSwitchListTile extends StatefulWidget {
 
 class _PublicSwitchListTileState extends State<PublicSwitchListTile> {
   bool switcherValue = false;
-  final appPrefs = getIt<AppPrefs>();
+  late final AppPrefs appPrefs;
+  late final NotificationSettingsCubit bloc;
+
+  @override
+  void initState() {
+    super.initState();
+    switcherValue = widget.initValue;
+    appPrefs = getIt();
+bloc = NotificationSettingsCubit.getInstance(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,22 +52,12 @@ class _PublicSwitchListTileState extends State<PublicSwitchListTile> {
             setState(() {
               switcherValue = value;
             });
-            setSwitches(widget.swithcer, switcherValue);
+            bloc.changeNotification(widget.index);
           },
           value: switcherValue,
-          activeColor:AppColors.orangePrimary,
+          activeColor: AppColors.orangePrimary,
         ),
       ),
     );
-  }
-
-  // helper methods
-  void setSwitches(Switchers switcher, bool value) {
-    switch (switcher) {
-      case Switchers.rememberMe:
-        appPrefs.setUserLoggedIn();
-        break;
-      default:
-    }
   }
 }

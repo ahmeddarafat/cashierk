@@ -108,4 +108,8 @@ class AppPrefs {
   void clear() {
     _sharedPrefs.clear();
   }
+
+  /// notification
+  // TODO: data - remove fcm token
+  Future<void> setNotificationOnOff() async {}
 }
