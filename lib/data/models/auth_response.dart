@@ -47,3 +47,26 @@ class User {
     );
   }
 }
+
+class PasswordResetResponse {
+  final bool? status;
+  final String? message;
+  final String? otp;
+
+  PasswordResetResponse({
+    this.status,
+    this.message,
+    this.otp
+  });
+
+  factory PasswordResetResponse.fromJson(Map<String, dynamic> map) {
+    return PasswordResetResponse(
+      status: map["success"] as bool?,
+      message: map["message"] as String?,
+      otp: map["otp"] as String?,
+    );
+  }
+
+  @override
+  String toString() => 'PasswordResetResponse(status: $status, message: $message, otp: $otp)';
+}

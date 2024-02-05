@@ -48,6 +48,8 @@ class EndPoints {
   static const login = "/auth/login";
   static const register = "/auth/register";
   static const profile = "/auth/user-profile";
+  static const forgotPassword = "/password/forget-password";
+  static const resetPassword = "/password/reset";
   static const logout = "/auth/logout";
 
   /// order

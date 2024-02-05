@@ -23,3 +23,15 @@ class LoginRequest {
   });
 }
 
+class ResetPasswordRequest {
+  final String email;
+  final String password;
+  final String otp;
+
+  ResetPasswordRequest({
+    required this.email,
+    required this.password,
+    required this.otp,
+  });
+}
+
