@@ -68,7 +68,7 @@ class AppRoutes {
 
   /// Scan
   static const cart = "cart";
-  static const orderState = "order state";
+  static const orderStatus = "order state";
   static const qrView = "qr view";
   static const waiting = "waiting";
 
@@ -202,7 +202,7 @@ class RouteGenerate {
           ),
           settings: routeSettings,
         );
-      case AppRoutes.orderState:
+      case AppRoutes.orderStatus:
         return MaterialPageRoute(
           builder: (_) => OrderStatePage(
             isSuccess: routeSettings.arguments as bool,

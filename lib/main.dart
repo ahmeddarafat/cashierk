@@ -74,7 +74,7 @@ class MyApp extends StatelessWidget {
 
   String getInitRoute() {
     // for testing
-    return AppRoutes.login;
+    // return AppRoutes.login;
     AppPrefs appPrefs = getIt<AppPrefs>();
     if (appPrefs.isOnBoardingViewed()) {
       if (appPrefs.isUserLoggedIn()) {
