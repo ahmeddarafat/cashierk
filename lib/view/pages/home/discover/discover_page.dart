@@ -55,7 +55,7 @@ class DiscoverPage extends StatelessWidget {
 
               /// search
               InkWell(
-                onTap: () => Navigator.pushNamed(context, AppRoutes.search),
+                onTap: () => Navigator.pushNamed(context, AppRoutes.categories),
                 child: Hero(
                   tag: "Search tage",
                   child: Container(

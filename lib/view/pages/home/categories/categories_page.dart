@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
 import 'package:start_app/view/widgets/public_text_form_field.dart';
@@ -59,7 +60,14 @@ class CategoriesPage extends StatelessWidget {
                             ? AppColors.white
                             : AppColors.orangePrimary,
                       ),
-                      onSelected: (_) {},
+                      onSelected: (_) {
+                        if (index == 0) {
+                          bloc.removeFilter();
+                        } else {
+                          bloc.filterItemsByLabel(
+                              AppConstants.categoriesNames[index]);
+                        }
+                      },
                     );
                   },
                   separatorBuilder: (_, __) => 10.pw,
@@ -73,20 +81,31 @@ class CategoriesPage extends StatelessWidget {
                 validator: null,
                 showprefixIcon: true,
                 prefixIcon: Icons.search,
+                onChanged: (str) {
+                  bloc.filterItemsBySearch(str);
+                },
               ),
               20.ph,
 
               /// items
-              GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: DummyData.items.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 170 / 220,
-                ),
-                itemBuilder: (_, index) {
-                  return ItemCard(item: bloc.allItems[index]);
+              BlocBuilder<HomeCubit, HomeState>(
+                buildWhen: (_, current) {
+                  return current is FilterItemsState;
+                },
+                builder: (context, state) {
+                  return GridView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: bloc.filteredItems.length,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      childAspectRatio: 170 / 220,
+                    ),
+                    itemBuilder: (_, index) {
+                      return ItemCard(item: bloc.filteredItems[index]);
+                    },
+                  );
                 },
               ),
             ],

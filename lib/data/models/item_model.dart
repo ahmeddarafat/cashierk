@@ -9,6 +9,7 @@ class Item {
   final int quantity;
   final String unitPrice;
   final String? unit;
+  final String category;
   late final double totalPrice;
 
   Item({
@@ -17,6 +18,7 @@ class Item {
     required this.image,
     required this.quantity,
     required this.unitPrice,
+    required this.category,
     this.unit,
   }) {
     totalPrice = quantity * double.parse(unitPrice);
@@ -29,6 +31,7 @@ class Item {
       image: map[ApiConstants.productImage] as String,
       quantity: map[ApiConstants.quantity] as int,
       unitPrice: map[ApiConstants.unitPrice] as String,
+      category: map[ApiConstants.category] as String? ?? "unknown",
       unit: map[ApiConstants.productUnit] as String? ??"",
     );
   }

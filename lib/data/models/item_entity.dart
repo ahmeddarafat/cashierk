@@ -12,6 +12,7 @@ class ItemEntity {
   final String unitPrice;
   final String? unit;
   final double totalPrice;
+  final String category;
   bool isFavorite;
 
   ItemEntity({
@@ -20,6 +21,7 @@ class ItemEntity {
     required this.image,
     required this.quantity,
     required this.unitPrice,
+    required this.category,
     this.unit,
     required this.totalPrice,
     this.isFavorite = false,
@@ -34,6 +36,7 @@ class ItemEntity {
       unitPrice: item.unitPrice,
       unit: item.unit,
       totalPrice: item.totalPrice,
+      category: item.category,
       isFavorite: false,
     );
   }
@@ -47,6 +50,7 @@ class ItemEntity {
     String? unit,
     double? totalPrice,
     bool? isFavorite,
+    String? category,
   }) {
     return ItemEntity(
       id: id ?? this.id,
@@ -57,6 +61,7 @@ class ItemEntity {
       unit: unit ?? this.unit,
       totalPrice: totalPrice ?? this.totalPrice,
       isFavorite: isFavorite ?? this.isFavorite,
+      category: category ?? this.category,
     );
   }
 
@@ -70,6 +75,7 @@ class ItemEntity {
       'unit': unit,
       'totalPrice': totalPrice,
       'isFavorite': isFavorite,
+      'category': category,
     };
   }
 
@@ -83,6 +89,7 @@ class ItemEntity {
       unit: map['unit'] != null ? map['unit'] as String : null,
       totalPrice: map['totalPrice'] as double,
       isFavorite: map['isFavorite'] as bool,
+      category: map['category'] as String,
     );
   }
 

@@ -650,11 +650,11 @@ class S {
     );
   }
 
-  /// `Vegtables`
-  String get vegtables {
+  /// `Vegetables`
+  String get vegetables {
     return Intl.message(
-      'Vegtables',
-      name: 'vegtables',
+      'Vegetables',
+      name: 'vegetables',
       desc: '',
       args: [],
     );
