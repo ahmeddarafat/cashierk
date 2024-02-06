@@ -15,6 +15,7 @@ import 'resources/styles/app_themes.dart';
 import 'resources/router/app_router.dart';
 import 'resources/service_locator/service_locator.dart';
 import 'view_model/profile/profile/profile_cubit.dart';
+import 'view_model/notifications/notification_cubit.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -33,6 +34,10 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: (_) => RecepitsViewModel(getIt())),
           BlocProvider(create: (_) => HomeCubit()),
           BlocProvider(create: (_) => NotificationSettingsCubit()),
+          BlocProvider(
+            create: (_) => NotificationCubit(),
+            lazy: false,
+          ),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
