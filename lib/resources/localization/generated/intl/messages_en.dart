@@ -215,7 +215,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "trackMyOrder": MessageLookupByLibrary.simpleMessage("Track my Order"),
         "tryAgain": MessageLookupByLibrary.simpleMessage("Try Again"),
         "username": MessageLookupByLibrary.simpleMessage("User name"),
-        "vegtables": MessageLookupByLibrary.simpleMessage("Vegtables"),
+        "vegetables": MessageLookupByLibrary.simpleMessage("Vegetables"),
         "verify": MessageLookupByLibrary.simpleMessage("Verfiy"),
         "viewDetails": MessageLookupByLibrary.simpleMessage("View Details"),
         "waitingSubtitle":

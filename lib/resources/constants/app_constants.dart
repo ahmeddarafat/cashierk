@@ -34,7 +34,7 @@ class AppConstants {
     ),
     Category(
         image: Assets.imagesBrokly,
-        name: S.current.vegtables,
+        name: S.current.vegetables,
         color: const Color(0xFF82DA9D)),
     Category(
       image: Assets.imagesMeat,
@@ -53,7 +53,7 @@ class AppConstants {
     ),
     Category(
       image: Assets.imagesBrokly,
-      name: S.current.vegtables,
+      name: S.current.vegetables,
       color: const Color(0xFFB4F7A3),
     ),
     Category(
@@ -71,11 +71,11 @@ class AppConstants {
   static final categoriesNames = [
     S.current.all,
     S.current.fruits,
-    S.current.vegtables,
+    S.current.vegetables,
     S.current.meat,
     S.current.chicken,
     S.current.fruits,
-    S.current.vegtables,
+    S.current.vegetables,
     S.current.meat,
     S.current.chicken,
   ];

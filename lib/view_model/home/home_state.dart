@@ -45,3 +45,14 @@ final class FavoriteItemsState extends HomeState {
     );
   }
 }
+
+final class FilterItemsState extends HomeState {
+  final String label;
+
+  const FilterItemsState(
+    this.label,
+  );
+
+  @override
+  List<Object> get props => [label];
+}

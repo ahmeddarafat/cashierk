@@ -1,7 +1,6 @@
 import '../../resources/constants/app_assets.dart';
 import '../models/item_model.dart';
 import '../models/notification_model.dart';
-import '../models/order_model.dart';
 
 class DummyData {
   DummyData._();
@@ -14,6 +13,7 @@ class DummyData {
       unit: "Kg",
       quantity: 1,
       unitPrice: '20',
+      category: 'Fruits',
     ),
     Item(
       id: "2",
@@ -22,6 +22,7 @@ class DummyData {
       unit: "Kg",
       unitPrice: "100",
       quantity: 1,
+      category: 'Meat',
     ),
     Item(
       id: "3",
@@ -30,6 +31,7 @@ class DummyData {
       unit: "Kg",
       unitPrice: "35.5",
       quantity: 1,
+      category: 'Fruits',
     ),
     Item(
       id: "4",
@@ -38,6 +40,7 @@ class DummyData {
       unit: "Kg",
       quantity: 1,
       unitPrice: "10.8",
+      category: 'Vegetables',
     ),
     Item(
       id: "5",
@@ -46,6 +49,7 @@ class DummyData {
       unit: "Kg",
       quantity: 1,
       unitPrice: '20',
+      category: 'Fruits',
     ),
     Item(
       id: "6",
@@ -54,6 +58,7 @@ class DummyData {
       unit: "Kg",
       unitPrice: "100",
       quantity: 1,
+      category: 'Meat',
     ),
     Item(
       id: "7",
@@ -62,6 +67,7 @@ class DummyData {
       unit: "Kg",
       unitPrice: "35.5",
       quantity: 1,
+      category: 'Fruits',
     ),
     Item(
       id: "8",
@@ -70,6 +76,7 @@ class DummyData {
       unit: "Kg",
       quantity: 1,
       unitPrice: "10.8",
+      category: 'Vegetables',
     ),
   ];
 

@@ -1,4 +1,3 @@
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,6 +10,7 @@ part 'home_state.dart';
 class HomeCubit extends Cubit<HomeState> with HydratedMixin {
   late List<ItemEntity> allItems;
   late List<ItemEntity> favoirteItems;
+  late List<ItemEntity> filteredItems;
 
   HomeCubit() : super(HomeInitial()) {
     /// beacuse we don't have a real api
@@ -18,6 +18,7 @@ class HomeCubit extends Cubit<HomeState> with HydratedMixin {
     allItems =
         DummyData.items.map((item) => ItemEntity.fromModel(item)).toList();
     favoirteItems = [];
+    filteredItems = allItems;
     hydrate();
   }
 
@@ -51,6 +52,25 @@ class HomeCubit extends Cubit<HomeState> with HydratedMixin {
     }
   }
 
+  void filterItemsByLabel(String label) {
+    filteredItems = allItems.where((item) {
+      return item.category.toLowerCase() == label.toLowerCase();
+    }).toList();
+    emit(FilterItemsState(label));
+  }
+
+  void filterItemsBySearch(String str) {
+    filteredItems = allItems.where((item) {
+      return item.name.toLowerCase().contains(str.toLowerCase());
+    }).toList();
+    emit(FilterItemsState(str));
+  }
+
+  void removeFilter() {
+    filteredItems = allItems;
+    emit(const FilterItemsState('no filter'));
+  }
+
   void _modifyFavoriteList(ItemEntity item, String id) {
     if (item.isFavorite) {
       favoirteItems.removeWhere((item) => item.id == id);
@@ -71,3 +91,4 @@ class HomeCubit extends Cubit<HomeState> with HydratedMixin {
     }
   }
 }
+
