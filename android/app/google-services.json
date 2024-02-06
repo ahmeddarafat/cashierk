@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "679536687745",
+    "project_id": "casheric-4d83f",
+    "storage_bucket": "casheric-4d83f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679536687745:android:0a84ee88fcceeead91eb80",
+        "android_client_info": {
+          "package_name": "com.example.start_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9FdFOqe_nrY5AVw2inCuv7GROhwJn-cw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

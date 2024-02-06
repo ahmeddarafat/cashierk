@@ -4,7 +4,7 @@ import 'package:start_app/data/data_source/remote/api_service.dart';
 import 'package:start_app/data/network/custom_exception.dart';
 import 'package:start_app/data/network/network_info.dart';
 
-import '../data_source/remote/api_constants.dart';
+import '../constants/api_constants.dart';
 import '../network/error_handler.dart';
 
 const apiKey =

@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:start_app/data/models/order_entity.dart';
 
 import '../data_source/local/app_prefs.dart';
-import '../data_source/remote/api_constants.dart';
+import '../constants/api_constants.dart';
 import '../data_source/remote/api_service.dart';
 import '../models/order_model.dart';
 import '../network/custom_exception.dart';
