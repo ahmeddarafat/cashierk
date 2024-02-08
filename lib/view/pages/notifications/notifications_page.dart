@@ -53,7 +53,8 @@ class _NotificationsPageState extends State<NotificationsPage> {
             return ListView.builder(
               itemCount: bloc.notifications.length,
               itemBuilder: (_, index) => NotificationCard(
-                notification: bloc.notifications[index],
+                // TODO: logic - enhance
+                notification: bloc.notifications.reversed.toList()[index],
               ),
             );
           },

@@ -66,3 +66,4 @@ class QRBloc extends Bloc<QREvent, QRState> {
     await Future.delayed(const Duration(seconds: 5));
   }
 }
+

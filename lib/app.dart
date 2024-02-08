@@ -10,6 +10,7 @@ import 'package:start_app/view_model/onboarding/onboarding_cubit.dart';
 import 'package:start_app/view_model/profile/cubit/notification_settings_cubit.dart';
 import 'package:start_app/view_model/recepits/recepits_viewmodel.dart';
 import 'data/data_source/local/app_prefs.dart';
+import 'resources/helper/navigation_service.dart';
 import 'resources/styles/app_themes.dart';
 
 import 'resources/router/app_router.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
           ),
         ],
         child: MaterialApp(
+          navigatorKey: NavigationService.navigatorKey, 
           debugShowCheckedModeBanner: false,
           title: 'Cashierc',
           theme: AppThemes.light,
