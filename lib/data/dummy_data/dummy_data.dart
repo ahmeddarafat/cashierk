@@ -80,36 +80,36 @@ class DummyData {
     ),
   ];
 
-  static const List<NotificationObject> notifications = [
-    NotificationObject(
+  static  List<NotificationModel> notifications = [
+    NotificationModel(
       title: "Fresh Vegetables",
-      date: "Aug 12, 2023",
-      content: "30% - 50% Off on selected vegetables",
+      date: DateTime.now(),
+      body: "30% - 50% Off on selected vegetables",
     ),
-    NotificationObject(
+    NotificationModel(
       title: "Fresh Fruits",
-      date: "Mar 15, 2023",
-      content: "30% - 50% Off on selected fruits.",
+      body: "30% - 50% Off on selected fruits.",
+      date: DateTime.now(),
     ),
-    NotificationObject(
+    NotificationModel(
       title: "Fresh Vegetables",
-      date: "Aug 12, 2023",
-      content: "30% - 50% Off on selected vegetables",
+      body: "30% - 50% Off on selected vegetables",
+      date: DateTime.now(),
     ),
-    NotificationObject(
+    NotificationModel(
       title: "Fresh Fruits",
-      date: "Mar 15, 2023",
-      content: "30% - 50% Off on selected fruits.",
+      body: "30% - 50% Off on selected fruits.",
+      date: DateTime.now(),
     ),
-    NotificationObject(
+    NotificationModel(
       title: "Fresh Vegetables",
-      date: "Aug 12, 2023",
-      content: "30% - 50% Off on selected vegetables",
+      body: "30% - 50% Off on selected vegetables",
+      date: DateTime.now(),
     ),
-    NotificationObject(
+    NotificationModel(
       title: "Fresh Fruits",
-      date: "Mar 15, 2023",
-      content: "30% - 50% Off on selected fruits.",
+      body: "30% - 50% Off on selected fruits.",
+      date: DateTime.now(),
     ),
   ];
 

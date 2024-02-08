@@ -1,7 +1,9 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter/material.dart';
 import 'package:start_app/resources/extensions/app_extensions.dart';
+import 'package:start_app/view_model/notifications/notification_cubit.dart';
 
 import '../../../data/dummy_data/dummy_data.dart';
 import '../../../data/models/notification_model.dart';
@@ -11,9 +13,21 @@ import '../../widgets/public_text.dart';
 
 part 'components/notification_card.dart';
 
-class NotificationsPage extends StatelessWidget {
+class NotificationsPage extends StatefulWidget {
   const NotificationsPage({super.key});
 
+  @override
+  State<NotificationsPage> createState() => _NotificationsPageState();
+}
+
+class _NotificationsPageState extends State<NotificationsPage> {
+  late final NotificationCubit bloc;
+  @override
+  void initState() {
+    super.initState();
+    bloc = context.read();
+    
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -34,11 +48,16 @@ class NotificationsPage extends StatelessWidget {
             onPressed: () => Navigator.pop(context),
           ),
         ),
-        body: ListView.builder(
-          itemCount: DummyData.notifications.length,
-          itemBuilder: (_, index) => NotificationCard(
-            notification: DummyData.notifications[index],
-          ),
+        body: BlocBuilder<NotificationCubit, NotificationState>(
+          builder: (context, state) {
+            return ListView.builder(
+              itemCount: bloc.notifications.length,
+              itemBuilder: (_, index) => NotificationCard(
+                // TODO: logic - enhance
+                notification: bloc.notifications.reversed.toList()[index],
+              ),
+            );
+          },
         ),
       ),
     );

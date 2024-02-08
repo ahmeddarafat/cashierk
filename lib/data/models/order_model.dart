@@ -1,4 +1,4 @@
-import 'package:start_app/data/data_source/remote/api_constants.dart';
+import 'package:start_app/data/constants/api_constants.dart';
 import 'package:start_app/data/models/item_model.dart';
 
 class Order {

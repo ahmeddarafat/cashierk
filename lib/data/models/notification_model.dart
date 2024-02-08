@@ -1,11 +1,18 @@
-class NotificationObject {
+class NotificationModel {
   final String title;
-  final String date;
-  final String content;
+  final String body;
+  final DateTime date;
+  final Map<String, dynamic>? data;
 
-  const NotificationObject({
+  const NotificationModel({
     required this.title,
     required this.date,
-    required this.content,
+    required this.body,
+    this.data,
   });
+
+  @override
+  String toString() {
+    return 'NotificationModel(title: $title, body: $body, date: $date, data: $data)';
+  }
 }

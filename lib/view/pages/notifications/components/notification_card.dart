@@ -1,7 +1,7 @@
 part of '../notifications_page.dart';
 
 class NotificationCard extends StatelessWidget {
-  final NotificationObject notification;
+  final NotificationModel notification;
   const NotificationCard({
     super.key,
     required this.notification,
@@ -10,9 +10,9 @@ class NotificationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 6.h),
+      padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 10.w),
+        padding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 10.h),
         height: 86.h,
         width: 394.w,
         decoration: BoxDecoration(
@@ -27,6 +27,7 @@ class NotificationCard extends StatelessWidget {
           ],
         ),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               decoration: BoxDecoration(
@@ -35,15 +36,14 @@ class NotificationCard extends StatelessWidget {
               ),
               child: Icon(
                 Icons.priority_high_rounded,
-                size: 40.w,
+                size: 35.w,
                 color: AppColors.orangePrimary,
               ),
             ),
-            10.pw,
+            15.pw,
             SizedBox(
               width: MediaQuery.sizeOf(context).width - 2 * 32.w - 50.w,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
@@ -56,16 +56,16 @@ class NotificationCard extends StatelessWidget {
                           size: 18.sp,
                         ),
                       ),
-                      // TODO: "logic - make the type dateTime"
                       PublicText(
-                        txt: notification.date,
+                        txt: notification.date.monthDayYearFormat,
                         size: 13.sp,
                         color: AppColors.grey,
                       ),
                     ],
                   ),
+                  5.ph,
                   PublicText(
-                    txt: notification.content,
+                    txt: notification.body,
                     size: 16.sp,
                     fw: FontWeight.w400,
                     color: AppColors.grey,

@@ -44,6 +44,12 @@ class EndPoints {
   /// Url
   static const serverBaseUrl = "https://cashierc.pharmaco-medica.com/api";
   static const paymentBaseUrl = "https://accept.paymob.com/api";
+  // static const fcmBaseUrl = "https://fcm.googleapis.com/fcm";
+
+  // /// notification
+  // static const fcmSend = "/send";
+  // static const fcmAuth =
+  //     "AAAAItfTFCA:APA91bENlDihkLeUXYHHbUKz3P9LT_uG_70Zot89voqThP3N9XAayZOiViDNO-8BhGO68qlW2xG56nW2V6rMO3VGBTnERtnBNDstaQCy1zR_vuM__JBBletmURRSbS9ifAVnCCASnU6D";
 
   /// Auth
   static const login = "/auth/login";
