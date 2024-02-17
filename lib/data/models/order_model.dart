@@ -31,10 +31,10 @@ class Order {
       id: map[ApiConstants.orderNumber] as String,
       status: map[ApiConstants.orderStatus] as String,
       date: map[ApiConstants.orderDate] as String,
-      shopName: 'Al-Soltan Market',
+      shopName: 'Carrefour Market',
       notes: 'There is no notes',
-      subTotalPrice: totalPrice,
       taxes: 0,
+      subTotalPrice: totalPrice,
       totalPrice: totalPrice,
       items: (map[ApiConstants.orderItems] as List)
           .map((item) => Item.fromMap(item))

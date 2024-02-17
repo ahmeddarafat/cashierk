@@ -84,8 +84,8 @@ class AppPrefs {
     await _sharedPrefs.setString(PrefsKeys.profileImage, profileImage);
   }
 
-  String getProfileImage() {
-    return _sharedPrefs.getString(PrefsKeys.profileImage) ?? "Unknown";
+  String? getProfileImage() {
+    return _sharedPrefs.getString(PrefsKeys.profileImage);
   }
 
   Future<void> removeProfileImage() async {

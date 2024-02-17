@@ -12,7 +12,7 @@ class OrderView extends StatelessWidget {
     return ListView.separated(
       itemCount: orders.length,
       itemBuilder: (_, index) {
-        return OrderCard(order: orders[index]);
+        return OrderCard(order: orders.reversed.toList()[index]);
       },
       separatorBuilder: (_, __) => 10.ph,
     );

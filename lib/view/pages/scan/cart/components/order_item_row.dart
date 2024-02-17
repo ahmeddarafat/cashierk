@@ -19,7 +19,6 @@ class OrderItemRow extends StatelessWidget {
           child: CachedNetworkImage(
             imageUrl: item.image,
             fit: BoxFit.fill,
-            placeholder: (_, __) => const CircularProgressIndicator(),
             errorWidget: (_, __, ___) => const Icon(Icons.error),
           ),
         ),
