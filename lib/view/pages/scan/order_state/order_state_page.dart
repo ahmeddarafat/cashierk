@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:start_app/resources/constants/app_assets.dart';
@@ -77,6 +79,7 @@ class OrderStatePage extends StatelessWidget {
   }
 
   void _tryAgain(BuildContext context) {
+    log("try again");
     Navigator.pop(context);
   }
 }

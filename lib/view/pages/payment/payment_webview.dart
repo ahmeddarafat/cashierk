@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:start_app/resources/router/app_router.dart';
 import 'package:start_app/view_model/payment/payment_viewmodel.dart';
@@ -18,22 +20,7 @@ class _PaymentWebViewState extends State<PaymentWebView> {
   void initState() {
     super.initState();
     _viewModel = PaymentViewModel();
-    _viewModel.configController(widget.paymentToken);
-    while (_viewModel.status == -1) {
-      if (_viewModel.status == 1) {
-        Navigator.pushReplacementNamed(
-          context,
-          AppRoutes.orderStatus,
-          arguments: true,
-        );
-      } else if (_viewModel.status == 0) {
-        Navigator.pushReplacementNamed(
-          context,
-          AppRoutes.orderStatus,
-          arguments: false,
-        );
-      }
-    }
+    _viewModel.configController(context, widget.paymentToken);
   }
 
   @override

@@ -133,5 +133,7 @@
     "notes": "Notes",
     "Wating_comment": "--------------------------- waiting comment -------------------------------",
     "pleaseWait": "Please Wait",
-    "waitingSubtitle": "We are adding your products"
+    "waitingSubtitle": "We are adding your products",
+    "notifications_comment": "--------------------------- notifications comment -------------------------------",
+    "noNotificationsTitle": "You don't have notifications yet"
 }

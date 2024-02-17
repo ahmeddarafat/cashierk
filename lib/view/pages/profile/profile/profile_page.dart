@@ -45,7 +45,7 @@ class _ProfilePageState extends State<ProfilePage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                PublicCircularImage(image: cubit.image),
+                const PublicCircularImage(),
                 8.ph,
                 BlocBuilder<ProfileCubit, ProfileState>(
                   buildWhen: (_, current) => current is ChangeProfileState,
@@ -93,14 +93,12 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 const PublicDivider(),
                 PublicListTile(
-                  onTap: () =>
-                      Navigator.pushNamed(context, AppRoutes.policy),
+                  onTap: () => Navigator.pushNamed(context, AppRoutes.policy),
                   title: S.of(context).privacyPolicy,
                   icon: Icons.privacy_tip_outlined,
                 ),
                 PublicListTile(
-                  onTap: () =>
-                      Navigator.pushNamed(context, AppRoutes.terms),
+                  onTap: () => Navigator.pushNamed(context, AppRoutes.terms),
                   title: S.of(context).termsConditions,
                   icon: Icons.telegram_sharp,
                 ),

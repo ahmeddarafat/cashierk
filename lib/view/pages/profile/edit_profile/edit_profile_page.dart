@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
@@ -71,7 +70,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     alignment: Alignment.center,
                     child: Stack(
                       children: [
-                        PublicCircularImage(image: cubit.image),
+                        const PublicCircularImage(),
                         Positioned(
                           bottom: 2.h,
                           right: 2.w,
@@ -97,7 +96,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     ),
                   ),
                   24.ph,
-            
+
                   /// Username
                   PublicText(
                     txt: S.of(context).username,
@@ -115,7 +114,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     },
                   ),
                   24.ph,
-            
+
                   /// Email
                   PublicText(
                     txt: S.of(context).email,
@@ -153,5 +152,3 @@ class _EditProfilePageState extends State<EditProfilePage> {
     );
   }
 }
-
-

@@ -7,7 +7,6 @@ import 'package:start_app/view_model/auth/login/login_cubit.dart';
 import 'package:start_app/view_model/auth/reset_pass/reset_cubit.dart';
 import 'package:start_app/view_model/home/home_cubit.dart';
 import 'package:start_app/view_model/onboarding/onboarding_cubit.dart';
-import 'package:start_app/view_model/profile/cubit/notification_settings_cubit.dart';
 import 'package:start_app/view_model/recepits/recepits_viewmodel.dart';
 import 'data/data_source/local/app_prefs.dart';
 import 'resources/helper/navigation_service.dart';
@@ -15,6 +14,7 @@ import 'resources/styles/app_themes.dart';
 
 import 'resources/router/app_router.dart';
 import 'resources/service_locator/service_locator.dart';
+import 'view_model/profile/notifications_settings/notification_settings_cubit.dart';
 import 'view_model/profile/profile/profile_cubit.dart';
 import 'view_model/notifications/notification_cubit.dart';
 

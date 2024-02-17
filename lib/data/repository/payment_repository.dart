@@ -1,4 +1,3 @@
-
 import 'package:start_app/data/data_source/local/app_prefs.dart';
 import 'package:start_app/data/data_source/remote/api_service.dart';
 import 'package:start_app/data/network/custom_exception.dart';
@@ -73,12 +72,8 @@ class PaymentRepository {
     }
   }
 
-  Future<String> getPaymenToken(
-    String authToken,
-    String price,
-    String orderId,
-    String orderNumber
-  ) async {
+  Future<String> getPaymenToken(String authToken, String price, String orderId,
+      String orderNumber) async {
     if (await _networkInfo.isConnected) {
       final userInfo = _appPrefs.getUserInfo();
       try {
@@ -92,15 +87,15 @@ class PaymentRepository {
             ApiConstants.currency: "EGP",
             ApiConstants.integrationId: IntegrationIds.cardId,
             "billing_data": {
-              "postal_code": orderNumber,
-              "first_name": userInfo.name,
-              "last_name": userInfo.name,
+              "street": orderNumber,
+              "first_name": userInfo.name.split(" ").first,
+              "last_name": userInfo.name.split(" ").last,
               "email": userInfo.email,
               "phone_number": "+86(8)9135210487",
               "apartment": "NA",
               "floor": "NA",
-              "street": "NA",
               "building": "NA",
+              "postal_code": "NA",
               "shipping_method": "NA",
               "city": "NA",
               "country": "NA",

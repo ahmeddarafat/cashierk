@@ -3,21 +3,33 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
+import '../../resources/router/app_router.dart';
+
 class PaymentViewModel {
   late final WebViewController controller;
-  int status = -1;
 
-  void configController(String paymentToken) {
+  void configController(BuildContext context, String paymentToken) {
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setBackgroundColor(const Color(0x00000000))
       ..setNavigationDelegate(
         NavigationDelegate(
           onPageFinished: (String url) {
+            log("page finished: $url");
             if (url.contains('success=true')) {
-              status = 1;
+              log("success");
+              Navigator.pushReplacementNamed(
+                context,
+                AppRoutes.orderStatus,
+                arguments: true,
+              );
             } else if (url.contains('success=false')) {
-              status = 0;
+              log("failed");
+              Navigator.pushReplacementNamed(
+                context,
+                AppRoutes.orderStatus,
+                arguments: false,
+              );
             }
           },
           onWebResourceError: (WebResourceError error) {

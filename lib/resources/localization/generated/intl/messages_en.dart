@@ -112,6 +112,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Remember to mark you favorite items"),
         "noFavoriteTitle": MessageLookupByLibrary.simpleMessage(
             "You don\'t have an favorite items yet"),
+        "noNotificationsTitle": MessageLookupByLibrary.simpleMessage(
+            "You don\'t have notifications yet"),
         "noOrderSubtitle": MessageLookupByLibrary.simpleMessage(
             "You don\'t have any order at this time"),
         "noOrderTitle": MessageLookupByLibrary.simpleMessage(
@@ -124,6 +126,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "notification_settings_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- notifications settings -------------------------------"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
+        "notifications_comment": MessageLookupByLibrary.simpleMessage(
+            "--------------------------- notifications comment -------------------------------"),
         "oldPassword": MessageLookupByLibrary.simpleMessage("Old Password"),
         "onboardingSubtitle1": MessageLookupByLibrary.simpleMessage(
             "This app will teach you everything you need to know about using the Cashierk, from setting it up to processing payments."),

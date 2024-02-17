@@ -84,8 +84,8 @@ class AppPrefs {
     await _sharedPrefs.setString(PrefsKeys.profileImage, profileImage);
   }
 
-  String getProfileImage() {
-    return _sharedPrefs.getString(PrefsKeys.profileImage) ?? "Unknown";
+  String? getProfileImage() {
+    return _sharedPrefs.getString(PrefsKeys.profileImage);
   }
 
   Future<void> removeProfileImage() async {
@@ -105,11 +105,12 @@ class AppPrefs {
     await _sharedPrefs.remove(PrefsKeys.orderNumber);
   }
 
-  void clear() {
-    _sharedPrefs.clear();
-  }
-
   /// notification
   // TODO: data - remove fcm token
   Future<void> setNotificationOnOff() async {}
+
+  /// clear
+  void clear() {
+    _sharedPrefs.clear();
+  }
 }
