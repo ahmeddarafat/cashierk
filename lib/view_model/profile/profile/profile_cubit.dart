@@ -12,16 +12,19 @@ import '../../../resources/service_locator/service_locator.dart';
 part 'profile_state.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {
-  ProfileCubit() : super(ProfileInitState());
-
-  static ProfileCubit getInstance(BuildContext context) =>
-      BlocProvider.of(context);
-
   late TextEditingController nameController;
   late TextEditingController emailController;
   late GlobalKey<FormState> formKey;
   File? image;
-  final appPrefs = getIt<AppPrefs>();
+  late final AppPrefs appPrefs;
+
+  ProfileCubit() : super(ProfileInitState()) {
+    appPrefs = getIt<AppPrefs>();
+    _initProfileImage();
+  }
+
+  static ProfileCubit getInstance(BuildContext context) =>
+      BlocProvider.of(context);
 
   void init() {
     nameController = TextEditingController();
@@ -69,5 +72,12 @@ class ProfileCubit extends Cubit<ProfileState> {
     this.image = File(image.path);
     appPrefs.setProfileImage(image.path);
     emit(ChangeProfileImageState(image.name));
+  }
+
+  void _initProfileImage() {
+    var imagePath = appPrefs.getProfileImage();
+    if (imagePath != null) {
+      image = File(imagePath);
+    }
   }
 }

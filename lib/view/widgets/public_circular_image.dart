@@ -9,10 +9,8 @@ import '../../view_model/profile/profile/profile_cubit.dart';
 import 'public_text.dart';
 
 class PublicCircularImage extends StatelessWidget {
-  final File? image;
   const PublicCircularImage({
     super.key,
-    this.image,
   });
 
   @override
@@ -20,6 +18,7 @@ class PublicCircularImage extends StatelessWidget {
     return BlocBuilder<ProfileCubit, ProfileState>(
       buildWhen: (_, current) => current is ChangeProfileImageState,
       builder: (context, state) {
+        final bloc = context.read<ProfileCubit>();
         return Container(
           height: 140.w,
           width: 140.w,
@@ -27,7 +26,7 @@ class PublicCircularImage extends StatelessWidget {
             color: AppColors.orangePrimary,
             shape: BoxShape.circle,
           ),
-          child: image == null
+          child: bloc.image == null
               ? const Center(
                   child: PublicText(
                     txt: "no image",
@@ -36,7 +35,7 @@ class PublicCircularImage extends StatelessWidget {
                 )
               : ClipOval(
                   child: Image.file(
-                    image!,
+                    bloc.image!,
                     fit: BoxFit.cover,
                   ),
                 ),
