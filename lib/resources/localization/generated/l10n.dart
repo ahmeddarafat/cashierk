@@ -1399,6 +1399,26 @@ class S {
       args: [],
     );
   }
+
+  /// `--------------------------- notifications comment -------------------------------`
+  String get notifications_comment {
+    return Intl.message(
+      '--------------------------- notifications comment -------------------------------',
+      name: 'notifications_comment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You don't have notifications yet`
+  String get noNotificationsTitle {
+    return Intl.message(
+      'You don\'t have notifications yet',
+      name: 'noNotificationsTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
