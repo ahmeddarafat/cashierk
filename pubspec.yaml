@@ -71,6 +71,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.1
+  flutter_launcher_icons: ^0.13.1
 
   # code generation
   build_runner: ^2.4.8
@@ -117,9 +118,9 @@ flutter_assets:
   filename: app_assets.dart
   field_prefix:
 
-# flutter_launcher_icons:
-#   android: true
-#   ios: true
-#   image_path: "assets/images/logo_foreground.png"
-#   adaptive_icon_backgorund: "#105161"
-#   adaptive_icon_foreground: "assets/images/logo_foreground.png"
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/logo_launcher.png"
+  adaptive_icon_backgorund: "#000000"
+  adaptive_icon_foreground: "assets/icons/logo_launcher.png"
