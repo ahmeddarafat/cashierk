@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:start_app/data/models/order_entity.dart';
-import 'package:start_app/resources/extensions/app_extensions.dart';
+import '../../../../data/models/order_entity.dart';
+import '../../../../resources/extensions/app_extensions.dart';
 
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/styles/app_colors.dart';

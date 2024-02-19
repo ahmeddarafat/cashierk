@@ -1,11 +1,9 @@
-import 'dart:developer';
-import 'dart:io';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:start_app/data/data_source/remote/firebase_service.dart';
+import 'data/data_source/remote/firebase_service.dart';
 
 import 'resources/configs/firebase_options.dart';
 import 'resources/observers/bloc_observer.dart';

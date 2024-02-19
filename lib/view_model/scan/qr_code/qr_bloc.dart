@@ -4,10 +4,10 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-import 'package:start_app/data/data_source/local/app_prefs.dart';
-import 'package:start_app/data/repository/scan_repository.dart';
-import 'package:start_app/view_model/scan/qr_code/qr_event.dart';
-import 'package:start_app/view_model/scan/qr_code/qr_state.dart';
+import '../../../data/data_source/local/app_prefs.dart';
+import '../../../data/repository/scan_repository.dart';
+import 'qr_event.dart';
+import 'qr_state.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
 
 import '../../../data/network/custom_exception.dart';

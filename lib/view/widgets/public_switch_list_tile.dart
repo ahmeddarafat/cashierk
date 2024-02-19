@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:start_app/resources/styles/app_colors.dart';
-import 'package:start_app/view_model/profile/notifications_settings/notification_settings_cubit.dart';
+import '../../resources/styles/app_colors.dart';
+import '../../view_model/profile/notifications_settings/notification_settings_cubit.dart';
 
 import '../../data/data_source/local/app_prefs.dart';
 import '../../resources/service_locator/service_locator.dart';

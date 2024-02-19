@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'package:start_app/resources/extensions/app_extensions.dart';
-import 'package:start_app/view/widgets/public_circular_image.dart';
-import 'package:start_app/view/widgets/public_divider.dart';
-import 'package:start_app/view_model/auth/login/login_cubit.dart';
-import 'package:start_app/view_model/profile/profile/profile_cubit.dart';
+import '../../../../resources/extensions/app_extensions.dart';
+import '../../../widgets/public_circular_image.dart';
+import '../../../widgets/public_divider.dart';
+import '../../../../view_model/auth/login/login_cubit.dart';
+import '../../../../view_model/profile/profile/profile_cubit.dart';
 
 import '../../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/router/app_router.dart';

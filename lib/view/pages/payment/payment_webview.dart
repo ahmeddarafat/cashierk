@@ -1,8 +1,6 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:start_app/resources/router/app_router.dart';
-import 'package:start_app/view_model/payment/payment_viewmodel.dart';
+import '../../../view_model/payment/payment_viewmodel.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class PaymentWebView extends StatefulWidget {

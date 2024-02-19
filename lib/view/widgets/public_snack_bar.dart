@@ -8,7 +8,7 @@ import 'public_text.dart';
 
 // ignore: must_be_immutable
 class MySnackBar extends Flushbar {
-  MySnackBar({Key? key}) : super(key: key);
+  MySnackBar({super.key});
 
   static Flushbar error({
     required String message,

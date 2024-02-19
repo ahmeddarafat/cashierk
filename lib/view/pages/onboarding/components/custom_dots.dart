@@ -2,7 +2,7 @@ part of '../onboarding_page.dart';
 
 class CustomDots extends StatelessWidget {
   final int myindex;
-  const CustomDots({Key? key, required this.myindex}) : super(key: key);
+  const CustomDots({super.key, required this.myindex});
 
   @override
   Widget build(BuildContext context) {

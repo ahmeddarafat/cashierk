@@ -2,9 +2,9 @@
 import 'dart:convert';
 
 import 'package:intl/intl.dart';
-import 'package:start_app/data/models/item_entity.dart';
+import 'package:cashierc/data/models/item_entity.dart';
 
-import 'package:start_app/resources/extensions/app_extensions.dart';
+import 'package:cashierc/resources/extensions/app_extensions.dart';
 
 import 'order_model.dart';
 

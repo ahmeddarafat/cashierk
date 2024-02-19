@@ -4,8 +4,8 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:start_app/data/models/order_entity.dart';
-import 'package:start_app/data/repository/recepits_repository.dart';
+import '../../data/models/order_entity.dart';
+import '../../data/repository/recepits_repository.dart';
 
 import '../../data/network/custom_exception.dart';
 

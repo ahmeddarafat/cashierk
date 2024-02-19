@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:start_app/resources/extensions/app_extensions.dart';
+import '../../../resources/extensions/app_extensions.dart';
 
 import '../../../data/models/onboarding_model.dart';
 import '../../../resources/constants/app_constants.dart';
@@ -16,7 +16,7 @@ part 'components/custom_dots.dart';
 part 'components/onboarding_item.dart';
 
 class OnboardingPage extends StatefulWidget {
-  const OnboardingPage({Key? key}) : super(key: key);
+  const OnboardingPage({super.key});
 
   @override
   State<OnboardingPage> createState() => _OnboardingPageState();

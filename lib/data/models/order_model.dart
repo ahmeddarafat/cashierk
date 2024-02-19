@@ -1,5 +1,5 @@
-import 'package:start_app/data/constants/api_constants.dart';
-import 'package:start_app/data/models/item_model.dart';
+import '../constants/api_constants.dart';
+import 'item_model.dart';
 
 class Order {
   final String id;

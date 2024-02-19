@@ -4,8 +4,8 @@ import 'package:equatable/equatable.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:start_app/data/data_source/remote/firebase_service.dart';
-import 'package:start_app/data/models/notification_model.dart';
+import '../../data/data_source/remote/firebase_service.dart';
+import '../../data/models/notification_model.dart';
 
 import '../../resources/helper/navigation_service.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter/material.dart';
-import 'package:start_app/resources/styles/app_colors.dart';
+import '../../resources/styles/app_colors.dart';
 
 
 class PublicTextFormField extends StatefulWidget {
@@ -26,7 +26,7 @@ class PublicTextFormField extends StatefulWidget {
   final void Function(String)? onSubmitted;
 
   const PublicTextFormField({
-    Key? key,
+    super.key,
     required this.hint,
     required this.validator,
     this.label,
@@ -46,7 +46,7 @@ class PublicTextFormField extends StatefulWidget {
     this.contentPadding,
     this.onChanged,
     this.onSubmitted,
-  }) : super(key: key);
+  });
 
   @override
   State<PublicTextFormField> createState() => _PublicTextFormFieldState();

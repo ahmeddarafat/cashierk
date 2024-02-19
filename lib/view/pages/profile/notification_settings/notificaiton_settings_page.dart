@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:start_app/view/widgets/public_divider.dart';
-import 'package:start_app/view_model/profile/notifications_settings/notification_settings_cubit.dart';
+import '../../../widgets/public_divider.dart';
+import '../../../../view_model/profile/notifications_settings/notification_settings_cubit.dart';
 
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/styles/app_colors.dart';

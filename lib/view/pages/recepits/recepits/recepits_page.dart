@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:start_app/data/dummy_data/dummy_data.dart';
-import 'package:start_app/data/models/order_entity.dart';
-import 'package:start_app/resources/extensions/app_extensions.dart';
-import 'package:start_app/resources/router/app_router.dart';
-import 'package:start_app/view/widgets/public_button.dart';
-import 'package:start_app/view_model/recepits/recepits_viewmodel.dart';
+import '../../../../data/models/order_entity.dart';
+import '../../../../resources/extensions/app_extensions.dart';
+import '../../../../resources/router/app_router.dart';
+import '../../../widgets/public_button.dart';
+import '../../../../view_model/recepits/recepits_viewmodel.dart';
 
-import '../../../../data/models/order_model.dart';
 import '../../../../resources/constants/app_assets.dart';
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/styles/app_colors.dart';

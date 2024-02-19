@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:start_app/resources/constants/app_assets.dart';
+import '../../../../resources/constants/app_assets.dart';
 
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/styles/app_colors.dart';

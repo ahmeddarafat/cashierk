@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:start_app/data/dummy_data/dummy_data.dart';
-import 'package:start_app/data/models/category_model.dart';
-import 'package:start_app/resources/constants/app_assets.dart';
-import 'package:start_app/resources/constants/app_constants.dart';
-import 'package:start_app/resources/extensions/app_extensions.dart';
-import 'package:start_app/resources/router/app_router.dart';
-import 'package:start_app/view/widgets/public_text.dart';
-import 'package:start_app/view/widgets/public_title_tile.dart';
-import 'package:start_app/view_model/home/home_cubit.dart';
+import '../../../../data/dummy_data/dummy_data.dart';
+import '../../../../data/models/category_model.dart';
+import '../../../../resources/constants/app_assets.dart';
+import '../../../../resources/constants/app_constants.dart';
+import '../../../../resources/extensions/app_extensions.dart';
+import '../../../../resources/router/app_router.dart';
+import '../../../widgets/public_text.dart';
+import '../../../widgets/public_title_tile.dart';
+import '../../../../view_model/home/home_cubit.dart';
 
 import '../../../../../resources/localization/generated/l10n.dart';
 import '../../../../../resources/styles/app_colors.dart';

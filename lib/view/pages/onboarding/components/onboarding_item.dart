@@ -3,9 +3,9 @@ part of '../onboarding_page.dart';
 class OnboardingItem extends StatelessWidget {
   final OnBoardingModel onBoarding;
   const OnboardingItem({
-    Key? key,
+    super.key,
     required this.onBoarding,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

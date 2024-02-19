@@ -1,5 +1,5 @@
-import 'package:start_app/data/constants/api_constants.dart';
-import 'package:start_app/data/network/error_handler.dart';
+import '../constants/api_constants.dart';
+import '../network/error_handler.dart';
 
 import '../data_source/remote/api_service.dart';
 import '../models/auth_request.dart';

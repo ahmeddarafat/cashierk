@@ -1,7 +1,6 @@
-import 'package:start_app/data/data_source/local/app_prefs.dart';
-import 'package:start_app/data/constants/api_constants.dart';
-import 'package:start_app/data/models/order_entity.dart';
-import 'package:start_app/data/models/order_model.dart';
+import '../data_source/local/app_prefs.dart';
+import '../constants/api_constants.dart';
+import '../models/order_model.dart';
 
 import '../data_source/remote/api_service.dart';
 import '../network/custom_exception.dart';

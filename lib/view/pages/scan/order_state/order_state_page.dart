@@ -2,12 +2,12 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:start_app/resources/constants/app_assets.dart';
-import 'package:start_app/resources/extensions/app_extensions.dart';
-import 'package:start_app/resources/styles/app_colors.dart';
-import 'package:start_app/view/widgets/public_button.dart';
-import 'package:start_app/view/widgets/public_outline_button.dart';
-import 'package:start_app/view/widgets/public_text.dart';
+import '../../../../resources/constants/app_assets.dart';
+import '../../../../resources/extensions/app_extensions.dart';
+import '../../../../resources/styles/app_colors.dart';
+import '../../../widgets/public_button.dart';
+import '../../../widgets/public_outline_button.dart';
+import '../../../widgets/public_text.dart';
 
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/router/app_router.dart';

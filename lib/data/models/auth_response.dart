@@ -1,4 +1,4 @@
-import 'package:start_app/data/constants/api_constants.dart';
+import '../constants/api_constants.dart';
 
 class AuthResponse {
   final int? status;

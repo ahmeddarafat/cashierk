@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:start_app/data/models/item_entity.dart';
-import 'package:start_app/resources/extensions/app_extensions.dart';
-import 'package:start_app/view_model/home/home_cubit.dart';
+import '../../data/models/item_entity.dart';
+import '../../resources/extensions/app_extensions.dart';
+import '../../view_model/home/home_cubit.dart';
 
 import '../../resources/styles/app_colors.dart';
 import 'public_text.dart';

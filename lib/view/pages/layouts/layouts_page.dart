@@ -2,11 +2,11 @@ import 'package:circle_nav_bar/circle_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:start_app/resources/constants/app_assets.dart';
-import 'package:start_app/resources/styles/app_colors.dart';
-import 'package:start_app/view/pages/favourites/favourites_page.dart';
-import 'package:start_app/view/pages/profile/profile/profile_page.dart';
-import 'package:start_app/view/pages/recepits/recepits/recepits_page.dart';
+import '../../../resources/constants/app_assets.dart';
+import '../../../resources/styles/app_colors.dart';
+import '../favourites/favourites_page.dart';
+import '../profile/profile/profile_page.dart';
+import '../recepits/recepits/recepits_page.dart';
 
 import '../home/discover/discover_page.dart';
 import '../scan/scan/scan_page.dart';

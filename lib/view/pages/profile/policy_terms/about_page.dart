@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
-import 'package:start_app/resources/constants/app_policy.dart';
-import 'package:start_app/resources/extensions/app_extensions.dart';
 
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/styles/app_colors.dart';

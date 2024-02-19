@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:start_app/data/data_source/local/app_prefs.dart';
-import 'package:start_app/resources/extensions/app_extensions.dart';
-import 'package:start_app/resources/service_locator/service_locator.dart';
-import 'package:start_app/view_model/profile/profile/profile_cubit.dart';
+import '../../../../data/data_source/local/app_prefs.dart';
+import '../../../../resources/extensions/app_extensions.dart';
+import '../../../../resources/service_locator/service_locator.dart';
+import '../../../../view_model/profile/profile/profile_cubit.dart';
 
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/styles/app_colors.dart';

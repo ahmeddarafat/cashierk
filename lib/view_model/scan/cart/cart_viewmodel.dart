@@ -1,11 +1,10 @@
-import 'dart:developer';
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:start_app/data/data_source/local/app_prefs.dart';
-import 'package:start_app/data/repository/payment_repository.dart';
-import 'package:start_app/resources/service_locator/service_locator.dart';
+import '../../../data/data_source/local/app_prefs.dart';
+import '../../../data/repository/payment_repository.dart';
+import '../../../resources/service_locator/service_locator.dart';
 
 import '../../../data/network/custom_exception.dart';
 

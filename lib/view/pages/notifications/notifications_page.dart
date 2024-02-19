@@ -2,8 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter/material.dart';
-import 'package:start_app/resources/extensions/app_extensions.dart';
-import 'package:start_app/view_model/notifications/notification_cubit.dart';
+import '../../../resources/extensions/app_extensions.dart';
+import '../../../view_model/notifications/notification_cubit.dart';
 
 import '../../../data/models/notification_model.dart';
 import '../../../resources/constants/app_assets.dart';

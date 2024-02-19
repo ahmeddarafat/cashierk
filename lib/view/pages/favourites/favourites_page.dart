@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:start_app/resources/extensions/app_extensions.dart';
-import 'package:start_app/view_model/home/home_cubit.dart';
+import '../../../resources/extensions/app_extensions.dart';
+import '../../../view_model/home/home_cubit.dart';
 
 import '../../../resources/constants/app_assets.dart';
 import '../../../resources/localization/generated/l10n.dart';

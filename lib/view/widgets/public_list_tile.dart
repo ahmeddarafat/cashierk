@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:start_app/resources/styles/app_colors.dart';
+import '../../resources/styles/app_colors.dart';
 import 'public_text.dart';
 
 class PublicListTile extends StatelessWidget {

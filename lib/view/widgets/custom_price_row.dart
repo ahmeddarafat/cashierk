@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:start_app/data/dummy_data/dummy_data.dart';
-import 'package:start_app/resources/extensions/app_extensions.dart';
-import 'package:start_app/view/widgets/public_button.dart';
-import 'package:start_app/view/widgets/public_divider.dart';
 
-import '../../../../resources/localization/generated/l10n.dart';
-import '../../../../resources/styles/app_colors.dart';
 import 'public_text.dart';
 
 class CustomPriceRow extends StatelessWidget {

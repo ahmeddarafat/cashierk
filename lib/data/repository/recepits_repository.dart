@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:start_app/data/models/order_entity.dart';
+import '../models/order_entity.dart';
 
 import '../data_source/local/app_prefs.dart';
 import '../constants/api_constants.dart';

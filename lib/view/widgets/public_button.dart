@@ -1,7 +1,7 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter/material.dart';
-import 'package:start_app/resources/styles/app_colors.dart';
+import '../../resources/styles/app_colors.dart';
 
 import 'public_text.dart';
 
@@ -16,7 +16,7 @@ class PublicButton extends StatelessWidget {
   final double? verticalpadding;
 
   const PublicButton({
-    Key? key,
+    super.key,
     required this.onPressed,
     this.titleSize,
     this.title = "",
@@ -25,7 +25,7 @@ class PublicButton extends StatelessWidget {
     this.titleColor = AppColors.white,
     this.backgroundColor = AppColors.orangePrimary,
     this.verticalpadding,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

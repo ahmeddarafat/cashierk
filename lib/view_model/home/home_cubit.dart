@@ -2,8 +2,8 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:start_app/data/dummy_data/dummy_data.dart';
-import 'package:start_app/data/models/item_entity.dart';
+import '../../data/dummy_data/dummy_data.dart';
+import '../../data/models/item_entity.dart';
 
 part 'home_state.dart';
 

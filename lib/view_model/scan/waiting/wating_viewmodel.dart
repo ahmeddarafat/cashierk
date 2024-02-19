@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:start_app/data/data_source/local/app_prefs.dart';
-import 'package:start_app/data/models/order_entity.dart';
-import 'package:start_app/data/network/custom_exception.dart';
-import 'package:start_app/view_model/scan/waiting/wating_state.dart';
+import '../../../data/data_source/local/app_prefs.dart';
+import '../../../data/models/order_entity.dart';
+import '../../../data/network/custom_exception.dart';
+import 'wating_state.dart';
 
 import '../../../data/repository/scan_repository.dart';
 import '../../../resources/service_locator/service_locator.dart';
