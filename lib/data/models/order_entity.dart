@@ -1,10 +1,9 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
-
 import 'package:intl/intl.dart';
-import 'package:cashierc/data/models/item_entity.dart';
 
-import 'package:cashierc/resources/extensions/app_extensions.dart';
+import '../../resources/extensions/app_extensions.dart';
+
+import 'item_entity.dart';
 
 import 'order_model.dart';
 

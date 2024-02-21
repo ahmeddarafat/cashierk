@@ -1,4 +1,4 @@
-# start_app
+# cashier
 
 A new Flutter project.
 

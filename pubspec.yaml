@@ -1,12 +1,12 @@
-name: cashierc
-description: A new Flutter project.
+name: cashier
+description: "A new Flutter project."
 
-publish_to: 'none'
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.0+1
+version: 1.0.2+3
 
 environment:
-  sdk: '>=3.1.0 <4.0.0'
+  sdk: '>=3.3.0 <4.0.0'
 
 dependencies:
   flutter:
@@ -107,7 +107,11 @@ flutter_intl:
   arb_dir: lib/resources/localization/l10n
 
 flutter_native_splash:
+<<<<<<< HEAD
   image: assets/images/logo.png
+=======
+  image: assets/images/splash_android_12.png
+>>>>>>> adcd5eb (fix: change package name)
   color: "#ffffff"
   android: true
   ios: true

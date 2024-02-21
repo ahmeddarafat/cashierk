@@ -1,6 +1,6 @@
 {
-    "name": "start_app",
-    "short_name": "start_app",
+    "name": "cashier",
+    "short_name": "cashier",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
