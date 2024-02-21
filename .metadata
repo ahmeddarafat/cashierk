@@ -13,7 +13,6 @@ project_type: app
 migration:
   platforms:
     - platform: root
-<<<<<<< HEAD
       create_revision: efbf63d9c66b9f6ec30e9ad4611189aa80003d31
       base_revision: efbf63d9c66b9f6ec30e9ad4611189aa80003d31
     - platform: android
@@ -33,7 +32,6 @@ migration:
     - platform: windows
       create_revision: bae5e49bc2a867403c43b2aae2de8f8c33b037e4
       base_revision: bae5e49bc2a867403c43b2aae2de8f8c33b037e4
->>>>>>> adcd5eb (fix: change package name)
 
   # User provided section
 
