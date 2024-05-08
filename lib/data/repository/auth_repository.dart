@@ -1,3 +1,5 @@
+import 'package:dio/dio.dart';
+
 import '../constants/api_constants.dart';
 import '../network/error_handler.dart';
 
@@ -40,14 +42,16 @@ class AuthRepository {
   Future<AuthResponse> register(RegisterRequest request) async {
     if (await _networkInfo.isConnected) {
       try {
+        FormData formData = FormData.fromMap({
+          ApiConstants.name: "${request.firstName} ${request.lastName}",
+          ApiConstants.email: request.email,
+          ApiConstants.password: request.password,
+          ApiConstants.phone: request.phone,
+          ApiConstants.profileImage: request.image,
+        });
         var response = await _apiService.postData(
           endPoint: EndPoints.register,
-          body: {
-            ApiConstants.name: "${request.firstName} ${request.lastName}",
-            ApiConstants.email: request.email,
-            ApiConstants.password: request.password,
-            ApiConstants.phone: request.phone,
-          },
+          body: formData,
         );
         return AuthResponse.fromJson(response.data);
       } catch (error) {
@@ -85,7 +89,7 @@ class AuthRepository {
             "email": email,
           },
         );
-        
+
         return PasswordResetResponse.fromJson(response.data);
       } catch (e) {
         throw CustomException(e.toString());

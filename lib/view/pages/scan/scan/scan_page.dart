@@ -11,6 +11,7 @@ import '../../../widgets/public_button.dart';
 import '../../../widgets/public_text.dart';
 
 
+@Deprecated("This is the old version of the ScanPage, use the waiting page instead")
 class ScanPage extends StatelessWidget {
   const ScanPage({super.key});
 

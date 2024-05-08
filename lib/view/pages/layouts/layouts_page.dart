@@ -1,3 +1,4 @@
+import 'package:cashier/view/pages/scan/waiting/waiting_page.dart';
 import 'package:circle_nav_bar/circle_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

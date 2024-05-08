@@ -1,5 +1,4 @@
 import 'dart:developer';
-import 'dart:io';
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +14,7 @@ class ProfileCubit extends Cubit<ProfileState> {
   late TextEditingController nameController;
   late TextEditingController emailController;
   late GlobalKey<FormState> formKey;
-  File? image;
+  String? image;
   late final AppPrefs appPrefs;
 
   ProfileCubit() : super(ProfileInitState()) {
@@ -69,7 +68,7 @@ class ProfileCubit extends Cubit<ProfileState> {
     final picker = ImagePicker();
     final image = await picker.pickImage(source: source);
     if (image == null) return;
-    this.image = File(image.path);
+    this.image = image.path;
     appPrefs.setProfileImage(image.path);
     emit(ChangeProfileImageState(image.name));
   }
@@ -77,7 +76,7 @@ class ProfileCubit extends Cubit<ProfileState> {
   void _initProfileImage() {
     var imagePath = appPrefs.getProfileImage();
     if (imagePath != null) {
-      image = File(imagePath);
+      image = imagePath;
     }
   }
 }

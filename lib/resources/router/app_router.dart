@@ -211,10 +211,7 @@ class RouteGenerate {
         );
       case AppRoutes.waiting:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (_) => WaitingViewModel(getIt<ScanRepository>()),
-            child: const WaitingPage(),
-          ),
+          builder: (_) => const WaitingPage(),
           settings: routeSettings,
         );
 

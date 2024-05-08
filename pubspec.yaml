@@ -66,6 +66,7 @@ dependencies:
 
   # Others
   uuid: ^4.2.2
+  iconsax: ^0.0.8
 
 dev_dependencies:
   flutter_test:
@@ -107,11 +108,7 @@ flutter_intl:
   arb_dir: lib/resources/localization/l10n
 
 flutter_native_splash:
-<<<<<<< HEAD
-  image: assets/images/logo.png
-=======
   image: assets/images/splash_android_12.png
->>>>>>> adcd5eb (fix: change package name)
   color: "#ffffff"
   android: true
   ios: true

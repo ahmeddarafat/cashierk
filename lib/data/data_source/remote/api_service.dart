@@ -53,7 +53,7 @@ class ApiService {
 
   Future<Response> postData({
     required String endPoint,
-    required Map<String, dynamic> body,
+    required Object body,
     Map<String, dynamic>? query,
     String? token,
   }) async {

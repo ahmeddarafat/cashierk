@@ -45,7 +45,17 @@ class _ProfilePageState extends State<ProfilePage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const PublicCircularImage(),
+                BlocBuilder<ProfileCubit, ProfileState>(
+                  buildWhen: (_, current) => current is ChangeProfileImageState,
+                  builder: (context, state) {
+                    final bloc = context.read<ProfileCubit>();
+                    return PublicCircularImage(
+                      image: bloc.image,
+                      type:
+                          bloc.image != null ? ImageType.file : ImageType.none,
+                    );
+                  },
+                ),
                 8.ph,
                 BlocBuilder<ProfileCubit, ProfileState>(
                   buildWhen: (_, current) => current is ChangeProfileState,

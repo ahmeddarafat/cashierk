@@ -1,3 +1,4 @@
+import 'package:cashier/view_model/scan/waiting/wating_viewmodel.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -37,6 +38,13 @@ Future<void> initModule() async {
     () => ScanRepository(
       networkInfo: getIt(),
       appPerfs: getIt(),
+    ),
+  );
+
+  /// waiting view model
+  getIt.registerLazySingleton(
+    () => WaitingViewModel(
+      getIt(),
     ),
   );
 

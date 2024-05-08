@@ -1,9 +1,12 @@
+import 'package:dio/dio.dart';
+
 class RegisterRequest {
   final String firstName;
   final String lastName;
   final String email;
   final String password;
   final String phone;
+  final MultipartFile image;
 
   RegisterRequest({
     required this.firstName,
@@ -11,6 +14,7 @@ class RegisterRequest {
     required this.email,
     required this.password,
     required this.phone,
+    required this.image,
   });
 }
 class LoginRequest {

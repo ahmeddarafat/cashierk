@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import '../../../../resources/extensions/app_extensions.dart';
-import '../../../widgets/custom_divider.dart';
 
+import '../../../../resources/extensions/app_extensions.dart';
 import '../../../../resources/localization/generated/l10n.dart';
 import '../../../../resources/router/app_router.dart';
 import '../../../../resources/styles/app_colors.dart';
 import '../../../../view_model/auth/register/register_cubit.dart';
+import '../../../widgets/custom_divider.dart';
+import '../../../widgets/custom_social_auth.dart';
 import '../../../widgets/public_button.dart';
 import '../../../widgets/public_snack_bar.dart';
 import '../../../widgets/public_text.dart';
 import '../../../widgets/public_text_form_field.dart';
-import '../../../widgets/custom_social_auth.dart';
+import 'components/register_profile_image.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -87,7 +88,9 @@ class _RegisterPageState extends State<RegisterPage> {
                             letterSpacing: 2.8.h,
                           ),
                         ),
-                        30.ph,
+                        24.ph,
+
+                        const RegisterProfileImage(),
 
                         //username
                         Align(

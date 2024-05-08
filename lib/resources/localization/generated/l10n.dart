@@ -60,30 +60,30 @@ class S {
     );
   }
 
-  /// `Welcome to the Cashierk App!`
+  /// `Welcome to the Cashierc App!`
   String get onboardingTitle1 {
     return Intl.message(
-      'Welcome to the Cashierk App!',
+      'Welcome to the Cashierc App!',
       name: 'onboardingTitle1',
       desc: '',
       args: [],
     );
   }
 
-  /// `This app will teach you everything you need to know about using the Cashierk, from setting it up to processing payments.`
+  /// `This app will teach you everything you need to know about using the Cashierc, from setting it up to processing payments.`
   String get onboardingSubtitle1 {
     return Intl.message(
-      'This app will teach you everything you need to know about using the Cashierk, from setting it up to processing payments.',
+      'This app will teach you everything you need to know about using the Cashierc, from setting it up to processing payments.',
       name: 'onboardingSubtitle1',
       desc: '',
       args: [],
     );
   }
 
-  /// `Learn about the Cashierk`
+  /// `Learn about the Cashierc`
   String get onboardingTitle2 {
     return Intl.message(
-      'Learn about the Cashierk',
+      'Learn about the Cashierc',
       name: 'onboardingTitle2',
       desc: '',
       args: [],
@@ -100,20 +100,20 @@ class S {
     );
   }
 
-  /// `Get started with the Cashierk`
+  /// `Get started with the Cashierc`
   String get onboardingTitle3 {
     return Intl.message(
-      'Get started with the Cashierk',
+      'Get started with the Cashierc',
       name: 'onboardingTitle3',
       desc: '',
       args: [],
     );
   }
 
-  /// `This app will walk you through the steps of getting started with the Cashierk, so you can start using it right away.`
+  /// `This app will walk you through the steps of getting started with the Cashierc, so you can start using it right away.`
   String get onboardingSubtitle3 {
     return Intl.message(
-      'This app will walk you through the steps of getting started with the Cashierk, so you can start using it right away.',
+      'This app will walk you through the steps of getting started with the Cashierc, so you can start using it right away.',
       name: 'onboardingSubtitle3',
       desc: '',
       args: [],
@@ -330,10 +330,10 @@ class S {
     );
   }
 
-  /// `Welcome to Cashierk!`
+  /// `Welcome to Cashierc!`
   String get registerTitle {
     return Intl.message(
-      'Welcome to Cashierk!',
+      'Welcome to Cashierc!',
       name: 'registerTitle',
       desc: '',
       args: [],
@@ -465,6 +465,16 @@ class S {
     return Intl.message(
       'Already have an account?',
       name: 'alreadyHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please, select a profile image`
+  String get profileImageErrorMessage {
+    return Intl.message(
+      'Please, select a profile image',
+      name: 'profileImageErrorMessage',
       desc: '',
       args: [],
     );

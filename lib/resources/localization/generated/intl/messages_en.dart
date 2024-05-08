@@ -130,17 +130,17 @@ class MessageLookup extends MessageLookupByLibrary {
             "--------------------------- notifications comment -------------------------------"),
         "oldPassword": MessageLookupByLibrary.simpleMessage("Old Password"),
         "onboardingSubtitle1": MessageLookupByLibrary.simpleMessage(
-            "This app will teach you everything you need to know about using the Cashierk, from setting it up to processing payments."),
+            "This app will teach you everything you need to know about using the Cashierc, from setting it up to processing payments."),
         "onboardingSubtitle2": MessageLookupByLibrary.simpleMessage(
             "In this app, you\'ll learn about the features of the AI Cashier and how to use them to your advantage."),
         "onboardingSubtitle3": MessageLookupByLibrary.simpleMessage(
-            "This app will walk you through the steps of getting started with the Cashierk, so you can start using it right away."),
+            "This app will walk you through the steps of getting started with the Cashierc, so you can start using it right away."),
         "onboardingTitle1": MessageLookupByLibrary.simpleMessage(
-            "Welcome to the Cashierk App!"),
+            "Welcome to the Cashierc App!"),
         "onboardingTitle2":
-            MessageLookupByLibrary.simpleMessage("Learn about the Cashierk"),
+            MessageLookupByLibrary.simpleMessage("Learn about the Cashierc"),
         "onboardingTitle3": MessageLookupByLibrary.simpleMessage(
-            "Get started with the Cashierk"),
+            "Get started with the Cashierc"),
         "onbording_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- onbording -------------------------------"),
         "or": MessageLookupByLibrary.simpleMessage("Or"),
@@ -179,6 +179,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Privacy & Policy"),
         "proceedCheckout":
             MessageLookupByLibrary.simpleMessage("Proceed to checkout"),
+        "profileImageErrorMessage": MessageLookupByLibrary.simpleMessage(
+            "Please, select a profile image"),
         "profile_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- profile -------------------------------"),
         "received": MessageLookupByLibrary.simpleMessage("Received"),
@@ -186,7 +188,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "--------------------------- receptis -------------------------------"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "registerTitle":
-            MessageLookupByLibrary.simpleMessage("Welcome to Cashierk!"),
+            MessageLookupByLibrary.simpleMessage("Welcome to Cashierc!"),
         "register_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- register -------------------------------"),
         "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),

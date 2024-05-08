@@ -28,3 +28,11 @@ class ChangeAcceptTermsState extends RegisterState {
   @override
   List<Object> get props => [value];
 }
+
+class ChangeProfileImageState extends RegisterState {
+  final String image;
+  const ChangeProfileImageState(this.image);
+
+  @override
+  List<Object> get props => [image];
+}

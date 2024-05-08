@@ -1,3 +1,4 @@
+import 'package:cashier/view_model/scan/waiting/wating_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -35,13 +36,11 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: (_) => RecepitsViewModel(getIt())),
           BlocProvider(create: (_) => HomeCubit()),
           BlocProvider(create: (_) => NotificationSettingsCubit()),
-          BlocProvider(
-            create: (_) => NotificationCubit(),
-            lazy: false,
-          ),
+          BlocProvider(create: (_) => NotificationCubit()),
+          BlocProvider(create: (_) => getIt<WaitingViewModel>()),
         ],
         child: MaterialApp(
-          navigatorKey: NavigationService.navigatorKey, 
+          navigatorKey: NavigationService.navigatorKey,
           debugShowCheckedModeBanner: false,
           title: 'Cashierc',
           theme: AppThemes.light,

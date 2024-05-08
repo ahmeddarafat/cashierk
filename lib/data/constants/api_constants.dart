@@ -10,6 +10,7 @@ class ApiConstants {
   static const message = "message";
   static const status = "status";
   static const phone = "phone";
+  static const profileImage = "profile_image";
 
   /// Order
   static const orderNumber = "order_number";
@@ -42,7 +43,7 @@ class EndPoints {
   EndPoints._();
 
   /// Url
-  static const serverBaseUrl = "https://cashierc.pharmaco-medica.com/api";
+  static const serverBaseUrl = "https://cashierc.site-pocket.com/api";
   static const paymentBaseUrl = "https://accept.paymob.com/api";
   // static const fcmBaseUrl = "https://fcm.googleapis.com/fcm";
 

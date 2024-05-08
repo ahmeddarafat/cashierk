@@ -10,6 +10,7 @@ import '../../../../view_model/scan/qr_code/qr_state.dart';
 import '../../../../resources/styles/app_colors.dart';
 import '../../../widgets/public_snack_bar.dart';
 
+@Deprecated("This is the old version of the QRViewPage, use the waiting page instead")
 class QRViewPage extends StatefulWidget {
   const QRViewPage({super.key});
 
