@@ -1,4 +1,5 @@
 import 'package:cashier/view/pages/scan/get_order/components/get_order_bloc_listener.dart';
+import 'package:cashier/view_model/scan/waiting/wating_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../resources/extensions/app_extensions.dart';
@@ -21,7 +22,7 @@ class GetOrderPage extends StatelessWidget {
               children: [
                 /// Bloc Listener
                 const GetOrderBlocListener(),
-                
+
                 PublicText(
                   txt: "Ready to get your order?",
                   size: 20.sp,
@@ -37,7 +38,10 @@ class GetOrderPage extends StatelessWidget {
                 ),
                 200.ph,
                 PublicButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    final bloc = WaitingViewModel.getInstance(context);
+                    bloc.getOrderNumber();
+                  },
                   title: "Get Order",
                 )
               ],
