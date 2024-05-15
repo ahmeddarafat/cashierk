@@ -161,7 +161,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "--------------------------- order state -------------------------------"),
         "orders": MessageLookupByLibrary.simpleMessage("Orders"),
         "otpSubtitle": MessageLookupByLibrary.simpleMessage(
-            "Enter the 4-digits code to verfiy your email address"),
+            "Enter the 6-digits code to verfiy your email address"),
         "otpTitle": MessageLookupByLibrary.simpleMessage("Email Verification"),
         "otp_comment": MessageLookupByLibrary.simpleMessage(
             "--------------------------- otp -------------------------------"),

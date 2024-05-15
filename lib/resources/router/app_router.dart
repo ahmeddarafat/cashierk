@@ -1,3 +1,4 @@
+import 'package:cashier/view/pages/auth/register/register_verification_page.dart';
 import 'package:cashier/view/pages/scan/get_order/get_order_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -45,6 +46,7 @@ class AppRoutes {
   static const forgotPassword = "forgot password";
   static const emailVerify = "email verify";
   static const resetPassword = "reset password";
+  static const registerVerify = "register verify";
 
   /// home
   static const layouts = "layouts";
@@ -97,11 +99,13 @@ class RouteGenerate {
         );
       case AppRoutes.register:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider(
-            create: (_) => RegisterCubit(getIt()),
-            child: const RegisterPage(),
-          ),
           settings: routeSettings,
+          builder: (_) => const RegisterPage(),
+        );
+      case AppRoutes.registerVerify:
+        return MaterialPageRoute(
+          settings: routeSettings,
+          builder: (_) => const RegisterVerificationPage(),
         );
       case AppRoutes.forgotPassword:
         return MaterialPageRoute(

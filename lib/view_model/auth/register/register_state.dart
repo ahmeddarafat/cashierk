@@ -36,3 +36,14 @@ class ChangeProfileImageState extends RegisterState {
   @override
   List<Object> get props => [image];
 }
+
+/// Verfiy Email
+
+class VerifyEmailLoadingState extends RegisterState {}
+
+class VerifyEmailSuccessState extends RegisterState {}
+
+class VerifyEmailErrorState extends RegisterState {
+  final String error;
+  const VerifyEmailErrorState(this.error);
+}

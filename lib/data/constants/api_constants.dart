@@ -11,6 +11,7 @@ class ApiConstants {
   static const status = "status";
   static const phone = "phone";
   static const profileImage = "profile_image";
+  static const otp = "otp";
 
   /// Order
   static const orderNumber = "order_number";
@@ -59,6 +60,8 @@ class EndPoints {
   static const forgotPassword = "/password/forget-password";
   static const resetPassword = "/password/reset";
   static const logout = "/auth/logout";
+  static const verifyRegister = "/auth/verify-otp";
+  static const resendOtp = "/auth/resend-otp";
 
   /// order
   static const orders = "/orders";

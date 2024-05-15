@@ -1,17 +1,17 @@
+import 'dart:developer';
 import 'dart:io';
-import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-import '../../../data/data_source/local/app_prefs.dart';
-import '../../../data/repository/auth_repository.dart';
 
+import '../../../data/data_source/local/app_prefs.dart';
 import '../../../data/models/auth_request.dart';
 import '../../../data/models/auth_response.dart';
 import '../../../data/network/custom_exception.dart';
+import '../../../data/repository/auth_repository.dart';
 import '../../../resources/localization/generated/l10n.dart';
 import '../../../resources/service_locator/service_locator.dart';
 
@@ -31,10 +31,12 @@ class RegisterCubit extends Cubit<RegisterState> {
   late final TextEditingController passwordConfirmController;
   late final TextEditingController phoneController;
   late final GlobalKey<FormState> formKey;
+  final appPrefs = getIt<AppPrefs>();
+
+  String otp = '';
   String? image;
   bool _spinner = false;
   bool acceptTerms = false;
-  final appPrefs = getIt<AppPrefs>();
 
   /// init & dispose
   void init() {
@@ -111,6 +113,36 @@ class RegisterCubit extends Cubit<RegisterState> {
     this.image = image.path;
     appPrefs.setProfileImage(image.path);
     emit(ChangeProfileImageState(image.name));
+  }
+
+  /// verify email
+  Future<void> verifyEmail() async {
+    log("otp: $otp");
+    log("otp.length: ${otp.length}");
+    emit(VerifyEmailLoadingState());
+    if (otp.length == 6) {
+      try {
+        final response = await repo.verfiyRegister(emailController.text, otp);
+        log("response: $response");
+        if (response) {
+          emit(VerifyEmailSuccessState());
+        } else {
+          log("invalid code:");
+          emit(const VerifyEmailErrorState("Invalid Code"));
+        }
+      } catch (error) {
+        if (error is CustomException) {
+          log("message: ${error.message}");
+          emit(VerifyEmailErrorState(error.message));
+        }
+      }
+    } else {
+      emit(const VerifyEmailErrorState("Enter 6-digits Code"));
+    }
+  }
+
+  void setOtp(String otp) {
+    this.otp = otp;
   }
 
   void _storeDataLocally(AuthResponse response) {

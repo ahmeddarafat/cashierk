@@ -53,10 +53,9 @@ class _RegisterPageState extends State<RegisterPage> {
                 message: state.error, color: Colors.red, context: context);
           } else if (state is RegisterSuccessState) {
             // TODO: "UI: connect register "
-            Navigator.pushNamedAndRemoveUntil(
+            Navigator.pushNamed(
               context,
-              AppRoutes.layouts,
-              (_) => false,
+              AppRoutes.registerVerify,
             );
           }
         }

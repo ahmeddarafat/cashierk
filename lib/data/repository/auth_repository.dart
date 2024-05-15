@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 
 import '../constants/api_constants.dart';
+import '../data_source/local/app_prefs.dart';
 import '../network/error_handler.dart';
 
 import '../data_source/remote/api_service.dart';
@@ -12,9 +15,11 @@ import '../network/network_info.dart';
 class AuthRepository {
   final NetworkInfo _networkInfo;
   late final ApiService _apiService;
+  late final AppPrefs appPrefs;
 
   AuthRepository({
     required NetworkInfo networkInfo,
+    required this.appPrefs,
   }) : _networkInfo = networkInfo {
     _apiService = ApiService(EndPoints.serverBaseUrl);
   }
@@ -55,6 +60,30 @@ class AuthRepository {
         );
         return AuthResponse.fromJson(response.data);
       } catch (error) {
+        final failure = ErrorHandler.handle(error).failure;
+        throw CustomException(failure.message);
+      }
+    } else {
+      throw CustomException("Check your network connection");
+    }
+  }
+
+  // TODO: fix - you need to get status from response and the api is not returning status
+  Future<bool> verfiyRegister(String email, String otp) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        var response = await _apiService.postData(
+          endPoint: EndPoints.verifyRegister,
+          body: {
+            ApiConstants.email: email,
+            ApiConstants.otp: otp,
+          },
+          token: appPrefs.getToken(),
+        );
+        log("response: ${response.data}");
+        return true;
+      } catch (error) {
+        log("eror: $error");
         final failure = ErrorHandler.handle(error).failure;
         throw CustomException(failure.message);
       }

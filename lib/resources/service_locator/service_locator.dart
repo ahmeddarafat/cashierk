@@ -30,6 +30,7 @@ Future<void> initModule() async {
   getIt.registerLazySingleton(
     () => AuthRepository(
       networkInfo: getIt(),
+      appPrefs: getIt(),
     ),
   );
 

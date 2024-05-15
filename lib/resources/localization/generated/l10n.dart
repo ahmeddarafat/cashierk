@@ -540,10 +540,10 @@ class S {
     );
   }
 
-  /// `Enter the 4-digits code to verfiy your email address`
+  /// `Enter the 6-digits code to verfiy your email address`
   String get otpSubtitle {
     return Intl.message(
-      'Enter the 4-digits code to verfiy your email address',
+      'Enter the 6-digits code to verfiy your email address',
       name: 'otpSubtitle',
       desc: '',
       args: [],

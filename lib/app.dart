@@ -1,3 +1,4 @@
+import 'package:cashier/view_model/auth/register/register_cubit.dart';
 import 'package:cashier/view_model/scan/waiting/wating_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: (_) => OnboardingCubit()),
           BlocProvider(create: (_) => ResetCubit(getIt())),
           BlocProvider(create: (_) => LoginCubit(getIt())),
+          BlocProvider(create: (_) => RegisterCubit(getIt())),
           BlocProvider(create: (_) => ProfileCubit()),
           BlocProvider(create: (_) => RecepitsViewModel(getIt())),
           BlocProvider(create: (_) => HomeCubit()),

@@ -48,7 +48,7 @@
     "send": "Send",
     "otp_comment": "--------------------------- otp -------------------------------",
     "otpTitle": "Email Verification",
-    "otpSubtitle": "Enter the 4-digits code to verfiy your email address",
+    "otpSubtitle": "Enter the 6-digits code to verfiy your email address",
     "verify": "Verfiy",
     "reset_passwrd_comment": "--------------------------- reset_passwrd -------------------------------",
     "resetPasswordTitle": "Reset Password",
