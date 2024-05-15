@@ -48,4 +48,17 @@ class WaitingViewModel extends Cubit<WaitingState> {
       }
     }
   }
+
+  Future<void> getOrderNumber() async {
+    emit(const OrderLoadingState());
+    try {
+      var orderNumber = await repo.getOrderNumber();
+      _appPrefs.setOrderNumber(orderNumber);
+      emit(const OrderCompleteState());
+    } catch (error) {
+      if (error is CustomException) {
+        emit(OrderErrorState(error.message));
+      }
+    }
+  }
 }

@@ -1,3 +1,4 @@
+import 'package:cashier/view/pages/scan/get_order/get_order_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../data/models/order_entity.dart';
@@ -71,6 +72,7 @@ class AppRoutes {
   static const orderStatus = "order state";
   static const qrView = "qr view";
   static const waiting = "waiting";
+  static const getOrder = "getOrder";
 
   /// Recepits
   static const orderDetails = "order details";
@@ -208,6 +210,11 @@ class RouteGenerate {
             isSuccess: routeSettings.arguments as bool,
           ),
           settings: routeSettings,
+        );
+      case AppRoutes.getOrder:
+        return MaterialPageRoute(
+          settings: routeSettings,
+          builder: (_) => const GetOrderPage(),
         );
       case AppRoutes.waiting:
         return MaterialPageRoute(

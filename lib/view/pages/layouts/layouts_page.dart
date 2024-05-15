@@ -1,3 +1,4 @@
+import 'package:cashier/view/pages/scan/get_order/get_order_page.dart';
 import 'package:cashier/view/pages/scan/waiting/waiting_page.dart';
 import 'package:circle_nav_bar/circle_nav_bar.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class _LayoutsPageState extends State<LayoutsPage> {
   List containScreen = [
     const DiscoverPage(),
     const RecepitsPage(),
-    const ScanPage(),
+    const GetOrderPage(),
     const FavouritesPage(),
     const ProfilePage(),
   ];

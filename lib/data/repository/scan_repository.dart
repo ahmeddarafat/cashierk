@@ -57,4 +57,21 @@ class ScanRepository {
       throw CustomException("Check your network connection");
     }
   }
+
+    Future<String> getOrderNumber() async {
+    if (await _networkInfo.isConnected) {
+      try {
+        final response = await _apiService.getData(
+          endPoint: EndPoints.getOrderNumber,
+          token: _appPrefs.getToken(),
+        );
+        return response.data["order"]["number"];
+      } catch (error) {
+        final failure = ErrorHandler.handle(error).failure;
+        throw CustomException(failure.message);
+      }
+    } else {
+      throw CustomException("Check your network connection");
+    }
+  }
 }

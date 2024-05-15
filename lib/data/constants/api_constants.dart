@@ -62,6 +62,7 @@ class EndPoints {
 
   /// order
   static const orders = "/orders";
+  static const getOrderNumber = "/last-pending-order";
 
   /// Payment
   static const authToken = "/auth/tokens";

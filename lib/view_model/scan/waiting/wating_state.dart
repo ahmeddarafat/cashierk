@@ -22,3 +22,20 @@ final class WaitingErrorState extends WaitingState {
   @override
   List<Object> get props => [message];
 }
+
+final class OrderLoadingState extends WaitingState {
+  const OrderLoadingState();
+}
+
+final class OrderCompleteState extends WaitingState {
+  const OrderCompleteState();
+}
+
+final class OrderErrorState extends WaitingState {
+  final String message;
+
+  const OrderErrorState(this.message);
+
+  @override
+  List<Object> get props => [message];
+}

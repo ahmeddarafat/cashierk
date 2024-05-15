@@ -26,9 +26,10 @@ class DiscoverPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
+          padding: EdgeInsets.symmetric(horizontal: 10.w),
           child: ListView(
             children: [
+              20.ph,
               Row(
                 children: [
                   PublicText(
@@ -129,6 +130,7 @@ class DiscoverPage extends StatelessWidget {
                   return ItemCard(item: bloc.allItems[index]);
                 },
               ),
+              20.ph,
             ],
           ),
         ),
