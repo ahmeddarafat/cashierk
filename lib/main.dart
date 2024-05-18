@@ -36,13 +36,12 @@ void main() async {
 
   runApp(const MyApp());
 }
-
-
-
-
-
   /// notes
   
   /// 1. remove the cache data to reset the app
   /// var appDir = (await getApplicationDocumentsDirectory()).path;
   /// Directory(appDir).delete(recursive: true);
+  /// 
+
+  /// Todo list
+  /// TODO: Data - save cards

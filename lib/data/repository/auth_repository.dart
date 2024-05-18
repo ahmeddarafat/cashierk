@@ -81,7 +81,7 @@ class AuthRepository {
           token: appPrefs.getToken(),
         );
         log("response: ${response.data}");
-        return true;
+        return response.data["status"] == 0 ? true :false;
       } catch (error) {
         log("eror: $error");
         final failure = ErrorHandler.handle(error).failure;

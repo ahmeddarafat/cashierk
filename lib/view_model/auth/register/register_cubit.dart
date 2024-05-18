@@ -126,6 +126,7 @@ class RegisterCubit extends Cubit<RegisterState> {
         log("response: $response");
         if (response) {
           emit(VerifyEmailSuccessState());
+          appPrefs.setUserLoggedIn();
         } else {
           log("invalid code:");
           emit(const VerifyEmailErrorState("Invalid Code"));
@@ -146,7 +147,6 @@ class RegisterCubit extends Cubit<RegisterState> {
   }
 
   void _storeDataLocally(AuthResponse response) {
-    appPrefs.setUserLoggedIn();
     appPrefs.setToken(response.token);
     final user = response.user;
     appPrefs.setUserInfo(
