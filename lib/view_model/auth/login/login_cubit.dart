@@ -84,7 +84,7 @@ class LoginCubit extends Cubit<LoginState> {
     appPrefs.setUserInfo(
       name: user.name,
       email: user.email,
-      phone: user.phone,
+      phone: user.phone ?? "",
     );
   }
 

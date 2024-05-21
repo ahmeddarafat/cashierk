@@ -54,7 +54,7 @@ class OrderEntity {
     final parseDate = DateFormat("yyyy-MM-dd HH:mm:ss").parse(order.date);
     final subTotalPrice = double.parse(order.subTotalPrice);
     final totalPrice = double.parse(order.totalPrice);
-    late final OrderStatus orderStatus;
+    OrderStatus? orderStatus;
     switch (order.status) {
       case "pending":
         orderStatus = OrderStatus.pending;
@@ -80,7 +80,7 @@ class OrderEntity {
       taxes: order.taxes,
       totalPrice: totalPrice,
       items: order.items.map((item) => ItemEntity.fromModel(item)).toList(),
-      status: orderStatus,
+      status: orderStatus ?? OrderStatus.pending,
     );
   }
 

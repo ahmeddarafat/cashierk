@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ part 'recepits_state.dart';
 
 class RecepitsViewModel extends Cubit<RecepitsState> with HydratedMixin {
   final RecepitsRepository repo;
-  late final List<OrderEntity> allOrders;
+  late List<OrderEntity> allOrders;
 
   RecepitsViewModel(this.repo) : super(const RecepitsInitState()) {
     allOrders = [];
@@ -51,7 +52,7 @@ class RecepitsViewModel extends Cubit<RecepitsState> with HydratedMixin {
       final expiredTime = DateTime.now().add(const Duration(minutes: 1));
       emit(const RecepitsLoadingState());
       final orders = await repo.getAllOrder();
-      allOrders.addAll(orders);
+      allOrders = orders;
       emit(
         RecepitsSuccessState(
           orders: orders,
@@ -59,7 +60,9 @@ class RecepitsViewModel extends Cubit<RecepitsState> with HydratedMixin {
         ),
       );
     } catch (error) {
+      log(error.toString());
       if (error is CustomException) {
+        log(error.message);
         emit(RecepitsErrorState(error.message));
       }
     }

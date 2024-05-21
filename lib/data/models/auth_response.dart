@@ -31,19 +31,19 @@ class AuthResponse {
 class User {
   final String name;
   final String email;
-  final String phone;
+  final String? phone;
 
   User({
     required this.name,
     required this.email,
-    required this.phone,
+     this.phone,
   });
 
   factory User.fromJson(Map<String, dynamic> map) {
     return User(
       name: map[ApiConstants.name] as String,
       email: map[ApiConstants.email] as String,
-      phone: map[ApiConstants.phone] as String,
+      phone: map[ApiConstants.phone] as String?,
     );
   }
 }

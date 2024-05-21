@@ -73,7 +73,6 @@ class _RecepitsPageState extends State<RecepitsPage> {
   }
 
   Widget _getOrderView() {
-    // TODO: "Logic - check for order list here"
     if (_viewModel.allOrders.isEmpty) {
       return const NoOrderVeiw();
     } else {

@@ -36,6 +36,7 @@ class AuthRepository {
         );
         return AuthResponse.fromJson(response.data);
       } catch (error) {
+        log(error.toString());
         final failure = ErrorHandler.handle(error).failure;
         throw CustomException(failure.message);
       }
@@ -68,7 +69,6 @@ class AuthRepository {
     }
   }
 
-  // TODO: fix - you need to get status from response and the api is not returning status
   Future<bool> verfiyRegister(String email, String otp) async {
     if (await _networkInfo.isConnected) {
       try {

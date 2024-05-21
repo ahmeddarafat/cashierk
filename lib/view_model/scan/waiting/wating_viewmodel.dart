@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../data/data_source/local/app_prefs.dart';
@@ -23,7 +25,7 @@ extension OrderStatusX on OrderStatus {
 class WaitingViewModel extends Cubit<WaitingState> {
   final ScanRepository repo;
   late final AppPrefs _appPrefs;
-  late final OrderEntity order;
+  late OrderEntity order;
 
   WaitingViewModel(this.repo) : super(const WaitingLoadingState()) {
     _appPrefs = getIt<AppPrefs>();
@@ -33,16 +35,20 @@ class WaitingViewModel extends Cubit<WaitingState> {
 
   // TODO: data - prefer move the data actions to the repository (re-requests)
   Future<void> getOrderItems() async {
+    emit(const WaitingLoadingState());
     final orderNumber = _appPrefs.getOrderNumber();
     try {
       var order = await repo.getOrderItems(orderNumber);
       while (order.status == OrderStatus.pending.name) {
         order = await repo.getOrderItems(orderNumber);
-        await Future.delayed(const Duration(milliseconds: 500));
+        log("the order is pending");
+        await Future.delayed(const Duration(seconds: 4));
       }
+      log("the order is processing");
       this.order = OrderEntity.fromModel(order);
       emit(const WaitingCompleteState());
     } catch (error) {
+      log(error.toString());
       if (error is CustomException) {
         emit(WaitingErrorState(error.message));
       }

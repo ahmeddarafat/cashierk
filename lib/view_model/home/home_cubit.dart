@@ -11,6 +11,7 @@ class HomeCubit extends Cubit<HomeState> with HydratedMixin {
   late List<ItemEntity> allItems;
   late List<ItemEntity> favoirteItems;
   late List<ItemEntity> filteredItems;
+  int selectedLabelIndex = 0;
 
   HomeCubit() : super(HomeInitial()) {
     /// beacuse we don't have a real api
@@ -52,7 +53,8 @@ class HomeCubit extends Cubit<HomeState> with HydratedMixin {
     }
   }
 
-  void filterItemsByLabel(String label) {
+  void filterItemsByLabel(String label, int index) {
+    selectedLabelIndex = index;
     filteredItems = allItems.where((item) {
       return item.category.toLowerCase() == label.toLowerCase();
     }).toList();
@@ -67,6 +69,7 @@ class HomeCubit extends Cubit<HomeState> with HydratedMixin {
   }
 
   void removeFilter() {
+    selectedLabelIndex = 0;
     filteredItems = allItems;
     emit(const FilterItemsState('no filter'));
   }
@@ -91,4 +94,3 @@ class HomeCubit extends Cubit<HomeState> with HydratedMixin {
     }
   }
 }
-

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import '../models/order_entity.dart';
 
@@ -31,6 +33,7 @@ class RecepitsRepository {
         );
         return _modelingOrder(response);
       } catch (error) {
+        log(error.toString(), name: "RecepitsRepository");
         final failure = ErrorHandler.handle(error).failure;
         throw CustomException(failure.message);
       }

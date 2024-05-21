@@ -152,7 +152,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     appPrefs.setUserInfo(
       name: user.name,
       email: user.email,
-      phone: user.phone,
+      phone: user.phone?? "",
     );
   }
 

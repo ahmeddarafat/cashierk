@@ -37,40 +37,50 @@ class CategoriesPage extends StatelessWidget {
           child: ListView(
             children: [
               /// categories
-              SizedBox(
-                height: 40.h,
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: AppConstants.categoriesNames.length,
-                  itemBuilder: (_, index) {
-                    return ChoiceChip(
-                      backgroundColor: AppColors.white,
-                      selectedColor: AppColors.orangePrimary,
-                      selected: index == 0,
-                      showCheckmark: false,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(24),
-                      ),
-                      label: PublicText(
-                        txt: AppConstants.categoriesNames[index],
-                        fw: FontWeight.w600,
-                        size: 13.sp,
-                        color: 0 == index
-                            ? AppColors.white
-                            : AppColors.orangePrimary,
-                      ),
-                      onSelected: (_) {
-                        if (index == 0) {
-                          bloc.removeFilter();
-                        } else {
-                          bloc.filterItemsByLabel(
-                              AppConstants.categoriesNames[index]);
-                        }
+              BlocBuilder<HomeCubit, HomeState>(
+                builder: (context, state) {
+                  return SizedBox(
+                    height: 40.h,
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: AppConstants.categoriesNames.length,
+                      itemBuilder: (_, index) {
+                        return ChoiceChip(
+                          backgroundColor: index == bloc.selectedLabelIndex
+                              ? AppColors.orangePrimary
+                              : AppColors.white,
+                          selectedColor: index == bloc.selectedLabelIndex
+                              ? AppColors.orangePrimary
+                              : AppColors.white,
+                          selected: index == bloc.selectedLabelIndex,
+                          showCheckmark: false,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(24),
+                          ),
+                          label: PublicText(
+                            txt: AppConstants.categoriesNames[index],
+                            fw: FontWeight.w600,
+                            size: 13.sp,
+                            color: bloc.selectedLabelIndex == index
+                                ? AppColors.white
+                                : AppColors.orangePrimary,
+                          ),
+                          onSelected: (_) {
+                            if (index == 0) {
+                              bloc.removeFilter();
+                            } else {
+                              bloc.filterItemsByLabel(
+                                AppConstants.categoriesNames[index],
+                                index,
+                              );
+                            }
+                          },
+                        );
                       },
-                    );
-                  },
-                  separatorBuilder: (_, __) => 10.pw,
-                ),
+                      separatorBuilder: (_, __) => 10.pw,
+                    ),
+                  );
+                },
               ),
               20.ph,
 

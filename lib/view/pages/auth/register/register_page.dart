@@ -52,7 +52,6 @@ class _RegisterPageState extends State<RegisterPage> {
             MySnackBar.error(
                 message: state.error, color: Colors.red, context: context);
           } else if (state is RegisterSuccessState) {
-            // TODO: "UI: connect register "
             Navigator.pushNamed(
               context,
               AppRoutes.registerVerify,
