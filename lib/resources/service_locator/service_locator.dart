@@ -31,6 +31,7 @@ Future<void> initModule() async {
     () => AuthRepository(
       networkInfo: getIt(),
       appPrefs: getIt(),
+     
     ),
   );
 

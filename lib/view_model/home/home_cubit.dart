@@ -84,7 +84,7 @@ class HomeCubit extends Cubit<HomeState> with HydratedMixin {
 
   void _cachingData(FavoriteItemsState state) {
     favoirteItems.addAll(state.items);
-    // TODO: logic - bad algorithm need to be improved
+    // TODO: refactor - bad algorithm need to be improved
     for (var item in allItems) {
       for (var favItem in favoirteItems) {
         if (item.id == favItem.id) {

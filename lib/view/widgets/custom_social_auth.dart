@@ -18,7 +18,7 @@ class CustomSocialAuth extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              // TODO: 'data, logic' login with facebook
+              // TODO: data - login with facebook
             },
             child: IconsBox(
               image: Image.asset(
@@ -30,7 +30,7 @@ class CustomSocialAuth extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              // TODO: 'data, logic' login with google
+              // TODO: data - login with google
             },
             child: IconsBox(
               image: Image.asset(
@@ -42,7 +42,7 @@ class CustomSocialAuth extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
-              // TODO: 'data, logic' login with apple
+              // TODO: data - login with apple
             },
             child: IconsBox(
               image: Image.asset(

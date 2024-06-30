@@ -33,7 +33,7 @@ class WaitingViewModel extends Cubit<WaitingState> {
 
   static WaitingViewModel getInstance(BuildContext context) => context.read();
 
-  // TODO: data - prefer move the data actions to the repository (re-requests)
+  // TODO: refactor - prefer move the data actions to the repository (re-requests)
   Future<void> getOrderItems() async {
     emit(const WaitingLoadingState());
     final orderNumber = _appPrefs.getOrderNumber();

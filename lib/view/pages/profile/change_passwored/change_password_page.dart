@@ -51,7 +51,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
             MySnackBar.error(
                 message: state.error, color: Colors.red, context: context);
           } else if (state is ChangePasswordSuccessState) {
-            // TODO: "UI - build pop up success"
+            // TODO: UI - build pop up success
           }
         }
       },

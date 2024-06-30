@@ -111,7 +111,6 @@ class RegisterCubit extends Cubit<RegisterState> {
     final image = await picker.pickImage(source: source);
     if (image == null) return;
     this.image = image.path;
-    appPrefs.setProfileImage(image.path);
     emit(ChangeProfileImageState(image.name));
   }
 

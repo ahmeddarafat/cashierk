@@ -32,10 +32,12 @@ class User {
   final String name;
   final String email;
   final String? phone;
+  final String profileImage;
 
   User({
     required this.name,
     required this.email,
+    required this.profileImage,
      this.phone,
   });
 
@@ -43,6 +45,7 @@ class User {
     return User(
       name: map[ApiConstants.name] as String,
       email: map[ApiConstants.email] as String,
+      profileImage: map[ApiConstants.profileImage] as String,
       phone: map[ApiConstants.phone] as String?,
     );
   }

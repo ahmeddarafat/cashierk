@@ -45,6 +45,20 @@ class AuthRepository {
     }
   }
 
+  Future<Response> downloadProfileImage(String urlPath, String savePath) async {
+    if (await _networkInfo.isConnected) {
+      try {
+        var dio = Dio();
+        return await dio.download(urlPath, savePath);
+      } catch (error) {
+        final failure = ErrorHandler.handle(error).failure;
+        throw CustomException(failure.message);
+      }
+    } else {
+      throw CustomException("Check your network connection");
+    }
+  }
+
   Future<AuthResponse> register(RegisterRequest request) async {
     if (await _networkInfo.isConnected) {
       try {
@@ -81,7 +95,7 @@ class AuthRepository {
           token: appPrefs.getToken(),
         );
         log("response: ${response.data}");
-        return response.data["status"] == 0 ? true :false;
+        return response.data["status"] == 0 ? true : false;
       } catch (error) {
         log("eror: $error");
         final failure = ErrorHandler.handle(error).failure;

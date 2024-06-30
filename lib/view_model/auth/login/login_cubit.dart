@@ -1,9 +1,11 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 import '../../../data/repository/auth_repository.dart';
 
 import '../../../data/data_source/local/app_prefs.dart';
@@ -66,6 +68,13 @@ class LoginCubit extends Cubit<LoginState> {
       emit(LoginLoadingState());
       try {
         final response = await repo.login(request);
+        var dir = await getApplicationDocumentsDirectory();
+        var imageDownloadPath = '${dir.path}/image.jpg';
+        await repo.downloadProfileImage(
+          response.user.profileImage,
+          imageDownloadPath,
+        );
+        appPrefs.setProfileImage(imageDownloadPath);
         _storeDataLocally(response);
         emit(LoginSuccessState());
       } catch (e) {
