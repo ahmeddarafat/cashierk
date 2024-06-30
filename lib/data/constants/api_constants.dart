@@ -1,3 +1,5 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 class ApiConstants {
   ApiConstants._();
 
@@ -44,7 +46,7 @@ class EndPoints {
   EndPoints._();
 
   /// Url
-  static const serverBaseUrl = "https://cashierc.site-pocket.com/api";
+  static String serverBaseUrl = dotenv.env['SERVER_URL'] ?? "";
   static const paymentBaseUrl = "https://accept.paymob.com/api";
   // static const fcmBaseUrl = "https://fcm.googleapis.com/fcm";
 

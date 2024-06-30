@@ -3,7 +3,7 @@ description: "A new Flutter project."
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 2.0.2+1
+version: 3.0.0+1
 
 environment:
   sdk: '>=3.3.0 <4.0.0'
@@ -23,10 +23,11 @@ dependencies:
   modal_progress_hud_nsn: ^0.5.1
   image_picker: ^1.0.4
   qr_code_scanner: ^1.0.1
-  lottie: ^2.7.0
+  lottie: ^3.1.2
   webview_flutter: ^4.4.2
-  flutter_widget_from_html: ^0.14.11
-  flutter_markdown: ^0.6.18+3
+  flutter_widget_from_html: ^0.15.1
+  flutter_markdown: ^0.7.3
+  iconsax: ^0.0.8
 
   # State Management
   flutter_bloc: ^8.1.3
@@ -56,22 +57,24 @@ dependencies:
   path_provider: ^2.1.2
 
   # Firebase
-  firebase_core: ^2.24.2
-  firebase_messaging: ^14.7.10
-  flutter_local_notifications: ^16.3.2
+  firebase_core: ^3.1.1
+  firebase_messaging: ^15.0.2
+  flutter_local_notifications: ^17.2.1
 
   # code generation
   freezed_annotation: ^2.4.1
   json_annotation: ^4.8.1
 
+  # Security
+  flutter_dotenv: ^5.1.0
+
   # Others
   uuid: ^4.2.2
-  iconsax: ^0.0.8
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.1
+  flutter_lints: ^4.0.0
 
   # code generation
   build_runner: ^2.4.8
@@ -89,6 +92,7 @@ flutter:
     - assets/icons/
     - assets/jsons/
     - assets/markdown/
+    - .env
 
   fonts:
     - family: Roboto
