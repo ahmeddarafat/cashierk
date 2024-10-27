@@ -3,15 +3,12 @@
 ## 📊 Table of Contents
 
 1. [Overview](#-Overview)
-2. [Features](#-features)
-3. [Project Architecture](#%EF%B8%8F-project-architecture)
-4. [UI Screens](#-ui-screens)
-5. [Demo](#%EF%B8%8F-demo)
-6. [Contributing](#%EF%B8%8F-contributing)
-7. [Running the App](#-running-the-app)
-8. [Running Tests](#-running-tests)
-7. [License](#-license)
-8. [Contact](#%EF%B8%8F-contact)
+2. [Project Architecture](#%EF%B8%8F-project-architecture)
+3. [Contributing](#%EF%B8%8F-contributing)
+4. [Running the App](#-running-the-app)
+5. [Running Tests](#-running-tests)
+6. [License](#-license)
+7. [Contact](#%EF%B8%8F-contact)
 
 ## 👌 Overview
 
